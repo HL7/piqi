@@ -1,0 +1,144 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.xprod.uv.piqi",
+  "url": "http://hl7.org/xprod/ig/uv/piqi/ImplementationGuide/hl7.xprod.uv.piqi",
+  "version": "1.0.0",
+  "name": "CrossParadigmPIQI",
+  "title": "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1",
+  "status": "draft",
+  "publisher": "HL7 Cross-Group Projects Work Group",
+  "contact": [
+    {
+      "name": "HL7 Cross-Group Projects Work Group",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.hl7.org/Special/committees/cgp"
+        },
+        {
+          "system": "email",
+          "value": "cgp@lists.hl7.org"
+        }
+      ]
+    }
+  ],
+  "description": "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1",
+  "packageId": "hl7.xprod.uv.piqi",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "definition": {
+    "resource": [],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "PIQI Background",
+          "generation": "markdown",
+          "name": "background.html",
+          "sourceUrl": "background.html"
+        },
+        {
+          "title": "Requirements and Use Case",
+          "generation": "markdown",
+          "name": "requirements_and_use_case.html",
+          "sourceUrl": "requirements_and_use_case.html"
+        },
+        {
+          "title": "Guidance",
+          "generation": "markdown",
+          "name": "guidance.html",
+          "sourceUrl": "guidance.html"
+        },
+        {
+          "title": "PIQI Overview",
+          "generation": "markdown",
+          "name": "piqi_overview.html",
+          "sourceUrl": "piqi_overview.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Simple Assessment Modules (SAMS)",
+          "generation": "markdown",
+          "name": "sams.html",
+          "sourceUrl": "sams.html"
+        },
+        {
+          "title": "Evaluation",
+          "generation": "markdown",
+          "name": "evaluation.html",
+          "sourceUrl": "evaluation.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Useful Downloads",
+          "generation": "markdown",
+          "name": "downloads.html",
+          "sourceUrl": "downloads.html"
+        },
+        {
+          "title": "IG Change History",
+          "generation": "markdown",
+          "name": "changes.html",
+          "sourceUrl": "changes.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "draft"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "jira-code",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "piqi-framework"
+      },
+      {
+        "code": {
+          "code": "path-history",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/xprod/ig/uv/piqi/history.html"
+      }
+    ]
+  }
+}
