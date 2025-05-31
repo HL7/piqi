@@ -2,7 +2,8 @@
 
 TBD
 
-### <a name="uscdi"> </a>US Core Data for Interoperability (USCDI)
+<a name="uscdi"></a>
+### US Core Data for Interoperability (USCDI)
 
 TBD
 
