@@ -32,7 +32,7 @@ This implementation guide was made possible by the thoughtful contributions of t
 
 ### Acknowledgements
 
-TBD
+Thanks
 
 ### Cross Version Analysis
 
