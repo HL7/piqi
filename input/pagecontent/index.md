@@ -1,8 +1,6 @@
 ### Introduction
 
-TBD
-
-This Implementation Guide (IG) provides ...
+This Implementation Guide (IG) describes the Patient Information Quality Improvement Framework or PIQI (pronounced ‘picky’) Framework with the goal to create a standard approach for patient-centric health care information that prioritizes portability and reusability, enabling seamless integration into various systems irrespective of the data source. Health care data can be complex, heterogeneous, and dispersed across various systems and platforms. Moreover, the traditional database-centric approach often restricts the flexibility and portability required to accommodate the intricate nuances of patient-centric healthcare information. By shifting the focus to simplified patient-centric information models, this framework aims to enhance data quality on an individual health level. This approach will increase the certainty and usability of healthcare data, empowering health care organizations to make more informed decisions quickly around treatment options while ultimately providing improved patient care. PIQI assesses data against a standard, such as USCDI v3, generates a scorecard, and provides insights into issues affecting the quality score. This feedback enables data sources to make necessary adjustments to meet quality requirements. See the Table of Contents for more information.
 
 ### Guide Overview
 
@@ -25,7 +23,7 @@ This implementation guide was made possible by the thoughtful contributions of t
 *   Carol Macumber, Clinical Architecture
 *   Russell Ott, Deloitte Consulting LLP
 *   Mark Roberts, Leavitt Partners, LLC
-*   TBD
+*   Charlie Harp, Clinical Architecture
 *   TBD
 *   TBD
 *   TBD
