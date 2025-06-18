@@ -1,5 +1,5 @@
 
-**Evaluation Profiles**
+**PIQI Evaluation**
 
 The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Profile**.
 
