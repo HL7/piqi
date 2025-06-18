@@ -65,9 +65,6 @@
       <li>
         <a href="requirements_and_use_case.html#use-case">Use Case</a>
       </li>
-      <li>
-        <a href="requirements_and_use_case.html#terms-and-concepts">Terms and Concepts</a>
-      </li>
     </ul>
   </li>
   <li>
@@ -85,16 +82,13 @@
         <a href="terminology.html">Terminology</a>
       </li>
       <li>
-        <a href="piqi_overview.html#information-model">Information Model</a>
+        <a href="piqi_overview.html#information-model">PIQI Model</a>
       </li>
       <li>
         <a href="sams.html">Simple Assessment Modules (SAMS)</a>
       </li>
       <li>
-        <a href="evaluation.html">Evaluation Criteria</a>
-      </li>
-      <li>
-        <a href="evaluation.html#evaluation-profiles">Evaluation Profiles</a>
+        <a href="evaluation.html">PIQI Evaluation</a>
       </li>
       <li>
         <a href="examples.html">Examples</a>
