@@ -16,7 +16,7 @@ If the **Condition** is configured, the **Evaluation** is only processed if the 
 
 Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (could not assess) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
 
-![Relationship of SAMs to Evaluation Profiles and Conditions](<../images/SAM_ Diagram.jpg)
+![Relationship of SAMs to Evaluation Profiles and Conditions](SAM_Diagram.jpg)
 
 ## Simple Assessment Modules
 
