@@ -20,12 +20,14 @@ The main sections of this IG are:
 
 This implementation guide was made possible by the thoughtful contributions of the following people and organizations:
 
+Primary Authors:
 *   Charlie Harp, Clinical Architecture
 *   Carol Macumber, Clinical Architecture
 *   Russell Ott, Deloitte Consulting LLP
 *   Mark Roberts, Leavitt Partners, LLC
-*   TBD
-*   TBD
+
+Contributing Authors:
+*   Lisa Anderson, The Joint Commission
 *   TBD
 
 ### Acknowledgements
