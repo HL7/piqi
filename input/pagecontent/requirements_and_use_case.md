@@ -10,7 +10,3 @@ TBD
 ### Use Case
 
 TBD
-
-### Terms and Concepts
-
-TBD

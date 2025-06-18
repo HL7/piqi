@@ -66,12 +66,11 @@ menu:
     Industry-specific Requirements: requirements_and_use_case.html
     USCDI: requirements_and_use_case.html#uscdi
     Use Case: requirements_and_use_case.html#use-case
-    Terms and Concepts: requirements_and_use_case.html#terms-and-concepts
   Guidance: guidance.html
   Framework:
     Overview: piqi_overview.html
     Terminology: terminology.html
-    Information Model: piqi_overview.html#information-model 
+    PIQI Model: piqi_overview.html#information-model 
     Simple Assessment Modules (SAMS): sams.html
     Evaluation Criteria: evaluation.html
     Evaluation Profiles: evaluation.html#evaluation-profiles
