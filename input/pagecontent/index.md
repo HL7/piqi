@@ -10,7 +10,7 @@ The main sections of this IG are:
 
 
 *   [Background](background.html) - these pages provide background on on the PIQI Framework...
-*   [Requirements and Use Case](requirements_and_use_case.html) - these pages provide background on on the PIQI Framework...
+*   [Requirements and Use Case](requirements_and_use_case.html) - these pages describe known use cases and specific requirements for assessing data quality in various industry veritcals
 *   [Guidance](guidance.html) - this page provides best practices and considerations for implementation of the PIQI Framework.
 *   [Framework](piqi_overview.html) - these pages define the structure of the PIQI Framework with examples.
 *   [Downloads](downloads.html) - this page provides links to downloadable artifacts.
@@ -20,10 +20,10 @@ The main sections of this IG are:
 
 This implementation guide was made possible by the thoughtful contributions of the following people and organizations:
 
+*   Charlie Harp, Clinical Architecture
 *   Carol Macumber, Clinical Architecture
 *   Russell Ott, Deloitte Consulting LLP
 *   Mark Roberts, Leavitt Partners, LLC
-*   Charlie Harp, Clinical Architecture
 *   TBD
 *   TBD
 *   TBD
