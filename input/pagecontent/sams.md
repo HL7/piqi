@@ -1,6 +1,6 @@
 ### Simple Assessment Modules (SAMS)
 
-# PIQI Assessment Approach
+#### PIQI Assessment Approach
 
 The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Profile**.
 
@@ -17,40 +17,60 @@ If the **Condition** is configured, the **Evaluation** is only processed if the 
 Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (could not assess) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
 
 ![Relationship of SAMs to Evaluation Profiles and Conditions](SAM_Diagram.jpg)
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-## Simple Assessment Modules
+#### Simple Assessment Modules
 
 Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘could not assess’ result.
 
-# Anatomy of a Simple Assessment Module (SAM)
+### Anatomy of a Simple Assessment Module (SAM)
 
 A SAM is comprised of the following component:
 
-## SAM Mnemonic
+#### SAM Mnemonic
 
 The SAMID is a mnemonic identifier that is used to identify a unique SAM. The Mnemonic is intended to be universal so that common SAMs can be referenced across implementations in the PIQI community. This is the primary identifier to reference a given SAM.
 
-## SAM UID
+#### SAM UID
 
 The SAMUID is an optional implementation specific unique identifier. This identifier can vary from implementation to implementation.
 
-## SAM Name
+#### SAM Name
 
 The name of the SAM. This name should be in the context of the SAM passing. For example, if the SAM is assessing if a attribute is populated the same name would be ‘Is populated’.
 
-## SAM Success Alias
+#### SAM Success Alias
 
 The alias for the SAM that is used when communicating that the SAM has passed. For example, in the SAM name is ‘Attribute is populated’ the SAM Success Alias would be ‘Is populated’.
 
-## SAM Failure Alias
+#### SAM Failure Alias
 
 The alias for the SAM that is used when communicating that the SAM has failed. This is typically the reciprocal of the SAM Success Alias. For example, in the SAM name is ‘Is populated’ the SAM Failure Alias would be ‘Is not populated’.
 
-## SAM Description
+#### SAM Description
 
 This is a brief description of the purpose of the SAM.
 
-## SAM Input Type
+#### SAM Input Type
 
 This is the entity type that the SAM expects as input. The initial Input types are as follows:
 
@@ -70,35 +90,35 @@ This is the entity type that the SAM expects as input. The initial Input types a
 
 For the Element and Data Class input Types the PIQI Model is required.
 
-## SAM PIQI Model
+#### SAM PIQI Model
 
 SAMs that use elements as input types will have a requirement to specify the minimum PIQI model and minimum version that is required to provide the SAM with the necessary attribute components in the body of the element. It has the following components:
 
-### PIQI Model Mnemonic
+##### PIQI Model Mnemonic
 
 The standard mnemonic for the PIQI model
 
-### PIQI Model Version
+##### PIQI Model Version
 
 The numeric version of the PIQI Model
 
-### PIQI Model Mnemonic
+##### PIQI Model Mnemonic
 
 The mnemonic for the specific standard model version.
 
-## SAM Parameters
+#### SAM Parameters
 
 This is a list of parameters that the SAM accepts each parameter has multiple components:
 
-### SAM Parameter Name
+##### SAM Parameter Name
 
 This is the name of the parameter in the parameter. This name is used in in the parameter JSON that is passed to the SAM.
 
-### SAM Parameter Description
+##### SAM Parameter Description
 
 This is the description of the nature and purpose of the parameter.
 
-### SAM Parameter Type
+##### SAM Parameter Type
 
 This is the parameter type and can be one of the following values. The specific parameter types can be used to simplify SAM configuration. All SAM parameters are passed to the SAM as a JSON collection on execution.
 
@@ -110,15 +130,15 @@ This is the parameter type and can be one of the following values. The specific 
 
 **Simple_Text_Parameter** A simple free text vale.
 
-## SAM Prerequisite SAM Mnemonic
+#### SAM Prerequisite SAM Mnemonic
 
 This is the SAM Mnemonic for the SAM that must pass before this SAM can run. This is an optional property.
 
-## SAM HDQT Dimension Mnemonic
+#### SAM HDQT Dimension Mnemonic
 
 This defined the healthcare data quality taxonomy dimension that this SAM is bound to. The mnemonic is from the HDQT dimension list.
 
-## SAM Execution Type
+#### SAM Execution Type
 
 This defines the nature of the machinery of the SAM and can have the following values.
 
@@ -136,7 +156,7 @@ This defines the nature of the machinery of the SAM and can have the following v
 
 For the Stored_Procedure and RESTful_Service execution types the assumption is they have an interface that matches the SAM interface for the input type.
 
-## SAM Execution Reference
+#### SAM Execution Reference
 
 This is the meta-data that describes the information necessary to execute the SAM based on the execution type.
 
@@ -145,151 +165,112 @@ This is the meta-data that describes the information necessary to execute the SA
 - If the execution type is RESTful_Service, this would be the URL for the RESTful service endpoint.
 - If the execution type is Value_Set, this would be the value set identifier in the repository.
 
-## SAM Creation DateTime
+#### SAM Creation DateTime
 
 The date and time the SAM was created. This is optional for primitive SAMs.
 
-## SAM Modification DateTime
+#### SAM Modification DateTime
 
 The date and time the SAM was last updated.
 
-## SAM Source
+#### SAM Source
 
 The author of the SAM and related reference resources. This is optional for primitive SAMs.
 
-### Source Name
+##### Source Name
 
 The name of the source of the SAM
 
-### PIQI Alliance Member UID
+##### PIQI Alliance Member UID
 
 The PIQI Alliance Member unique identifier.
 
-## Examples of SAM Definition JSON
+### Examples of SAM Definition JSON
 
 A primitive SAM for Attribute is Valid Date:
 
+```json
 {
-
-"SAMs": \[{
-
-"mnemonic": "Attr_IsValidDate",
-
-"uniqueID": " 5ea00021-24ce-40c2-a1f7-02875b7732f0",
-
-"name": "Attribute is valid date",
-
-"successAlias": "Valid date",
-
-"failureAlias": "Invalid date",
-
-"description": "Determines if a simple attribute is a valid date",
-
-"inputType": "SimpleAttribute",
-
-"parameters": \[\],
-
-"prerequisiteSAMMnemonic": "Attr_IsPopulated",
-
-"HDQTDimensionMnemonic": "Accuracy.InvalidFormat",
-
-"executionType": "Primitive_Logic",
-
-"executionReference": "",
-
-"createdDateTime": "",
-
-"modifiedDateTime": "",
-
-“Source”: \[
-
-{ "Name": "PIQI Alliance",
-
-"PIQIAllianceMemberUID": ”f0f3de6d-c3d8-483c-a8ff-004a66dbc551"}\]
-
-}\]
-
+    "SAMs": [
+        {
+            "mnemonic": "Attr_IsValidDate",
+            "uniqueID": " 5ea00021-24ce-40c2-a1f7-02875b7732f0",
+            "name": "Attribute is valid date",
+            "successAlias": "Valid date",
+            "failureAlias": "Invalid date",
+            "description": "Determines if a simple attribute is a valid date",
+            "inputType": "SimpleAttribute",
+            "parameters": [],
+            "prerequisiteSAMMnemonic": "Attr_IsPopulated",
+            "HDQTDimensionMnemonic": "Accuracy.InvalidFormat",
+            "executionType": "Primitive_Logic",
+            "executionReference": "",
+            "createdDateTime": "",
+            "modifiedDateTime": "",
+            "Source": [
+                {
+                    "Name": "PIQI Alliance",
+                    "PIQIAllianceMemberUID": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
+                }
+            ]
+        }
+    ]
 }
+```
 
 A Stored Procedure SAM for lab result unit plausibility based on LOINC:
 
+```json
 {
-
-"SAMs": \[
-
-{
-
-"mnemonic": " Lab_PlausibleUnit_LOINC_V1",
-
-"uniqueID": "2241d12c-58a4-4596-ae0f-e983b0ba5209",
-
-"name": " Lab Result Unit is plausible (LOINC) – V1",
-
-"success_Alias": " plausible unit ",
-
-"failure_Alias": " implausible unit",
-
-"description": " Evaluates a populated result unit against a valid LOINC Code",
-
-"PIQIModel": {
-
-"mnemonic": "PAT",
-
-"version": 1,
-
-"versionMnemonic": "PAT_V1"
-
+    "SAMs": [
+        {
+            "mnemonic": " Lab_PlausibleUnit_LOINC_V1",
+            "uniqueID": "2241d12c-58a4-4596-ae0f-e983b0ba5209",
+            "name": " Lab Result Unit is plausible (LOINC) \u2013 V1",
+            "success_Alias": " plausible unit ",
+            "failure_Alias": " implausible unit",
+            "description": " Evaluates a populated result unit against a valid LOINC Code",
+            "PIQIModel": {
+                "mnemonic": "PAT",
+                "version": 1,
+                "versionMnemonic": "PAT_V1"
+            },
+            "input_Type": "Element:LabResult",
+            "parameters": [],
+            "prerequisiteSAMMnemonic": "",
+            "HDQTDimensionMnemonic": "Plausibility.Clinical ",
+            "executionTypeMnemonic": " Stored_Procedure ",
+            "execution_Reference": " spLOINC_UnitPlausibility ",
+            "createdDateTime": "20250315",
+            "modifiedDateTime": "20250315",
+            "source": [
+                {
+                    "name": "PIQI Alliance",
+                    "PIQIAllianceMemberUID": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
+                }
+            ]
+        }
+    ]
 }
+```
 
-"input_Type": "Element:LabResult",
-
-"parameters": \[\],
-
-"prerequisiteSAMMnemonic": "",
-
-"HDQTDimensionMnemonic": "Plausibility.Clinical ",
-
-"executionTypeMnemonic": " Stored_Procedure ",
-
-"execution_Reference": " spLOINC_UnitPlausibility ",
-
-"createdDateTime": "20250315",
-
-"modifiedDateTime": "20250315",
-
-"source": \[
-
-{
-
-"name": "PIQI Alliance",
-
-"PIQIAllianceMemberUID": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
-
-}
-
-\]
-
-}
-
-\]
-
-}
-
-# Standard Simple Assessment Modules
+### Standard Simple Assessment Modules
 
 The standard SAMs are those that operate against attributes that use primitive logic for performance.
 
-## Simple Attribute SAMs
+#### Simple Attribute SAMs
 
 A **simple attribute** is a string value in the JSON attribute structure. Simple attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers and dates.
 
 Example: In this example the EffectiveDateTime attribute is a simple attribute.
 
-"labElements": \[
-
+```json
 {
-
-"effectiveDateTime": "20230111135518",
+    "labElements": [
+        {"effectiveDateTime": "20230111135518"}
+    ]
+}
+```
 
 For the purposes of a SAM complex attribute type like Codable Concepts, Ranged Values and Observation values can be treated like simple attributes.
 
@@ -297,29 +278,26 @@ A **codable concept** attribute is a structure that can be represented as a simp
 
 **Example:** In this Test example the highlighted text is considered the simple attribute value of the codable concept.
 
-"test":
-
+```json
 {
-
-"text": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
-
-"codings": \[
-
-{
-
-"code": "742-7",
-
-"display": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
-
-"system": "LOINC"
-
-}\]},
+    "test": {
+        "text": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
+        "codings": [
+            {
+                "code": "742-7",
+                "display": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
+                "system": "LOINC"
+            }
+        ]
+    }
+}
+```
 
 Each complex attribute has a similar **text** field at the root level of its JSON structure. This **text** value is what is assessed by **simple attribute** SAMs.
 
 The most common simple attribute SAM is ‘**Is Populated**’ which is used as a prerequisite for many downstream SAMs.
 
-### Attribute is Populated
+##### Attribute is Populated
 
 This SAM is designed to assess if a simple attribute has content. For complex attribute types it assesses the ‘Text’ sub property which should include the entire source field the complex attribute us derived from.
 
@@ -337,7 +315,7 @@ This SAM is designed to assess if a simple attribute has content. For complex at
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Numeric
+##### Attribute is Numeric
 
 This SAM is designed to assess if a simple attribute is a number. This should only apply to simple attributes.
 
@@ -355,7 +333,7 @@ This SAM is designed to assess if a simple attribute is a number. This should on
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Integer
+##### Attribute is Integer
 
 This SAM is designed to assess if a simple attribute is an integer. This should only apply to simple attributes.
 
@@ -373,7 +351,7 @@ This SAM is designed to assess if a simple attribute is an integer. This should 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Decimal
+##### Attribute is Decimal
 
 This SAM is designed to assess if a simple attribute is a decimal. This should only apply to simple attributes.
 
@@ -391,7 +369,7 @@ This SAM is designed to assess if a simple attribute is a decimal. This should o
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Positive Number
+##### Attribute is Positive Number
 
 This SAM is designed to assess if a simple attribute is a positive number. This should only apply to simple attributes.
 
@@ -409,7 +387,7 @@ This SAM is designed to assess if a simple attribute is a positive number. This 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Negative Number
+##### Attribute is Negative Number
 
 This SAM is designed to assess if a simple attribute is a negative number. This should only apply to simple attributes.
 
@@ -427,7 +405,7 @@ This SAM is designed to assess if a simple attribute is a negative number. This 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Date
+##### Attribute is Date
 
 This SAM is designed to assess if a simple attribute is a date. This should only apply to simple attributes.
 
@@ -445,7 +423,7 @@ This SAM is designed to assess if a simple attribute is a date. This should only
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Future Date
+##### Attribute is Future Date
 
 This SAM is designed to assess if a simple attribute is a date in the future. This should only apply to simple attributes.
 
@@ -463,7 +441,7 @@ This SAM is designed to assess if a simple attribute is a date in the future. Th
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Past Date
+##### Attribute is Past Date
 
 This SAM is designed to assess if a simple attribute is a date in the future. This should only apply to simple attributes.
 
@@ -481,7 +459,7 @@ This SAM is designed to assess if a simple attribute is a date in the future. Th
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Time
+##### Attribute is Time
 
 This SAM is designed to assess if a simple attribute is a time. This should only apply to simple attributes.
 
@@ -499,7 +477,7 @@ This SAM is designed to assess if a simple attribute is a time. This should only
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is TimeStamp
+##### Attribute is TimeStamp
 
 This SAM is designed to assess if a simple attribute is a timestamp including a date and time. This should only apply to simple attributes.
 
@@ -517,7 +495,7 @@ This SAM is designed to assess if a simple attribute is a timestamp including a 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute is Timestamp with Time Zone
+##### Attribute is Timestamp with Time Zone
 
 This SAM is designed to assess if a simple attribute is a timestamp including a date, time and time zone. This should only apply to simple attributes.
 
@@ -535,7 +513,7 @@ This SAM is designed to assess if a simple attribute is a timestamp including a 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Attribute Matches Regex
+##### Attribute Matches Regex
 
 This SAM is designed to assess if a simple attribute matches the regex pattern provided in the parameter. This should only apply to simple attributes and is intended to handle situations in an evaluation profile not covered by standard pattern SAMS.
 
@@ -553,7 +531,7 @@ This SAM is designed to assess if a simple attribute matches the regex pattern p
 | Execution Reference | (provided in Parameter_1) |
 | Source | PIQI Alliance |
 
-### Attribute Is In List
+##### Attribute Is In List
 
 This SAM is designed to assess if a simple attribute is a member of a list of enumerate values.
 
@@ -571,7 +549,7 @@ This SAM is designed to assess if a simple attribute is a member of a list of en
 | Execution Reference | (provided in Parameter_1) |
 | Source | PIQI Alliance |
 
-## Codable Concept SAMs
+#### Codable Concept SAMs
 
 A Codable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
@@ -592,43 +570,30 @@ A Codable Concept attribute is a structure that can be represented as a simple a
 
 **Example:**
 
-"test":
-
+```json
 {
-
-"text": " MONOCYTES, Serum",
-
-"codings": \[
-
-{
-
-"code": "MONO100",
-
-"display": "MONOS",
-
-"system": "LCL"
-
-},
-
-{
-
-"code": "742-7",
-
-"display": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
-
-"system": "LOINC"
-
-},
-
-{
-
-"code": "123456789",
-
-"display": "MONOCYTES, Serum",
-
-"system": ""
-
-}\]},
+    "test": {
+        "text": " MONOCYTES, Serum",
+        "codings": [
+            {
+                "code": "MONO100",
+                "display": "MONOS",
+                "system": "LCL"
+            },
+            {
+                "code": "742-7",
+                "display": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
+                "system": "LOINC"
+            },
+            {
+                "code": "123456789",
+                "display": "MONOCYTES, Serum",
+                "system": ""
+            }
+        ]
+    }
+}
+```
 
 For SAMs assessing **codable concepts**, the coding collection is critical and is assessed as an aggregate. Since a **codable concept** attribute can have more than one code in the **codings** collection an assessment is evaluating the entire collection looking for the best-case scenario.
 
@@ -636,7 +601,7 @@ In the above example there are three **codings** in the collection. The SAMs tha
 
 It is also worth noting that **Codable Concepts SAMs** also work with **Observation Value** attributes since they can contain a **codings** collection.
 
-### Codable Concept has Code
+##### Codable Concept has Code
 
 This SAM is designed to assess if a codable concept attribute has at least ONE code value in its codings collection.
 
@@ -654,7 +619,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept has Code System
+##### Codable Concept has Code System
 
 This SAM is designed to assess if a codable concept attribute has at least ONE code system value in its codings collection.
 
@@ -672,7 +637,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept has Display
+##### Codable Concept has Display
 
 This SAM is designed to assess if a codable concept attribute has at least ONE code system value in its codings collection.
 
@@ -690,7 +655,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept Code System is Recognized
+##### Codable Concept Code System is Recognized
 
 This SAM is designed to assess if a codable concept attribute has at least ONE code system that is recognized by the environment.
 
@@ -708,7 +673,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept Is Complete
+##### Codable Concept Is Complete
 
 This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection.
 
@@ -726,7 +691,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept Is Valid Concept
+##### Codable Concept Is Valid Concept
 
 This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of is provided code system.
 
@@ -744,7 +709,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept Is Valid Member
+##### Codable Concept Is Valid Member
 
 This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of the code system or value set provided in the parameter. This is used to determine if the concept is compatible.
 
@@ -762,7 +727,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept Is Semantically Consistent
+##### Codable Concept Is Semantically Consistent
 
 This SAM is designed to assess if a codable concept attribute’s text value is consistent with the compatible codings display as it is represented in the terminology server.
 
@@ -780,7 +745,7 @@ This SAM is designed to assess if a codable concept attribute’s text value is 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Codable Concept Is Active
+##### Codable Concept Is Active
 
 This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is an active member of is provided code system.
 
@@ -798,7 +763,7 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-## Observation Value SAMs
+#### Observation Value SAMs
 
 An **Observation Value** attribute is a structure that can be represented as a simple attribute value or a structure observation value. **Observation Value** is a specialized attribute as many elements in patient information can be represented by quantitative, text or coded concepts value. It is important to remember that simple attribute SAMs, codable concept SAMs and range value SAMs can all be applied to an **Observation Value** attribute
 
@@ -814,53 +779,33 @@ An **Observation Value** attribute is a structure that can be represented as a s
 
 Example:
 
-"resultValue": {
-
-"text": "Abnormal",
-
-“number”: ””,
-
-“number2”: “”,
-
-"type": {
-
-“text”: “CE”,
-
-“codings”: \[
-
+```json
 {
-
-“system” : “HL7-0125”,
-
-“code” : “CE”,
-
-“display” : “Coded Entry”
-
+    "resultValue": {
+        "text": "Abnormal",
+        "number": "",
+        "number2": "",
+        "type": {
+            "text": "CE",
+            "codings": [
+                {
+                    "system": "HL7-0125",
+                    "code": "CE",
+                    "display": "Coded Entry"
+                },
+                {
+                    "system": "LOINC",
+                    "code": "11111",
+                    "display": "Abnormal"
+                }
+            ]
+        }
+    }
 }
-
-},
-
-"codings": \[
-
-{
-
-"system": "LOINC",
-
-"code": "11111",
-
-"display": "Abnormal"
-
-}
-
-\]
-
-}
-
-}
-
+```
 <table><tbody><tr><th><p><strong>Typical Value Types</strong></p><ul><li>CE Coded Entry</li><li>CWE Coded Entry with Exceptions</li><li>ST String</li><li>DT Date</li><li>ED Encapsulated Data</li><li>FT Formatted Text</li></ul></th><th><ul><li>NM Numeric</li><li>SN Structured Numeric</li><li>RP Reference Pointer</li><li>TM Time</li><li>TS TimeStamp</li><li>TX Text Data</li></ul></th></tr></tbody></table>
 
-### Observation Value Type in List
+##### Observation Value Type in List
 
 This SAM is designed to assess if an observation result value type is contained in the comma separated list of value type codes.
 
@@ -878,7 +823,7 @@ This SAM is designed to assess if an observation result value type is contained 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Observation Value Matches Type
+##### Observation Value Matches Type
 
 This SAM is designed to assess if an observation result value is consistent with the expressed value type.
 
@@ -896,7 +841,7 @@ This SAM is designed to assess if an observation result value is consistent with
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Observation Value is Qualitative
+##### Observation Value is Qualitative
 
 This SAM is designed to assess if an observation result value type is a qualitative result. This SAM is used as a conditional SAM for assessing the coding of qualitative results. It is hardwired to use value types of CE, CWE, CD, and ST.
 
@@ -914,7 +859,7 @@ This SAM is designed to assess if an observation result value type is a qualitat
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-## Range Value SAMs
+#### Range Value SAMs
 
 A RangeValue attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The RangeValue is a specialized attribute as many elements in patient information can be represented by a structured range.
 
@@ -927,18 +872,17 @@ A RangeValue attribute is a structure that can be represented as a simple attrib
 | highValue | Simple Attribute | Text representation of the high value |
 
 **Example**:
-
-"referenceRange": {
-
-“text": "14-88",
-
-"lowValue": "14",
-
-"highValue": "88"
-
+```json
+{
+    "referenceRange": {
+        "text": "14-88",
+        "lowValue": "14",
+        "highValue": "88"
+    }
 }
+```
 
-### Range Value Is Complete
+##### Range Value Is Complete
 
 This SAM is designed to assess if a range value has both numeric components.
 
@@ -956,7 +900,7 @@ This SAM is designed to assess if a range value has both numeric components.
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Range Value Is Valid
+##### Range Value Is Valid
 
 This SAM is designed to assess if a range value’s numeric components are logically valid.
 
@@ -974,7 +918,7 @@ This SAM is designed to assess if a range value’s numeric components are logic
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-## Element SAMs
+#### Element SAMs
 
 An Element is a data class specific collection of attributes based on the PIQI Data Model specification. An Element SAMs has an input type that is the JSON for that element including all of its constituent attributes and audit information for those attributes.
 
@@ -982,7 +926,7 @@ While most attribute SAMs are primitive, it is expected that element level attri
 
 Here are some examples of Element SAMs.
 
-### Element is Clean
+##### Element is Clean
 
 This SAM is designed to assess if an element constituent attribute SAMs have all passed. The term ‘Clean’ in PIQI parlance means that all of the scoring evaluations for something have passed.
 
@@ -1000,7 +944,7 @@ This SAM is designed to assess if an element constituent attribute SAMs have all
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-### Lab Result Unit Matches Test
+##### Lab Result Unit Matches Test
 
 This SAM is designed to assess if a lab result unit (or lack of unit) is plausible based on a valid LOINC Code.
 
@@ -1018,7 +962,7 @@ This SAM is designed to assess if a lab result unit (or lack of unit) is plausib
 | Execution Reference | spLabResUnit_IsPlausible |
 | Source | PIQI Alliance |
 
-### Lab Result Value Is Plausible
+##### Lab Result Value Is Plausible
 
 This SAM is designed to assess if a lab result value is plausible based on a valid LOINC Code and unit of measure.
 
@@ -1036,7 +980,7 @@ This SAM is designed to assess if a lab result value is plausible based on a val
 | Execution Reference | spLabResValue_IsPlausible |
 | Source | PIQI Alliance |
 
-### Condition Is Sex Plausible
+##### Condition Is Sex Plausible
 
 This SAM is designed to assess if a condition is plausible based on the birth sex from the patient demographics. It would also assume the condition code in the element is coded to SNOMEDCT.
 
@@ -1054,13 +998,13 @@ This SAM is designed to assess if a condition is plausible based on the birth se
 | Execution Reference | spCondition_IsPlausibleForSex |
 | Source | PIQI Alliance |
 
-## Data Class SAMs
+#### Data Class SAMs
 
 A **Data Class** represents a domain specific collection of attributes that are instantiated in Elements. A **Data Class** SAM is intended to evaluate scenarios across its collection of elements. Typically, this type of SAM is used to identify inconsistency, duplication or disjoint conditions.
 
 Here is an example of **Data Class** SAM.
 
-### Data Class Has Duplicates
+##### Data Class Has Duplicates
 
 This SAM is designed to assess if a **Data Class** collection has duplicates. The attributes used to identify duplication are passed in the parameters.
 
@@ -1078,13 +1022,13 @@ This SAM is designed to assess if a **Data Class** collection has duplicates. Th
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-## Patient Message SAMs
+#### Patient Message SAMs
 
 A SAM that evaluates the entire patient message, including all of its data classes and elements, is contemplated in the PIQI framework. This type of SAM can be used to look for gaps in information and other message level plausibility concerns. Careful consideration should be given to this type of SAM as the message payload JSON could be quite large and could significantly impact the performance of the gateway. SAMs that perform **Data Class** specific assessments but require patient information should be element level SAMs that use a patient demographics parameter. (see [Condition is Sex Plausible](#_Condition_Is_Sex) example)
 
 Here is an example of a patient level SAM.
 
-### Patient is Undocumented Diabetic
+##### Patient is Undocumented Diabetic
 
 This SAM is designed to process the patient message with a multi-data class inference that determines if the patient has Type 2 Diabetes Mellitus based on labs, medications and comorbidities, but does have no mention of Diabetes on their condition list. This SAM would return a ‘condition not met’ if the patient has diabetes in their conditions list or does meet the criteria for the evaluation.
 
