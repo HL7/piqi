@@ -73,46 +73,26 @@ An ObservationValue attribute is a structure that can be represented as a simple
 
 **Example:**
 
-
-"resultValue": {
-
-"text": "Abnormal",
-
-"type": {
-
-“text”: “CE”,
-
-“codings”: \[
-
-{
-
-“system” : “HL7-0125”,
-
-“code” : “CE”,
-
-“display” : “Coded Entry”
-
-}
-
-},
-
-"codings": \[
-
-{
-
-"system": "LOINC",
-
-"code": "11111",
-
-"display": "Abnormal"
-
-}
-
-\]
-
-}
-
-}
+```json
+    "resultValue": {
+        "text": "Abnormal",
+        "type": {
+            "text": "CE",
+            "codings": [
+                {
+                    "system": "HL7-0125",
+                    "code": "CE",
+                    "display": "Coded Entry"
+                },
+                {
+                    "system": "LOINC",
+                    "code": "11111",
+                    "display": "Abnormal"
+                }
+            ]
+        }
+    }
+```
 
 #### RangeValue Attribute Type
 
@@ -128,15 +108,13 @@ A RangeValue attribute is a structure that can be represented as a simple attrib
 
 **Example**:
 
-"referenceRange": {
-
-“text": "14-88",
-
-"lowValue": "14",
-
-"highValue": "88"
-
-}
+```json
+    "referenceRange": {
+        "text": "14-88",
+        "lowValue": "14",
+        "highValue": "88"
+    }
+```
 
 ### PIQI Data Models
 
@@ -291,65 +269,56 @@ This is another example of how PIQI is designed specifically for patient informa
 
 #### Code System JSON structure
 
-“**codeSytems**” : \[
-
-{
-
-"mnemonic": "LOINC",
-
-"name": "Logical Observation Identifiers Names and Codes",
-
-"identifier": "<http://loinc.org>",
-
-"aliases": \["LOINC", "LOINC Code", "<http://loinc.org>", "urn:oid:2.16.840.1.113883.6.1"\],
-
-"terminologyServerStatus": "active"
-
-},
-
-{
-
-"mnemonic": "SNOMEDCT",
-
-"name": "SNOMED Clinical Terms",
-
-"identifier": "<http://snomed.info/sct>",
-
-"aliases": \["SNOMED CT", "SNOMEDCT", "sct", "urn:oid:2.16.840.1.113883.6.96"\],
-
-"terminologyServerStatus": "active"
-
-},
-
-{
-
-"mnemonic": "ICD10CM",
-
-"name": "International Classification of Diseases, Tenth Revision, Clinical Modification",
-
-"identifier": "<http://hl7.org/fhir/sid/icd-10-cm>",
-
-"aliases": \["ICD-10-CM", "ICD10CM", "urn:oid:2.16.840.1.113883.6.90"\],
-
-"terminologyServerStatus": "active"
-
-},
-
-{
-
-"mnemonic": "ICD9CM",
-
-"name": "International Classification of Diseases, Ninth Revision, Clinical Modification",
-
-"identifier": "<http://hl7.org/fhir/sid/icd-9-cm>",
-
-"aliases": \["ICD-9-CM", "ICD9CM", "urn:oid:2.16.840.1.113883.6.42"\],
-
-"terminologyServerStatus": "deprecated"
-
-}
-
-\]
+```json
+    "**codeSytems**": [
+        {
+            "mnemonic": "LOINC",
+            "name": "Logical Observation Identifiers Names and Codes",
+            "identifier": "<http://loinc.org>",
+            "aliases": [
+                "LOINC",
+                "LOINC Code",
+                "<http://loinc.org>",
+                "urn:oid:2.16.840.1.113883.6.1"
+            ],
+            "terminologyServerStatus": "active"
+        },
+        {
+            "mnemonic": "SNOMEDCT",
+            "name": "SNOMED Clinical Terms",
+            "identifier": "<http://snomed.info/sct>",
+            "aliases": [
+                "SNOMED CT",
+                "SNOMEDCT",
+                "sct",
+                "urn:oid:2.16.840.1.113883.6.96"
+            ],
+            "terminologyServerStatus": "active"
+        },
+        {
+            "mnemonic": "ICD10CM",
+            "name": "International Classification of Diseases, Tenth Revision, Clinical Modification",
+            "identifier": "<http://hl7.org/fhir/sid/icd-10-cm>",
+            "aliases": [
+                "ICD-10-CM",
+                "ICD10CM",
+                "urn:oid:2.16.840.1.113883.6.90"
+            ],
+            "terminologyServerStatus": "active"
+        },
+        {
+            "mnemonic": "ICD9CM",
+            "name": "International Classification of Diseases, Ninth Revision, Clinical Modification",
+            "identifier": "<http://hl7.org/fhir/sid/icd-9-cm>",
+            "aliases": [
+                "ICD-9-CM",
+                "ICD9CM",
+                "urn:oid:2.16.840.1.113883.6.42"
+            ],
+            "terminologyServerStatus": "deprecated"
+        }
+    ]
+```
 
 ### PIQI Patient Assessment Application Hierarchy
 
