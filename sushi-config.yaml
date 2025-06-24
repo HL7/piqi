@@ -51,30 +51,36 @@ pages:
     title: IG Change History
   
 menu:
-  Home: 
+  Home:
     Introduction: index.html
     Guide Overview: index.html#guide-overview
     Authors: index.html#authors
     Acknowledgements: index.html#acknowledgements
+    
   Background:
     Introduction: background.html
     Overview: background.html#overview
     Additional Information: background.html#additional-information
     Boundaries/Applicability: background.html#boundaries-and-applicability-of-framework
-    Community: background.html#community
+    Community: background.html#piqi-community
+    
   Requirements and Use Case:
     Industry-specific Requirements: requirements_and_use_case.html
     USCDI: requirements_and_use_case.html#uscdi
     Use Case: requirements_and_use_case.html#use-case
+    
   Guidance: guidance.html
+  
   Framework:
     Overview: piqi_overview.html
     Terminology: terminology.html
-    PIQI Model: piqi_overview.html#information-model 
+    PIQI Model: piqi_overview.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
     Examples: examples.html
+    
   Downloads: downloads.html
+  
   Change Notes: changes.html
   
     
