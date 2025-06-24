@@ -37,8 +37,6 @@ pages:
     title: Guidance
   piqi_overview.md:
     title: PIQI Overview
-  terminology.md:
-    title: Terminology
   sams.md:
     title: Simple Assessment Modules (SAMS)
   evaluation.md:
@@ -73,7 +71,7 @@ menu:
   
   Framework:
     Overview: piqi_overview.html
-    Terminology: terminology.html
+    Taxonomy: piqi_overview.html#piqi-healthcare-data-quality-taxonomy-version-10
     PIQI Model: piqi_overview.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html

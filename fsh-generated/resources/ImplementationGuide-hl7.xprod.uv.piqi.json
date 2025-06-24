@@ -64,12 +64,6 @@
           "sourceUrl": "piqi_overview.html"
         },
         {
-          "title": "Terminology",
-          "generation": "markdown",
-          "name": "terminology.html",
-          "sourceUrl": "terminology.html"
-        },
-        {
           "title": "Simple Assessment Modules (SAMS)",
           "generation": "markdown",
           "name": "sams.html",
