@@ -396,11 +396,11 @@ This category contains dimensions that relate to whether the data makes sense ba
 
 ### PIQI Assessment Approach
 
-The PIQI Framework assess patient data that has been put into the PIQI Data Model using an **Evaluation Criteria** which is collection of **Simple Assessment Modules** (SAMs) with criteria specific parameters and their individual effects of the assessment result for each patient data entity.
+The PIQI Framework assess patient data that has been put into the PIQI Data Model using an **Evaluation Rubric** which is collection of **Evaluations**, each evaluation a configured **Simple Assessment Module** (SAM) with specific parameters and their individual scoring effects of the evaluation result for each patient data entity.
 
 #### PIQI Simple Assessment Modules
 
-PIQI Simple assessment modules (SAMs) are composable service endpoints that follow a consistent pattern to evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘conditions not met’ result.
+PIQI Simple assessment modules (SAMs) are composable service endpoints that follow a consistent pattern to evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘conditions not met’ result.  A SAM that has been configured for use in a Evaluation Rubric is referred to simply as an Evaluation.
 
 Each SAM is comprised of the following elements:
 
@@ -450,11 +450,12 @@ One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisit
 
 The idea that the entity fails to pass the assigned SAM is what establishes the entity’s score, but the SAM or prerequisite SAM failure provides the statistics is a core principle of the PIQI approach.
 
-#### PIQI Evaluation Profile
+#### PIQI Evaluation Rubric
+An evaluation rubric is always based on a given PIQI model and version.  A evaluation rubric based on a given model should be compatible with any future version of the same model as PIQI models are backwards compatible.
 
-An evaluation profile is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that profile. Evaluation profiles can be established as a standard or custom scoring rubric.
+An evaluation rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that profile. Evaluation rubrics can be established as a standard or custom scoring rubric.
 
-An given evaluation profile has a name, version and purpose along with a sequenced collection assessable items comprised of SAMs assigned to the patient, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight and criticality.
+An given evaluation rubric has a name, version and purpose, A PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the patient, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight and criticality.
 
 Example: Graphical Depiction of an Evaluation profile for a data class
 
@@ -462,7 +463,7 @@ Example: Graphical Depiction of an Evaluation profile for a data class
 <img src="evaluation_profile.png" alt="Graphical Depiction of an Evaluation profile for a data class" height="70%" width="70%"/>
 </span>
 
-#### Evaluation Profile Assessments
+#### Evaluation Rubric Assessments
 
 The core of an Evaluation Criteria is the sequenced collection of entity assessments. Each step has the following components:
 
@@ -536,11 +537,12 @@ Structured Data Architecture Components
 - PIQI Model Structure – structured data
 - Standard Code System Mappings – structured data
 - Simple Assessment Module Reference Library – structured data
-- Evaluation Profile Reference Library – structured data
+- Evaluation Rubric Reference Library – structured data
 
 Structured Data Asset Components
 
-- Evaluation Profile Definition(s) – structured data
+- Evaluation Rubric Definition(s) – structured data
+- Evaluations - configured SAMs
 - Simple Assessment Module – Evaluation Definition(s) – structured data
 - SAM Specific evaluation content – structured data
 
