@@ -1,9 +1,9 @@
 
-**PIQI Evaluation**
+**PIQI Evaluation Rubric**
 
-The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Profile**.
+The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
 
-The Evaluation Profile is a sequenced collection of **Evaluation Criteria**.
+The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
 Each Evaluation Criteria is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
@@ -19,35 +19,35 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘could not assess’ result. For detailed information see [SAMS](sams.md)
 
-### Evaluation Profiles
+### Evaluation Rubrics
 
-Evaluation profiles represent a collection of sequences SAM evaluations of specific entities in the PIQI Model along with the desired scoring effect.
+Evaluation rubrics represent a collection of sequences SAM evaluations of specific entities in the PIQI Model along with the desired scoring effect.
 
-### Anatomy of an Evaluation Profile
+### Anatomy of an Evaluation Rubric
 
-An Evaluation Profile is comprised of the following component:
+An Evaluation Rubric is comprised of the following component:
 
-#### Evaluation Profile Mnemonic
+#### Evaluation Rubric Mnemonic
 
-The Profile Mnemonic is a mnemonic identifier that is used to identify a unique evaluation profile. This is the primary identifier to reference a given evaluation profile.
+The Rubric Mnemonic is a mnemonic identifier that is used to identify a unique evaluation rubric. This is the primary identifier to reference a given evaluation rubric.
 
-#### Evaluation Profile Name
+#### Evaluation Rubric Name
 
-The name of the evaluation profile.
+The name of the evaluation rubric.
 
-#### Evaluation Profile Description
+#### Evaluation Rubric Description
 
-The description of the scope and purpose of the evaluation profile.
+The description of the scope and purpose of the evaluation rubric.
 
-#### Evaluation Profile Version
+#### Evaluation Rubric Version
 
-The version of the evaluation profile is an optional field for evaluation profiles that are versioned.
+The version of the evaluation rubric is an optional field for evaluation profiles that are versioned.
 
-#### Evaluation Profile Authority
+#### Evaluation Rubric Authority
 
-The authoritative source or reference for the evaluation profile.
+The authoritative source or reference for the evaluation rubric.
 
-#### Evaluation Profile Model
+#### Evaluation Rubric Model
 
 This is the specific version or extension of the PIQI Data Model.
 
@@ -59,9 +59,9 @@ Profile Model Version
 
 Profile Model Extension mnemonic
 
-#### Evaluation Profile Source
+#### Evaluation Rubric Source
 
-This is the original source of the evaluation profile content.
+This is the original source of the evaluation rubric content.
 
 PIQI Organization UID
 
@@ -71,9 +71,9 @@ PIQI Organization Name
 
 #### ModifiedDateTime
 
-#### Evaluation Profile Criteria
+#### Evaluation Rubric Criteria
 
-Each evaluation profile contains a collection of criteria that are used for assessing and scoring patient messages. Each criterion has the following attributes:
+Each evaluation rubric contains a collection of criteria that are used for assessing and scoring patient messages. Each criterion has the following attributes:
 
 ##### Criterion Sequence
 
@@ -143,15 +143,15 @@ This field has the weight for scoring criteria. For informational criteria it is
 
 This field indicates whether this criterion is considered critical for the evaluation profile. It is set to ‘false’ for Informational criteria and defaults to ‘false’ for Scoring criteria.
 
-### Example of Evaluation Profile Definition JSON
+### Example of Evaluation Rubric Definition JSON
 
 ```json
 {
-    "evaluationProfile": [
+    "evaluationRubric": [
         {
-            "mnemonic": "Profile_001",
-            "name": "Sample Evaluation Profile",
-            "description": "This evaluation profile assesses patient data quality based on specific criteria.",
+            "mnemonic": "Rubric_001",
+            "name": "Sample Evaluation Rubric",
+            "description": "This evaluation rubric assesses patient data quality based on specific criteria.",
             "version": "1.0",
             "source": "PIQI Alliance",
             "model": "PIQI_DataModel_ExtensionX",
