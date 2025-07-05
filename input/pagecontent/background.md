@@ -28,9 +28,9 @@ This component of the framework focuses on the patient data elements and charact
 
 A simple assessment module (SAM) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections to collectively paint a larger qualitative picture as defined by a given use case.
 
-#### Evaluation Criteria
+#### Evaluation Rubric
 
-The Evaluation Criteria component represents a use case oriented hierarchical collection of simple assessments aligned to the patient information model. It is the function of the evaluation criteria to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case..
+The Evaluation Rubric component represents a use case oriented hierarchical collection of simple assessments aligned to a PIQI patient information model. It is the function of the evaluation rubric to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case..
 
 In summary, this design approach for patient data quality assessment separates the framework into distinct but interrelated components: the taxonomy for categorizing dimensions, the patient-centric information model for organizing data elements, simple assessment modules to measure quality and the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
 
@@ -63,5 +63,5 @@ The PIQI Framework is designed to be implemented within a community of practice.
 PIQI Framework starts with a simple model intended to support the assessment of core clinical patient data.  The simplicity of this model allows for extension through the addition of attributes and data classes.  Ideally these extensions would be adopted into the core PIQI model through a standard process.
 ### Shared Simple Assessment Modules
 While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codable concepts, elements, data classes and patient level data often require structured content in the form of value sets, tuples and other data patterns.  These data packages can be openly shared or licensed in a community portal.  More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces. 
-### Shared Evaluation Profiles
-While the Evaluation Profiles in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard evaluation profiles is one of the most beneficial features of the PIQI Framework.  The ability to publish and share an evaluation profile, along with its dependent SAMs and PIQI Model components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
+### Shared Evaluation Rubrics
+While the Evaluation Rubrics in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard evaluation rubrics is one of the most beneficial features of the PIQI Framework.  The ability to publish and share an evaluation rubric, along with its dependent SAMs and PIQI Model components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
