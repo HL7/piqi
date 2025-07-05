@@ -22,11 +22,14 @@ This foundational component establishes a well-organized taxonomy that categoriz
 
 #### Information Model
 
-This component of the framework focuses on the patient data elements and characteristics that are being assessed. It represents a simplified information model that defines and organizes the patient-centric data elements that are most important to ensuring the accurate representation of a given patient, ensuring alignment with the evolving needs of healthcare information models. This information model serves as the core data structure against which data quality assessments are performed. It includes the data elements related to patient demographics, medical history, treatment records, and any other pertinent healthcare information. The model facilitates the mapping of these elements to the taxonomy of dimensions, ensuring that each data element is assessed against relevant criteria.
+This component of the framework provides a flat, comuptable representation of patient data elements and characteristics that are being assessed. Each model version or extension represents a simplified information model that defines and organizes use case oriented, patient-centric data elements that are most important to ensuring the accurate representation of a given patient, ensuring alignment with the evolving needs of healthcare information models. Each information model serves as the core data structure against which data quality assessments are performed. Depending on use case they may include data elements such as patient demographics, medical history, treatment records, claims information and any other pertinent healthcare information. Each model facilitates the mapping of these elements to the taxonomy of dimensions, ensuring that each data element is assessed against relevant criteria.
 
 #### Simple Assessment Module (SAM)
 
-A simple assessment module (SAM) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections to collectively paint a larger qualitative picture as defined by a given use case.
+A simple assessment module (SAM) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’, ‘fail’ or 'conditions not met'. These modules are intended to be organized into one or many hierarchical collections to collectively paint a larger qualitative picture as defined by a given use case.  
+
+#### Evaluation
+A SAM that has been configured in a evalutation rubric is referred to as an evaluation.  An evaluation can be extemperaneously configured in an evaluation eubric or preconfigured for use, as with specific content, in a evaluation library.
 
 #### Evaluation Rubric
 
