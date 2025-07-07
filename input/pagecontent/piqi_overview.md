@@ -12,7 +12,7 @@ It is important to remember that the goal of the PIQI Framework is to assess and
 
 ### PIQI Attribute Types
 
-PIQI Elements are comprised of five attribute types: Simple Attribute, CodableConcept, ObservationValue and RangedValue.
+PIQI Elements are comprised of four attribute types: Simple Attribute, CodableConcept, ObservationValue and RangedValue.
 
 #### Simple Attribute Type
 
