@@ -76,7 +76,7 @@ This is the entity type that the SAM expects as input. The initial Input types a
 
 **Simple_Attribute** A simple string attribute JSON string
 
-**Codable_Concept_Attribute** A codable concept attribute JSON string
+**Codeable_Concept_Attribute** A codeable concept attribute JSON string
 
 **Observation_Value** a observation value JSON string
 
@@ -272,11 +272,11 @@ Example: In this example the EffectiveDateTime attribute is a simple attribute.
 }
 ```
 
-For the purposes of a SAM complex attribute type like Codable Concepts, Ranged Values and Observation values can be treated like simple attributes.
+For the purposes of a SAM complex attribute type like Codeable Concepts, Ranged Values and Observation values can be treated like simple attributes.
 
-A **codable concept** attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
+A **codeable concept** attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
-**Example:** In this Test example the highlighted text is considered the simple attribute value of the codable concept.
+**Example:** In this Test example the highlighted text is considered the simple attribute value of the codeable concept.
 
 ```json
 {
@@ -549,11 +549,11 @@ This SAM is designed to assess if a simple attribute is a member of a list of en
 | Execution Reference | (provided in Parameter_1) |
 | Source | PIQI Alliance |
 
-#### Codable Concept SAMs
+#### Codeable Concept SAMs
 
-A Codable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
+A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
-**CodableConcept sub-attributes**
+**CodeableConcept sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
@@ -595,22 +595,22 @@ A Codable Concept attribute is a structure that can be represented as a simple a
 }
 ```
 
-For SAMs assessing **codable concepts**, the coding collection is critical and is assessed as an aggregate. Since a **codable concept** attribute can have more than one code in the **codings** collection an assessment is evaluating the entire collection looking for the best-case scenario.
+For SAMs assessing **codeable concepts**, the coding collection is critical and is assessed as an aggregate. Since a **codeable concept** attribute can have more than one code in the **codings** collection an assessment is evaluating the entire collection looking for the best-case scenario.
 
 In the above example there are three **codings** in the collection. The SAMs that assess the **codings** like **has code**, **has code system** and **has display** provide the best-case scenario based on all of the **codings**. So, for the above example each of those SAMs would pass. The **Is Complete** assesses if at least **one coding** has all three parts. So, it would also pass because the second **coding** is complete. The **Is Valid Member** SAM would take the code system from each complete coding and attempt to validate that coding using the terminology server. If the code system is published to the terminology server and the code is valid it would also pass. The **Is Compatible** SAM with the LOINC parameter would also pass since at least one of the codings in the collection is valid and has a recognized representation of the LOINC code system.
 
-It is also worth noting that **Codable Concepts SAMs** also work with **Observation Value** attributes since they can contain a **codings** collection.
+It is also worth noting that **Codeable Concepts SAMs** also work with **Observation Value** attributes since they can contain a **codings** collection.
 
-##### Codable Concept has Code
+##### Codeable Concept has Code
 
-This SAM is designed to assess if a codable concept attribute has at least ONE code value in its codings collection.
+This SAM is designed to assess if a codeable concept attribute has at least ONE code value in its codings collection.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_HasCode |
 | Success Alias | has code |
 | Failure Alias | does not have code |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -619,16 +619,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept has Code System
+##### Codeable Concept has Code System
 
-This SAM is designed to assess if a codable concept attribute has at least ONE code system value in its codings collection.
+This SAM is designed to assess if a codeable concept attribute has at least ONE code system value in its codings collection.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_HasCodeSystem |
 | Success Alias | has code system |
 | Failure Alias | does not have code system |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -637,16 +637,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept has Display
+##### Codeable Concept has Display
 
-This SAM is designed to assess if a codable concept attribute has at least ONE code system value in its codings collection.
+This SAM is designed to assess if a codeable concept attribute has at least ONE code system value in its codings collection.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_HasDisplay |
 | Success Alias | has display |
 | Failure Alias | does not have display |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -655,16 +655,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept Code System is Recognized
+##### Codeable Concept Code System is Recognized
 
-This SAM is designed to assess if a codable concept attribute has at least ONE code system that is recognized by the environment.
+This SAM is designed to assess if a codeable concept attribute has at least ONE code system that is recognized by the environment.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_HasRecognizedCodeSystem |
 | Success Alias | code system recognized |
 | Failure Alias | code system not recognized |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -673,16 +673,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept Is Complete
+##### Codeable Concept Is Complete
 
-This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection.
+This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_IsComplete |
 | Success Alias | Is complete |
 | Failure Alias | Is not complete |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -691,16 +691,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept Is Valid Concept
+##### Codeable Concept Is Valid Concept
 
-This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of is provided code system.
+This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of is provided code system.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_IsValid |
 | Success Alias | Is a valid concept |
 | Failure Alias | Is not a valid concept |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Concept_IsComplete |
@@ -709,16 +709,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept Is Valid Member
+##### Codeable Concept Is Valid Member
 
-This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of the code system or value set provided in the parameter. This is used to determine if the concept is compatible.
+This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of the code system or value set provided in the parameter. This is used to determine if the concept is compatible.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_IsValidMember |
 | Success Alias | Is a valid member |
 | Failure Alias | Is not a valid member |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | Parameter_1: Codesystem/Valueset Mnemonic |
 | Prerequisite SAM | Concept_IsComplete |
@@ -727,16 +727,16 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept Is Semantically Consistent
+##### Codeable Concept Is Semantically Consistent
 
-This SAM is designed to assess if a codable concept attribute’s text value is consistent with the compatible codings display as it is represented in the terminology server.
+This SAM is designed to assess if a codeable concept attribute’s text value is consistent with the compatible codings display as it is represented in the terminology server.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_IsConsistent |
 | Success Alias | Is semantically consistent |
 | Failure Alias | Is not semantically consistent |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | Parameter_1: Similarity Tolerance Percentage |
 | Prerequisite SAM | Concept_IsValidMember |
@@ -745,16 +745,16 @@ This SAM is designed to assess if a codable concept attribute’s text value is 
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-##### Codable Concept Is Active
+##### Codeable Concept Is Active
 
-This SAM is designed to assess if a codable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is an active member of is provided code system.
+This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is an active member of is provided code system.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_IsActive |
 | Success Alias | Is a active concept |
 | Failure Alias | Is a obsolete concept |
-| Input Type | Codable Concept Attribute |
+| Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
 | Prerequisite SAM | Concept_IsValidConcept |
@@ -765,17 +765,17 @@ This SAM is designed to assess if a codable concept attribute has at least ONE c
 
 #### Observation Value SAMs
 
-An **Observation Value** attribute is a structure that can be represented as a simple attribute value or a structure observation value. **Observation Value** is a specialized attribute as many elements in patient information can be represented by quantitative, text or coded concepts value. It is important to remember that simple attribute SAMs, codable concept SAMs and range value SAMs can all be applied to an **Observation Value** attribute
+An **Observation Value** attribute is a structure that can be represented as a simple attribute value or a structure observation value. **Observation Value** is a specialized attribute as many elements in patient information can be represented by quantitative, text or coded concepts value. It is important to remember that simple attribute SAMs, codeable concept SAMs and range value SAMs can all be applied to an **Observation Value** attribute
 
 **Observation Value sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
 | text | Simple Attribute | Text representation of the value |
-| type | Codable concept | Collection of zero-to-many coded concepts representing the value type |
+| type | Codeable concept | Collection of zero-to-many coded concepts representing the value type |
 | number | Simple Attribute | For numeric values |
 | number2 | Simple Attribute | For second numeric value – used for structured numrics like ranges and ratios |
-| codings | Codable concept | Collection of zero-to-many coded concepts representing the observation value |
+| codings | Codeable concept | Collection of zero-to-many coded concepts representing the observation value |
 
 Example:
 
