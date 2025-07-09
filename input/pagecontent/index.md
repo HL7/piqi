@@ -1,6 +1,17 @@
 ### Introduction
 
-This Implementation Guide (IG) describes the Patient Information Quality Improvement Framework or PIQI (pronounced ‘picky’) Framework with the goal to create a standard approach for patient-centric health care information that prioritizes portability and reusability, enabling seamless integration into various systems irrespective of the data source. Health care data can be complex, heterogeneous, and dispersed across various systems and platforms. Moreover, the traditional database-centric approach often restricts the flexibility and portability required to accommodate the intricate nuances of patient-centric healthcare information. By shifting the focus to simplified patient-centric information models, this framework aims to enhance data quality on an individual health level. This approach will increase the certainty and usability of healthcare data, empowering health care organizations to make more informed decisions quickly around treatment options while ultimately providing improved patient care. PIQI assesses data against a standard, such as USCDI v3, generates a scorecard, and provides insights into issues affecting the quality score. This feedback enables data sources to make necessary adjustments to meet quality requirements. See the Table of Contents for more information.
+This Implementation Guide (IG) describes the Patient Information Quality Improvement Framework or PIQI (pronounced ‘picky’) Framework creates a standard approach for patient-centric health care information that prioritizes portability and reusability, enabling seamless integration into various systems irrespective of the data source. Health care data can be complex, heterogeneous, and dispersed across various systems and platforms. Moreover, the traditional database-centric approach often restricts the flexibility and portability required to accommodate the intricate nuances of patient-centric healthcare information. 
+
+Data fitness is a specific construct of data quality where determination of data’s appropriateness
+for use in a specific context is ultimately declared by the person (data consumer) responsible for
+evaluating whether a dataset is adequate for its intended purpose. Evaluators of data fitness
+frequently do not have the requisite contextual basis to enable a judgement on a particular
+dataset, rendering the data inutile despite its potential to inform care quality. The data quality
+knowledge presented to an evaluator must have a high level of face validity to that
+person—which assumes the information presents a complete and accurate picture of their
+expectations for the data’s use.
+
+Shifting the focus to standardized patient-centric information quality assessment models, tthje PIQI framework aims to enhance data quality at the structural, or data element level. Providing prespecified parameters for a simplified structural analysis increases the certainty and usability of healthcare data, empowering health care organizations to make well informed decisions quickly that ultimately provide improved patient care. The PIQI Framework provides the ability to assess data against standard models, such as USCDI v3, generating scorecards, and providing insights from the quality assessment process important to end users trusting the data is of sufficient quality. See the Table of Contents for more information.
 
 ### Guide Overview
 
