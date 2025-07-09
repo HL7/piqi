@@ -8,7 +8,12 @@ The goal of the Patient Information Quality Improvement Framework or PIQI (prono
 
 ## Framework Design
 
-The proposed healthcare data quality assessment framework is structured into four distinct functional components, each serving a vital role in ensuring comprehensive and systematic data quality assessment:
+The PIQI framework is structured into four distinct funtional but interrelated components: 1) the taxonomy for categorizing dimensions, 2) the patient-centric information model for organizing data elements, 3) simple assessment modules (SAMs) to measure quality and 4) the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
+
+<span width="100%">
+<img src="PIQI_High_Level_Component_Diagram.png" alt="PIQI Framework High Level Component Diagram" height="70%" width="70%"/>
+</span>
+
 
 ### Taxonomy of Dimensions
 
@@ -25,12 +30,6 @@ A [simple assessment module (SAM)](sams.md) is a logical measurement aligned to 
 ### Evaluation Criteria
 
 The [Evaluation Criteria](evaluation.md) component represents a use case oriented hierarchical collection of simple assessments aligned to the patient information model. It is the function of the evaluation criteria to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case..
-
-In summary, this design approach for patient data quality assessment separates the framework into distinct but interrelated components: the taxonomy for categorizing dimensions, the patient-centric information model for organizing data elements, simple assessment modules to measure quality and the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
-
-<span width="100%">
-<img src="PIQI_High_Level_Component_Diagram.png" alt="PIQI Framework High Level Component Diagram" height="70%" width="70%"/>
-</span>
 
 ## Framework Benefits
 
