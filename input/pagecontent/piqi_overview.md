@@ -26,7 +26,7 @@ Example: In this example the effectiveDateTime attribute is a simple attribute.
 ```
 #### CodeableConcept Attribute Type
 
-A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
+A CodeableConcept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
 **CodeableConcept sub-attributes**
 
@@ -66,10 +66,10 @@ An ObservationValue attribute is a structure that can be represented as a simple
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
 | text | Simple Attribute | Text representation of the value |
-| type | Codeable concept | Collection of zero-to-many coded concepts representing the value type |
+| type | CodeableConcept | Collection of zero-to-many coded concepts representing the value type |
 | number | Simple Attribute | For numeric values |
 | number2 | Simple Attribute | For second numeric value |
-| codings | Codeable concept | Collection of zero-to-many coded concepts representing the observation value |
+| codings | CodeableConcept | Collection of zero-to-many coded concepts representing the observation value |
 
 **Example:**
 
