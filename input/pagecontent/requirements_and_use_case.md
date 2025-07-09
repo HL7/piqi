@@ -27,7 +27,11 @@ Large difference in data quality requirements/expectations for QM/QI vs CDS
  - Restricting data entry to pre-defined fields by vendor to only allow use of structured fields (high burden on clinical workflow, increased frustration by patients when fields do not align with the information they wish to enter)
 
 #### Public Health - CDC?
-#### Regulatory - Russ Ott
+#### Regulatory
+Regulatory bodies depend on high-quality, high-integrity real-world data to make informed decisions that significantly impact public health and safety. The integrity and quality of this data are crucial, as they ensure that the information used is accurate, reliable, and trustworthy. This foundation is essential for making sound decisions regarding the approval, recall, and monitoring of clinical devices and products, ultimately safeguarding patients from potential harm.
+ 
+High-quality data allows regulatory bodies to effectively reuse information across various scenarios, enhancing their decision-making processes. In value-based care, accurate data is vital for evaluating patient outcomes and controlling costs. Reliable data is also critical in product approvals and recalls, ensuring that only safe and effective products reach the market. Post-market surveillance depends on high-quality data to continuously monitor the safety and efficacy of products. Additionally, population health reporting and analytics require precise data to identify trends and inform public health strategies. By maintaining the highest data quality standards, regulatory bodies can better protect and promote public health across these diverse areas.
+ 
 #### Payers
 Data integration and interoperability are top priorities for healthcare payers, but integrating data from diverse sources remains a complex challenge. Health insurance payers face costly data quality issues that impact member management, claims processing, regulatory compliance and operational efficiency.
 
