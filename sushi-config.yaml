@@ -58,13 +58,6 @@ menu:
     Additional Information: background.html#additional-information
     Boundaries/Applicability: background.html#boundaries-and-applicability-of-framework
     Community: background.html#piqi-community
-    
-  Requirements and Use Case:
-    Industry-specific Requirements: requirements_and_use_case.html
-    USCDI: requirements_and_use_case.html#uscdi
-    Use Case: requirements_and_use_case.html#use-case
-    
-  Guidance: guidance.html
   
   Framework:
     Overview: piqi_framework.html
@@ -72,8 +65,24 @@ menu:
     PIQI Model: piqi_framework.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
-    Examples: examples.html
+    Examples: examples.html    
+  
+  Requirements and Use Case:
+    Industry-specific Requirements: requirements_and_use_case.html
+    Core Data for Interoperability: requirements_and_use_case.html#Core-Data-for-Interoperability-(CDI)
+    Quality Measurement and Improvement: requirements_and_use_case.html#data-quality-measurement-and-quality-improvement
+    Clinical Care and CDS: requirements_and_use_case.html#clinical-care-and-cds
+    Public Health: requirements_and_use_case.html#public-health
+    Regulatory: requirements_and_use_case.html#regulatory
+    Payers: requirements_and_use_case.html#payers
+    Health Information Exchange: requirements_and_use_case.html#health-information-exchange
+    Laboratory Data: requirements_and_use_case.html#laboratory-data
+    EHRs: requirements_and_use_case.html#ehrs
+    Provider: requirements_and_use_case.html#provider
+    Social Services: requirements_and_use_case.html#social-services
     
+
+  
   Downloads: downloads.html
   
   Change Notes: changes.html

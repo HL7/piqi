@@ -50,13 +50,14 @@ The primary data quality issues that confront healthcare payers include:
 
 The PIQI Framework can significantly address the critical need for consistent, high-quality, and interoperable patient information that healthcare care payers obtain from diverse data sources using PIQI standardized data assessments to identify specific issues affecting data integrity, accuracy, conformity, and availability. The PIQI can provide detailed insight into the root causes of specific data quality issues and provides a feedback loop to help data sources adjust their processes to meet quality requirements and improve overall data quality. These improvements are useful to payers, healthcare providers, and most importantly to the people they serve.
 
-#### HIEs - MiHIN
-#### Laboratory
+#### Health Information Exchange - MiHIN
+
+#### Laboratory Data
 Laboratory results make up the largest percentage of data that drives clinical decisions, as well as follow up for public health, regulatory or research purposes. Often these results are produced at outside organizations, so being able to trust that the data is accurately reflecting the patient’s condition and are received in a timely manner is critical for all these use cases. For some lab tests the order must contain accurate clinical information (for example the overall volume of urine collected as input for a calculated result, or the patient’s sex and/or age to determine the correct reference range) for the laboratory to be able to perform testing. Missing or inaccurate data will require human intervention, delaying the testing and resulting process. Increasing the quality of laboratory data in electronic health care systems will serve many of the use cases listed on this page.
 
-#### EHRs - Gary Dickinson + Clinical Architecture
+#### Electronic Health Records - Gary Dickinson + Clinical Architecture
 Measuring and understanding objective quality is relevent for EHRs both when they are receiving to sharing patient information. When an EHR receives patient data from another healthcare system during hospital transfers, specialist referrals, or lab result transmissions, PIQI could evaluate the incoming data quality in real-time before incorporation into the patient record, preventing poor-quality data from contaminating the EHR and alerting clinicians to potential reliability issues. Additionally, healthcare organizations could use PIQI to assess their interoperability readiness before participating in health information exchanges or implementing new connections, ensuring their EHR's outgoing data meets quality standards expected by receiving systems, which is particularly relevant for USCDI compliance and information blocking regulations. The framework also enables vendor performance monitoring, allowing organizations to objectively measure the quality of data coming from different EHR modules, third-party applications, or data sources, providing metrics for vendor accountability while identifying which systems consistently provide high-quality versus problematic data. Finally, as data quality becomes increasingly important for regulatory programs like Medicare reporting, public health surveillance, and quality measures, EHRs could use PIQI to ensure outgoing data meets regulatory quality standards before submission. The key advantage of PIQI in these EHR scenarios is that it evaluates data quality "in flight" without storing PHI, making it suitable for real-time assessment during the normal flow of clinical operations rather than requiring separate data quality analysis processes.
-#### Provider - Amol Bhalla
-#### Social Services - Marty Prahl
 
-### Use Case
+#### Provider - Amol Bhalla
+
+#### Social Services - Marty Prahl
