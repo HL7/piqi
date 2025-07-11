@@ -32,11 +32,9 @@ pages:
   background.md:
     title: PIQI Background
   requirements_and_use_case.md:
-    title: Requirements and Use Case
-  guidance.md:
-    title: Guidance
-  piqi_overview.md:
-    title: PIQI Overview
+    title: Requirements and Use Case  
+  piqi_framework.md:
+    title: PIQI Framework
   sams.md:
     title: Simple Assessment Modules (SAMS)
   evaluation.md:
@@ -69,9 +67,9 @@ menu:
   Guidance: guidance.html
   
   Framework:
-    Overview: piqi_overview.html
-    Taxonomy: piqi_overview.html#piqi-healthcare-data-quality-taxonomy-version-10
-    PIQI Model: piqi_overview.html#piqi-data-models
+    Overview: piqi_framework.html
+    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10
+    PIQI Model: piqi_framework.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
     Examples: examples.html
