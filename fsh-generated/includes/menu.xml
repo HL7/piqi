@@ -64,9 +64,6 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="guidance.html">Guidance</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Framework
       <b class="caret"></b>

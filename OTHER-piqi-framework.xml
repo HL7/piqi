@@ -32,11 +32,10 @@
 <page key="evaluation" name="Evaluation"/>
 <page key="examples" name="Examples"/>
 <page deprecated="true" key="FhirLimitations" name="FHIR Limitiations"/>
-<page key="guidance" name="Guidance"/>
 <page key="index" name="Home"/>
-<page key="changes" name="IG Change History"/>
+<page key="changes" name="Change History"/>
 <page key="background" name="PIQI Background"/>
-<page key="piqi_overview" name="PIQI Overview"/>
+<page key="piqi_framework" name="PIQI Framework"/>
 <page deprecated="true" key="protobufexamples" name="Protobuf Examples"/>
 <page deprecated="true" key="protobufbackground" name="Protobuf Native Representation"/>
 <page deprecated="true" key="protobufschema" name="Protobuf Schema"/>
