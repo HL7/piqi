@@ -52,12 +52,6 @@
           "sourceUrl": "requirements_and_use_case.html"
         },
         {
-          "title": "Guidance",
-          "generation": "markdown",
-          "name": "guidance.html",
-          "sourceUrl": "guidance.html"
-        },
-        {
           "title": "PIQI Overview",
           "generation": "markdown",
           "name": "piqi_overview.html",
