@@ -52,10 +52,10 @@
           "sourceUrl": "requirements_and_use_case.html"
         },
         {
-          "title": "PIQI Overview",
+          "title": "PIQI Framework",
           "generation": "markdown",
-          "name": "piqi_overview.html",
-          "sourceUrl": "piqi_overview.html"
+          "name": "piqi_framework.html",
+          "sourceUrl": "piqi_framework.html"
         },
         {
           "title": "Simple Assessment Modules (SAMS)",
