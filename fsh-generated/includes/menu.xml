@@ -70,13 +70,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="piqi_overview.html">Overview</a>
+        <a href="piqi_framework.html">Overview</a>
       </li>
       <li>
-        <a href="piqi_overview.html#piqi-healthcare-data-quality-taxonomy-version-10">Taxonomy</a>
+        <a href="piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10">Taxonomy</a>
       </li>
       <li>
-        <a href="piqi_overview.html#piqi-data-models">PIQI Model</a>
+        <a href="piqi_framework.html#piqi-data-models">PIQI Model</a>
       </li>
       <li>
         <a href="sams.html">Simple Assessment Modules (SAMS)</a>

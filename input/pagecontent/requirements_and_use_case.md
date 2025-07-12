@@ -1,14 +1,21 @@
 ### Industry-specific Requirements
 
-<a name="uscdi"></a>
-
 #### The General Use Case for a Patient Data Quality Scoring Framework
 In healthcare, both human providers and the software systems that support them critically depend on the availability of complete, correct, and current information. To provide this information, our industry has spent decades building the foundational infrastructure for interoperability between healthcare applications. Messaging standards, standard terminologies, and implementation guides all form part of this foundation. However, the last barrier to true interoperability is trust—specifically, trust that the data we receive meets the quality standards necessary to support our use cases rather than undermine them.
 
 The PIQI Framework is designed to provide a standardized, community-based approach to evaluating data usability, with the goal of transcending siloed, subjective approaches to data quality assessment. The framework's flexible methodology enables quality measurement across different contexts while providing qualitative guidance tailored to various implementations of interoperable data exchange. By working across the family of HL7 products, the PIQI Framework supports not only the current state of the industry but also its evolution over time. 
 
 #### Core Data for Interoperability (CDI)
-##### United States CDI - Gay Dolin + Carmela Couderc
+##### United States CDI
+The Assistant Secretary for Technology Policy at the Office of the National Coordinator for Health Information Technology (ASTP/ONC) developed the [United States Core Data for Interoperability (USCDI)](https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi#uscdi-v5), a standardized set of health data classes and elements that defines the minimum data electronic health records (EHRs) must be able to exchange nationwide. While USCDI is standards-agnostic, it may specify code systems for certain elements. USCDI is use case agnostic, serving as a floor for data standardization. USCDI is composed of Data Classes and Data Elements. A USCDI Data Class is an aggregation of Data Elements by a common theme or use case. A USCDI Data Element is a piece of data defined in USCDI for access, exchange or use of electronic health information.  
+ASTP maintains an annual update cycle for USCDI. Stakeholders across the healthcare and standards communities may submit proposed data elements, accompanied by justifications aligned with published criteria. Draft versions are released for public comment prior to finalization.
+Once a new USCDI version is published, it triggers updates to the HL7 US Core and C-CDA standards. These standards operationalize USCDI requirements by interpreting them into implementable specifications:
+*	US Core defines [FHIR-based profiles](https://hl7.org/fhir/us/core/uscdi.html)
+*	C-CDA defines [CDA templates](https://hl7.org/cda/us/ccda/uscdi.html)
+Both are aligned with USCDI and are in scope for ASTP Health IT Certification.
+Although US Core and C-CDA are aligned with USCDI, not all of their data elements map directly to USCDI. These standards must support broader clinical and operational use beyond certification. Additionally, flexibility is needed to accommodate varying implementation needs, such as for public health reporting, where not all certified elements may be required in every exchange.
+In practice, variability in data quality emerges from differences in how vendors implement these standards and how health systems deploy them. To address this, quality rubrics, like those developed in this HL7 PIQI project, and the earlier [HL7 C-CDA Rubric Criteria Standard](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=534), provide structured ways to assess and improve data quality. These rubrics support the development of cross-standard quality tools that can "grade" implementations, helping to improve interoperability, enhance care delivery, and enable more reliable secondary data use.
+
 ##### Austrailian CDI - Reuben?
 ##### Canadian CDI - CIHI?
 ##### International Patient Summary - John D
@@ -44,10 +51,10 @@ Payers receive data in a variety of healthcare exchange and terminology standard
 
 The availability of consistent, accurate, and plausible data are paramount to correct outcomes for all of these use cases.
 The primary data quality issues that confront healthcare payers include:
-·            **Missing, incomplete data** such as key fields in patient demographics, provider identifiers, and claim details (Availability)
-·            **Inaccurate, incorrect data**, including incorrect provider directory information, incorrect claims coding (Accuracy)
-·            **Data inconsistency** where clinical data across sources, may be inconsistent such as when diagnosis codes in claims do not match those in the accompanying clinical documentation, or where dates-of-service or procedures that precede a member’s date of birth, or indicate overlapping inpatient stays at different facilities (Plausibility)
-·            **Invalid, Incompatible, or Non-Standard Code Systems**, including the use of diagnosis or procedure codes that are no longer valid, when the code system provided is not an agreed upon code system, or when the code is not a member of the provided code system (Conformity)
+- **Missing, incomplete data** such as key fields in patient demographics, provider identifiers, and claim details (Availability)
+- **Inaccurate, incorrect data**, including incorrect provider directory information, incorrect claims coding (Accuracy)
+- **Data inconsistency** where clinical data across sources, may be inconsistent such as when diagnosis codes in claims do not match those in the accompanying clinical documentation, or where dates-of-service or procedures that precede a member’s date of birth, or indicate overlapping inpatient stays at different facilities (Plausibility)
+- **Invalid, Incompatible, or Non-Standard Code Systems**, including the use of diagnosis or procedure codes that are no longer valid, when the code system provided is not an agreed upon code system, or when the code is not a member of the provided code system (Conformity)
 
 The PIQI Framework can significantly address the critical need for consistent, high-quality, and interoperable patient information that healthcare care payers obtain from diverse data sources using PIQI standardized data assessments to identify specific issues affecting data integrity, accuracy, conformity, and availability. The PIQI can provide detailed insight into the root causes of specific data quality issues and provides a feedback loop to help data sources adjust their processes to meet quality requirements and improve overall data quality. These improvements are useful to payers, healthcare providers, and most importantly to the people they serve.
 
@@ -59,6 +66,16 @@ Laboratory results make up the largest percentage of data that drives clinical d
 #### Electronic Health Records - Gary Dickinson + Clinical Architecture
 Measuring and understanding objective quality is relevent for EHRs both when they are receiving to sharing patient information. When an EHR receives patient data from another healthcare system during hospital transfers, specialist referrals, or lab result transmissions, PIQI could evaluate the incoming data quality in real-time before incorporation into the patient record, preventing poor-quality data from contaminating the EHR and alerting clinicians to potential reliability issues. Additionally, healthcare organizations could use PIQI to assess their interoperability readiness before participating in health information exchanges or implementing new connections, ensuring their EHR's outgoing data meets quality standards expected by receiving systems, which is particularly relevant for USCDI compliance and information blocking regulations. The framework also enables vendor performance monitoring, allowing organizations to objectively measure the quality of data coming from different EHR modules, third-party applications, or data sources, providing metrics for vendor accountability while identifying which systems consistently provide high-quality versus problematic data. Finally, as data quality becomes increasingly important for regulatory programs like Medicare reporting, public health surveillance, and quality measures, EHRs could use PIQI to ensure outgoing data meets regulatory quality standards before submission. The key advantage of PIQI in these EHR scenarios is that it evaluates data quality "in flight" without storing PHI, making it suitable for real-time assessment during the normal flow of clinical operations rather than requiring separate data quality analysis processes.
 
-#### Provider - Amol Bhalla
+#### Provider
+Healthcare providers encounter significant hurdles in generating high-quality, interoperable clinical data across various electronic health record (EHR) systems. These challenges include dealing with incomplete, outdated, or duplicate problem lists; deciphering ambiguous or inconsistently applied terminologies; and managing the increasing demand for structured documentation that may disrupt clinical workflows.
+
+A delicate balance exists between the need for thorough clinical documentation and the requirements for structured data capture. For instance, vital clinical information often resides in free-text notes, yet many systems and quality initiatives rely exclusively on structured fields for reporting, decision support, and risk adjustment. This disconnect can lead to critical data being underrepresented in secondary-use datasets.
+
+Providers also face limited feedback mechanisms to assess whether their data entries satisfy regulatory, operational, or quality standards. This lack of transparency can impede efforts to improve documentation practices and diminish trust in the EHR as a reliable source of information.
+
+The PIQI Framework serves as a powerful tool to evaluate and enhance data quality from the provider's perspective. By utilizing modular, reusable assessments (SAMs) and structured evaluation profiles, PIQI helps pinpoint actionable gaps—such as missing coded entries, improper use of value sets, or misalignment with USCDI and US Core standards. Integrating provider-centric rubrics bridges the gap between real-time documentation and downstream data applications.
+
+Ultimately, aligning the PIQI Framework with clinical workflows and provider constraints fosters greater engagement, reduces documentation burdens, and elevates the quality and utility of clinical data across the healthcare landscape.
+
 
 #### Social Services - Marty Prahl

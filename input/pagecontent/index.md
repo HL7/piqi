@@ -27,19 +27,21 @@ The main sections of this informative specificaiton are:
 
 ### Authors
 
-This implementation guide was made possible by the thoughtful contributions of the following people and organizations:
+This Informative Specfification was made possible by the thoughtful contributions of the following people and organizations:
 
 Primary Authors:
-*   Charlie Harp, Clinical Architecture
-*   Carol Macumber, Clinical Architecture
+*   Charlie Harp, Clinical Architecture, LLC
+*   Carol Macumber, Clinical Architecture, LLC
 *   Russell Ott, Deloitte Consulting LLP
 *   Mark Roberts, Leavitt Partners, LLC
 
 Contributing Authors:
 *   Lisa Anderson, The Joint Commission
+*   Amol Bhalla, IMO Health
+*   Carmela Couderc, US Assistant Secretary for Technology Policy (ASTP_)
+*   Gay Dolin, Namaste Informatics
 *   Benjamin Hamlin, IPRO
-*   Serafina Versaggi,  
-*   
+*   Serafina Versaggi, Versaggi Health IT Consulting
 
 ### Acknowledgements
 
