@@ -49,7 +49,7 @@ TBD
 
 TBD
 
-### PIQI Community
+### PIQI Community of Practice
 
 The PIQI Framework is designed to be implemented within a community of practice.  With encapsulated, portable, content driven components, the ability to share knowledge and evolve establishes great potential for rapid evolution and adoption. 
 #### PIQI Model Extensions
