@@ -54,20 +54,11 @@ menu:
     Acknowledgements: index.html#acknowledgements
     
   Background:
-    Introduction: background.html
     Additional Information: background.html#additional-information
     Boundaries/Applicability: background.html#boundaries-and-applicability-of-framework
-    Community: background.html#piqi-community
+    PIQI Community of Practice: background.html#piqi-community-of-practice   
   
-  Framework:
-    Overview: piqi_framework.html
-    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10
-    PIQI Model: piqi_framework.html#piqi-data-models
-    Simple Assessment Modules (SAMS): sams.html
-    PIQI Evaluation: evaluation.html
-    Examples: examples.html    
-  
-  Requirements and Use Case:
+  Data Quality Use Cases:
     Industry-specific Requirements: requirements_and_use_case.html
     Core Data for Interoperability: requirements_and_use_case.html#core-data-for-interoperability-cdi
     Quality Measurement and Improvement: requirements_and_use_case.html#data-quality-in-quality-measurement-and-quality-improvement
@@ -81,7 +72,13 @@ menu:
     Provider: requirements_and_use_case.html#provider
     Social Services: requirements_and_use_case.html#social-services
     
-
+  PIQI Framework:
+    Overview: piqi_framework.html
+    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10
+    PIQI Model: piqi_framework.html#piqi-data-models
+    Simple Assessment Modules (SAMS): sams.html
+    PIQI Evaluation: evaluation.html
+    Examples: examples.html 
   
   Downloads: downloads.html
   
