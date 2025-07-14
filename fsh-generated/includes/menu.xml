@@ -54,13 +54,36 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="requirements_and_use_case.html">Industry-specific Requirements</a>
+        <a href="requirements_and_use_case.html#the-general-use-case-for-a-patient-data-quality-scoring-framework">General Use Case</a>
       </li>
       <li>
-        <a href="requirements_and_use_case.html#uscdi">USCDI</a>
+        <a href="requirements_and_use_case.html#core-data-for-interoperability-cdi-">Core Data for Interoperability</a>
       </li>
       <li>
-        <a href="requirements_and_use_case.html#use-case">Use Case</a>
+        <a href="requirements_and_use_case.html#data-quality-in-quality-measurement-and-quality-improvement">Quality Measurement and Quality Improvement
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#clinical-care-and-cds">Clinical Care and CDS</a>
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#public-health">Public Health</a>
+      </li>
+        <a href="requirements_and_use_case.html#regulatory">Regulatory</a>
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#health-information-exchange">Health Information Exchange</a>
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#electronic-health-records">Electronic Health Records</a>
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#provider">Provider</a>
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#payer">Payer</a>
+      </li>
+      <li>
+        <a href="requirements_and_use_case.html#social-services">Social Services</a>
       </li>
     </ul>
   </li>
