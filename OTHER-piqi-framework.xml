@@ -28,12 +28,13 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
+<page key="changes" name="Change History"/>
 <page deprecated="true" key="ChangeSetUseCase" name="Change Set Exchange"/>
 <page key="evaluation" name="Evaluation"/>
 <page key="examples" name="Examples"/>
 <page deprecated="true" key="FhirLimitations" name="FHIR Limitiations"/>
+<page deprecated="true" key="guidance" name="Guidance"/>
 <page key="index" name="Home"/>
-<page key="changes" name="Change History"/>
 <page key="background" name="PIQI Background"/>
 <page key="piqi_framework" name="PIQI Framework"/>
 <page deprecated="true" key="protobufexamples" name="Protobuf Examples"/>
