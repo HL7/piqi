@@ -19,7 +19,7 @@
         <a href="index.html">Introduction</a>
       </li>
       <li>
-        <a href="index.html#guide-overview">Guide Overview</a>
+        <a href="index.html#informative-specification-overview">Guide Overview</a>
       </li>
       <li>
         <a href="index.html#authors">Authors</a>
@@ -82,10 +82,10 @@
         <a href="requirements_and_use_case.html">Industry-specific Requirements</a>
       </li>
       <li>
-        <a href="requirements_and_use_case.html#Core-Data-for-Interoperability-(CDI)">Core Data for Interoperability</a>
+        <a href="requirements_and_use_case.html#core-data-for-interoperability-cdi">Core Data for Interoperability</a>
       </li>
       <li>
-        <a href="requirements_and_use_case.html#data-quality-measurement-and-quality-improvement">Quality Measurement and Improvement</a>
+        <a href="requirements_and_use_case.html#data-quality-in-quality-measurement-and-quality-improvement">Quality Measurement and Improvement</a>
       </li>
       <li>
         <a href="requirements_and_use_case.html#clinical-care-and-cds">Clinical Care and CDS</a>
@@ -106,7 +106,7 @@
         <a href="requirements_and_use_case.html#laboratory-data">Laboratory Data</a>
       </li>
       <li>
-        <a href="requirements_and_use_case.html#ehrs">EHRs</a>
+        <a href="requirements_and_use_case.html#electronic-health-records">EHRs</a>
       </li>
       <li>
         <a href="requirements_and_use_case.html#provider">Provider</a>
