@@ -46,7 +46,7 @@
           "sourceUrl": "background.html"
         },
         {
-          "title": "Data Quality Framework Use Cases",
+          "title": "Data Quality Use Cases",
           "generation": "markdown",
           "name": "requirements_and_use_case.html",
           "sourceUrl": "requirements_and_use_case.html"

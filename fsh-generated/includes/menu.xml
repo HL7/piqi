@@ -35,51 +35,23 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="background.html">Introduction</a>
-      </li>
-      <li>
         <a href="background.html#additional-information">Additional Information</a>
       </li>
       <li>
         <a href="background.html#boundaries-and-applicability-of-framework">Boundaries/Applicability</a>
       </li>
       <li>
-        <a href="background.html#piqi-community">Community</a>
+        <a href="background.html#piqi-community-of-practice">PIQI Community of Practice</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Framework
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Data Quality Use Cases
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="piqi_framework.html">Overview</a>
-      </li>
-      <li>
-        <a href="piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10">Taxonomy</a>
-      </li>
-      <li>
-        <a href="piqi_framework.html#piqi-data-models">PIQI Model</a>
-      </li>
-      <li>
-        <a href="sams.html">Simple Assessment Modules (SAMS)</a>
-      </li>
-      <li>
-        <a href="evaluation.html">PIQI Evaluation</a>
-      </li>
-      <li>
-        <a href="examples.html">Examples</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Case
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="requirements_and_use_case.html">General Use Case</a>
+        <a href="requirements_and_use_case.html">Industry-specific Requirements</a>
       </li>
       <li>
         <a href="requirements_and_use_case.html#core-data-for-interoperability-cdi">Core Data for Interoperability</a>
@@ -113,6 +85,31 @@
       </li>
       <li>
         <a href="requirements_and_use_case.html#social-services">Social Services</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PIQI Framework
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="piqi_framework.html">Overview</a>
+      </li>
+      <li>
+        <a href="piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10">Taxonomy</a>
+      </li>
+      <li>
+        <a href="piqi_framework.html#piqi-data-models">PIQI Model</a>
+      </li>
+      <li>
+        <a href="sams.html">Simple Assessment Modules (SAMS)</a>
+      </li>
+      <li>
+        <a href="evaluation.html">PIQI Evaluation</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
       </li>
     </ul>
   </li>

@@ -30,6 +30,7 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="changes" name="Change History"/>
 <page deprecated="true" key="ChangeSetUseCase" name="Change Set Exchange"/>
+<page key="requirements_and_use_case" name="Data Quality Use Cases"/>
 <page key="evaluation" name="Evaluation"/>
 <page key="examples" name="Examples"/>
 <page deprecated="true" key="FhirLimitations" name="FHIR Limitiations"/>
@@ -40,7 +41,6 @@
 <page deprecated="true" key="protobufexamples" name="Protobuf Examples"/>
 <page deprecated="true" key="protobufbackground" name="Protobuf Native Representation"/>
 <page deprecated="true" key="protobufschema" name="Protobuf Schema"/>
-<page key="requirements_and_use_case" name="Requirements and Use Case"/>
 <page key="sams" name="Simple Assessment Modules (SAMS)"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="TerminologyDistribution" name="Terminology Distribution"/>
