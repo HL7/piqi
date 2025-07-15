@@ -32,7 +32,7 @@ pages:
   background.md:
     title: PIQI Background
   requirements_and_use_case.md:
-    title: Requirements and Use Case  
+    title: Data Quality Use Cases
   piqi_framework.md:
     title: PIQI Framework
   sams.md:
