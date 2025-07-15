@@ -16,7 +16,7 @@ PIQI Elements are comprised of four attribute types: Simple Attribute, CodeableC
 
 #### Simple Attribute Type
 
-A simple attribute is a string value in the JSON attribute structure. Simple attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers and dates.
+A simple attribute is a string value in the JSON attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers and dates.
 
 Example: In this example the effectiveDateTime attribute is a simple attribute.
 ```json
@@ -66,10 +66,10 @@ An ObservationValue attribute is a structure that can be represented as a simple
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
 | text | Simple Attribute | Text representation of the value |
-| type | CodeableConcept | Collection of zero-to-many coded concepts representing the value type |
+| type | Codeable Concept | Collection of zero-to-many coded concepts representing the value type |
 | number | Simple Attribute | For numeric values |
 | number2 | Simple Attribute | For second numeric value |
-| codings | CodeableConcept | Collection of zero-to-many coded concepts representing the observation value |
+| codings | Codeable Concept | Collection of zero-to-many coded concepts representing the observation value |
 
 **Example:**
 
@@ -94,11 +94,11 @@ An ObservationValue attribute is a structure that can be represented as a simple
     }
 ```
 
-#### RangeValue Attribute Type
+#### Range Value Attribute Type
 
-A RangeValue attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The RangeValue is a specialized attribute as many elements in patient information can be represented by a structured range.
+A Range Value attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range.
 
-**RanegValue sub-attributes**
+**Range Value sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
@@ -145,94 +145,94 @@ The PIQI Clinical Data Model is a simplified canonical data model based on US Co
 | **Allergy** |     |     |     |     |
 | --- |     |     |     |     | --- | --- |
 | **AttributeName** | **Type** |     |     | **Description** |
-| substance | Codeable concept |     |     | Allergen or substance that trigger an intolerance |
-| category | Codeable concept |     |     | Category of substance: medication, food, chemical, etc |
-| reaction | Codeable concept |     |     | Condition triggered by the intolerance or allergy |
-| effectiveDate | Simple attribute |     |     | Date of allergy onset or documentation |
-| severity | Codeable concept |     |     | Severity of the reaction |
+| substance | Codeable Concept |     |     | Allergen or substance that trigger an intolerance |
+| category | Codeable Concept |     |     | Category of substance: medication, food, chemical, etc |
+| reaction | Codeable Concept |     |     | Condition triggered by the intolerance or allergy |
+| effectiveDate | Simple Attribute |     |     | Date of allergy onset or documentation |
+| severity | Codeable Concept |     |     | Severity of the reaction |
 | **Condition** |     |     |     |     |
 | **AttributeName** | **Type** | **Description** |     |     |
-| condition | Codeable concept | Problem, Diagnosis or other medical condition |     |     |
-| conditionStatus | Codeable concept | Status of condition: active, confirmed, refuted, etc |     |     |
-| conditionType | Codeable concept | Type of condition/diagnosis: complaint, discharge, etc |     |     |
+| condition | Codeable Concept | Problem, Diagnosis or other medical condition |     |     |
+| conditionStatus | Codeable Concept | Status of condition: active, confirmed, refuted, etc |     |     |
+| conditionType | Codeable Concept | Type of condition/diagnosis: complaint, discharge, etc |     |     |
 | onsetDate | Simple Attribute | Onset or effective date |     |     |
 | resolutionDate | Simple Attribute | Date condition resolved |     |     |
 | **Demographics** |     |     |     |     |
 | **AttributeName** | **Type** | **Description** |     |     |
 | birthDate | Simple Attribute | Patient date of birth |     |     |
-| birthSex | Codeable concept | Patient gender at birth |     |     |
+| birthSex | Codeable Concept | Patient gender at birth |     |     |
 | deathDate | Simple Attribute | Patient date of death |     |     |
-| deceased | Codeable concept | Is patient deceased: Yes or No or boolean |     |     |
-| ethnicity | Codeable concept | Patient ethnic group |     |     |
-| genderIdentity | Codeable concept | Patient gender identity |     |     |
-| primaryLanguage | Codeable concept | Patient primary language |     |     |
-| maritalStatus | Codeable concept | Patient marital status |     |     |
-| race | Codeable concept | Patient race |     |     |
+| deceased | Codeable Concept | Is patient deceased: Yes or No or boolean |     |     |
+| ethnicity | Codeable Concept | Patient ethnic group |     |     |
+| genderIdentity | Codeable Concept | Patient gender identity |     |     |
+| primaryLanguage | Codeable Concept | Patient primary language |     |     |
+| maritalStatus | Codeable Concept | Patient marital status |     |     |
+| race | Codeable Concept | Patient race |     |     |
 | **HealthAssessment** |     |     |     |     |
 | **Attribute Name** | **Type** |     | **Description** |     |
-| assessment | Codeable concept |     | Specific health assessment |     |
+| assessment | Codeable Concept |     | Specific health assessment |     |
 | resultValue | ObservationValue |     | Health assessment result |     |
-| resultUnit | Codeable concept |     | Health assessment result unit, if applicable |     |
+| resultUnit | Codeable Concept |     | Health assessment result unit, if applicable |     |
 | performedDatetime | Simple Attribute |     | Date and time when assessment was performed |     |
 | **Immunization** |     |     |     |     |
 | **Attribute Name** | **Type** |     | **Description** |     |
-| immunization | Codeable concept |     | Immunization or vaccine product |     |
+| immunization | Codeable Concept |     | Immunization or vaccine product |     |
 | lotNumber | Simple Attribute |     | Lot number for immunization product |     |
 | administrationDate | Simple Attribute |     | Date immunization was administered |     |
 | expirationDate | Simple Attribute |     | Expiration date for immunization product |     |
-| reaction | Codeable concept |     | Patient reaction to immunization, if applicable |     |
+| reaction | Codeable Concept |     | Patient reaction to immunization, if applicable |     |
 | **LabResult** |     |     |     |     |
 | **Attribute Name** | **Type** |     |     | **Description** |
-| test | Codeable concept |     |     | Specific lab test performed |
-| order | Codeable concept |     |     | Order or panel that initiated the test being performed |
+| test | Codeable Concept |     |     | Specific lab test performed |
+| order | Codeable Concept |     |     | Order or panel that initiated the test being performed |
 | resultValue | Observation Value |     |     | Test result value |
-| resultUnit | Codeable concept |     |     | Test result unit, if applicable |
-| interpretation | Codeable concept |     |     | Test result interpretation |
-| referenceRange | RangeValue |     |     | Test reference range |
-| specimenType | Codeable concept |     |     | Type of specimen used by the specific test |
-| resultStatus | Codeable concept |     |     | Status of the result: Incomplete, pending, final, etc |
-| performingSite | Codeable concept |     |     | Unique identifier for the performing site |
+| resultUnit | Codeable Concept |     |     | Test result unit, if applicable |
+| interpretation | Codeable Concept |     |     | Test result interpretation |
+| referenceRange | Range Value |     |     | Test reference range |
+| specimenType | Codeable Concept |     |     | Type of specimen used by the specific test |
+| resultStatus | Codeable Concept |     |     | Status of the result: Incomplete, pending, final, etc |
+| performingSite | Codeable Concept |     |     | Unique identifier for the performing site |
 | performedDateTime | Simple Attribute |     |     | Date and time the test was performed |
 | orderDate | Simple Attribute |     |     | Date the order was requested |
 | **MedicalDevice** |     |     |     |     |
 | **Attribute Name** | **Type** |     |     | **Description** |
-| deviceType | Codeable concept |     |     | Type of implantable device |
-| deviceID | Codeable concept |     |     | FDA Unique device identifier |
-| implantationDate | Simple attribute |     |     | Date the device was implanted |
-| deviceStatus | Codeable concept |     |     | Status of the medical device |
+| deviceType | Codeable Concept |     |     | Type of implantable device |
+| deviceID | Codeable Concept |     |     | FDA Unique device identifier |
+| implantationDate | Simple Attribute |     |     | Date the device was implanted |
+| deviceStatus | Codeable Concept |     |     | Status of the medical device |
 | **Medication** |     |     |     |     |
 | **Attribute Name** | **Type** |     |     | **Description** |
-| medication | Codeable concept |     |     | Medication product (drug) |
-| startDate | Simple attribute |     |     | Date the patient started the medication |
-| endDate | Simple attribute |     |     | Date the patient discontinued the medication |
-| doseAmount | Simple attribute |     |     | the dose amount expressed in strength or eaches |
-| doseAmountUnit | Codeable concept |     |     | The dose amount unit |
-| doseRoute | Codeable concept |     |     | The route of administration |
-| doseQuantity | Simple attribute |     |     | The dose quantity dispensed |
-| doseQuantityUnit | Simple attribute |     |     | The dose quantity units |
-| instructions | Simple attribute |     |     | The medication instruction text |
-| adherence | Codeable concept |     |     | The patient’s adherence to the medication |
-| indication | Codeable concept |     |     | The condition the is being treated by the medication |
-| fillStatus | Codeable concept |     |     | Fill status of the medication |
+| medication | Codeable Concept |     |     | Medication product (drug) |
+| startDate | Simple Attribute |     |     | Date the patient started the medication |
+| endDate | Simple Attribute |     |     | Date the patient discontinued the medication |
+| doseAmount | Simple Attribute |     |     | the dose amount expressed in strength or eaches |
+| doseAmountUnit | Codeable Concept |     |     | The dose amount unit |
+| doseRoute | Codeable Concept |     |     | The route of administration |
+| doseQuantity | Simple Attribute |     |     | The dose quantity dispensed |
+| doseQuantityUnit | Simple Attribute |     |     | The dose quantity units |
+| instructions | Simple Attribute |     |     | The medication instruction text |
+| adherence | Codeable Concept |     |     | The patient’s adherence to the medication |
+| indication | Codeable Concept |     |     | The condition the is being treated by the medication |
+| fillStatus | Codeable Concept |     |     | Fill status of the medication |
 | **Procedure** |     |     |     |     |
 | **AttributeName** | **Type** |     |     | **Description** |
-| procedure | Codeable concept |     |     | The procedure that was performed on the patient |
+| procedure | Codeable Concept |     |     | The procedure that was performed on the patient |
 | procedureDateTime | Simple Attribute |     |     | The date and time the procedure was performed |
-| procedureReason | Codeable concept |     |     | The condition that prompted the procedure |
+| procedureReason | Codeable Concept |     |     | The condition that prompted the procedure |
 | **VitalSign** |     |     |     |     |
 | **AttributeName** | **Type** |     |     | **Description** |
-| vitalSign | Codeable concept |     |     | Vital sign assessment/test |
+| vitalSign | Codeable Concept |     |     | Vital sign assessment/test |
 | resultValue | Observation Value |     |     | Vital sign result |
-| resultUnit | Codeable concept |     |     | Vital sign result unit, if applicable |
-| interpretation | Codeable concept |     |     | Interpretation of vital sign |
-| referenceRange | RangeValue |     |     | Reference range for vital sign |
-| resultStatus | Codeable concept |     |     | Vital sign result status |
-| performingSite | Codeable concept |     |     | Unique identifier for performing site |
+| resultUnit | Codeable Concept |     |     | Vital sign result unit, if applicable |
+| interpretation | Codeable Concept |     |     | Interpretation of vital sign |
+| referenceRange | Range Value |     |     | Reference range for vital sign |
+| resultStatus | Codeable Concept |     |     | Vital sign result status |
+| performingSite | Codeable Concept |     |     | Unique identifier for performing site |
 | performedDateTime | Simple Attribute |     |     | Date and time vital sign was collected |
 
 ### Code System Identifiers in PIQI
 
-Many of the important attributes in patient information are codeable concepts. Codeable concepts are attributed that can be represented by a simple text string or a one or many coded concepts, hence the code**able** concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display and code system identifier.
+Many of the important attributes in patient information are codeable concepts. Codeable Concepts are attributed that can be represented by a simple text string or a one or many coded concepts, hence the code**able** concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display and code system identifier.
 
 **All of these sub attributes must be populated in order for the concept being exchanged to be valid.**
 

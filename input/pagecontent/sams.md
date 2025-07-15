@@ -260,7 +260,7 @@ The standard SAMs are those that operate against attributes that use primitive l
 
 #### Simple Attribute SAMs
 
-A **simple attribute** is a string value in the JSON attribute structure. Simple attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers and dates.
+A **simple attribute** is a string value in the JSON attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers and dates.
 
 Example: In this example the EffectiveDateTime attribute is a simple attribute.
 
@@ -306,7 +306,7 @@ This SAM is designed to assess if a simple attribute has content. For complex at
 | SAM Mnemonic | Attr_IsPopulated |
 | Success Alias | is populated |
 | Failure Alias | Is not populated |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | \-  |
@@ -324,7 +324,7 @@ This SAM is designed to assess if a simple attribute is a number. This should on
 | SAM Mnemonic | Attr_IsNumeric |
 | Success Alias | is numeric |
 | Failure Alias | Is not numeric |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -342,7 +342,7 @@ This SAM is designed to assess if a simple attribute is an integer. This should 
 | SAM Mnemonic | Attr_IsInteger |
 | Success Alias | is an integer |
 | Failure Alias | Is not an integer |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -360,7 +360,7 @@ This SAM is designed to assess if a simple attribute is a decimal. This should o
 | SAM Mnemonic | Attr_IsDecimal |
 | Success Alias | is a decimal |
 | Failure Alias | Is not a decimal |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -378,7 +378,7 @@ This SAM is designed to assess if a simple attribute is a positive number. This 
 | SAM Mnemonic | Attr_IsPositiveNumber |
 | Success Alias | is a positive number |
 | Failure Alias | Is not a positive number |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -396,7 +396,7 @@ This SAM is designed to assess if a simple attribute is a negative number. This 
 | SAM Mnemonic | Attr_IsNegativeNumber |
 | Success Alias | is a negative number |
 | Failure Alias | Is not a negative number |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -414,7 +414,7 @@ This SAM is designed to assess if a simple attribute is a date. This should only
 | SAM Mnemonic | Attr_IsDate |
 | Success Alias | is a date |
 | Failure Alias | Is not a date |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -432,7 +432,7 @@ This SAM is designed to assess if a simple attribute is a date in the future. Th
 | SAM Mnemonic | Attr_IsFutureDate |
 | Success Alias | is a future date |
 | Failure Alias | Is not a future date |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -450,7 +450,7 @@ This SAM is designed to assess if a simple attribute is a date in the future. Th
 | SAM Mnemonic | Attr_IsPastDate |
 | Success Alias | is a past date |
 | Failure Alias | Is not a past date |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -468,7 +468,7 @@ This SAM is designed to assess if a simple attribute is a time. This should only
 | SAM Mnemonic | Attr_IsTime |
 | Success Alias | is a time |
 | Failure Alias | Is not a time |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -486,7 +486,7 @@ This SAM is designed to assess if a simple attribute is a timestamp including a 
 | SAM Mnemonic | Attr_IsTimestamp |
 | Success Alias | is a timestamp |
 | Failure Alias | Is not a timestamp |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -504,7 +504,7 @@ This SAM is designed to assess if a simple attribute is a timestamp including a 
 | SAM Mnemonic | Attr_IsTimestampTz |
 | Success Alias | is a timestamp with time zone |
 | Failure Alias | Is not a timestamp with time zone |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -522,7 +522,7 @@ This SAM is designed to assess if a simple attribute matches the regex pattern p
 | SAM Mnemonic | Attr_MatchesRegex |
 | Success Alias | matches the regex pattern |
 | Failure Alias | does not match the regex pattern |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | Paramter_1:Regular Expression |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -540,7 +540,7 @@ This SAM is designed to assess if a simple attribute is a member of a list of en
 | SAM Mnemonic | Attr_InList |
 | Success Alias | Is in list |
 | Failure Alias | Is not in list |
-| Input Type | Simple attribute |
+| Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
 | Parameter(s) | Paramter_1:Enumerated_Valueset_Mnemonic |
 | Prerequisite SAM | Attr_IsPopulated |
@@ -772,10 +772,10 @@ An **Observation Value** attribute is a structure that can be represented as a s
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
 | text | Simple Attribute | Text representation of the value |
-| type | Codeable concept | Collection of zero-to-many coded concepts representing the value type |
+| type | Codeable Concept | Collection of zero-to-many coded concepts representing the value type |
 | number | Simple Attribute | For numeric values |
 | number2 | Simple Attribute | For second numeric value – used for structured numrics like ranges and ratios |
-| codings | Codeable concept | Collection of zero-to-many coded concepts representing the observation value |
+| codings | Codeable Concept | Collection of zero-to-many coded concepts representing the observation value |
 
 Example:
 
@@ -861,7 +861,7 @@ This SAM is designed to assess if an observation result value type is a qualitat
 
 #### Range Value SAMs
 
-A RangeValue attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The RangeValue is a specialized attribute as many elements in patient information can be represented by a structured range.
+A Range Value attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range.
 
 **RanegValue sub-attributes**
 
@@ -888,7 +888,7 @@ This SAM is designed to assess if a range value has both numeric components.
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | RangeValue_IsComplete |
+| SAM Mnemonic | Range Value_IsComplete |
 | Success Alias | Is complete |
 | Failure Alias | Is not complete |
 | Input Type | Range_Value |
@@ -906,13 +906,13 @@ This SAM is designed to assess if a range value’s numeric components are logic
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | RangeValue_IsValid |
+| SAM Mnemonic | Range Value_IsValid |
 | Success Alias | Is valid |
 | Failure Alias | Is not valid |
 | Input Type | Range_Value |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
-| Prerequisite SAM | RangeValue_IsComplete |
+| Prerequisite SAM | Range Value_IsComplete |
 | HDQT Dimension | Accuracy.InvalidValue |
 | Execution Type | Primitive_Logic |
 | Execution Reference | \-  |

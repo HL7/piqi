@@ -1,7 +1,3 @@
-### Purpose
-
-The goal of the Patient Information Quality Improvement Framework or PIQI (pronounced ‘picky’) Framework is to create a standard approach that prioritizes portability and reusability, enabling assessments that can be applied universally, irrespective of the data source. By shifting the focus to simplified patient-centric information models, this framework aims to enhance data quality on an individual patient level. This approach will increase the certainty and usability of healthcare data, empowering healthcare organizations to make more informed decisions, conduct research with confidence, and ultimately, provide improved patient care.
-
 ### Framework Design
 
 The PIQI framework is structured into four distinct funtional but interrelated components: 1) the taxonomy for categorizing dimensions, 2) the patient-centric information model for organizing data elements, 3) simple assessment modules (SAMs) to measure quality and 4) the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
