@@ -118,11 +118,11 @@ A Range Value attribute is a structure that can be represented as a simple attri
 
 ### PIQI Data Models
 
-The PIQI Framework depends on a patient-oriented, flat-element collection data model. Depending on the use case, the structure of the model—including its data classes and element details—may vary. For example, the PIQI Clinical Data Model is designed to evaluate clinical information exchanged about a patient, so its data classes reflect common clinical data elements. In contrast, the PIQI Medical Claim Data Model includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses attribute types that align with the framework’s design.
+The PIQI Framework depends on a patient-oriented, flat-element collection information model. Depending on the use case, the structure of the model—including its data classes and element details—may vary. For example, the PIQI Clinical Data Model is designed to evaluate clinical information exchanged about a patient, so its data classes reflect common clinical data elements. In contrast, the PIQI Medical Claim Data Model includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses attribute types that align with the framework’s design.
 
 ### PIQI Clinical Data Model
 
-The PIQI Clinical Data Model is a simplified data model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patients care process, initially the model is purposefully limited to patient demographics, social and clinical information.
+The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patients care process, initially the model is purposefully limited to patient demographics, social and clinical information.
 
 #### PIQI Clinical Data Model Classes
 
@@ -322,12 +322,12 @@ This is another example of how PIQI is designed specifically for patient informa
 
 ### PIQI Patient Assessment Application Hierarchy
 
-When considering the PIQI information model it is worth nothing that patient data in this model organizes itself into a hierarchical structure with four primary entity levels that can each be evaluated for quality. These entities are as follows:
+When considering a PIQI information model it is worth nothing that patient data in this model organizes itself into a hierarchical structure with four primary entity levels that can each be evaluated for quality. These entities are as follows:
 
-- **Patient**: A holistic entity that is comprised of all of the characteristics and elements.
-- **Data Class**: A collection of data elements with the same attributes representing domain specific items.
-- **Element**: A class specific entity that is comprised of a collection of data attributes which represents a discreet item.
-- **Element Attribute**: A single data characteristic that relates to the patient or an domain specific element.
+- **Patient**: A holistic entity that is comprised of all of the characteristics and elements
+- **Data Class**: A collection of data elements with the same attributes representing domain specific items
+- **Element**: A class specific entity that is comprised of a collection of data attributes
+- **Element Attribute**: A single data characteristic that relates a domain specific element
 
 <span width="100%">
 <img src="patient_assessment_application_hierarchy.png" alt="PIQI Patient Assessment Application Hierarchy" height="25%" width="25%" />
