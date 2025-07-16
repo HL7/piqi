@@ -4,7 +4,7 @@ The Patient Information Quality Improvement Framework or PIQI Framework (pronoun
 
 Data fitness is one component of data quality where determination of data’s appropriateness for use in a specific context is ultimately declared by the person (data consumer) responsible for evaluating whether a dataset is adequate for its intended purpose. Evaluators of data fitness frequently do not have the requisite contextual basis to enable a judgement on a particular dataset, rendering the data inutile despite its potential to inform care quality. The data quality knowledge presented to an evaluator must have a high level of face validity to that person—which assumes the information presents a complete and accurate picture of their expectations for the data’s use.
 
-Shifting the focus to standardized patient-centric information quality assessment models, the PIQI framework aims to enhance data quality at the structural, or data element level. Providing prespecified parameters for a simplified structural analysis increases the certainty and usability of healthcare data, empowering health care organizations to make well informed decisions quickly that ultimately provide improved patient care. The PIQI Framework provides the ability to assess data against standard models, such as USCDI v3, generating scorecards, and providing insights from the quality assessment process important to end users trusting the data is of sufficient quality. See the Table of Contents for more information.
+Shifting the focus to standardized patient-centric information quality assessment models, the PIQI framework aims to support evaluation of data quality at the structural, or data element level. Providing prespecified parameters for a simplified structural analysis increases the certainty and usability of healthcare data, empowering health care organizations to make well informed decisions quickly that ultimately provide improved patient care. The PIQI Framework provides the ability to assess data against standard models, such as USCDI v3, generating scorecards, and providing insights from the quality assessment process important to end users trusting the data is of sufficient quality. See the Table of Contents for more information.
 
 ### Informative Specification Overview and Scope
 The Cross Project Group (CPG) sponsored PIQI project is two-phased. This Informative Sepcification is the first phase, in which, the PIQI Framework, it's components and approach to data quality evaluation are described. A cross-paradigm implementaiton guide (CP IG), which defines how the PIQI Framework and approach can be utilized across formats, namely the HL7 V2, CCDA and FHIR, will be produced in the second phase. Therefore specifics about how PIQI Framework relates to each HL7 product family is out of scope for this informative specification and will be addressed in the PIQI CP IG.
@@ -33,9 +33,13 @@ Primary Authors:
 Contributing Authors:
 *   Lisa Anderson, The Joint Commission
 *   Amol Bhalla, IMO Health
-*   Carmela Couderc, US Assistant Secretary for Technology Policy (ASTP_)
+*   Carmela Couderc, US Assistant Secretary for Technology Policy (ASTP)
+*   John D'Amore, More Informatics
 *   Gay Dolin, Namaste Informatics
 *   Benjamin Hamlin, IPRO
+*   Gena Jarosch, Michigan Health Information Netork (MiHIN)
+*   Craig Newman, J Michael Consulting
+*   Riki Merrick, Association of Public Health Laboratories (APHL)
 *   Serafina Versaggi, Versaggi Health IT Consulting
 
 ### Cross Version Analysis
