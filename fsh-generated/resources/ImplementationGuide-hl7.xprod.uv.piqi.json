@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.xprod.uv.piqi",
   "url": "http://hl7.org/xprod/ig/uv/piqi/ImplementationGuide/hl7.xprod.uv.piqi",
-  "version": "1.0.0",
+  "version": "1.0.0-ballot",
   "name": "CrossParadigmPIQI",
   "title": "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1",
   "status": "draft",
@@ -92,7 +92,7 @@
           "code": "releaselabel",
           "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
         },
-        "value": "draft"
+        "value": "ballot"
       },
       {
         "code": {

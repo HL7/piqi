@@ -9,10 +9,10 @@ name: CrossParadigmPIQI
 title: "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1"
 description: "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1"
 status: draft # draft | active | retired | unknown
-version: 1.0.0
+version: 1.0.0-ballot
 fhirVersion: 5.0.0
 copyrightYear: 2025+
-releaseLabel: draft  # | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: ballot  # | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
