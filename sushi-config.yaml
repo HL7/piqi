@@ -39,25 +39,18 @@ pages:
     title: Simple Assessment Modules (SAMS)
   evaluation.md:
     title: Evaluation
-  examples.md:
-    title: Examples
-  downloads.md:
-    title: Useful Downloads
   changes.md:
     title: Change History
   
 menu:
   Home:
     Introduction: index.html
-    Guide Overview: index.html#informative-specification-overview
+    Overview and Scope: index.html#informative-specification-overview-and-scope
     Authors: index.html#authors
-    Acknowledgements: index.html#acknowledgements
     
   Background:
     Framework Design: background.html#framework-design
     Framework Benefits: background.html#framework-benefits
-    Additional Information: background.html#additional-information
-    Boundaries/Applicability: background.html#boundaries-and-applicability-of-framework
     PIQI Community of Practice: background.html#piqi-community-of-practice   
   
   Data Quality Use Cases:
@@ -80,7 +73,6 @@ menu:
     PIQI Model: piqi_framework.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
-    Examples: examples.html 
   
   Change Notes: changes.html
   

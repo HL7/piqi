@@ -32,7 +32,6 @@
 <page deprecated="true" key="ChangeSetUseCase" name="Change Set Exchange"/>
 <page key="requirements_and_use_case" name="Data Quality Use Cases"/>
 <page key="evaluation" name="Evaluation"/>
-<page key="examples" name="Examples"/>
 <page deprecated="true" key="FhirLimitations" name="FHIR Limitiations"/>
 <page deprecated="true" key="guidance" name="Guidance"/>
 <page key="index" name="Home"/>
@@ -49,5 +48,5 @@
 <page deprecated="true" key="TinkarModelConcepts" name="Tinkar Model Concepts"/>
 <page deprecated="true" key="TinkarOverview" name="Tinkar Overview"/>
 <page deprecated="true" key="tinkartofhir" name="Transform to FHIR"/>
-<page key="downloads" name="Useful Downloads"/>
+<page deprecated="true" key="downloads" name="Useful Downloads"/>
 </specification>

@@ -17,7 +17,7 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 ### Simple Assessment Modules
 
-Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘could not assess’ result. For detailed information see [SAMS](sams.md)
+Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘could not assess’ result. For detailed information see [SAMS](sams.html)
 
 ### Evaluation Rubrics
 

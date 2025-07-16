@@ -21,7 +21,7 @@ A [simple assessment module (SAM)](sams.html) is a logical measurement aligned t
 
 #### Evaluation Criteria
 
-The [Evaluation Criteria](evaluation.md) component represents a use case oriented hierarchical collection of simple assessments aligned to the patient information model. It is the function of the evaluation criteria to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case.
+The [Evaluation Criteria](evaluation.html) component represents a use case oriented hierarchical collection of simple assessments aligned to the patient information model. It is the function of the evaluation criteria to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case.
 
 ### Framework Benefits
 
@@ -36,14 +36,6 @@ Being aligned to patient information specifically, rather than being a generic q
 #### Shareable and Portable
 
 The use of a standardized data model coupled with a standard taxonomy as a basis for the deployment of modular assessments should allow for portable evaluation libraries that should function the same regardless of the source of patient information. The evaluation libraries are portable assets that can be shared across institutions and deployed centrally in a transactional manner.
-
-### Additional Information
-
-TBD
-
-### Boundaries and Applicability of Framework
-
-TBD
 
 ### PIQI Community of Practice
 

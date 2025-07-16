@@ -70,18 +70,6 @@
           "sourceUrl": "evaluation.html"
         },
         {
-          "title": "Examples",
-          "generation": "markdown",
-          "name": "examples.html",
-          "sourceUrl": "examples.html"
-        },
-        {
-          "title": "Useful Downloads",
-          "generation": "markdown",
-          "name": "downloads.html",
-          "sourceUrl": "downloads.html"
-        },
-        {
           "title": "Change History",
           "generation": "markdown",
           "name": "changes.html",
