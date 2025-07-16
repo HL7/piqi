@@ -111,5 +111,5 @@ Ultimately, aligning the PIQI Framework with clinical workflows and provider con
 
 
 
-[1]: Canadian Institute for Health Information. Canadian Core Data for Interoperability (CACDI) Version 1. Ottawa, ON: CIHI; 2025.
-[2]: Australian e-Health Research Centre. Australian Core Data for Interoperability (AUCDI) Release 1. Herston QLD: AEHRC; 2024.
+[^1]: Canadian Institute for Health Information. Canadian Core Data for Interoperability (CACDI) Version 1. Ottawa, ON: CIHI; 2025.
+[^2]: Australian e-Health Research Centre. Australian Core Data for Interoperability (AUCDI) Release 1. Herston QLD: AEHRC; 2024.
