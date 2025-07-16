@@ -37,14 +37,6 @@ Being aligned to patient information specifically, rather than being a generic q
 
 The use of a standardized data model coupled with a standard taxonomy as a basis for the deployment of modular assessments should allow for portable evaluation libraries that should function the same regardless of the source of patient information. The evaluation libraries are portable assets that can be shared across institutions and deployed centrally in a transactional manner.
 
-### Additional Information
-
-TBD
-
-### Boundaries and Applicability of Framework
-
-TBD
-
 ### PIQI Community of Practice
 
 The PIQI Framework is designed to be implemented within a community of practice.  With encapsulated, portable, content driven components, the ability to share knowledge and evolve establishes great potential for rapid evolution and adoption. 

@@ -1,28 +1,3 @@
-<div style="width: 100%;" >
-<h3 id="plain-language-summary-about-this-guide">Plain Language Summary about this Guide
-  </h3>
-  <button class="btn btn-info btn-lg collapsed" type="button" title="Click to Open or Close the Plain Language Summary" data-toggle="collapse" data-target="#plain-lang-summary" aria-expanded="false" aria-controls="collapseExample">
-    Welcome! Thank you for wanting to learn about this guide.  Click Here to see the Plain Language Summary
-  </button>
-</div>
-<div class="collapse" id="plain-lang-summary" aria-expanded="false" style="height: 0px;">
-  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
-
-<a name="about-this-guide"> </a>
-  <h3>About this Guide</h3>
-<p>
-The HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1 explains the components of the PIQI framework, and how to use it to define data quality criteria for health data messages. This guide is primarily designed for healthcare IT professionals, developers, or informaticists who are interested in pursuing consistent data quality rulesets across various representations of health data.
-</p>
-<p>
-Organizations that adopt this framework will be able to computably define data quality expectations that can be applied to various health data exchanges, such as HL7 v2 messages, CDA documents or FHIR transactions.
-</p>
-<p>
-As more data is exchanged, and in more formats, it becomes increasingly difficult to address data quality in representation-specific rules as we historically have done. This framework is intended to help the health data community pursue a more wholistic approach, assessing data quality in health data exchange messages using the same rules, even if the data representations vary.
-</p>
-
-  </div>
-</div>
-
 ### Introduction
 
 The Patient Information Quality Improvement Framework or PIQI Framework (pronounced ‘picky’) creates a standard approach to evaluating data quality of patient-centric health care information. PIQI prioritizes portability and reusability, enabling seamless integration into various systems irrespective of the data source. Health care data can be complex, heterogeneous, and dispersed across various systems and platforms. Moreover, the traditional database-centric approach often restricts the flexibility and portability required to accommodate the intricate nuances of patient-centric healthcare information. 
@@ -63,10 +38,6 @@ Contributing Authors:
 *   Gay Dolin, Namaste Informatics
 *   Benjamin Hamlin, IPRO
 *   Serafina Versaggi, Versaggi Health IT Consulting
-
-### Acknowledgements
-
-Thanks
 
 ### Cross Version Analysis
 

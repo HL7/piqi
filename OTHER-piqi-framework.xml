@@ -32,7 +32,6 @@
 <page deprecated="true" key="ChangeSetUseCase" name="Change Set Exchange"/>
 <page key="requirements_and_use_case" name="Data Quality Use Cases"/>
 <page key="evaluation" name="Evaluation"/>
-<page key="examples" name="Examples"/>
 <page deprecated="true" key="FhirLimitations" name="FHIR Limitiations"/>
 <page deprecated="true" key="guidance" name="Guidance"/>
 <page key="index" name="Home"/>
