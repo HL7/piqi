@@ -17,7 +17,7 @@ This component of the framework focuses on the patient data elements and charact
 
 #### Simple Assessment Module (SAM)
 
-A [simple assessment module (SAM)](sams.md) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections to collectively paint a larger qualitative picture as defined by a given use case.
+A [simple assessment module (SAM)](sams.html) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections to collectively paint a larger qualitative picture as defined by a given use case.
 
 #### Evaluation Criteria
 
