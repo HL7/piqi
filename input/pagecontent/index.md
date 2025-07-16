@@ -17,7 +17,6 @@ The main sections of this informative specificaiton are:
 *   [Background](background.html) - these pages provide background on the PIQI Framework
 *   [Framework](piqi_framework.html) - these pages define the structure of the PIQI Framework with examples.
 *   [Use Cases](requirements_and_use_case.html) - this pages describe known use cases and specific requirements for assessing data quality in various industry verticals
-*   [Downloads](downloads.html) - this page provides links to downloadable artifacts.
 *   [Change Notes](changes.html) - this page documents the changes across the versions of the Terminology Change Set IG.
 
 

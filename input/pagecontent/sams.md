@@ -1024,7 +1024,7 @@ This SAM is designed to assess if a **Data Class** collection has duplicates. Th
 
 #### Patient Message SAMs
 
-A SAM that evaluates the entire patient message, including all of its data classes and elements, is contemplated in the PIQI framework. This type of SAM can be used to look for gaps in information and other message level plausibility concerns. Careful consideration should be given to this type of SAM as the message payload JSON could be quite large and could significantly impact the performance of the gateway. SAMs that perform **Data Class** specific assessments but require patient information should be element level SAMs that use a patient demographics parameter. (see [Condition is Sex Plausible](#_Condition_Is_Sex) example)
+A SAM that evaluates the entire patient message, including all of its data classes and elements, is contemplated in the PIQI framework. This type of SAM can be used to look for gaps in information and other message level plausibility concerns. Careful consideration should be given to this type of SAM as the message payload JSON could be quite large and could significantly impact the performance of the gateway. SAMs that perform **Data Class** specific assessments but require patient information should be element level SAMs that use a patient demographics parameter. (see [Condition is Sex Plausible](#condition-is-sex-plausible) example)
 
 Here is an example of a patient level SAM.
 

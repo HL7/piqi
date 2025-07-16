@@ -21,7 +21,7 @@ A [simple assessment module (SAM)](sams.html) is a logical measurement aligned t
 
 #### Evaluation Criteria
 
-The [Evaluation Criteria](evaluation.md) component represents a use case oriented hierarchical collection of simple assessments aligned to the patient information model. It is the function of the evaluation criteria to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case.
+The [Evaluation Criteria](evaluation.html) component represents a use case oriented hierarchical collection of simple assessments aligned to the patient information model. It is the function of the evaluation criteria to describe the relevance of each assessment to the acceptability of each characteristic, element and essential patient data submission in its entirety, relative to a given use case.
 
 ### Framework Benefits
 
