@@ -19,11 +19,22 @@ Implementing the framework supports a continuous data quality lifecycle of asses
 
 
 #### [Austrailian CDI](https://sparked.csiro.au/wp-content/uploads/2024/06/Sparked-AUCDI-R1-V1.0-1.pdf)
-[Austrailian CDI] 
+>The AUCDI is changing the approach to health data and is set to become a natioonal asset focused on establishing an independent base of reusable, standardised information models and related artefacts. As clinical systems converge their internal data structures towards AUCDI, this common, consensus-based data founda on will reduce the need for data transformations and mappings, supporing safer and simpler interoperability.
+
+>The AUCDI is intenionnally agnostic of: 
+- Any single clinical use case while being constructed as a founda on for many clinical use cases,
+- Any single clinical system vendor while being strongly informed by func onality and data available in current clinical systems, and
+- Any single technical implementa on or exchange approach while providing the clinical data requirements for developing the FHIR AU Core specifications and subsequent Implementation on Guides (IG).
+
+
+[Australian CDI][^2]
+
+
 #### [Canadian CDI](https://www.cihi.ca/sites/default/files/document/canadian-core-data-interoperability-cacdi-v1-en.pdf)
 >The Canadian Core Data for Interoperability (CACDI) defines a standardized set of essential health data elements and value sets in the context of a common data architecture to support interoperability and data exchange across the Canadian health care ecosystem. The CACDI represents the minimum data required to support standardized information capture and enable meaningful exchange of health information. It aims to standardize the capture, structure and exchange of health data across the health continuum by providing a foundation of standardized data elements applicable to multiple health care settings. 
 
->The CACDI is a subset of the Pan-Canadian Health Data Content Framework and works in tandem with CA Core+, the Fast Healthcare Interoperability Resources (FHIR) profiles created by Canada Health Infoway, to facilitate the meaningful exchange of health care information. Together, the Canadian Institute for Health Information’s and Canada Health Infoway’s efforts, including the development of national health data content and data exchange standards, will support the uninterrupted and accurate exchange of health information across Canada, aligning with Health Canada’s vision for a modern, integrated health care system" [Canadian CDI][1]
+>The CACDI is a subset of the Pan-Canadian Health Data Content Framework and works in tandem with CA Core+, the Fast Healthcare Interoperability Resources (FHIR) profiles created by Canada Health Infoway, to facilitate the meaningful exchange of health care information. Together, the Canadian Institute for Health Information’s and Canada Health Infoway’s efforts, including the development of national health data content and data exchange standards, will support the uninterrupted and accurate exchange of health information across Canada, aligning with Health Canada’s vision for a modern, integrated health care system" 
+[Canadian CDI][^1]
 
 Similar to it's applicability to the USCDI, the PIQI Framework can expand on the approach taken by the CACDI by enabling health systems and organizations to assess the quality of exchanged data—regardless of format. The PIQI Framework components are extensible by design, and can be adapted to address CACDI-specific elements and SAMs to defined a CACDI evaluation rubric using applicable CACDI required terminolgy components.
 
