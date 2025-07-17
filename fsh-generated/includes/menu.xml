@@ -27,7 +27,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PIQI Background
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -57,7 +57,7 @@
         <a href="requirements_and_use_case.html#data-quality-in-quality-measurement-and-quality-improvement">Quality Measurement and Improvement</a>
       </li>
       <li>
-        <a href="requirements_and_use_case.html#clinical-care-and-cds">Clinical Care and CDS</a>
+        <a href="requirements_and_use_case.html#clinical-care-and-clinical-decision-support">Clinical Care and Decision Support</a>
       </li>
       <li>
         <a href="requirements_and_use_case.html#public-health">Public Health</a>
