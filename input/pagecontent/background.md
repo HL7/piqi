@@ -1,6 +1,6 @@
 ### Framework Design
 
-The PIQI framework is structured into four distinct funtional but interrelated components: 1) the taxonomy for categorizing dimensions, 2) the patient-centric information model for organizing data elements, 3) simple assessment modules (SAMs) to measure quality and 4) the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
+The PIQI Framework is structured into four distinct funtional but interrelated components: 1) the taxonomy for categorizing dimensions, 2) the patient-centric information model for organizing data elements, 3) simple assessment modules (SAMs) to measure quality and 4) the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
 
 <span width="100%">
 <img src="PIQI_High_Level_Component_Diagram.png" alt="PIQI Framework High Level Component Diagram" height="70%" width="70%"/>

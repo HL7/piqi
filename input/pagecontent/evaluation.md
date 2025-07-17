@@ -85,7 +85,7 @@ This is a human readable description of the purpose or rationale for the criteri
 
 ##### Criterion Data Class
 
-This is the Data Class in the PIQI model that is being assessed. This can be any data class in the PIQI data model or ‘Patient’ which indicates a complete patient
+This is the Data Class in the PIQI model that is being assessed. This can be any data class in the PIQI information model or ‘Patient’ which indicates a complete patient
 
 ##### Criterion Entity
 
