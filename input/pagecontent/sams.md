@@ -154,7 +154,7 @@ This defines the nature of the machinery of the SAM and can have the following v
 
 **Value_Set_Code** The execution is using a value set of codings
 
-For the Stored_Procedure and RESTful_Service execution types the assumption is they have an interface that matches the SAM interface for the input type.
+For the Stored_Procedure and RESTful_Service execution types the assumption is they have an interface that matches the SAM interface for the input type. These execution types are designed to support SAMs requiring more advanced logic or semantic relationships that could be powered by an Integrated Knowledge Environment such as those described in the Tinkar specification in [HL7 Logical Model: Standardized Terminology Knowledgebase, Release 1](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=573).
 
 #### SAM Execution Reference
 
