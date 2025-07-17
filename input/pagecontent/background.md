@@ -17,7 +17,7 @@ This component of the framework focuses on the patient data elements and charact
 
 #### Simple Assessment Module (SAM)
 
-A [simple assessment module (SAM)](sams.html) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections to collectively paint a larger qualitative picture as defined by a given use case.
+A [simple assessment module (SAM)](sams.html) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections of SAMs to collectively paint a larger qualitative picture as defined by a given use case.
 
 #### Evaluation Criteria
 
@@ -31,11 +31,19 @@ A healthcare specific taxonomy or qualitative dimension applied to a patient-cen
 
 #### Relevant
 
-Being aligned to patient information specifically, rather than being a generic quality-oriented framework, provides the benefit of highly relevant, prioritizable results.
+Being aligned to patient information specifically, rather than being a generic quality-oriented framework, provides the benefit of highly relevant, fit-for-purpose, prioritizable results.
 
 #### Shareable and Portable
 
-The use of a standardized data model coupled with a standard taxonomy as a basis for the deployment of modular assessments should allow for portable evaluation libraries that should function the same regardless of the source of patient information. The evaluation libraries are portable assets that can be shared across institutions and deployed centrally in a transactional manner.
+The use of a standardized information model coupled with a standard taxonomy as a basis for the deployment of modular assessments should allow for portable evaluation libraries that should function the same regardless of the source of patient information. The evaluation libraries are portable assets that can be shared across institutions and deployed centrally in a transactional manner.
+
+### Additional Information
+
+TBD
+
+### Boundaries and Applicability of Framework
+
+TBD
 
 ### PIQI Community of Practice
 

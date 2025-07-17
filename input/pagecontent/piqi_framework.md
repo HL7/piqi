@@ -12,7 +12,7 @@ It is important to remember that the goal of the PIQI Framework is to assess and
 
 ### PIQI Attribute Types
 
-PIQI Elements are comprised of four attribute types: Simple Attribute, CodeableConcept, ObservationValue and RangedValue.
+PIQI Elements are comprised of four attribute types: Simple Attribute, Codeable Concept, Observation Value and Ranged Value.
 
 #### Simple Attribute Type
 
@@ -57,9 +57,9 @@ A Codeable Concept attribute is a structure that can be represented as a simple 
     }
 ```
 
-#### ObservationValue Attribute Type
+#### Observation Value Attribute Type
 
-An ObservationValue attribute is a structure that can be represented as a simple attribute value or a structure observation value. ObservationValue is a specialized attribute as many elements in patient information can be represented by a quantitative, text or coded concepts value.
+An Observation Value attribute is a structure that can be represented as a simple attribute value or a structure observation value. Observation Value is a specialized attribute as many elements in patient information can be represented by a quantitative, text or coded concepts value.
 
 **Observation Value sub-attributes**
 
@@ -122,7 +122,7 @@ The PIQI Framework depends on a patient-oriented, flat-element collection inform
 
 ### PIQI Clinical Data Model
 
-The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patients care process, initially the model is purposefully limited to patient demographics, social and clinical information.
+The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and to simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patients care process, initially the model is purposefully limited to patient demographics, social and clinical information.
 
 #### PIQI Clinical Data Model Classes
 
@@ -171,9 +171,9 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | **HealthAssessment** |     |     |     |     |
 | **Attribute Name** | **Type** | **Description** |     |
 | assessment | Codeable Concept | Specific health assessment |     |
-| resultValue | ObservationValue | Health assessment result |     |
+| resultValue | Observation Value | Health assessment result |     |
 | resultUnit | Codeable Concept | Health assessment result unit, if applicable |     |
-| performedDatetime | Simple Attribute | Date and time when assessment was performed |     |
+| performedDateTime | Simple Attribute | Date and time when assessment was performed |     |
 | **Immunization** |     |     |     |     |
 | **Attribute Name** | **Type** | **Description** |     |
 | immunization | Codeable Concept | Immunization or vaccine product |     |
@@ -242,7 +242,7 @@ The **code system identifier is required** to confirm that the code is valid in 
 
 The **display is required** so that a human can verify that the code provided does, in fact, semantically match the concept in the identified code system. It is also necessary if the concept provided is being mapped/normalized to a standard or local terminology.
 
-One of the issues with validating coded concepts is that often different string values are used to identify the code system for a given code. For example, when sending a LOINC code it is possible to see the following code system identifiers:
+One of the issues with validating codeable concepts is that often different string values are used to identify the code system for a given code. For example, when sending a LOINC code it is possible to see the following code system identifiers:
 
 LOINC, LNC, LN Code System Simple string identifiers
 

@@ -553,7 +553,7 @@ This SAM is designed to assess if a simple attribute is a member of a list of en
 
 A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
-**CodeableConcept sub-attributes**
+**Codeable Concept sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
@@ -811,7 +811,7 @@ This SAM is designed to assess if an observation result value type is contained 
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | ObservationValueType_InList |
+| SAM Mnemonic | Observation Value Type_InList |
 | Success Alias | Value type in list |
 | Failure Alias | Value type not in list |
 | Input Type | Observation_Value |
@@ -829,13 +829,13 @@ This SAM is designed to assess if an observation result value is consistent with
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | ObservationValue_MatchesType |
+| SAM Mnemonic | Observation Value _MatchesType |
 | Success Alias | Value matches type |
 | Failure Alias | Value does not match type |
 | Input Type | Observation_Value |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
-| Prerequisite SAM | ObservationValue_HasType |
+| Prerequisite SAM | Observation Value _HasType |
 | HDQT Dimension | Accuracy.InvalidValue |
 | Execution Type | Primitive_Logic |
 | Execution Reference | \-  |
@@ -847,13 +847,13 @@ This SAM is designed to assess if an observation result value type is a qualitat
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | ObservationValue_IsQualitative |
+| SAM Mnemonic | Observation Value _IsQualitative |
 | Success Alias | Value is qualitative |
 | Failure Alias | Value is not qualitative |
 | Input Type | Observation_Value |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
-| Prerequisite SAM | ObservationValue_HasType |
+| Prerequisite SAM | Observation Value _HasType |
 | HDQT Dimension | Accuracy.InvalidValue |
 | Execution Type | Primitive_Logic |
 | Execution Reference | \-  |
@@ -861,7 +861,7 @@ This SAM is designed to assess if an observation result value type is a qualitat
 
 #### Range Value SAMs
 
-A Range Value attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range.
+A RangeValue attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The RangeValue is a specialized attribute as many elements in patient information can be represented by a structured range.
 
 **RanegValue sub-attributes**
 
@@ -888,7 +888,7 @@ This SAM is designed to assess if a range value has both numeric components.
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | Range Value_IsComplete |
+| SAM Mnemonic | RangeValue_IsComplete |
 | Success Alias | Is complete |
 | Failure Alias | Is not complete |
 | Input Type | Range_Value |
@@ -906,13 +906,13 @@ This SAM is designed to assess if a range value’s numeric components are logic
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | Range Value_IsValid |
+| SAM Mnemonic | RangeValue_IsValid |
 | Success Alias | Is valid |
 | Failure Alias | Is not valid |
 | Input Type | Range_Value |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
-| Prerequisite SAM | Range Value_IsComplete |
+| Prerequisite SAM | RangeValue_IsComplete |
 | HDQT Dimension | Accuracy.InvalidValue |
 | Execution Type | Primitive_Logic |
 | Execution Reference | \-  |
@@ -1024,7 +1024,7 @@ This SAM is designed to assess if a **Data Class** collection has duplicates. Th
 
 #### Patient Message SAMs
 
-A SAM that evaluates the entire patient message, including all of its data classes and elements, is contemplated in the PIQI framework. This type of SAM can be used to look for gaps in information and other message level plausibility concerns. Careful consideration should be given to this type of SAM as the message payload JSON could be quite large and could significantly impact the performance of the gateway. SAMs that perform **Data Class** specific assessments but require patient information should be element level SAMs that use a patient demographics parameter. (see [Condition is Sex Plausible](#condition-is-sex-plausible) example)
+A SAM that evaluates the entire patient message, including all of its data classes and elements, is contemplated in the PIQI framework. This type of SAM can be used to look for gaps in information and other message level plausibility concerns. Careful consideration should be given to this type of SAM as the message payload JSON could be quite large and could significantly impact the performance of the gateway. SAMs that perform **Data Class** specific assessments but require patient information should be element level SAMs that use a patient demographics parameter. (see [Condition is Sex Plausible](#_Condition_Is_Sex) example)
 
 Here is an example of a patient level SAM.
 
