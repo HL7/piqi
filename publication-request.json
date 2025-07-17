@@ -7,7 +7,7 @@
   "sequence" : "STU1, Release 1",
   "first" : true, 
   "title" : "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1",
-  "ci-build" : "https://build.fhir.org/ig/HL7/piqi/",
+  "ci-build" : "https://build.fhir.org/ig/HL7/piqi",
   "category" : "other",
   "introduction" : "The Patient Information Quality Improvement (PIQI) Framework is a healthcare standard that helps organizations check whether their patient data is good enough to use for medical care and decision-making.
 
