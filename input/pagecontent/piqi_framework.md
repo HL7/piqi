@@ -566,9 +566,9 @@ PIQI Framework starts with a simple model intended to support the assessment of 
 
 While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes and patient level data often require structured content in the form of value sets, tuples and other data patterns. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces.
 
-### Shared Evaluation Profiles
+### Shared Evaluation Rubrics
 
-While the Evaluation Profiles in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard evaluation profiles is one of the most beneficial features of the PIQI Framework. The ability to publish and share an evaluation profile, along with its dependent SAMs and PIQI Model components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
+While the Evaluation Rubrics in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard evaluation profiles is one of the most beneficial features of the PIQI Framework. The ability to publish and share an evaluation profile, along with its dependent SAMs and PIQI Model components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
 
 ### PIQI Endpoint Registration
 

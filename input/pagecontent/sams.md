@@ -2,9 +2,9 @@
 
 #### PIQI Assessment Approach
 
-The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Profile**.
+The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
 
-The Evaluation Profile is a sequenced collection of **Evaluation Criteria**.
+The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
 Each Evaluation Criteria is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
@@ -16,7 +16,7 @@ If the **Condition** is configured, the **Evaluation** is only processed if the 
 
 Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (could not assess) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
 
-![Relationship of SAMs to Evaluation Profiles and Conditions](SAM_Diagram.jpg)
+![Relationship of SAMs to Evaluation Rubrics and Conditions](SAM_Diagram.jpg)
 <br/>
 <br/>
 <br/>

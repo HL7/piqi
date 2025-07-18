@@ -51,13 +51,13 @@ The authoritative source or reference for the evaluation rubric.
 
 This is the specific version or extension of the PIQI Data Model.
 
-Profile Model version mnemonic
+Rubric Model version mnemonic
 
-Profile Model menmonic
+Rubric Model menmonic
 
-Profile Model Version
+Rubric Model Version
 
-Profile Model Extension mnemonic
+Rubric Model Extension mnemonic
 
 #### Evaluation Rubric Source
 
