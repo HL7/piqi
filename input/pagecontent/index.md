@@ -41,6 +41,7 @@ Contributing Authors:
 *   Craig Newman, J Michael Consulting
 *   Riki Merrick, Association of Public Health Laboratories (APHL)
 *   Serafina Versaggi, Versaggi Health IT Consulting
+*   Andrew Sills, Deloitte Consulting LLP
 
 ### Cross Version Analysis
 

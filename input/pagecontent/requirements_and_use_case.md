@@ -115,9 +115,9 @@ The PIQI Framework serves as a powerful tool to evaluate and enhance data qualit
 Ultimately, aligning the PIQI Framework with clinical workflows and provider constraints fosters greater engagement, reduces documentation burdens, and elevates the quality and utility of clinical data across the healthcare landscape.
 
 
-### Social Services
 
-
+------------------------------------------------------------------------
+Footnotes:
 
 [^1]: Canadian Institute for Health Information. Canadian Core Data for Interoperability (CACDI) Version 1. Ottawa, ON: CIHI; 2025.
 [^2]: Australian e-Health Research Centre. Australian Core Data for Interoperability (AUCDI) Release 1. Herston QLD: AEHRC; 2024.
