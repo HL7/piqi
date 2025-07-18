@@ -1,6 +1,6 @@
 ### Framework Design
 
-The PIQI Framework is structured into four distinct functional but interrelated components: 1) the taxonomy for categorizing dimensions, 2) the patient-centric information model for organizing data elements, 3) simple assessment modules (SAMs) to measure quality and 4) the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
+The PIQI Framework is structured into four distinct functional but interrelated components: 1) the taxonomy for categorizing dimensions 2) the patient-centric information model for organizing data elements, 3) simple assessment modules (SAMs) to measure quality, and 4) the evaluation criteria to organize and interpret the measures relative to an overarching use case. Together, these components provide a structured and adaptable approach to assess and enhance the quality of patient-oriented healthcare data, ultimately increasing the certainty and usability of this critical information.
 
 <span width="100%">
 <img src="PIQI_High_Level_Component_Diagram.png" alt="PIQI Framework High Level Component Diagram" height="70%" width="70%"/>
@@ -37,20 +37,12 @@ Being aligned to patient information specifically, rather than being a generic q
 
 The use of a standardized information model coupled with a standard taxonomy as a basis for the deployment of modular assessments should allow for portable evaluation libraries that should function the same regardless of the source of patient information. The evaluation libraries are portable assets that can be shared across institutions and deployed centrally in a transactional manner.
 
-### Additional Information
-
-TBD
-
-### Boundaries and Applicability of Framework
-
-TBD
-
 ### PIQI Community of Practice
 
 The PIQI Framework is designed to be implemented within a community of practice with encapsulated, portable, content driven components, the ability to share knowledge and evolve, which establishes great potential for rapid evolution and adoption. 
 #### PIQI Model Extensions
 The PIQI Framework starts with a simple model intended to support the assessment of core clinical patient data.  The simplicity of this model allows for extension through the addition of attributes and data classes.  Ideally these extensions would be adopted into the core PIQI model through a standard process.
 #### Shared Simple Assessment Modules
-While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codable concepts, elements, data classes and patient level data often require structured content in the form of value sets, tuples and other data patterns.  These packages of SAMs and related content can be openly shared or licensed in a community portal.  More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces. 
+While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codable concepts, elements, data classes, and patient level data often require structured content in the form of value sets, tuples, and other data patterns.  These packages of SAMs and related content can be openly shared or licensed in a community portal.  More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces. 
 #### Shared Evaluation Rubrics
 While the Evaluation Rubrics in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard Evaluation Rubrics is one of the most beneficial features of the PIQI Framework.  The ability to publish and share an evaluation Rubrics, along with its dependent SAMs and PIQI components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
