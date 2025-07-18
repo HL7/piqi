@@ -6,6 +6,24 @@ The PIQI Framework is designed to provide a standardized, community-based approa
 ### Core Data for Interoperability (CDI)
 The following are examples of national or international specifications that outline technical and/or policy requirements via "core data" requirements to support interoperability through defined classes and elements within the classes, often bound to specific terminology assets. PIQI components can be assembled to evaluate data quality for any of these specifications, regardless of varying data formats, defined classes, elements or terminology bindings required by the applicable jurisdiction. 
 
+#### [Australian CDI](https://sparked.csiro.au/wp-content/uploads/2024/06/Sparked-AUCDI-R1-V1.0-1.pdf)
+>The AUCDI is changing the approach to health data and is set to become a national asset focused on establishing an independent base of reusable, standardised information models and related artefacts. As clinical systems converge their internal data structures towards AUCDI, this common, consensus-based data founda on will reduce the need for data transformations and mappings, supporing safer and simpler interoperability.
+
+>The AUCDI is intentionally agnostic of: 
+- Any single clinical use case while being constructed as a foundation for many clinical use cases,
+- Any single clinical system vendor while being strongly informed by functionality and data available in current clinical systems, and
+- Any single technical implementation or exchange approach while providing the clinical data requirements for developing the FHIR AU Core specifications and subsequent Implementation on Guides (IG).
+
+[Australian CDI][^2]
+
+#### [Canadian CDI](https://www.cihi.ca/sites/default/files/document/canadian-core-data-interoperability-cacdi-v1-en.pdf)
+>The Canadian Core Data for Interoperability (CACDI) defines a standardized set of essential health data elements and value sets in the context of a common data architecture to support interoperability and data exchange across the Canadian health care ecosystem. The CACDI represents the minimum data required to support standardized information capture and enable meaningful exchange of health information. It aims to standardize the capture, structure and exchange of health data across the health continuum by providing a foundation of standardized data elements applicable to multiple health care settings. 
+
+>The CACDI is a subset of the Pan-Canadian Health Data Content Framework and works in tandem with CA Core+, the Fast Healthcare Interoperability Resources (FHIR) profiles created by Canada Health Infoway, to facilitate the meaningful exchange of health care information. Together, the Canadian Institute for Health Information’s and Canada Health Infoway’s efforts, including the development of national health data content and data exchange standards, will support the uninterrupted and accurate exchange of health information across Canada, aligning with Health Canada’s vision for a modern, integrated health care system" 
+[Canadian CDI][^1]
+
+Similar to it's applicability to the USCDI, the PIQI Framework can expand on the approach taken by the CACDI by enabling health systems and organizations to assess the quality of exchanged data—regardless of format. The PIQI Framework components are extensible by design, and can be adapted to address CACDI-specific elements and SAMs to define a CACDI evaluation rubric using applicable CACDI required terminology components.
+
 #### [United States CDI](https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi)
 The United States Core Data for Interoperability (USCDI) establishes the technical and policy foundation for nationwide interoperable health information exchange. It defines a baseline set of data elements for exchange across care settings and use cases. USCDI is stewarded and adopted by the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health Information Technology (ASTP/ONC) on behalf of the U.S. Department of Health and Human Services.
 
@@ -16,27 +34,6 @@ Certification Program testing tools verify a health IT developer’s ability to 
 To address data quality, the [HL7 C-CDA Rubric Criteria Standard](https://confluence.hl7.org/download/attachments/82903049/20200520%20Topic01%20USCDI-Rubric%20Rules%20%283%29.pdf?version=1&modificationDate=1590007727407&api=v2) was developed to evaluate structured data within C-CDA documents. The PIQI Framework expands on this approach, enabling health systems and organizations (e.g., Qualified Health Information Networks) to assess the quality of exchanged data—regardless of format. A USCDI-specific model within the PIQI Framework can identify and remediate data quality issues during exchange, improving patient care, reporting, clinical decision support, AI applications, and claims processing.
 
 Implementing the framework supports a continuous data quality lifecycle of assessment, remediation, monitoring, and improvement. The PIQI Framework also serves as the data quality component within the [Patient Demographic Data Quality Framework](https://www.healthit.gov/playbook/pddq-framework/introduction/).
-
-
-#### [Australian CDI](https://sparked.csiro.au/wp-content/uploads/2024/06/Sparked-AUCDI-R1-V1.0-1.pdf)
->The AUCDI is changing the approach to health data and is set to become a national asset focused on establishing an independent base of reusable, standardised information models and related artefacts. As clinical systems converge their internal data structures towards AUCDI, this common, consensus-based data founda on will reduce the need for data transformations and mappings, supporing safer and simpler interoperability.
-
->The AUCDI is intentionally agnostic of: 
-- Any single clinical use case while being constructed as a foundation for many clinical use cases,
-- Any single clinical system vendor while being strongly informed by functionality and data available in current clinical systems, and
-- Any single technical implementation or exchange approach while providing the clinical data requirements for developing the FHIR AU Core specifications and subsequent Implementation on Guides (IG).
-
-
-[Australian CDI][^2]
-
-
-#### [Canadian CDI](https://www.cihi.ca/sites/default/files/document/canadian-core-data-interoperability-cacdi-v1-en.pdf)
->The Canadian Core Data for Interoperability (CACDI) defines a standardized set of essential health data elements and value sets in the context of a common data architecture to support interoperability and data exchange across the Canadian health care ecosystem. The CACDI represents the minimum data required to support standardized information capture and enable meaningful exchange of health information. It aims to standardize the capture, structure and exchange of health data across the health continuum by providing a foundation of standardized data elements applicable to multiple health care settings. 
-
->The CACDI is a subset of the Pan-Canadian Health Data Content Framework and works in tandem with CA Core+, the Fast Healthcare Interoperability Resources (FHIR) profiles created by Canada Health Infoway, to facilitate the meaningful exchange of health care information. Together, the Canadian Institute for Health Information’s and Canada Health Infoway’s efforts, including the development of national health data content and data exchange standards, will support the uninterrupted and accurate exchange of health information across Canada, aligning with Health Canada’s vision for a modern, integrated health care system" 
-[Canadian CDI][^1]
-
-Similar to it's applicability to the USCDI, the PIQI Framework can expand on the approach taken by the CACDI by enabling health systems and organizations to assess the quality of exchanged data—regardless of format. The PIQI Framework components are extensible by design, and can be adapted to address CACDI-specific elements and SAMs to define a CACDI evaluation rubric using applicable CACDI required terminology components.
 
 #### International Patient Summary
 The International Patient Summary is a minimal and non-exhaustive set of basic clinical data of a patient, specialty-agnostic, condition-independent, but readily usable by all clinicians for cross-border patient care. This summarized version of the patient’s clinical data gives health professionals the essential information such as allergies, medications and problems needed to provide care in the case of an unexpected or unscheduled medical situation (e.g. emergency or accident). While this data is mainly intended to aid health professionals in providing unscheduled care, it can also be used to provide planned medical care (e.g. in the case of citizen movements or cross-organizational care paths).
