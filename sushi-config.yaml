@@ -45,7 +45,7 @@ pages:
 menu:
   Home:
     Introduction: index.html
-    Overview and Scope: index.html#informative-specification-overview-and-scope
+    Overview and Scope: index.html#informative-document-overview-and-scope
     Authors: index.html#authors
     
   PIQI Background:
