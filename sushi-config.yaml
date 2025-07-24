@@ -12,7 +12,7 @@ status: draft # draft | active | retired | unknown
 version: 1.0.0-ballot
 fhirVersion: 5.0.0
 copyrightYear: 2025+
-releaseLabel: ballot  # | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: Informative 1 - Ballot  # | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:

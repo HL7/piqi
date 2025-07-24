@@ -92,7 +92,7 @@
           "code": "releaselabel",
           "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
         },
-        "value": "ballot"
+        "value": "Informative 1 - Ballot"
       },
       {
         "code": {
