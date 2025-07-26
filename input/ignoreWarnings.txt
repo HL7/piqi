@@ -1,4 +1,4 @@
 == Suppressed Messages ==
 
-# Informational Messages
+# Codesystem is experimental but is used in the Implementation Guide resource
 %Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code%
