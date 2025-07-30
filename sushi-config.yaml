@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.xprod.uv.piqi
-canonical: http://hl7.org/xprod/ig/uv/piqi
+canonical: http://hl7.org/xprod/uv/piqi
 name: CrossParadigmPIQI
 title: "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1"
 description: "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1"

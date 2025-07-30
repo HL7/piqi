@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.xprod.uv.piqi",
   "version" : "1.0.0-ballot",
-  "path" : "http://hl7.org/xprod/ig/uv/piqi/2025Sep",
+  "path" : "http://hl7.org/xprod/uv/piqi/2025Sep",
   "mode" : "working",
   "status" : "ballot",
-  "sequence" : "Informative 1 - Ballot",
+  "sequence" : "Informative 1",
   "desc" : "September 2025 ballot release of the PIQI Framework",
   "first" : true, 
   "title" : "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1",

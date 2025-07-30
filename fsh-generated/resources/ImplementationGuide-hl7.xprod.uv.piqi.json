@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "hl7.xprod.uv.piqi",
-  "url": "http://hl7.org/xprod/ig/uv/piqi/ImplementationGuide/hl7.xprod.uv.piqi",
+  "url": "http://hl7.org/xprod/uv/piqi/ImplementationGuide/hl7.xprod.uv.piqi",
   "version": "1.0.0-ballot",
   "name": "CrossParadigmPIQI",
   "title": "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1",
@@ -113,7 +113,7 @@
           "code": "path-history",
           "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
         },
-        "value": "http://hl7.org/xprod/ig/uv/piqi/history.html"
+        "value": "http://hl7.org/xprod/uv/piqi/history.html"
       }
     ]
   }
