@@ -73,7 +73,7 @@ Data integration and interoperability are top priorities for healthcare payers, 
 
 Payers rely upon data obtained from diverse sources, each often acquired in unique formats (e.g., flat files, CSV, non-standard XML, JSON, EDI standards) using a variety of vocabularies (proprietary and terminology standards) which require significant transformation to aggregate, analyze and exchange these data.
 
-Payers receive data in a variety of healthcare exchange and terminology standards formats including HL7 FHIR, C-CDA’s and Version 2, EDI X12N, ICD, CPT and HCPCS, SNOMED CT, and LOINC. Payers use healthcare data submitted by providers to evaluate requests for prior authorization and to accurately adjudicate healthcare claims. In addition, these data are used to show that quality measures are being addressed as well as to ensure that appropriate Risk Adjustments are applied to their members.
+Payers receive data in a variety of healthcare exchange and terminology standard formats, including HL7® FHIR®, C-CDA documents and HL7® Version 2 messages, X12N EDI transactions, ICD codes, CPT® codes, HCPCS codes, SNOMED CT® codes, and LOINC® codes. Payers use healthcare data submitted by providers to evaluate requests for prior authorization and to accurately adjudicate healthcare claims. In addition, these data are used to show that quality measures are being addressed as well as to ensure that appropriate Risk Adjustments are applied to their members.
 
 The availability of consistent, accurate, and plausible data are paramount to correct outcomes for all of these use cases.
 The primary data quality issues that confront healthcare payers include:
