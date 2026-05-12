@@ -17,6 +17,13 @@ The main sections of this Informative Document include:
 *   [PIQI Framework](piqi_framework.html) - These pages define the structure of the PIQI Framework with examples.
 *   [Change Notes](changes.html) - This page documents the changes across the versions of the Terminology Change Set IG.
 
+Achieving higher data quality involves careful review and action throughout different stages of the health data lifecycle. However, the PIQI framework is primarily designed to objectively assess data quality at the point of data exchange—which is when data receivers first encounter the data. When PIQI-based assessments uncover data quality issues, organizations should work to address these problems by consulting comprehensive, end-to-end standards for health record data quality, such as the following:
+
+- [HL7/ISO 21089:2018 - Health Informatics - Trusted End-to-End Information Flows](https://www.iso.org/standard/66936.html)
+- [HL7/ISO 10781:2023 Electronic Health Record System Functional Model Release 1 (EHR-S FM)](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=528), Record Infrastructure (RI) Section
+- [HL7/ISO 16527:2023 Personal Health Record System Functional Model Release 2 (PHR-S FM)](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=88), Record Infrastructure (RI) Section
+- [HL7 FHIR R5 Record Lifecycle Event Implementation Guide (FHIR RLE IG - 2023)](http://hl7.org/fhir/uv/ehrs-rle/Informative1/)
+- [HL7/ASTM E2147-18 - Standards Specification for Audit and Disclosure Logs for Use in Health Information Systems](https://confluence.hl7.org/download/attachments/212760223/E2147-18%20copy.pdf?version=1&modificationDate=1736787249656&api=v2)
 
 ### Authors
 
