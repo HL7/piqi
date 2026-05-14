@@ -327,7 +327,7 @@ When considering a PIQI information model it is worth nothing that patient data 
 - **Patient**: A holistic entity that is comprised of all of the characteristics and elements.
 - **Data Class**: A collection of data elements with the same attributes representing domain specific items.
 - **Element**: A class specific entity that is comprised of a collection of data attributes.
-- **Element Attribute**: A single data characteristic that relates a domain specific element.
+- **Element Attribute**: A single data characteristic that relates to a domain specific element.
 
 <span width="100%">
 <img src="patient_assessment_application_hierarchy.png" alt="PIQI Patient Assessment Application Hierarchy" height="25%" width="25%" />
