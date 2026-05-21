@@ -9,7 +9,6 @@ Shifting the focus to standardized patient-centric information quality assessmen
 ### Informative Document Overview and Scope
 The HL7 Cross Project Group (CPG) sponsored PIQI project is two-phased. This Informative Document is the first phase, in which, the PIQI Framework, it's components and approach to data quality evaluation are described. As an Informative Document, no HL7 product specific resources are defined herein. The second phase will encompass a cross-paradigm implementation guide (CP IG), which defines how the PIQI Framework and approach can be utilized across formats, namely the HL7 V2, CCDA and FHIR, will be produced in the second phase. Therefore specifics about how PIQI Framework relates to each HL7 product family is out of scope for the Informative Document and will be addressed in the PIQI CP IG.
 
-
 The main sections of this Informative Document include:
 
 *   [PIQI Background](background.html) - These pages provide background on the PIQI Framework.
@@ -24,6 +23,8 @@ Achieving higher data quality involves careful review and action throughout diff
 - [HL7/ISO 16527:2023 Personal Health Record System Functional Model Release 2 (PHR-S FM)](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=88), Record Infrastructure (RI) Section
 - [HL7 FHIR R5 Record Lifecycle Event Implementation Guide (FHIR RLE IG - 2023)](http://hl7.org/fhir/uv/ehrs-rle/Informative1/)
 - [HL7/ASTM E2147-18 - Standards Specification for Audit and Disclosure Logs for Use in Health Information Systems](https://confluence.hl7.org/download/attachments/212760223/E2147-18%20copy.pdf?version=1&modificationDate=1736787249656&api=v2)
+
+It's important to note that PIQI is not intended to assess clinical judgement or accuracy of the processes of the data source. Rather, PIQI can ensure that the data being utilized in decision support has been evaluated based on metrics important for the use cases.
 
 ### Authors
 
