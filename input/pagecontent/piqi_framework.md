@@ -28,6 +28,16 @@ Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 
 A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
+Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the code**able** concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display, and code system identifier.
+
+**All of these Coding sub attributes should be populated in order for the concept being exchanged to be validated.**
+
+The **code is needed** to provide a unique stable identifier for the concept in a given code system.
+
+The **code system identifier is needed** to confirm that the code is valid in that code system and, if necessary, determine the status of that code.
+
+The **display is needed** so that a human can verify that the code provided does, in fact, semantically match the concept in the identified code system. It is also necessary if the concept provided is being mapped/normalized to a standard or local terminology.
+
 <style>
 table, td{
   border: 1px solid black;
@@ -246,15 +256,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 
 ### Code System Identifiers in PIQI
 
-Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the code**able** concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display, and code system identifier.
 
-**All of these sub attributes must be populated in order for the concept being exchanged to be valid.**
-
-The **code is required** to provide a unique stable identifier for the concept in a given code system.
-
-The **code system identifier is required** to confirm that the code is valid in that code system and, if necessary, determine the status of that code.
-
-The **display is required** so that a human can verify that the code provided does, in fact, semantically match the concept in the identified code system. It is also necessary if the concept provided is being mapped/normalized to a standard or local terminology.
 
 One of the issues with validating codeable concepts is that often different string values are used to identify the code system for a given code. For example, when sending a LOINC code it is possible to see the following code system identifiers:
 
