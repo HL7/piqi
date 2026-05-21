@@ -28,6 +28,20 @@ Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 
 A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
+<style>
+table, td{
+  border: 1px solid black;
+}
+th{
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+tr {
+  background-color: #DCDCDC;
+}
+</style>
+
 **Codeable Concept sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
