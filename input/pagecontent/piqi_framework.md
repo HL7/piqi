@@ -4,11 +4,11 @@ Please refer to the appropriate **PIQI Message Format Guide** for specific PIQI 
 
 ### PIQI Message Philosophy
 
-It is important to remember that the goal of the PIQI Framework is to assess and assign a **score to a single message in flight**, not a collection of messages. Each message being evaluated should be a single episode based on the use case, be that a clinical summary, lab report, claim or other patient centric message. This allows the following:
+It is important to remember that the goal of the PIQI Framework is to assess the contents of **a single structured data payload and provide a score based solely on the contents of that payload**. Each rubric assessing a payload is designed in the context of a particular use case. This allows the following:
 
-1. The assessment of the quality of that single message.
-2. The collection of statistics with aggregate values (Averages, Medians) and other ‘per message’ statistics.
-3. Allows patient level plausibility assessments that assess a single episode.
+1) The assessment of the quality of that single payload.
+2) The collection of statistics with aggregate values (Averages, Medians) and other ‘per payload’ statistics.
+3) Allows payload level plausibility assessments.
 
 ### PIQI Attribute Types
 
