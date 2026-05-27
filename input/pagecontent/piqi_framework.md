@@ -228,7 +228,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | referenceRange | Range Value | Test reference range |
 | specimenType | Codeable Concept | Type of specimen used by the specific test |
 | resultStatus | Codeable Concept | Status of the result: Incomplete, pending, final, etc |
-| performedSite | Codeable Concept | Unique identifier for the performing site |
+| performedSite | Simple Attribute | Unique identifier for the performing site |
 | performedDateTime | Simple Attribute | Date and time the test was performed |
 | orderDate | Simple Attribute | Date the order was requested |
 
