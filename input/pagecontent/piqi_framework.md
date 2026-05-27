@@ -460,7 +460,7 @@ Example: Attribute is Present
 | --- | --- |
 | SAM Name | Attribute is Present |
 | Entity Type | Simple Attribute |
-| Assessment Logic | If (Attribute.Value==””) { SAM.Result=”FAIL”} (Psuedocode) |
+| Assessment Logic | If (Attribute.Value==””) { SAM.Result=”FAIL”} (Pseudocode) |
 | PIQI Dimension | Availability.Unpopulated \[AV.UNPOP\] |
 | Required Params | N/A |
 
