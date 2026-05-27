@@ -418,7 +418,7 @@ This category contains dimensions that relate to coded information or referentia
 | --- | --- | --- |
 | Invalid Member | Attribute | This applies to coded entity complex attributes when the code provided is not a member of the code system provided. |
 | Incompatible | Attribute | This applies to coded entity complex attributes when the code system provided is not an agreed upon code system per the terms of the criteria. |
-| Obsolete | Element<br><br>Attribute | This applies to coded entity complex attributes when the concept provided is no longer active in the code system provided. |
+| Obsolete | Element<br><br>Attribute | This applies to coded entity complex attributes when the concept provided was no longer active in the code system provided at the time of event described in the transaction. |
 
 #### Plausibility Category
 
