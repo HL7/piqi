@@ -12,7 +12,7 @@ It is important to remember that the goal of the PIQI Framework is to assess and
 
 ### PIQI Attribute Types
 
-PIQI Elements are comprised of four attribute types: Simple Attribute, Codeable Concept, Observation Value, and Ranged Value.
+PIQI Elements are comprised of four attribute types: Simple, Codeable Concept, Observation Value, and Ranged Value.
 
 #### Simple Attribute Type
 
@@ -28,7 +28,7 @@ Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 
 A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
-Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the code**able** concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display, and code system identifier.
+Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the codeable concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display, and code system identifier.
 
 **All of these Coding sub attributes should be populated in order for the concept being exchanged to be validated.**
 
@@ -146,7 +146,7 @@ The PIQI Framework depends on a patient-oriented, flat-element collection inform
 
 ### PIQI Clinical Data Model
 
-The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and to simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patients care process, initially the model is purposefully limited to patient demographics, social, and clinical information.
+The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and to simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patient's care process, initially the model is purposefully limited to patient demographics, social, and clinical information.
 
 #### PIQI Clinical Data Model Classes
 
@@ -252,7 +252,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | doseQuantityUnit | Simple Attribute | The dose quantity units |
 | instructions | Simple Attribute | The medication instruction text |
 | adherence | Codeable Concept | The patient’s adherence to the medication |
-| indication | Codeable Concept | The condition the is being treated by the medication |
+| indication | Codeable Concept | The condition that is being treated by the medication |
 | fillStatus | Codeable Concept | Fill status of the medication |
 
 | **Procedure** |
@@ -406,7 +406,7 @@ Dimensions:
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
-| Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format is freetext, date, time, timestamp, integer, decimal, single alphanumeric character, etc. The specific logic used to assess format should be included in the corresponding SAM definition.|
+| Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, single alphanumeric character, etc. The specific logic used to assess format should be included in the corresponding SAM definition.|
 | Invalid Value | Attribute | This applies to an Attribute that has a value but the value does not conform to the expected set of values for the attribute. This can apply to numeric values, enumerated values that are inappropriate. |
 | Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes are invalid. |
 
@@ -422,11 +422,11 @@ This category contains dimensions that relate to coded information or referentia
 
 #### Plausibility Category
 
-This category contains dimensions that relate to whether the data makes sense based some context.
+This category contains dimensions that relate to whether the data makes sense based on some context.
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
-| Temporally Implausible | Element<br><br>Attribute | Temporally implausible conditions are identified when an attribute or element is uncertain due to when it occurs in the context of the patients timeline. _An example of this would be a future birth date or a end time that precedes a start time._ |
+| Temporally Implausible | Element<br><br>Attribute | Temporally implausible conditions are identified when an attribute or element is uncertain due to when it occurs in the context of the patient's timeline. _An example of this would be a future birth date or an end time that precedes a start time._ |
 | Clinically Implausible | Element<br><br>Attribute | Clinically Implausible conditions are identified when an attribute or element is uncertain due to clinical considerations. _An example of this would be a lab result value that is outside a reasonable range of values for a given lab test._ |
 | Situationally Implausible | Element | Situationally Implausible conditions are identified when an attribute or element is uncertain due other conflicting elements or attributes. _An example of this would be a high range value that is lower then a low range value._ |
 
