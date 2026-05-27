@@ -235,9 +235,9 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | **MedicalDevice** |
 | --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
-| deviceType | Codeable Concept | Type of implantable device |
+| deviceType | Codeable Concept | Type of medical device |
 | deviceID | Codeable Concept | FDA Unique device identifier |
-| implantationDate | Simple Attribute | Date the device was implanted |
+| implantationDate | Simple Attribute | Date the device was implanted if applicable |
 | deviceStatus | Codeable Concept | Status of the medical device |
 
 | **Medication** |
