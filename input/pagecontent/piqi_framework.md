@@ -491,7 +491,7 @@ An evaluation rubric is always based on a given PIQI model and version.  A evalu
 
 An evaluation rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that profile. Evaluation rubrics can be established as a standard or custom scoring rubric.
 
-An given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the patient, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
+A given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the patient, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
 
 Example: Graphical Depiction of an Evaluation profile for a data class
 
