@@ -40,7 +40,7 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 #### Simple Assessment Modules
 
-Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘could not assess’ result.
+Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard.
 
 ### Anatomy of a Simple Assessment Module (SAM)
 
