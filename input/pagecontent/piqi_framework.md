@@ -272,7 +272,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | interpretation | Codeable Concept | Interpretation of vital sign |
 | referenceRange | Range Value | Reference range for vital sign |
 | resultStatus | Codeable Concept | Vital sign result status |
-| performedSite | Codeable Concept | Unique identifier for performing site |
+| performedSite | Simple Attribute | Unique identifier for performing site |
 | performedDateTime | Simple Attribute | Date and time vital sign was collected |
 
 ### Code System Identifiers in PIQI
