@@ -152,7 +152,6 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 
 | **Data Class** | **Cardinality to Patient Container** |
 | --- | --- |
-| Patient | One |
 | Allergy | Zero to Many |
 | Condition | Zero to Many |
 | Demographics | One |
