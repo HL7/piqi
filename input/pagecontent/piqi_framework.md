@@ -166,22 +166,29 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 
 #### PIQI Data Class Attributes
 
-| **Allergy** |     |     |     |     |
-| --- |     |     |     |     | --- | --- |
+| **Allergy**|
+| --- |     |     |
 | **AttributeName** | **Type** | **Description** |
 | substance | Codeable Concept | Allergen or substance that trigger an intolerance |
 | category | Codeable Concept | Category of substance: medication, food, chemical, etc |
 | reaction | Codeable Concept | Condition triggered by the intolerance or allergy |
 | effectiveDate | Simple Attribute | Date of allergy onset or documentation |
 | severity | Codeable Concept | Severity of the reaction |
-| **Condition** |     |     |     |     |
+| allergyStatus | Codeable Concept | Status of condition: active, confirmed, refuted, etc |
+
+
+| **Condition** |
+| --- |     |     |
 | **AttributeName** | **Type** | **Description** |
 | condition | Codeable Concept | Problem, Diagnosis or other medical condition |
 | conditionStatus | Codeable Concept | Status of condition: active, confirmed, refuted, etc |
 | conditionType | Codeable Concept | Type of condition/diagnosis: complaint, discharge, etc |
 | onsetDate | Simple Attribute | Onset or effective date |
 | resolutionDate | Simple Attribute | Date condition resolved |
-| **Demographics** |     |     |     |     |
+
+
+| **Demographics** |
+| --- |     |     |
 | **AttributeName** | **Type** | **Description** |
 | birthDate | Simple Attribute | Patient date of birth |
 | birthSex | Codeable Concept | Patient sex at birth |
@@ -192,20 +199,26 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | primaryLanguage | Codeable Concept | Patient primary language |
 | maritalStatus | Codeable Concept | Patient marital status |
 | raceCategory | Codeable Concept | Patient race category |
-| **HealthAssessment** |     |     |     |     |
-| **Attribute Name** | **Type** | **Description** |     |
-| assessment | Codeable Concept | Specific health assessment |     |
-| resultValue | Observation Value | Health assessment result |     |
-| resultUnit | Codeable Concept | Health assessment result unit, if applicable |     |
-| performedDateTime | Simple Attribute | Date and time when assessment was performed |     |
-| **Immunization** |     |     |     |     |
-| **Attribute Name** | **Type** | **Description** |     |
-| immunization | Codeable Concept | Immunization or vaccine product |     |
-| lotNumber | Simple Attribute | Lot number for immunization product |     |
-| administrationDate | Simple Attribute |  Date immunization was administered |     |
-| expirationDate | Simple Attribute | Expiration date for immunization product |     |
-| reaction | Codeable Concept | Patient reaction to immunization, if applicable |     |
-| **LabResult** |     |     |     |     |
+
+| **HealthAssessment** |
+| --- |     |     |
+| **Attribute Name** | **Type** | **Description** |
+| assessment | Codeable Concept | Specific health assessment |
+| resultValue | Observation Value | Health assessment result |
+| resultUnit | Codeable Concept | Health assessment result unit, if applicable |
+| performedDateTime | Simple Attribute | Date and time when assessment was performed |
+
+| **Immunization** |
+| --- |     |     |
+| **Attribute Name** | **Type** | **Description** |
+| immunization | Codeable Concept | Immunization or vaccine product |
+| lotNumber | Simple Attribute | Lot number for immunization product |
+| administrationDate | Simple Attribute |  Date immunization was administered |
+| expirationDate | Simple Attribute | Expiration date for immunization product |
+| reaction | Codeable Concept | Patient reaction to immunization, if applicable |
+
+| **LabResult** |
+| --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
 | test | Codeable Concept | Specific lab test performed |
 | order | Codeable Concept | Order or panel that initiated the test being performed |
@@ -218,13 +231,17 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | performedSite | Codeable Concept | Unique identifier for the performing site |
 | performedDateTime | Simple Attribute | Date and time the test was performed |
 | orderDate | Simple Attribute | Date the order was requested |
-| **MedicalDevice** |     |     |     |     |
+
+| **MedicalDevice** |
+| --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
 | deviceType | Codeable Concept | Type of implantable device |
 | deviceID | Codeable Concept | FDA Unique device identifier |
 | implantationDate | Simple Attribute | Date the device was implanted |
 | deviceStatus | Codeable Concept | Status of the medical device |
-| **Medication** |     |     |     |     |
+
+| **Medication** |
+| --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
 | medication | Codeable Concept | Medication product (drug) |
 | startDate | Simple Attribute | Date the patient started the medication |
@@ -238,12 +255,16 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | adherence | Codeable Concept | The patient’s adherence to the medication |
 | indication | Codeable Concept | The condition the is being treated by the medication |
 | fillStatus | Codeable Concept | Fill status of the medication |
-| **Procedure** |     |     |     |     |
+
+| **Procedure** |
+| --- |     |     |
 | **AttributeName** | **Type** | **Description** |
 | procedure | Codeable Concept | The procedure that was performed on the patient |
 | procedureDateTime | Simple Attribute | The date and time the procedure was performed |
 | procedureReason | Codeable Concept | The condition that prompted the procedure |
-| **VitalSign** |     |     |     |     |
+
+| **VitalSign** |
+| --- |     |     |
 | **AttributeName** | **Type** | **Description** |
 | vitalSign | Codeable Concept | Vital sign assessment/test |
 | resultValue | Observation Value | Vital sign result |
