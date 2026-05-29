@@ -16,7 +16,7 @@ PIQI Elements are comprised of four attribute types: Simple, Codeable Concept, O
 
 #### Simple Attribute Type
 
-A Simple Attribute is a string value in the JSON attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers, and dates.
+A Simple Attribute is a string value in the JSON attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers, dates, and date ranges.
 
 Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 ```json
@@ -171,7 +171,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | substance | Codeable Concept | Allergen or substance that trigger an intolerance |
 | category | Codeable Concept | Category of substance: medication, food, chemical, etc |
 | reaction | Codeable Concept | Condition triggered by the intolerance or allergy |
-| effectiveDate | Simple Attribute | Date of allergy onset or documentation |
+| effectiveDate | Simple Attribute | Date of allergy onset or documentation. Note: this could be a date or date range |
 | severity | Codeable Concept | Severity of the reaction |
 | allergyStatus | Codeable Concept | Status of condition: active, confirmed, refuted, etc |
 
@@ -259,7 +259,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | --- |     |     |
 | **AttributeName** | **Type** | **Description** |
 | procedure | Codeable Concept | The procedure that was performed on the patient |
-| procedureDateTime | Simple Attribute | The date and time the procedure was performed |
+| procedureDateTime | Simple Attribute | The date and time the procedure was performed. Note: this could be a date or date range  |
 | procedureReason | Codeable Concept | The condition that prompted the procedure |
 
 | **VitalSign** |
