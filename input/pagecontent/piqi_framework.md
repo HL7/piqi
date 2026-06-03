@@ -120,7 +120,7 @@ An Observation Value attribute is a structure that can be represented as a simpl
 
 #### Range Value Attribute Type
 
-A Range Value attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range.
+A Range Value attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range. The Range Value Attribute Type can only be used with numeric ranges and cannot be used for a date range.
 
 **Range Value sub-attributes**
 
