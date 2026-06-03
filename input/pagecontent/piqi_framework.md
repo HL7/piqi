@@ -387,7 +387,7 @@ When considering a PIQI information model it is worth nothing that patient data 
 <br/>
 
 
-**Reminder**: It is important to restate that PIQI is intended to review a patient message payload representing a single current summary or episode, not a patient’s entire medical history. Large historical patient messages will impact the performance of the assessments, especially assessments at the patient level.
+**Reminder**: It is important to restate that PIQI is intended to assess the quality of data payloads in real time, determining their suitability for use by the intended recipient, and not intended to evaluate data within records at rest.
 
 ### PIQI Healthcare Data Quality Taxonomy Version 1.0
 
