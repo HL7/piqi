@@ -173,7 +173,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | reaction | Codeable Concept | Condition triggered by the intolerance or allergy |
 | effectiveDate | Simple Attribute | Date of allergy onset or documentation. Note: this could be a date or date range |
 | severity | Codeable Concept | Severity of the reaction |
-| allergyStatus | Codeable Concept | Status of condition: active, confirmed, refuted, etc |
+| allergyStatus | Codeable Concept | Status of allergy: active, confirmed, refuted, etc |
 
 
 | **Condition** |
@@ -215,6 +215,8 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | administrationDate | Simple Attribute |  Date immunization was administered |
 | expirationDate | Simple Attribute | Expiration date for immunization product |
 | reaction | Codeable Concept | Patient reaction to immunization, if applicable |
+| immunizationStatus | Codeable Concept | Status of immunization: completed, entered-in-error, not-done, etc |
+
 
 | **LabResult** |
 | --- |     |     |
@@ -254,6 +256,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | adherence | Codeable Concept | The patient’s adherence to the medication |
 | indication | Codeable Concept | The condition that is being treated by the medication |
 | fillStatus | Codeable Concept | Fill status of the medication |
+| medicationStatus | Codeable Concept | Status of medication: active, stopped, entered-in-error, etc |
 
 | **Procedure** |
 | --- |     |     |
@@ -261,6 +264,8 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | procedure | Codeable Concept | The procedure that was performed on the patient |
 | procedureDateTime | Simple Attribute | The date and time the procedure was performed. Note: this could be a date or date range  |
 | procedureReason | Codeable Concept | The condition that prompted the procedure |
+| procedureStatus | Codeable Concept | Status of procedure: preparation, in-progress, completed, entered-in-error, etc |
+
 
 | **VitalSign** |
 | --- |     |     |
