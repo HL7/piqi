@@ -174,6 +174,8 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | effectiveDate | Simple Attribute | Date of allergy onset or documentation. Note: this could be a date or date range |
 | severity | Codeable Concept | Severity of the reaction |
 | allergyStatus | Codeable Concept | Status of allergy: active, confirmed, refuted, etc |
+| provenance | Simple Attribute | Source of this information |
+
 
 
 | **Condition** |
@@ -184,6 +186,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | conditionType | Codeable Concept | Type of condition/diagnosis: complaint, discharge, etc |
 | onsetDate | Simple Attribute | Onset or effective date |
 | resolutionDate | Simple Attribute | Date condition resolved |
+| provenance | Simple Attribute | Source of this information |
 
 
 | **Demographics** |
@@ -198,6 +201,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | primaryLanguage | Codeable Concept | Patient primary language |
 | maritalStatus | Codeable Concept | Patient marital status |
 | raceCategory | Codeable Concept | Patient race category |
+| provenance | Simple Attribute | Source of this information |
 
 | **HealthAssessment** |
 | --- |     |     |
@@ -206,6 +210,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | resultValue | Observation Value | Health assessment result |
 | resultUnit | Codeable Concept | Health assessment result unit, if applicable |
 | performedDateTime | Simple Attribute | Date and time when assessment was performed |
+| provenance | Simple Attribute | Source of this information |
 
 | **Immunization** |
 | --- |     |     |
@@ -216,6 +221,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | expirationDate | Simple Attribute | Expiration date for immunization product |
 | reaction | Codeable Concept | Patient reaction to immunization, if applicable |
 | immunizationStatus | Codeable Concept | Status of immunization: completed, entered-in-error, not-done, etc |
+| provenance | Simple Attribute | Source of this information |
 
 
 | **LabResult** |
@@ -232,6 +238,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | performedSite | Simple Attribute | Unique identifier for the performing site |
 | performedDateTime | Simple Attribute | Date and time the test was performed |
 | orderDate | Simple Attribute | Date the order was requested |
+| provenance | Simple Attribute | Source of this information |
 
 | **MedicalDevice** |
 | --- |     |     |
@@ -240,6 +247,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | deviceID | Codeable Concept | FDA Unique device identifier |
 | implantationDate | Simple Attribute | Date the device was implanted if applicable |
 | deviceStatus | Codeable Concept | Status of the medical device |
+| provenance | Simple Attribute | Source of this information |
 
 | **Medication** |
 | --- |     |     |
@@ -257,6 +265,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | indication | Codeable Concept | The condition that is being treated by the medication |
 | fillStatus | Codeable Concept | Fill status of the medication |
 | medicationStatus | Codeable Concept | Status of medication: active, stopped, entered-in-error, etc |
+| provenance | Simple Attribute | Source of this information |
 
 | **Procedure** |
 | --- |     |     |
@@ -265,6 +274,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | procedureDateTime | Simple Attribute | The date and time the procedure was performed. Note: this could be a date or date range  |
 | procedureReason | Codeable Concept | The condition that prompted the procedure |
 | procedureStatus | Codeable Concept | Status of procedure: preparation, in-progress, completed, entered-in-error, etc |
+| provenance | Simple Attribute | Source of this information |
 
 
 | **VitalSign** |
@@ -278,6 +288,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | resultStatus | Codeable Concept | Vital sign result status |
 | performedSite | Simple Attribute | Unique identifier for performing site |
 | performedDateTime | Simple Attribute | Date and time vital sign was collected |
+| provenance | Simple Attribute | Source of this information |
 
 ### Code System Identifiers in PIQI
 
