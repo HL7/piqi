@@ -298,7 +298,7 @@ One of the issues with validating codeable concepts is that often different stri
 
 LOINC, LNC, LN Code System Simple string identifiers
 
-CodeSystem OID: 1.3.6.1.4.1.12009 
+CodeSystem OID: 2.16.840.1.113883.6.1 
 
 CodeSystem URL <http://loinc.org>
 
@@ -313,9 +313,9 @@ For example, for LOINC this mechanism would establish the ‘LOINC’ mnemonic i
 | Code System Identifiers | LOINC |
 |     | LNC |
 |     | LN  |
-|     | 1.3.6.1.4.1.12009 |
+|     | 2.16.840.1.113883.6.1 |
 |     | <http://loinc.org> |
-| Validation Code System | 1.3.6.1.4.1.12009 |
+| Validation Code System | 2.16.840.1.113883.6.1 |
 
 This is another example of how PIQI is designed specifically for patient information. This function will allow, for example, an evaluation profile that is checking for conformance to just pass ‘LOINC’ to the SAM that validated conformity and have it pass if any of the Code System Identifier aliases are used. It also allows a validation SAM to automatically validate a concept that is received using one of the code systems aliases. If at some point in the future another valid code system identifier is defined for a given code system, it can easily be added to this mechanism and automatically reflected in all configured evaluation profiles.
 
