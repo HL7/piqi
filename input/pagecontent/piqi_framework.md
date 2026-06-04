@@ -1,6 +1,6 @@
 ### High Level Component Diagram
 
-Please refer to the appropriate **PIQI Message Format Guide** for specific PIQI model format implementation details.
+Please refer to the appropriate [**PIQI Message Format Guide**](https://piqiframework.org/wp-content/uploads/2025/05/PIQI-Framework-Message-Format-Implementation-Guide-Patient-Clinical-Data-Model-v1.1-05MAY2025.pdf) for specific PIQI model format implementation details.
 
 ### PIQI Message Philosophy
 
