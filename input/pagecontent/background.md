@@ -17,7 +17,7 @@ This component of the framework focuses on the patient data elements and charact
 
 #### Simple Assessment Module (SAM)
 
-A [simple assessment module (SAM)](sams.html) is a logical measurement aligned to a qualitative dimension applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections of SAMs to collectively paint a larger qualitative picture as defined by a given use case.
+A [simple assessment module (SAM)](sams.html) is a logical measurement aligned to a qualitative dimension of quality applied to a model element or characteristic according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ (or 0/1). These modules are intended to be organized into one or many hierarchical collections of SAMs to collectively paint a larger qualitative picture as defined by a given use case.
 
 #### Evaluation Criteria
 
@@ -27,7 +27,7 @@ The [Evaluation Criteria](evaluation.html) component represents a use case orien
 
 #### Standardized
 
-A healthcare specific taxonomy or qualitative dimension applied to a patient-centric information model can establish a common way of expressing and understanding the scope and nature of quality concerns that currently inhibit interoperability partners’ ability to trust patient information, regardless of whether it is local or received from an external entity.
+A healthcare specific taxonomy or dimension of quality applied to a patient-centric information model can establish a common way of expressing and understanding the scope and nature of quality concerns that currently inhibit interoperability partners’ ability to trust patient information, regardless of whether it is local or received from an external entity.
 
 #### Relevant
 
