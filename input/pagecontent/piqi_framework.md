@@ -229,15 +229,15 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | **LabResult** |
 | --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
-| test | Codeable Concept | Specific lab test performed |
-| order | Codeable Concept | Order or panel that initiated the test being performed |
+| performed test | Codeable Concept | Specific lab test performed |
+| ordered test | Codeable Concept | Order or panel that initiated the test being performed |
 | resultValue | Observation Value | Test result value |
 | resultUnit | Codeable Concept | Test result unit, if applicable |
 | interpretation | Codeable Concept | Test result interpretation |
 | referenceRange | Range Value | Test reference range |
 | specimenType | Codeable Concept | Type of specimen used by the specific test |
 | resultStatus | Codeable Concept | Status of the result: Incomplete, pending, final, etc |
-| performedSite | Simple Attribute | Unique identifier for the performing site |
+| performingSite | Simple Attribute | Unique identifier for the performing site |
 | performedDateTime | Simple Attribute | Date and time the test was performed |
 | orderDate | Simple Attribute | Date the order was requested |
 | provenance | Simple Attribute | Source of this information |
