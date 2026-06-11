@@ -425,7 +425,7 @@ Dimensions:
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
 | Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, single alphanumeric character, etc. The specific logic used to assess format should be included in the corresponding SAM definition.|
-| Invalid Value | Attribute | This applies to an Attribute that has a value but the value does not conform to the expected set of values for the attribute. This can apply to numeric values, enumerated values that are inappropriate. |
+| Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations  for the attribute. For example, it would be appropriate to include in this dimension the logical assessments of text strings expected to conform to a specific set of values (e.g., UCUM units when they are not conveyed in a fully coded format where the Invalid Member dimension would be a more appropriate choice), or business rules related to date values (e.g., Date of Birth with a future date). Note that a value may be an invalid value despite the values having an appropriate format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields.|
 | Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes are invalid. |
 
 #### Conformity Category
