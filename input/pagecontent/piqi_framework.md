@@ -430,13 +430,13 @@ Dimensions:
 
 #### Conformity Category
 
-This category contains dimensions that relate to coded information or referential validity of the data.
+This category contains dimensions that relate to the integrity of coded information, for example verifying that specific code is a member of a CodeSystem or Valueset.
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
-| Invalid Member | Attribute | This applies to coded entity complex attributes when the code provided is not a member of the code system provided. |
-| Incompatible | Attribute | This applies to coded entity complex attributes when the code system provided is not an agreed upon code system per the terms of the criteria. |
-| Obsolete | Element<br><br>Attribute | This applies to coded entity complex attributes when the concept provided was no longer active in the code system provided at the time of event described in the transaction. |
+| Invalid Member | Attribute | This applies to coded entity complex attributes when the code provided is not a member of the CodeSystem/ValueSet provided. |
+| Incompatible | Attribute | This applies to coded entity complex attributes when the code system provided is not an agreed upon CodeSystem/ValueSet per the terms of the criteria. |
+| Obsolete | Element<br><br>Attribute | This applies to coded entity complex attributes when the concept provided is no longer active in the CodeSystem/ValueSet provided. |
 
 #### Plausibility Category
 
