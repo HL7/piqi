@@ -40,8 +40,8 @@ The use of a standardized information model coupled with a standard taxonomy as 
 ### PIQI Community of Practice
 
 The **PIQI Framework** is designed to be implemented by a **collaborative user community (a "community of practice")**, a network of stakeholders such as public health agencies, providers, EHR vendors, and analysts who share a common interest in improving patient data quality. Within this community, participants use encapsulated, portable, content-driven components; share knowledge and lessons learned; and evolve practices together. This collaborative approach creates strong potential for rapid refinement, broader adoption, and sustained improvement of the framework.
-#### PIQI Model Extensions
-The PIQI Framework starts with a simple model intended to support the assessment of core clinical patient data.  The simplicity of this model allows for extension through the addition of attributes and data classes.  Ideally these extensions would be adopted into the core PIQI model through a standard process.
+#### Localized PIQI Models
+The PIQI Framework is designed to use simple models. Those models can be localized through the addition of data classes and attributes important to use cases.
 #### Shared Simple Assessment Modules
 Many foundational, attribute-level SAMs are algorithmic, but SAMs that apply to codable concepts, elements, data classes, and patient-level data often require more structured content. This may take the form of value sets, tuples (ordered sets of related values treated as a single unit, such as patient identifier, date, and result value), or other data patterns. Packages of SAMs and their related content can be openly shared or licensed through a community portal. More advanced algorithmic SAMs, potentially powered by generative AI, could also be hosted as RESTful services via wrapper SAM interfaces.
 #### Shared Evaluation Rubrics
