@@ -14,7 +14,7 @@ The **Evaluation** and **Condition** are both configured **Simple Assessment Mod
 
 If the **Condition** is configured, the **Evaluation** is only processed if the conditional SAM passes.
 
-Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (could not assess) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
+Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (skip) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
 
 ![Relationship of SAMs to Evaluation Rubrics and Conditions](SAM_Diagram.jpg)
 <br/>

@@ -13,11 +13,11 @@ The **Evaluation** and **Condition** are both configured **Simple Assessment Mod
 
 If the **Condition** is configured, the **Evaluation** is only processed if the conditional SAM passes.
 
-Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (could not assess) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
+Each Evaluation that is processed triggers the **Scoring Effect** based upon the pass or fail result of the underlying SAM. If the SAM returns an indeterminant result (skip) the Evaluation is skipped. This implies a condition within the implementation of the SAM itself was not met.
 
 ### Simple Assessment Modules
 
-Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple ‘pass’, ‘fail’ or ‘could not assess’ result. For detailed information see [SAMS](sams.html)
+Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
 
 ### Evaluation Rubrics
 
@@ -25,7 +25,7 @@ Evaluation rubrics represent a collection of sequences SAM evaluations of specif
 
 ### Anatomy of an Evaluation Rubric
 
-An Evaluation Rubric is comprised of the following component:
+An Evaluation Rubric is comprised of the following components:
 
 #### Evaluation Rubric Mnemonic
 
