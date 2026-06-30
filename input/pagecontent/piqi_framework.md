@@ -610,7 +610,7 @@ Software Components
 
 ### PIQI Alliance as a Community of Practice
 
-The PIQI Framework is designed to be implemented within a community of practice. With encapsulated, portable, content driven components, the ability to share knowledge, and evolve establishes great potential for rapid evolution and adoption.
+The PIQI Framework is designed to be implemented within a community of practice. Encapsulated, portable, data-driven components, and the ability to share knowledge establishes great potential for rapid evolution and adoption.
 
 ### PIQI Model Extensions
 
