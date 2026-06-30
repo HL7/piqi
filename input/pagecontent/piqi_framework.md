@@ -304,7 +304,7 @@ CodeSystem OID: 2.16.840.1.113883.6.1
 
 CodeSystem URL <http://loinc.org>
 
-To support code system identifier variants in PIQI there is a mechanism that allows for a code system mnemonic to be used in the configuration of an evaluation profile to represent any valid code system identifier and identify the code system identifier that is required to validate that code in the implementation's terminology server.
+To support code system identifier variants in PIQI there is a mechanism that allows for a code system mnemonic to be used in the configuration of an Evaluation Rubric to represent any valid code system identifier and identify the code system identifier that is required to validate that code in the implementation's terminology server.
 
 For example, for LOINC this mechanism would establish the ‘LOINC’ mnemonic in the following manner:
 
@@ -319,7 +319,7 @@ For example, for LOINC this mechanism would establish the ‘LOINC’ mnemonic i
 |     | <http://loinc.org> |
 | Validation Code System | 2.16.840.1.113883.6.1 |
 
-This is another example of how PIQI is designed specifically for patient information. This function will allow, for example, an evaluation profile that is checking for conformance to just pass ‘LOINC’ to the SAM that validated conformity and have it pass if any of the Code System Identifier aliases are used. It also allows a validation SAM to automatically validate a concept that is received using one of the code systems aliases. If at some point in the future another valid code system identifier is defined for a given code system, it can easily be added to this mechanism and automatically reflected in all configured evaluation profiles.
+This is another example of how PIQI is designed specifically for patient information. This function will allow, for example, an Evaluation Rubric that is checking for conformance to just pass ‘LOINC’ to the SAM that validated conformity and have it pass if any of the Code System Identifier aliases are used. It also allows a validation SAM to automatically validate a concept that is received using one of the code systems aliases. If at some point in the future another valid code system identifier is defined for a given code system, it can easily be added to this mechanism and automatically reflected in all configured Evaluation Rubrics.
 
 #### Code System JSON structure
 
@@ -511,10 +511,10 @@ An evaluation rubric is the alignment of patient data entities to SAMs as a list
 
 A given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the patient, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
 
-Example: Graphical Depiction of an Evaluation profile for a data class
+Example: Graphical Depiction of an Evaluation Rubric for a data class
 
 <span width="100%">
-<img src="evaluation_profile.png" alt="Graphical Depiction of an Evaluation profile for a data class" height="70%" width="70%"/>
+<img src="evaluation_profile.png" alt="Graphical Depiction of an Evaluation Rubric for a data class" height="70%" width="70%"/>
 </span>
 
 #### Evaluation Rubric Assessments
@@ -531,7 +531,7 @@ The core of an Evaluation Criteria is the sequenced collection of entity assessm
 | Effect | The effect of assessment failure on the qualitative status of the entity being assessed (Scoring, Informational). |
 | Condition | The precondition that must be met to include the assessment. |
 | Weight | The weight that is applied to the weighted score value numerator and denominator. |
-| Criticality | A true/false indicator as to whether the assessment is considered critical in the evaluation profile. |
+| Criticality | A true/false indicator as to whether the assessment is considered critical in the Evaluation Rubric. |
 
 #### Scoring Effect
 
@@ -539,7 +539,7 @@ An assigned Evaluation SAM is typically used to score the quality of the data in
 
 #### Weight
 
-In some cases, a PIQI user may want to weigh the score in a rubric allowing some SAMs to have more impact than others. By default, the weight for any assigned Evaluation SAM is one. If a particular evaluation profile does use a weighted score for one or more SAMs the PIQI engine will produce a PIQI Score and a PIQI Weighted Score for the message being assessed. Both scores will be a percentage of a numerator over a denominator with a maximum score of 100% of all possible points, weighted or unweighted.
+In some cases, a PIQI user may want to weigh the score in a rubric allowing some SAMs to have more impact than others. By default, the weight for any assigned Evaluation SAM is one. If a particular Evaluation Rubric does use a weighted score for one or more SAMs the PIQI engine will produce a PIQI Score and a PIQI Weighted Score for the message being assessed. Both scores will be a percentage of a numerator over a denominator with a maximum score of 100% of all possible points, weighted or unweighted.
 
 #### Criticality
 
@@ -559,7 +559,7 @@ The sequence of execution of the Evaluation Criteria Assessments controls the or
 
 ### PIQI Scoring in a Nutshell
 
-The objective for PIQI data quality scoring is to provide a useful score card that provides the data consumer with insight into the quality of a patient data payload based on a given evaluation profile.
+The objective for PIQI data quality scoring is to provide a useful score card that provides the data consumer with insight into the quality of a patient data payload based on a given Evaluation Rubric.
 
 The most basic result returned from a PIQI scorecard evaluation would be the following:
 
@@ -568,13 +568,13 @@ The most basic result returned from a PIQI scorecard evaluation would be the fol
 | **DataProviderID** | The DataProviderID submitted with the scoring request. |
 | **DataSourceID** | The DataSourceID submitted with the scoring request. |
 | **Potential Item Score** | A count of the total number of scorable items in the patient data payload. This is also the score denominator. |
-| **Total Item Score** | A count of the total number of scoreable items that passed according to the evaluation profile rubric. This is also the score numerator. |
+| **Total Item Score** | A count of the total number of scoreable items that passed according to the Evaluation Rubric. This is also the score numerator. |
 | **PIQI Index** | The Total Item Score is divided by the Potential Item Score. Resulting in a value from 0 to 100. |
 | **Critical Failure Count** | A count of the scorable items that were flagged as critical and did not pass. |
-| **Data Class Frequency** | A count of the total number of elements within each data class in the patient data payload. This will only include data classes that are referenced in the evaluation profile. |
+| **Data Class Frequency** | A count of the total number of elements within each data class in the patient data payload. This will only include data classes that are referenced in the Evaluation Rubric. |
 | _(If Weighted scores are used)_ |     |
 | **Potential Weighted Item Score** | A count of the total number of scorable item weights in the patient data payload. This is also the score denominator. |
-| **Total Weighted Item Score** | A count of the total number of scoreable item weights that passed according to the evaluation profile rubric. This is also the score numerator. |
+| **Total Weighted Item Score** | A count of the total number of scoreable item weights that passed according to the Evaluation Rubric. This is also the score numerator. |
 | **PIQI Weighted Index** | The Total Weighted Item Score is divided by the Potential Weighted Item Score. Resulting in a value from 0 to 100. |
 
 ### Verbose Scoring
@@ -622,7 +622,7 @@ The PIQI Framework starts with a simple model intended to support the assessment
 
 ### Shared Evaluation Rubrics
 
-While the Evaluation Rubrics in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard evaluation profiles is one of the most beneficial features of the PIQI Framework. The ability to publish and share an evaluation profile, along with its dependent SAMs and PIQI Model components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
+While the Evaluation Rubrics in PIQI are designed to be configured to support the needs of the implementer, the ability to establish sanctioned standard Evaluation Rubrics is one of the most beneficial features of the PIQI Framework. The ability to publish and share an Evaluation Rubric, along with its dependent SAMs and PIQI Model components can minimize duplication of effort and provide a powerful way to create a common basis for understanding data quality across the community.
 
 ### PIQI Endpoint Registration
 
