@@ -45,7 +45,7 @@ The version of the evaluation rubric is an optional field for evaluation profile
 
 #### Evaluation Rubric Authority
 
-The authoritative source or reference for the evaluation rubric.
+The authoritative source or reference for the evaluation rubric. This should contain both any organizations that have endorsed the rubric (to convey trustworthiness) as well as context on known production usage of the rubric.
 
 #### Evaluation Rubric Model
 
