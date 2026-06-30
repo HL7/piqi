@@ -618,7 +618,7 @@ The PIQI Framework starts with a simple model intended to support the assessment
 
 ### Shared Simple Assessment Modules
 
-While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes, and patient level data often require structured content in the form of value sets, tuples, and other data patterns. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces.
+ While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes, and patient level data often require structured content in the form of value sets, tuples, and other data patterns. To share and utilize rubrics that use SAMs that depend on such structures, PIQI evaluation engines must also have access to the supporting content. For example, to utilize a rubric including a SAM configured to verify that a codeable concept is an active LOINC term, that PIQI evaluation engine must be able to reference the current LOINC release. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces.
 
 ### Shared Evaluation Rubrics
 
