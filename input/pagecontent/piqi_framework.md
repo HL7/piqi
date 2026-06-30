@@ -636,4 +636,4 @@ In healthcare, we have various identifier types for institutions, facilities, an
 
 This is not merely a "nice to have" feature. Establishing a unique data source identifier is critical for trust, traceability, and provenance in our national healthcare infrastructure.
 
-While the PIQI Framework does not mandate a global unique data source identifier, incorporating one would significantly enhance our ability to assess the quality and reliability of data exchange participants—regardless of their role or the nature of the coordinating entity.
+While the PIQI Framework does not require a global unique data source identifier, nor does it include a methodology for assigning one, incorporating one would significantly enhance the ability to assess the quality and reliability of data exchange participants—regardless of their role or the nature of the coordinating entity.
