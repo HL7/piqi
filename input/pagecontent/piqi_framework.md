@@ -34,7 +34,7 @@ Many of the important attributes in patient information are Codeable Concepts. C
 
 The **code is needed** to provide a unique stable identifier for the concept in a given code system.
 
-The **code system identifier is needed** to confirm that the code is valid in that code system and, if necessary, determine the status of that code.
+The **code system identifier is needed** to provide context for the meaning of a code, and to confirm that the code is valid in that code system and, if necessary, determine the status of that code.
 
 The **display is needed** so that a human can verify that the code provided does, in fact, semantically match the concept in the identified code system. It is also necessary if the concept provided is being mapped/normalized to a standard or local terminology.
 
@@ -65,7 +65,7 @@ tr {
 | --- | --- | --- |
 | code | Simple Attribute | Code value for the coded concept |
 | display | Simple Attribute | Display value for the coded concept |
-| system | Simple Attribute | Code system identifier for the codec concept |
+| system | Simple Attribute | Code system identifier for the coded concept |
 
 **Example:**
 ```json
