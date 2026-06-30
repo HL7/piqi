@@ -492,17 +492,17 @@ Example: Coded Entity is Interoperable
 | PIQI Dimension | Conformity.Incompatible \[CNF.INCMPT\] |
 | Required Params | CS_PARAM – Code System Required for Interoperability by Evaluation Criteria |
 
-A SAM can have a **prerequisite SAM**. This is a SAM that must be run and pass prior to this SAM being run. Prerequisites can stack resulting in a series of SAMs that must be run on an entity before in order for the assigned SAM to be run and pass.
+A SAM can have a **prerequisite SAM**. This is a SAM that must be run and pass prior to this SAM being run. Prerequisites can stack resulting in a series of SAMs that must be run on an entity before in order for the assigned Evaluation SAM to be run and pass.
 
 <span width="100%">
 <img src="prerequisite_sams.png" alt="Prerequisite SAMs"/>
 </span>
 
-Prerequisite SAMs cannot have parameters that are not provided to the assigned SAM.
+Prerequisite SAMs cannot have parameters that are not provided to the assigned Evaluation SAM.
 
-One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisite logic in the assigned SAM. The reason PIQI does not do this is the information on the failure of the entity being evaluated in primary to the definition of the SAM and the SAM itself just returns a pass or fail. In the above example when the assigned assessment ‘Concept is Compatible’ is run the first prerequisite SAM, ‘Attribute is Populated’ is run on the entity. If it fails, the ‘Attribute is Populated’ fails and not the ‘Concept is Compatible’. This conveys the nature of the failure, as opposed to ‘Concept is Compatible’ failing and having to return a reason for the failure. Additionally, when a pre-requisite SAM fails, that failure should be categorized against the dimension for the pre-requisite SAM, not the dimension for the assigned SAM.
+One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisite logic in the assigned Evaluation SAM. The reason PIQI does not do this is the information on the failure of the entity being evaluated in primary to the definition of the SAM and the SAM itself just returns a pass or fail. In the above example when the assigned assessment ‘Concept is Compatible’ is run the first prerequisite SAM, ‘Attribute is Populated’ is run on the entity. If it fails, the ‘Attribute is Populated’ fails and not the ‘Concept is Compatible’. This conveys the nature of the failure, as opposed to ‘Concept is Compatible’ failing and having to return a reason for the failure. Additionally, when a pre-requisite SAM fails, that failure should be categorized against the dimension for the pre-requisite SAM, not the dimension for the assigned Evaluation SAM.
 
-The idea that the entity fails to pass the assigned SAM is what establishes the entity’s score, but the SAM or prerequisite SAM failure provides the statistics is a core principle of the PIQI approach.
+The idea that the entity fails to pass the assigned Evaluation SAM is what establishes the entity’s score, but the SAM or prerequisite SAM failure provides the statistics is a core principle of the PIQI approach.
 
 #### PIQI Evaluation Rubric
 An evaluation rubric is always based on a given PIQI model and version.  A evaluation rubric based on a given model should be compatible with any future version of the same model as PIQI models are backwards compatible.
@@ -535,23 +535,23 @@ The core of an Evaluation Criteria is the sequenced collection of entity assessm
 
 #### Scoring Effect
 
-An assigned SAM is typically used to score the quality of the data in a message but can also be used to collect data without impacting the quality score. The Scoring Effect is essentially a switch that tells the PIQI engine to collect statistics for a given SAM without effecting the numerator or denominator of the score for the message.
+An assigned Evaluation SAM is typically used to score the quality of the data in a message but can also be used to collect data without impacting the quality score. The Scoring Effect is essentially a switch that tells the PIQI engine to collect statistics for a given SAM without effecting the numerator or denominator of the score for the message.
 
 #### Weight
 
-In some cases, a PIQI user may want to weigh the score in a rubric allowing some SAMs to have more impact than others. By default, the weight for any assigned SAM is one. If a particular evaluation profile does use a weighted score for one or more SAMs the PIQI engine will produce a PIQI Score and a PIQI Weighted Score for the message being assessed. Both scores will be a percentage of a numerator over a denominator with a maximum score of 100% of all possible points, weighted or unweighted.
+In some cases, a PIQI user may want to weigh the score in a rubric allowing some SAMs to have more impact than others. By default, the weight for any assigned Evaluation SAM is one. If a particular evaluation profile does use a weighted score for one or more SAMs the PIQI engine will produce a PIQI Score and a PIQI Weighted Score for the message being assessed. Both scores will be a percentage of a numerator over a denominator with a maximum score of 100% of all possible points, weighted or unweighted.
 
 #### Criticality
 
-The criticality indicator on an assigned SAM allows the user to flag that assessment as critically important to the rubric. As an alternative to a weighted score the criticality indicator provides the ability to indicate that message has critical qualitative issues that may make the data unusable without effecting nature of the unweighted numerator/denominator percentage.
+The criticality indicator on an assigned Evaluation SAM allows the user to flag that assessment as critically important to the rubric. As an alternative to a weighted score the criticality indicator provides the ability to indicate that message has critical qualitative issues that may make the data unusable without effecting nature of the unweighted numerator/denominator percentage.
 
 #### Conditional Assessments
 
-In some cases, an assigned SAM should only be applied if another condition is true. While this may seem similar to a prerequisite SAM it affects the scoring in a very different way.
+In some cases, an assigned Evaluation SAM should only be applied if another condition is true. While this may seem similar to a prerequisite SAM it affects the scoring in a very different way.
 
-If a **prerequisite** SAM for an assigned SAM fails, this is considered an entity assessment failure which increments the denominator but not the numerator for that assessment. In other words, the assessment is a failure.
+If a **prerequisite** SAM for an assigned Evaluation SAM fails, this is considered an entity assessment failure which increments the denominator but not the numerator for that assessment. In other words, the assessment is a failure.
 
-If a **conditional** SAM for an assigned SAM fails, this means the conditions for the assigned SAM were not met and the assigned SAM should not be run. Neither the numerator nor the denominator is incremented.
+If a **conditional** SAM for an assigned Evaluation SAM fails, this means the conditions for the assigned Evaluation SAM were not met and the assigned Evaluation SAM should not be run. Neither the numerator nor the denominator is incremented.
 
 ### Evaluation Criteria Execution
 
