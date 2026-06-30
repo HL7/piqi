@@ -376,7 +376,7 @@ This is another example of how PIQI is designed specifically for patient informa
 
 ### PIQI Patient Assessment Application Hierarchy
 
-When considering a PIQI information model it is worth nothing that patient data in this model organizes itself into a hierarchical structure with four primary entity levels that can each be evaluated for quality. These entities are as follows:
+When considering a PIQI information model it is worth noting that patient data in such models are organized into a hierarchical structure with four primary entity levels that can each be evaluated for quality. These entities are as follows:
 
 - **Patient**: A holistic entity that is comprised of all of the characteristics and elements.
 - **Data Class**: A collection of data elements with the same attributes representing domain specific items.
