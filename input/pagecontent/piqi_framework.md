@@ -28,7 +28,7 @@ Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 
 A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
-Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the codeable concept. If the attribute does contain one or more coded concepts, each coded concept is comprised of three components: a code, display, and code system identifier.
+Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the codeable concept. If the attribute does contain one or more codings, each coding is comprised of three components: a code, display, and code system identifier.
 
 **All of these Coding sub attributes should be populated in order for the concept being exchanged to be validated.**
 
@@ -63,9 +63,9 @@ tr {
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
-| code | Simple Attribute | Code value for the coded concept |
-| display | Simple Attribute | Display value for the coded concept |
-| system | Simple Attribute | Code system identifier for the coded concept |
+| code | Simple Attribute | Code value for the coding |
+| display | Simple Attribute | Display value for the coding |
+| system | Simple Attribute | Code system identifier for the coding |
 
 **Example:**
 ```json
@@ -83,17 +83,17 @@ tr {
 
 #### Observation Value Attribute Type
 
-An Observation Value attribute is a structure that can be represented as a simple attribute value or a structure observation value. Observation Value is a specialized attribute as many elements in patient information can be represented by a quantitative, text, or coded concepts value.
+An Observation Value attribute is a structure that can be represented as a simple attribute value or a structure observation value. Observation Value is a specialized attribute as many elements in patient information can be represented by a quantitative, text, or coding value.
 
 **Observation Value sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
 | text | Simple Attribute | Text representation of the value |
-| type | Codeable Concept | Collection of zero-to-many coded concepts representing the value type |
+| type | Codeable Concept | Collection of zero-to-many codings representing the value type |
 | number | Simple Attribute | For numeric values |
 | number2 | Simple Attribute | For second numeric value |
-| codings | Codeable Concept | Collection of zero-to-many coded concepts representing the observation value |
+| codings | Codeable Concept | Collection of zero-to-many codings representing the observation value |
 
 **Example:**
 
