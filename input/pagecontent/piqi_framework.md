@@ -567,15 +567,15 @@ The most basic result returned from a PIQI scorecard evaluation would be the fol
 | --- | --- |
 | **DataProviderID** | The DataProviderID submitted with the scoring request. |
 | **DataSourceID** | The DataSourceID submitted with the scoring request. |
-| **Potential Item Score** | A count of the total number of scorable items in the patient data payload. This is also the score denominator. |
+| **Potential Item Score** | A count of the total number of scorable items in the patient data payload and will always be greater than or equal to the Total Item Score. This is also the score denominator. |
 | **Total Item Score** | A count of the total number of scoreable items that passed according to the Evaluation Rubric. This is also the score numerator. |
-| **PIQI Index** | The Total Item Score is divided by the Potential Item Score. Resulting in a value from 0 to 100. |
+| **PIQI Index** | The Total Item Score is divided by the Potential Item Score. Resulting in a percentage value from 0 to 100. |
 | **Critical Failure Count** | A count of the scorable items that were flagged as critical and did not pass. |
 | **Data Class Frequency** | A count of the total number of elements within each data class in the patient data payload. This will only include data classes that are referenced in the Evaluation Rubric. |
 | _(If Weighted scores are used)_ |     |
 | **Potential Weighted Item Score** | A count of the total number of scorable item weights in the patient data payload. This is also the score denominator. |
 | **Total Weighted Item Score** | A count of the total number of scoreable item weights that passed according to the Evaluation Rubric. This is also the score numerator. |
-| **PIQI Weighted Index** | The Total Weighted Item Score is divided by the Potential Weighted Item Score. Resulting in a value from 0 to 100. |
+| **PIQI Weighted Index** | The Total Weighted Item Score is divided by the Potential Weighted Item Score. Resulting in a percentage value from 0 to 100. |
 
 ### Verbose Scoring
 
