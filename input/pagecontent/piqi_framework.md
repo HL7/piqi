@@ -539,7 +539,7 @@ An assigned Evaluation SAM is typically used to score the quality of the data in
 
 #### Weight
 
-In some cases, a PIQI user may want to weigh the score in a rubric allowing some SAMs to have more impact than others. By default, the weight for any assigned Evaluation SAM is one. If a particular Evaluation Rubric does use a weighted score for one or more SAMs the PIQI engine will produce a PIQI Score and a PIQI Weighted Score for the message being assessed. Both scores will be a percentage of a numerator over a denominator with a maximum score of 100% of all possible points, weighted or unweighted.
+In some cases, a PIQI user may want to weigh the score in a rubric allowing some SAMs to have more impact than others. By default, the weight for any assigned Evaluation SAM is one. If a particular Evaluation Rubric does use a weighted score for one or more SAMs the PIQI engine will produce a PIQI Score and a PIQI Weighted Score for the message being assessed. Both scores will be a percentage of a numerator over a denominator with a maximum score of 100% of all possible points.  This practically means that a PIQI score for a message is simply the number of scored evaluations that passed, divided by the total number of scored evaluations performed, and a PIQI Weighted Score for a message is the sum of weighted values for all scored evaluations that passed, divided by the sum of weighted value for all scored evaluations, including both those that passed and failed.
 
 #### Criticality
 
