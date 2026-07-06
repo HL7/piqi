@@ -10,6 +10,8 @@ It is important to remember that the goal of the PIQI Framework is to assess the
 2) The collection of statistics with aggregate values (Averages, Medians) and other ‘per payload’ statistics.
 3) Allows payload level plausibility assessments.
 
+Implementers of the PIQI Framework will likely aggregate scoring results for the purpose of qualitative root-cause analysis, but this specification is focused on the implementation of the framework itself.  Future efforts may consider optimal patterns for analyzing data quality patterns across collections of messages.
+
 ### PIQI Attribute Types
 
 PIQI Elements are comprised of four attribute types: Simple, Codeable Concept, Observation Value, and Ranged Value.

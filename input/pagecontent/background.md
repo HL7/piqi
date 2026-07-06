@@ -40,6 +40,7 @@ The use of a standardized information model coupled with a standard taxonomy as 
 ### PIQI Community of Practice
 
 The **PIQI Framework** is designed to be implemented by a **collaborative user community (a "community of practice")**, a network of stakeholders such as public health agencies, providers, EHR vendors, and analysts who share a common interest in improving patient data quality. Within this community, participants use encapsulated, portable, data-driven components; share knowledge and lessons learned; and evolve practices together. This collaborative approach creates strong potential for rapid refinement, broader adoption, and sustained improvement of the framework.
+
 #### Localized PIQI Models
 The PIQI Framework is designed to use simple models. Those models can be localized through the addition of data classes and attributes important to use cases.
 #### Shared Simple Assessment Modules
