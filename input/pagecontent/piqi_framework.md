@@ -454,7 +454,7 @@ The PIQI Framework assess patient data that has been put into the PIQI Data Mode
 
 #### PIQI Simple Assessment Modules
 
-PIQI SAMs are composable service endpoints that follow a consistent pattern to evaluate a patient message, data class, element or attribute, and return a simple ‘pass’, ‘fail’ or ‘conditions not met’ result.  A SAM that has been configured for use in a Evaluation Rubric is referred to simply as an Evaluation.
+PIQI SAMs are composable service endpoints that follow a consistent pattern to evaluate a patient message, data class, element or attribute, and return a simple ‘pass’, ‘fail’ or ‘conditions not met’ result. A SAM that has been configured for use in a Evaluation Rubric is referred to simply as an Evaluation.
 
 Each SAM is comprised of the following elements:
 
