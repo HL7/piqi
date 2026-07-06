@@ -450,7 +450,7 @@ This category contains dimensions that relate to whether the data makes sense ba
 
 ### PIQI Assessment Approach
 
-The PIQI Framework assess patient data that has been put into the PIQI Data Model using an **Evaluation Rubric** which is a collection of **Evaluations**, each evaluation has a configured **Simple Assessment Module** (SAM) with specific parameters and their individual scoring effects of the evaluation result for each patient data entity.
+The PIQI Framework assess patient data that has been put into the PIQI Data Model using an **Evaluation Rubric** which is a collection of **Evaluations**, each evaluation consisting of a patient data entity to be evaluated, a configured Simple Assessment Module (SAM) to use in that evaluation, specific parameter values to use with that SAM, and scoring implications of the evaluation result.
 
 #### PIQI Simple Assessment Modules
 
