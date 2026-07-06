@@ -49,23 +49,23 @@ The authoritative source or reference for the evaluation rubric. This should con
 
 #### Evaluation Rubric Model
 
-This is the specific version or extension of the PIQI Data Model.
+This is the PIQI Data Model required for the rubric. It is envisioned that there may be many versions of a given model, as well as extensions based upon those versions. Given the tight relationship between the model and the rubric, all of these sub-attributes are necessary to uniquely identify the specific model required.
 
-Rubric Model version mnemonic
+- Rubric Model version mnemonic
 
-Rubric Model menmonic
+- Rubric Model mnemonic
 
-Rubric Model Version
+- Rubric Model Version
 
-Rubric Model Extension mnemonic
+- Rubric Model Extension mnemonic
 
 #### Evaluation Rubric Source
 
-This is the original source of the evaluation rubric content.
+This is the original source of the evaluation rubric content, containing both a unique identifier as well as a human readable name for the organization.
 
-PIQI Organization UID
+- PIQI Organization UID
 
-PIQI Organization Name
+- PIQI Organization Name
 
 #### CreationDateTime
 
