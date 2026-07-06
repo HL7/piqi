@@ -443,7 +443,7 @@ This SAM is designed to assess if a simple attribute is a date in the future. Th
 
 ##### Attribute is Past Date
 
-This SAM is designed to assess if a simple attribute is a date in the future. This should only apply to simple attributes.
+This SAM is designed to assess if a simple attribute is a date in the past. This should only apply to simple attributes.
 
 | **Property** | **Value** |
 | --- | --- |
@@ -639,7 +639,7 @@ This SAM is designed to assess if a codeable concept attribute has at least ONE 
 
 ##### Codeable Concept has Display
 
-This SAM is designed to assess if a codeable concept attribute has at least ONE code system value in its codings collection.
+This SAM is designed to assess if a codeable concept attribute has display in its codings collection.
 
 | **Property** | **Value** |
 | --- | --- |
