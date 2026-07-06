@@ -412,7 +412,7 @@ Dimensions:
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
-| Missing | Element | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient is diabetic but there is no corresponding element indicating this condition, then the diabetes element is considered missing._ |
+| Missing | Element | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient has Insulin on their medication list, and has a high A1C, but there is no corresponding condition indicating Diabetes, then the diabetes condition is considered missing._ |
 | Unpopulated | Attribute | This applies to an Attributes that should be populated with something but are not. This dimension does not evaluate the validity of the Attribute, merely whether or not it has data. This dimension only applies to Attributes of Elements that are not missing. |
 | Incomplete | Element<br><br>Attribute | This applies to Elements or complex Attributes where there is inadequate information available to fully represent the attribute or element. _For example, a coded entity (attribute) that is missing its code system is incomplete. In this context the code system component of a coding is unpopulated and the coded entity Attribute is incomplete._ |
 
