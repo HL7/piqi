@@ -259,11 +259,11 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | medication | Codeable Concept | Medication product (drug) |
 | startDate | Simple Attribute | Date the patient started the medication |
 | endDate | Simple Attribute | Date the patient discontinued the medication |
-| doseAmount | Simple Attribute | the dose amount expressed in strength or eaches |
-| doseAmountUnit | Codeable Concept | The dose amount unit |
+| doseAmount | Simple Attribute | The dose amount expressed in strength or eaches. For a 200mg total dose delivered via 2 100mg tablets, the doseAmount is 200. |
+| doseAmountUnit | Codeable Concept | The dose amount unit. For a 200mg total dose delivered via 2 100mg tablets, the doseAmountUnit is mg. |
 | doseRoute | Codeable Concept | The route of administration |
-| doseQuantity | Simple Attribute | The dose quantity dispensed |
-| doseQuantityUnit | Simple Attribute | The dose quantity units |
+| doseQuantity | Simple Attribute | The dose quantity dispensed. For a 200mg total dose delivered via 2 100mg tablets, the doseQuantity is 2. |
+| doseQuantityUnit | Simple Attribute | The dose quantity units. For a 200mg total dose delivered via 2 100mg tablets, the doseQuantityUnit is {Tablet}. |
 | instructions | Simple Attribute | The medication instruction text |
 | adherence | Codeable Concept | The patient’s adherence to the medication |
 | indication | Codeable Concept | The condition that is being treated by the medication |
