@@ -49,12 +49,14 @@ Contributing Authors:
 *   Amol Bhalla, IMO Health
 *   Carmela Couderc, US Assistant Secretary for Technology Policy (ASTP)
 *   John D'Amore, More Informatics
+*   Sarah DeSilvey, Gravity Project
 *   Gay Dolin, Namaste Informatics
 *   Benjamin Hamlin, IPRO
 *   Gena Jarosch, Michigan Health Information Netork (MiHIN)
 *   Jon Lowe, CommonSpirit Health
 *   Craig Newman, J Michael Consulting
 *   Riki Merrick, Association of Public Health Laboratories (APHL)
+*   Shannon O'Connor, Canadian Institute for Health Information (CIHI)
 *   Serafina Versaggi, Versaggi Health IT Consulting
 *   Andrew Sills, Deloitte Consulting LLP
 
