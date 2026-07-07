@@ -82,9 +82,9 @@ This is the entity type that the SAM expects as input. The initial Input types a
 
 **Ranged_Value** A ranged value JSON string
 
-**Element** A domain element JSON collection
+**Element** An element or single instance of a data class - JSON collection of attributes
 
-**Data_Class** A domain data class, element JSON collection
+**Data_Class** A model data class, element JSON collection of elements
 
 **Patient** The entire patient JSON collection
 
@@ -918,9 +918,9 @@ This SAM is designed to assess if a range value’s numeric components are logic
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
 
-#### Element SAMs
+#### Data Class Element SAMs
 
-An Element is a data class specific collection of attributes based on the PIQI Data Model specification. An Element SAMs has an input type that is the JSON for that element including all of its constituent attributes and audit information for those attributes.
+An Element is an instance of data class specific attributes based on the PIQI Data Model specification. An Element SAMs has an input type that is the JSON for that element including all of its constituent attributes and audit information for those attributes.
 
 While most attribute SAMs are primitive, it is expected that element level attributes will be based on content and require that the constituent attribute SAMs have passed.
 
