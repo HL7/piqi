@@ -144,13 +144,13 @@ A Range Value attribute is a structure that can be represented as a simple attri
 
 ### PIQI Data Models
 
-The PIQI Framework depends on a patient-oriented, flat-element collection information model. Depending on the use case, the structure of the model—including its data classes and element details—may vary. For example, the PIQI Clinical Data Model is designed to evaluate clinical information exchanged about a patient, so its data classes reflect common clinical data elements. In contrast, the PIQI Medical Claim Data Model includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses attribute types that align with the framework’s design.
+The PIQI Framework depends on a patient-oriented, flat-data class collection information model. Depending on the use case, the structure of the model—including its data classes and attribute details—may vary. For example, the PIQI Clinical Data Model is designed to evaluate clinical information exchanged about a patient, so its data classes and attributes reflect common clinical data elements. In contrast, the PIQI Medical Claim Data Model includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses attribute types that align with the framework’s design.
 
 All attributes have a cardinality of 0..1, recognizing that a CodeableConcept collection attribute may contain multiple CodeableConcepts values.
 
 ### PIQI Clinical Data Model
 
-The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on elements and characteristics that are highly relevant to patient clinical data quality and to simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patient's care process, initially the model is purposefully limited to patient demographics, social, and clinical information.
+The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on data classes and attributes that are highly relevant to patient clinical data quality and to simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patient's care process, initially the model is purposefully limited to patient demographics, social, and clinical information.
 
 #### PIQI Clinical Data Model Classes
 
@@ -380,10 +380,10 @@ This is another example of how PIQI is designed specifically for patient informa
 
 When considering a PIQI information model it is worth noting that patient data in such models are organized into a hierarchical structure with four primary entity levels that can each be evaluated for quality. These entities are as follows:
 
-- **Patient**: A holistic entity that is comprised of all of the characteristics and elements.
-- **Data Class**: A collection of data elements with the same attributes representing domain specific items.
-- **Element**: A class specific entity that is comprised of a collection of data attributes.
-- **Element Attribute**: A single data characteristic that relates to a domain specific element.
+- **Data Model**: A holistic entity that is comprised of all of the data class instances and attributes - the entire structured data submission.
+- **Data Class**: A collection of instances of a data class.
+- **Element**: A single instance of a data class collection of attributes.
+- **Attribute**: A single data attribute that relates to a data class.
 
 <span width="100%">
 <img src="patient_assessment_application_hierarchy.png" alt="PIQI Patient Assessment Application Hierarchy" height="25%" width="25%" />
@@ -414,7 +414,7 @@ Dimensions:
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
-| Missing | Element | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient has Insulin on their medication list, and has a high A1C, but there is no corresponding condition indicating Diabetes, then the diabetes condition is considered missing._ |
+| Missing |  | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient has Insulin on their medication list, and has a high A1C, but there is no corresponding condition indicating Diabetes, then the diabetes condition is considered missing._ |
 | Unpopulated | Attribute | This applies to an Attributes that should be populated with something but are not. This dimension does not evaluate the validity of the Attribute, merely whether or not it has data. This dimension only applies to Attributes of Elements that are not missing. |
 | Incomplete | Element<br><br>Attribute | This applies to Elements or complex Attributes where there is inadequate information available to fully represent the attribute or element. _For example, a coded entity (attribute) that is missing its code system is incomplete. In this context the code system component of a coding is unpopulated and the coded entity Attribute is incomplete._ |
 
@@ -463,7 +463,7 @@ Each SAM is comprised of the following elements:
 | Component | Description |
 | --- | --- |
 | SAM Name | The name of the SAM. |
-| Entity Type | This is the patient entity type (entire patient, data class, element, attribute) that the assessment has been designed to evaluate. |
+| Entity Type | This is the patient entity type (entire model, data class, element, attribute) that the assessment has been designed to evaluate. |
 | Assessment Logic | The actual logic that performs the evaluation against the |
 | PIQI Dimension | The PIQI taxonomy dimension that most appropriately describes the SAM. |
 | Required Params | The list of required parameters that must be supplied by the Evaluation Criteria to perform the assessment. |
@@ -511,7 +511,7 @@ An evaluation rubric is always based on a given PIQI model and version.  A evalu
 
 An evaluation rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that profile. Evaluation rubrics can be established as a standard or custom scoring rubric.
 
-A given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the patient, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
+A given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the model, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
 
 Example: Graphical Depiction of an Evaluation Rubric for a data class
 
@@ -557,7 +557,7 @@ If a **conditional** SAM for an assigned Evaluation SAM fails, this means the co
 
 ### Evaluation Criteria Execution
 
-The sequence of execution of the Evaluation Criteria Assessments controls the order of assessment within a given data class. The data class execution sequence is defined as the sequence of patient data loaded into the PIQI model. The sequence of assessment will repeat within a given data class until it has completed all the elements of that data class. Upon completion of the assessment of all the elements in a given data class, the data class assessments themselves (if defined) are executed. Upon completion of all elements and data class assessments, patient scope assessments (if defined) are executed.
+The sequence of execution of the Evaluation Criteria Assessments controls the order of assessment within a given data class. The data class execution sequence is defined as the sequence of patient data loaded into the PIQI model. The sequence of assessment will repeat within a given data class until it has completed all the elements of that data class. Upon completion of the assessment of all the elements in a given data class, the data class assessments themselves (if defined) are executed. Upon completion of all elements and data class assessments, model scope assessments (if defined) are executed.
 
 ### PIQI Scoring in a Nutshell
 
@@ -620,7 +620,7 @@ The PIQI Framework starts with a simple model intended to support the assessment
 
 ### Shared Simple Assessment Modules
 
- While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes, and patient level data often require structured content in the form of value sets, tuples, and other data patterns. To share and utilize rubrics that use SAMs that depend on such structures, PIQI evaluation engines must also have access to the supporting content. For example, to utilize a rubric including a SAM configured to verify that a codeable concept is an active LOINC term, that PIQI evaluation engine must be able to reference the current LOINC release. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces.
+ While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes, and model level data often require structured content in the form of value sets, tuples, and other data patterns. To share and utilize rubrics that use SAMs that depend on such structures, PIQI evaluation engines must also have access to the supporting content. For example, to utilize a rubric including a SAM configured to verify that a codeable concept is an active LOINC term, that PIQI evaluation engine must be able to reference the current LOINC release. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces.
 
 ### Shared Evaluation Rubrics
 
