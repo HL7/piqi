@@ -4,7 +4,7 @@ Please refer to the appropriate [**PIQI Message Format Guide**](https://piqifram
 
 ### PIQI Message Philosophy
 
-It is important to remember that the goal of the PIQI Framework is to assess the contents of **a single structured data payload and provide a score based solely on the contents of that payload**. Each rubric assessing a payload is designed in the context of a particular use case. This allows the following:
+It is important to remember that the goal of the Patient Information Quality Improvement (PIQI) Framework is to assess the contents of **a single structured data payload and provide a score based solely on the contents of that payload**. Each rubric assessing a payload is designed in the context of a particular use case. This allows the following:
 
 1) The assessment of the quality of that single payload.
 2) The collection of statistics with aggregate values (Averages, Medians) and other ‘per payload’ statistics.
@@ -18,7 +18,7 @@ PIQI Elements are comprised of four attribute types: Simple, Codeable Concept, O
 
 #### Simple Attribute Type
 
-A Simple Attribute is a string value in the JSON attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers, dates, and date ranges.
+A Simple Attribute is a string value in the JavaScript Object Notation (JSON) attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers, dates, and date ranges.
 
 Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 ```json
@@ -248,7 +248,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
 | deviceType | Codeable Concept | Type of medical device |
-| deviceID | Codeable Concept | FDA Unique device identifier |
+| deviceID | Codeable Concept | Food and Drug Administration (FDA) unique device identifier |
 | implantationDate | Simple Attribute | Date the device was implanted if applicable |
 | deviceStatus | Codeable Concept | Status of the medical device |
 | provenance | Simple Attribute | Source of this information |
@@ -298,13 +298,13 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 
 
 
-One of the issues with validating codeable concepts is that often different string values are used to identify the code system for a given code. For example, when sending a LOINC code it is possible to see the following code system identifiers:
+One of the issues with validating codeable concepts is that often different string values are used to identify the code system for a given code. For example, when sending a Logical Observation Identifiers Names and Codes (LOINC) code it is possible to see the following code system identifiers:
 
 LOINC, LNC, LN Code System Simple string identifiers
 
-CodeSystem OID: 2.16.840.1.113883.6.1 
+CodeSystem Object Identifier (OID): 2.16.840.1.113883.6.1 
 
-CodeSystem URL <http://loinc.org>
+CodeSystem Uniform Resource Locator (URL): <http://loinc.org>
 
 To support code system identifier variants in PIQI there is a mechanism that allows for a code system mnemonic to be used in the configuration of an Evaluation Rubric to represent any valid code system identifier and identify the code system identifier that is required to validate that code in the implementation's terminology server.
 
@@ -393,7 +393,7 @@ When considering a PIQI information model it is worth noting that patient data i
 
 **Reminder**: It is important to restate that PIQI is intended to assess the quality of data payloads in real time, determining their suitability for use by the intended recipient, and not intended to evaluate data within records at rest.
 
-### PIQI Healthcare Data Quality Taxonomy Version 1.0
+### PIQI Healthcare Data Quality Taxonomy (HDQT) Version 1.0
 
 A standard classification taxonomy for patient information quality issues provides structure and clarity to the process of data quality management. This systematic approach allows for the identification and categorization of various types of errors or inconsistencies, which can range from minor inaccuracies to critical misinformation. By classifying these issues, healthcare data stewards can prioritize them based on their potential impact. This methodical categorization facilitates easier tracking and analysis of recurring problems, enabling healthcare organizations to implement targeted improvements. Moreover, standardized taxonomy aids communication among healthcare professionals by providing a common language for discussing quality issues. Ultimately, this leads to enhanced quality control, improved patient outcomes, and a reduction in the likelihood of medical errors, thereby fostering a safer and more reliable healthcare environment.
 
@@ -604,8 +604,8 @@ Structured Data Asset Components
 
 Software Components
 
-- PIQI Framework Scoring Engine RESTful Service
-- FHIR (or equivalent) Terminology Server
+- PIQI Framework Scoring Engine Representational State Transfer (REST)ful Service
+- Fast Healthcare Interoperability Resources (FHIR) (or equivalent) Terminology Server
 <span width="100%">
 <img src="piqi_technical_components.png" alt="PIQI Technical Components" width="85%" />
 </span>
@@ -620,7 +620,7 @@ The PIQI Framework starts with a simple model intended to support the assessment
 
 ### Shared Simple Assessment Modules
 
- While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes, and model level data often require structured content in the form of value sets, tuples, and other data patterns. To share and utilize rubrics that use SAMs that depend on such structures, PIQI evaluation engines must also have access to the supporting content. For example, to utilize a rubric including a SAM configured to verify that a codeable concept is an active LOINC term, that PIQI evaluation engine must be able to reference the current LOINC release. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative AI, could also be hosted as RESTful services through wrapper SAM interfaces.
+ While many of the foundational, attribute level SAMs are algorithmic, SAMs that apply to codeable concepts, elements, data classes, and model level data often require structured content in the form of value sets, tuples, and other data patterns. To share and utilize rubrics that use SAMs that depend on such structures, PIQI evaluation engines must also have access to the supporting content. For example, to utilize a rubric including a SAM configured to verify that a codeable concept is an active LOINC term, that PIQI evaluation engine must be able to reference the current LOINC release. These data packages can be openly shared or licensed in a community portal. More sophisticated algorithmic SAMs, perhaps based on generative artificial intelligence (AI), could also be hosted as RESTful services through wrapper SAM interfaces.
 
 ### Shared Evaluation Rubrics
 
