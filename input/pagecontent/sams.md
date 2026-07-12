@@ -6,7 +6,7 @@ The Patient Information Quality Improvement (PIQI) Framework assesses patient da
 
 The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
-Each Evaluation Criteria is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
+Each Evaluation Criterion is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
 The PIQI Model Entity can be an attribute, element, data class or the entire patient.
 
@@ -299,7 +299,7 @@ The most common simple attribute SAM is ‘**Is Populated**’ which is used as 
 
 ##### Attribute is Populated
 
-This SAM is designed to assess if a simple attribute has content. For complex attribute types it assesses the ‘Text’ sub property which should include the entire source field the complex attribute us derived from.
+This SAM is designed to assess if a simple attribute has content. For complex attribute types it assesses the ‘Text’ sub property which should include the entire source field the complex attribute is derived from.
 
 | **Property** | **Value** |
 | --- | --- |
