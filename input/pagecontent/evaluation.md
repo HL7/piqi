@@ -1,7 +1,7 @@
 
 **PIQI Evaluation Rubric**
 
-The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
+The Patient Information Quality Improvement (PIQI) Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
 
 The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
@@ -17,7 +17,7 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 ### Simple Assessment Modules
 
-Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
+SAMs are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
 
 ### Evaluation Rubrics
 

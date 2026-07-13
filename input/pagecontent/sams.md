@@ -2,11 +2,11 @@
 
 #### PIQI Assessment Approach
 
-The PIQI Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
+The Patient Information Quality Improvement (PIQI) Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
 
 The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
-Each Evaluation Criteria is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
+Each Evaluation Criterion is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
 The PIQI Model Entity can be an attribute, element, data class or the entire patient.
 
@@ -40,7 +40,7 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 #### Simple Assessment Modules
 
-Simple assessment modules (SAMs) are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard.
+SAMs are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard.
 
 ### Anatomy of a Simple Assessment Module (SAM)
 
@@ -74,7 +74,7 @@ This is a brief description of the purpose of the SAM.
 
 This is the entity type that the SAM expects as input. The initial Input types are as follows:
 
-**Simple_Attribute** A simple string attribute JSON string
+**Simple_Attribute** A simple string attribute JavaScript Object Notation (JSON) string
 
 **Codeable_Concept_Attribute** A codeable concept attribute JSON string
 
@@ -136,7 +136,7 @@ This is the SAM Mnemonic for the SAM that must pass before this SAM can run. Thi
 
 #### SAM HDQT Dimension Mnemonic
 
-This defined the healthcare data quality taxonomy dimension that this SAM is bound to. The mnemonic is from the HDQT dimension list.
+This defines the Healthcare Data Quality Taxonomy (HDQT) dimension that this SAM is bound to. The mnemonic is from the HDQT dimension list.
 
 #### SAM Execution Type
 
@@ -146,9 +146,9 @@ This defines the nature of the machinery of the SAM and can have the following v
 
 **Regex_Pattern** The execution is primitive logic that uses regex to match reference data
 
-**Stored_Procedure** The execution is using a SQL stored procedure.
+**Stored_Procedure** The execution is using a Structured Query Language (SQL) stored procedure.
 
-**RESTful_Service** The execution is calling a RESTful service.
+**RESTful_Service** The execution is calling a Representational State Transfer (REST)ful service.
 
 **Value_Set_Enum** The execution is using a Value Set on enumerated strings
 
@@ -162,7 +162,7 @@ This is the meta-data that describes the information necessary to execute the SA
 
 - If the execution type is Primitive_Logic, this property is blank.
 - If the execution type is Stored_Procedure, this would be the stored procedure name.
-- If the execution type is RESTful_Service, this would be the URL for the RESTful service endpoint.
+- If the execution type is RESTful_Service, this would be the Uniform Resource Locator (URL) for the RESTful service endpoint.
 - If the execution type is Value_Set, this would be the value set identifier in the repository.
 
 #### SAM Creation DateTime
@@ -218,7 +218,7 @@ A primitive SAM for Attribute is Valid Date:
 }
 ```
 
-A Stored Procedure SAM for lab result unit plausibility based on LOINC:
+A Stored Procedure SAM for lab result unit plausibility based on Logical Observation Identifiers Names and Codes (LOINC):
 
 ```json
 {
@@ -299,7 +299,7 @@ The most common simple attribute SAM is ‘**Is Populated**’ which is used as 
 
 ##### Attribute is Populated
 
-This SAM is designed to assess if a simple attribute has content. For complex attribute types it assesses the ‘Text’ sub property which should include the entire source field the complex attribute us derived from.
+This SAM is designed to assess if a simple attribute has content. For complex attribute types it assesses the ‘Text’ sub property which should include the entire source field the complex attribute is derived from.
 
 | **Property** | **Value** |
 | --- | --- |
