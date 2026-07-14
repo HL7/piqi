@@ -63,12 +63,12 @@ menu:
     Payers: requirements_and_use_case.html#payers
     Health Information Exchange: requirements_and_use_case.html#health-information-exchange
     Laboratory Data: requirements_and_use_case.html#laboratory-data
-    EHRs: requirements_and_use_case.html#electronic-health-records
+    Health Information Technology: requirements_and_use_case.html##health-information-technology
     Provider: requirements_and_use_case.html#provider
     
   PIQI Framework:
     Overview: piqi_framework.html
-    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-version-10
+    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt-version-10
     PIQI Model: piqi_framework.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
