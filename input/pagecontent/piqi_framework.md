@@ -122,7 +122,7 @@ An Observation Value attribute is a structure that can be represented as a simpl
 
 #### Range Value Attribute Type
 
-A Range Value attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range. The Range Value Attribute Type can only be used with numeric ranges and cannot be used for a date range.
+A Range Value attribute is a structure that can be represented as a simple attribute value or a structured range value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range. The Range Value Attribute Type can only be used with numeric ranges and cannot be used for a date range.
 
 **Range Value sub-attributes**
 
@@ -415,7 +415,7 @@ Dimensions:
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
 | Missing |  | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient has Insulin on their medication list, and has a high A1C, but there is no corresponding condition indicating Diabetes, then the diabetes condition is considered missing._ |
-| Unpopulated | Attribute | This applies to an Attributes that should be populated with something but are not. This dimension does not evaluate the validity of the Attribute, merely whether or not it has data. This dimension only applies to Attributes of Elements that are not missing. |
+| Unpopulated | Attribute | This applies to an Attribute that should be populated with something but is not. This dimension does not evaluate the validity of the Attribute, merely whether or not it has data. This dimension only applies to Attributes of Elements that are not missing. |
 | Incomplete | Element<br><br>Attribute | This applies to Elements or complex Attributes where there is inadequate information available to fully represent the attribute or element. _For example, a coded entity (attribute) that is missing its code system is incomplete. In this context the code system component of a coding is unpopulated and the coded entity Attribute is incomplete._ |
 
 #### Accuracy Category
@@ -426,9 +426,9 @@ Dimensions:
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
-| Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, single alphanumeric character, etc. The specific logic used to assess format should be included in the corresponding SAM definition.|
+| Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, and single alphanumeric character. The specific logic used to assess format should be included in the corresponding SAM definition.|
 | Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. For example, it would be appropriate to include in this dimension the logical assessments of text strings expected to conform to a specific set of values (e.g., UCUM units when they are not conveyed in a fully coded format where the Invalid Member dimension would be a more appropriate choice), or business rules related to date values (e.g., Date of Birth with a future date). Note that a value may be an invalid value despite the values having an appropriate format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields.|
-| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes are invalid. |
+| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. |
 
 #### Conformity Category
 
@@ -452,11 +452,11 @@ This category contains dimensions that relate to whether the data makes sense ba
 
 ### PIQI Assessment Approach
 
-The PIQI Framework assess patient data that has been put into the PIQI Data Model using an **Evaluation Rubric** which is a collection of **Evaluations**, each evaluation consisting of a patient data entity to be evaluated, a configured Simple Assessment Module (SAM) to use in that evaluation, specific parameter values to use with that SAM, and scoring implications of the evaluation result.
+The PIQI Framework assesses patient data that has been put into the PIQI Data Model using an **Evaluation Rubric** which is a collection of **Evaluations**, each evaluation consisting of a patient data entity to be evaluated, a configured Simple Assessment Module (SAM) to use in that evaluation, specific parameter values to use with that SAM, and scoring implications of the evaluation result.
 
 #### PIQI Simple Assessment Modules
 
-PIQI SAMs are composable service endpoints that follow a consistent pattern to evaluate a patient message, data class, element or attribute, and return a simple ‘pass’, ‘fail’ or ‘conditions not met’ result. A SAM that has been configured for use in a Evaluation Rubric is referred to simply as an Evaluation.
+PIQI SAMs are composable service endpoints that follow a consistent pattern to evaluate a patient message, data class, element or attribute, and return a simple ‘pass’, ‘fail’ or ‘conditions not met’ result. A SAM that has been configured for use in an Evaluation Rubric is referred to simply as an Evaluation.
 
 Each SAM is comprised of the following elements:
 
@@ -466,7 +466,7 @@ Each SAM is comprised of the following elements:
 | Entity Type | This is the patient entity type (entire model, data class, element, attribute) that the assessment has been designed to evaluate. |
 | Assessment Logic | The actual logic that performs the evaluation against the |
 | PIQI Dimension | The PIQI taxonomy dimension that most appropriately describes the SAM. |
-| Required Params | The list of required parameters that must be supplied by the Evaluation Criteria to perform the assessment. |
+| Required Params | The list of required parameters that must be supplied by the Evaluation Criterion to perform the assessment. |
 
 Example: High Level  
 
@@ -492,9 +492,9 @@ Example: Coded Entity is Interoperable
 | Entity Type | Coded Entity Attribute |
 | Assessment Logic | If ((Attribute.CS.Value==CS_PARAM)&&(Attribute.CNF.INVMBR=”PASS”))<br><br>{ SAM.Result=”PASS”} (Psuedocode) |
 | PIQI Dimension | Conformity.Incompatible \[CNF.INCMPT\] |
-| Required Params | CS_PARAM – Code System Required for Interoperability by Evaluation Criteria |
+| Required Params | CS_PARAM – Code System Required for Interoperability by Evaluation Criterion |
 
-A SAM can have a **prerequisite SAM**. This is a SAM that must be run and pass prior to this SAM being run. Prerequisites can stack resulting in a series of SAMs that must be run on an entity before in order for the assigned Evaluation SAM to be run and pass.
+A SAM can have a **prerequisite SAM**. This is a SAM that must be run and pass prior to this SAM being run. Prerequisites can stack resulting in a series of SAMs that must be run on an entity for the assigned Evaluation SAM to be run and pass.
 
 <span width="100%">
 <img src="prerequisite_sams.png" alt="Prerequisite SAMs"/>
@@ -502,14 +502,12 @@ A SAM can have a **prerequisite SAM**. This is a SAM that must be run and pass p
 
 Prerequisite SAMs cannot have parameters that are not provided to the assigned Evaluation SAM.
 
-One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisite logic in the assigned Evaluation SAM. The reason PIQI does not do this is the information on the failure of the entity being evaluated in primary to the definition of the SAM and the SAM itself just returns a pass or fail. In the above example when the assigned assessment ‘Concept is Compatible’ is run the first prerequisite SAM, ‘Attribute is Populated’ is run on the entity. If it fails, the ‘Attribute is Populated’ fails and not the ‘Concept is Compatible’. This conveys the nature of the failure, as opposed to ‘Concept is Compatible’ failing and having to return a reason for the failure. Additionally, when a pre-requisite SAM fails, that failure should be categorized against the dimension for the pre-requisite SAM, not the dimension for the assigned Evaluation SAM.
-
-The idea that the entity fails to pass the assigned Evaluation SAM is what establishes the entity’s score, but the SAM or prerequisite SAM failure provides the statistics is a core principle of the PIQI approach.
+One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisite logic in the assigned Evaluation SAM. The reason PIQI does not do this is the information on the failure of the entity being evaluated is primary to the definition of the SAM and the SAM itself just returns a pass or fail. In the above example when the assigned assessment ‘Concept is Compatible’ is run the first prerequisite SAM, ‘Attribute is Populated’ is run on the entity. The idea that the entity fails to pass the assigned SAM is what establishes the entity's score. Recording the specific SAM that failed provides the statistics that are core to the PIQI approach. This conveys the nature of the failure, as opposed to ‘Concept is Compatible’ failing and having to return a reason for the failure. Additionally, when a pre-requisite SAM fails, that failure should be categorized against the dimension for the pre-requisite SAM, not the dimension for the assigned Evaluation SAM.
 
 #### PIQI Evaluation Rubric
-An evaluation rubric is always based on a given PIQI model and version.  A evaluation rubric based on a given model should be compatible with any future version of the same model as PIQI models are backwards compatible.
+An evaluation rubric is always based on a given PIQI model and version.  An evaluation rubric based on a given model should be compatible with any future version of the same model as PIQI models are backwards compatible.
 
-An evaluation rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that profile. Evaluation rubrics can be established as a standard or custom scoring rubric.
+An evaluation rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that specific collection of patient data. Evaluation rubrics can be established as a standard or custom scoring rubric.
 
 A given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the model, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
 
@@ -521,7 +519,7 @@ Example: Graphical Depiction of an Evaluation Rubric for a data class
 
 #### Evaluation Rubric Assessments
 
-The core of an Evaluation Criteria is the sequenced collection of entity assessments. Each step has the following components:
+The core of an Evaluation Rubric is the sequenced collection of entity assessments. Each step has the following components:
 
 | Component | Description |
 | --- | --- |
@@ -537,7 +535,7 @@ The core of an Evaluation Criteria is the sequenced collection of entity assessm
 
 #### Scoring Effect
 
-An assigned Evaluation SAM is typically used to score the quality of the data in a message but can also be used to collect data without impacting the quality score. The Scoring Effect is essentially a switch that tells the PIQI engine to collect statistics for a given SAM without effecting the numerator or denominator of the score for the message.
+An assigned Evaluation SAM is typically used to score the quality of the data in a message but can also be used to collect data without impacting the quality score. The Scoring Effect is essentially a switch that tells the PIQI engine to collect statistics for a given SAM without affecting the numerator or denominator of the score for the message.
 
 #### Weight
 
@@ -555,9 +553,9 @@ If a **prerequisite** SAM for an assigned Evaluation SAM fails, this is consider
 
 If a **conditional** SAM for an assigned Evaluation SAM fails, this means the conditions for the assigned Evaluation SAM were not met and the assigned Evaluation SAM should not be run. Neither the numerator nor the denominator is incremented.
 
-### Evaluation Criteria Execution
+### Evaluation Rubric Execution
 
-The sequence of execution of the Evaluation Criteria Assessments controls the order of assessment within a given data class. The data class execution sequence is defined as the sequence of patient data loaded into the PIQI model. The sequence of assessment will repeat within a given data class until it has completed all the elements of that data class. Upon completion of the assessment of all the elements in a given data class, the data class assessments themselves (if defined) are executed. Upon completion of all elements and data class assessments, model scope assessments (if defined) are executed.
+The sequence of execution of the Evaluation Rubric Assessments controls the order of assessment within a given data class. The data class execution sequence is defined as the sequence of patient data loaded into the PIQI model. The sequence of assessment will repeat within a given data class until it has completed all the elements of that data class. Upon completion of the assessment of all the elements in a given data class, the data class assessments themselves (if defined) are executed. Upon completion of all elements and data class assessments, model scope assessments (if defined) are executed.
 
 ### PIQI Scoring in a Nutshell
 
@@ -632,7 +630,7 @@ Within the community of practice implementations of the PIQI Framework could be 
 
 ### PIQI Data Source Unique Identifier
 
-The PIQI Framework was created to assess and improve the quality of patient data from a given source. However, this raises a crucial question: How do we uniquely and ubiquitously identify the source of that data?
+The PIQI Framework was created to assess and improve the quality of patient data from a given source. However, this raises a crucial question: How do we uniquely and unambiguously identify the source of that data?
 
 In healthcare, we have various identifier types for institutions, facilities, and providers, but no unique identifier for the data entity responsible for generating and sharing patient data. This is analogous to an IP address in a computer network—an essential component that enables modern data-sharing networks to recognize and authenticate each participant.
 

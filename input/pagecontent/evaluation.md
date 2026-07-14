@@ -5,7 +5,7 @@ The Patient Information Quality Improvement (PIQI) Framework assesses patient da
 
 The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
-Each Evaluation Criteria is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
+Each Evaluation Criterion is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
 The PIQI Model Entity can be an attribute, element, data class or the entire patient.
 
