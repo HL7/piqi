@@ -2,6 +2,8 @@
 
 Please refer to the appropriate [**PIQI Message Format Guide**](https://piqiframework.org/wp-content/uploads/2025/05/PIQI-Framework-Message-Format-Implementation-Guide-Patient-Clinical-Data-Model-v1.1-05MAY2025.pdf) for specific PIQI model format implementation details.
 
+The high-level component diagram can be found [here](background.md#framework-design)
+
 ### PIQI Message Philosophy
 
 It is important to remember that the goal of the Patient Information Quality Improvement (PIQI) Framework is to assess the contents of **a single structured data payload and provide a score based solely on the contents of that payload**. Each rubric assessing a payload is designed in the context of a particular use case. This allows the following:
@@ -637,3 +639,6 @@ In healthcare, we have various identifier types for institutions, facilities, an
 This is not merely a "nice to have" feature. Establishing a unique data source identifier is critical for trust, traceability, and provenance in our national healthcare infrastructure.
 
 While the PIQI Framework does not require a global unique data source identifier, nor does it include a methodology for assigning one, incorporating one would significantly enhance the ability to assess the quality and reliability of data exchange participants—regardless of their role or the nature of the coordinating entity.
+
+
+[def]: docs/
