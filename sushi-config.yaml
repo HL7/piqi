@@ -65,7 +65,8 @@ menu:
     Laboratory Data: requirements_and_use_case.html#laboratory-data
     Health Information Technology: requirements_and_use_case.html##health-information-technology
     Provider: requirements_and_use_case.html#provider
-    
+    Social Services: requirements_and_use_case.html#social-services    
+  
   PIQI Framework:
     Overview: piqi_framework.html
     Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt-version-10
