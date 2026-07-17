@@ -2,7 +2,7 @@
 
 Please refer to the appropriate [**PIQI Message Format Guide**](https://piqiframework.org/wp-content/uploads/2025/05/PIQI-Framework-Message-Format-Implementation-Guide-Patient-Clinical-Data-Model-v1.1-05MAY2025.pdf) for specific PIQI model format implementation details.
 
-The high-level component diagram can be found [here](background.md#framework-design)
+The high-level component diagram can be found [here](background.html#framework-design)
 
 ### PIQI Message Philosophy
 
