@@ -20,9 +20,10 @@ The HL7 Cross-Group Project (CGP) sponsored PIQI project is two-phased. This Inf
 The main sections of this Informative Document include:
 
 *   [PIQI Background](background.html) - These pages provide background on the PIQI Framework.
-*   [Data Quality Use Cases](requirements_and_use_case.html) - This pages describe known use cases and specific requirements for assessing data quality in various industry verticals.
+*   [Data Quality Use Cases](requirements_and_use_case.html) - This page describes known use cases and specific requirements for assessing data quality in various industry verticals.
 *   [PIQI Framework](piqi_framework.html) - These pages define the structure of the PIQI Framework with examples.
-*   [Change Notes](changes.html) - This page documents the changes across the versions of the Patient Information Quality Improvement (PIQI) IG.
+*   [PIQI Glossary](glossary.html) - This pages provides a glossary of terms use throuughout the PIQI IG.
+*   [Change Notes](changes.html) - This page documents the changes across the versions of the PIQI IG.
 
 Achieving higher data quality involves careful review and action throughout different stages of the health data lifecycle. However, the PIQI framework is primarily designed to objectively assess data quality at the point of data exchange—which is when data receivers first encounter the data. To best assess data quality, it's important to evaluate that data in as close to the format in which it was received as possible. When PIQI-based assessments uncover data quality issues, organizations should work to address these problems by consulting comprehensive, end-to-end standards for health record data quality, such as the following:
 
