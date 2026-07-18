@@ -471,7 +471,7 @@ Each SAM is comprised of the following elements:
 | --- | --- |
 | SAM Name | The name of the SAM. |
 | Entity Type | This is the patient entity type (entire model, data class, element, attribute) that the assessment has been designed to evaluate. |
-| Assessment Logic | The actual logic that performs the evaluation against the |
+| Assessment Logic | The actual logic that performs the evaluation against the data class, element or attribute |
 | PIQI Dimension | The PIQI taxonomy dimension that most appropriately describes the SAM. |
 | Required Params | The list of required parameters that must be supplied by the Evaluation Criterion to perform the assessment. |
 
