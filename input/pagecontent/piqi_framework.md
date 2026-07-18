@@ -406,7 +406,9 @@ A standard classification taxonomy for patient information quality issues provid
 
 The PIQI Taxonomy consists of high-level categories, each containing more specific dimensions. It's essential to note that the assessment of patient information quality occurs at both the element and [attribute](glossary.html#data-attribute) levels, and not all dimensions apply uniformly to both.
 
-Given that the dimensions are designed to categorize qualitative issues, they are presented from a negative perspective. Consequently, the percentages associated with these dimensions indicate the proportion of failures or issues identified within each dimension.
+Given that the dimensions are designed to categorize qualitative issues, they are presented from a negative perspective. Consequently, the percentages associated with these dimensions indicate the proportion of failures or issues identified within each dimension.  
+
+It is important to remember that these dimensions are available to be used by the SAMs which provide code assessments of the input to the SAM, be that an attribute, data class element, data class collection or the entire message.  This means a HDQT is an abstract concept and it's assignment to the SAM is based on a best-fit interpretation of the assessments intent.
 
 The categories are as follows:  
 <span width="100%">
@@ -435,7 +437,7 @@ Dimensions:
 | --- | --- | --- |
 | Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, and single alphanumeric character. The specific logic used to assess format should be included in the corresponding SAM definition.|
 | Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. For example, it would be appropriate to include in this dimension the logical assessments of text strings expected to conform to a specific set of values (e.g., UCUM units when they are not conveyed in a fully coded format where the Invalid Member dimension would be a more appropriate choice), or business rules related to date values (e.g., Date of Birth with a future date). Note that a value may be an invalid value despite the values having an appropriate format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields.|
-| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. |
+| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. An example of this could be a situation where a lab test that is only performed on serum and a lab element had that lab code paired with a urine specimen.  This is would represent a fundamentally invalid combination |
 
 #### Conformity Category
 
