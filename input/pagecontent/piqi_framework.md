@@ -312,69 +312,74 @@ To support code system identifier variants in PIQI there is a mechanism that all
 
 For example, for LOINC this mechanism would establish the ‘LOINC’ mnemonic in the following manner:
 
-| Mnemonic | LOINC |
+| Name | Logical Observation Identifiers Names and Codes |
+
 | --- | --- |
-| Description | Logical Observation Identifiers Names and Codes |
-| Organization | Regenstrief Institute |
+| Mnemonic | LOINC |
 | Code System Identifiers | LOINC |
+|     | LN |
 |     | LNC |
-|     | LN  |
+|     | urn:oid:2.16.840.1.113883.6.1 |
 |     | 2.16.840.1.113883.6.1 |
 |     | <http://loinc.org> |
-| Validation Code System | 2.16.840.1.113883.6.1 |
 
 This is another example of how PIQI is designed specifically for patient information. This function will allow, for example, an Evaluation Rubric that is checking for conformance to just pass ‘LOINC’ to the SAM that validated conformity and have it pass if any of the Code System Identifier aliases are used. It also allows a validation SAM to automatically validate a concept that is received using one of the code systems aliases. If at some point in the future another valid code system identifier is defined for a given code system, it can easily be added to this mechanism and automatically reflected in all configured Evaluation Rubrics.
 
 #### Code System JSON structure
 
 ```json
-    "**codeSytems**": [
-        {
-            "mnemonic": "LOINC",
-            "name": "Logical Observation Identifiers Names and Codes",
-            "identifier": "<http://loinc.org>",
-            "aliases": [
-                "LOINC",
-                "LOINC Code",
-                "<http://loinc.org>",
-                "urn:oid:2.16.840.1.113883.6.1"
-            ],
-            "terminologyServerStatus": "active"
-        },
-        {
-            "mnemonic": "SNOMEDCT",
-            "name": "SNOMED Clinical Terms",
-            "identifier": "<http://snomed.info/sct>",
-            "aliases": [
-                "SNOMED CT",
-                "SNOMEDCT",
-                "sct",
-                "urn:oid:2.16.840.1.113883.6.96"
-            ],
-            "terminologyServerStatus": "active"
-        },
-        {
-            "mnemonic": "ICD10CM",
-            "name": "International Classification of Diseases, Tenth Revision, Clinical Modification",
-            "identifier": "<http://hl7.org/fhir/sid/icd-10-cm>",
-            "aliases": [
-                "ICD-10-CM",
-                "ICD10CM",
-                "urn:oid:2.16.840.1.113883.6.90"
-            ],
-            "terminologyServerStatus": "active"
-        },
-        {
-            "mnemonic": "ICD9CM",
-            "name": "International Classification of Diseases, Ninth Revision, Clinical Modification",
-            "identifier": "<http://hl7.org/fhir/sid/icd-9-cm>",
-            "aliases": [
-                "ICD-9-CM",
-                "ICD9CM",
-                "urn:oid:2.16.840.1.113883.6.42"
-            ],
-            "terminologyServerStatus": "deprecated"
-        }
+    "**codeSystems**": [
+    {
+      "name": "Logical Observation Identifiers Names and Codes",
+      "mnemonic": "LOINC",
+      "codeSystemIdentifiers": [
+        "LN",
+        "LNC",
+        "urn:oid:2.16.840.1.113883.6.1",
+        "2.16.840.1.113883.6.1",
+        "http://loinc.org"
+      ]
+    },
+    {
+      "name": "SNOMED CT US Edition",
+      "mnemonic": "SNO_INT_USEXT",
+      "codeSystemIdentifiers": [
+        "http://snomed.info/sct/731000124108",
+        "SNOMED",
+        "SCT",
+        "SNOMEDCT",
+        "urn:oid:2.16.840.1.113883.6.96",
+        "http://snomed.info/sct",
+        "2.16.840.1.113883.6.96",
+        "SNO"
+        ]
+    },
+    {
+      "name": "ICD-10-CM",
+      "mnemonic": "ICD10CM",
+      "codeSystemIdentifiers": [
+        "ICD10",
+        "ICD10-CM",
+        "ICD10CM",
+        "2.16.840.1.113883.6.90",
+        "urn:oid:2.16.840.1.113883.6.90",
+        "http://hl7.org/fhir/sid/icd-10-cm",
+        "https://www.cms.gov/medicare/icd-10/2022-icd-10-cm"
+      ]
+    },
+    {
+      "name": "ICD-9-CM Diagnosis",
+      "mnemonic": "ICD9CMD",
+      "codeSystemIdentifiers": [
+        "I9",
+        "ICD9",
+        "ICD9CM",
+        "ICD9-CM",
+        "2.16.840.1.113883.6.103",
+        "urn:oid:2.16.840.1.113883.6.103"
+        "http://hl7.org/fhir/sid/icd-9-cm",
+      ]
+    }
     ]
 ```
 
