@@ -79,3 +79,4 @@ tmp*.xml
 # Manually Added #
 ##################
 /backups/
+CLAUDE.md

@@ -1,13 +1,13 @@
 
-**PIQI Evaluation Rubric**
+**PIQI [Evaluation Rubric](glossary.html#evaluation-rubric)**
 
-The Patient Information Quality Improvement (PIQI) Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
+The Patient Information Quality Improvement (PIQI) Framework assesses patient data in the PIQI Data Model using an **[Evaluation Rubric](glossary.html#evaluation-rubric)**.
 
 The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
-Each Evaluation Criterion is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
+Each Evaluation Criterion is comprised of a specific **[PIQI Model](glossary.html#piqi-model) Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
-The PIQI Model Entity can be an attribute, element, data class or the entire patient.
+The PIQI Model Entity can be an [attribute](glossary.html#data-attribute), element, [data class](glossary.html#data-class) or the entire patient.
 
 The **Evaluation** and **Condition** are both configured **Simple Assessment Modules** (**SAMs**).
 
@@ -17,11 +17,11 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 ### Simple Assessment Modules
 
-SAMs are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, data class, element or attribute and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
+SAMs are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, [data class](glossary.html#data-class), element or [attribute](glossary.html#data-attribute) and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
 
 ### Evaluation Rubrics
 
-Evaluation rubrics represent a collection of sequences SAM evaluations of specific entities in the PIQI Model along with the desired scoring effect.
+Evaluation rubrics represent a collection of sequences SAM evaluations of specific entities in the [PIQI Model](glossary.html#piqi-model) along with the desired scoring effect.
 
 ### Anatomy of an Evaluation Rubric
 
@@ -77,7 +77,7 @@ Each evaluation rubric contains a collection of criteria that are used for asses
 
 ##### Criterion Sequence
 
-This is the sequence order for the criteria in the collection. The criteria sequence is assigned automatically based on the data class and entity being assessed by the criteria.
+This is the sequence order for the criteria in the collection. The criteria sequence is assigned automatically based on the [data class](glossary.html#data-class) and entity being assessed by the criteria.
 
 ##### Criterion Description
 
@@ -85,11 +85,11 @@ This is a human readable description of the purpose or rationale for the criteri
 
 ##### Criterion Data Class
 
-This is the Data Class in the PIQI model that is being assessed. This can be any data class in the PIQI information model or ‘Patient’ which indicates a complete patient
+This is the Data Class in the [PIQI model](glossary.html#piqi-model) that is being assessed. This can be any data class in the PIQI information model or ‘Patient’ which indicates a complete patient
 
 ##### Criterion Entity
 
-This is the entity (element or attribute) being assessed by the criteria,
+This is the entity (element or [attribute](glossary.html#data-attribute)) being assessed by the criteria,
 
 ##### Criterion SAM Mnemonic
 

@@ -2,13 +2,13 @@
 
 #### PIQI Assessment Approach
 
-The Patient Information Quality Improvement (PIQI) Framework assesses patient data in the PIQI Data Model using an **Evaluation Rubric**.
+The Patient Information Quality Improvement (PIQI) Framework assesses patient data in the PIQI Data Model using an **[Evaluation Rubric](glossary.html#evaluation-rubric)**.
 
 The Evaluation Rubric is a sequenced collection of **Evaluation Criteria**.
 
-Each Evaluation Criterion is comprised of a specific **PIQI Model Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
+Each Evaluation Criterion is comprised of a specific **[PIQI Model](glossary.html#piqi-model) Entity** an assigned **Evaluation** an optional **Condition** and the **Scoring Effect.**
 
-The PIQI Model Entity can be an attribute, element, data class or the entire patient.
+The PIQI Model Entity can be an [attribute](glossary.html#data-attribute), element, [data class](glossary.html#data-class) or the entire patient.
 
 The **Evaluation** and **Condition** are both configured **Simple Assessment Modules** (**SAMs**).
 
@@ -56,7 +56,7 @@ The SAMUID is an optional implementation specific unique identifier. This identi
 
 #### SAM Name
 
-The name of the SAM. This name should be in the context of the SAM passing. For example, if the SAM is assessing if a attribute is populated the same name would be ‘Is populated’.
+The name of the SAM. This name should be in the context of the SAM passing. For example, if the SAM is assessing if a [attribute](glossary.html#data-attribute) is populated the same name would be ‘Is populated’.
 
 #### SAM Success Alias
 
@@ -82,13 +82,13 @@ This is the entity type that the SAM expects as input. The initial Input types a
 
 **Ranged_Value** A ranged value JSON string
 
-**Element** An element or single instance of a data class - JSON collection of attributes
+**Element** An element or single instance of a [data class](glossary.html#data-class) - JSON collection of attributes
 
 **Data_Class** A model data class, element JSON collection of elements
 
 **Patient** The entire patient JSON collection
 
-For the Element and Data Class input Types the PIQI Model is required.
+For the Element and Data Class input Types the [PIQI Model](glossary.html#piqi-model) is required.
 
 #### SAM PIQI Model
 
@@ -187,7 +187,7 @@ The PIQI Alliance Member unique identifier.
 
 ### Examples of SAM Definition JSON
 
-A primitive SAM for Attribute is Valid Date:
+A primitive SAM for [Attribute](glossary.html#data-attribute) is Valid Date:
 
 ```json
 {
@@ -256,7 +256,7 @@ A Stored Procedure SAM for lab result unit plausibility based on Logical Observa
 
 ### Standard Simple Assessment Modules
 
-The standard SAMs are those that operate against attributes that use primitive logic for performance.
+The standard SAMs are those that operate against [attributes](glossary.html#data-attribute) that use primitive logic for performance.
 
 #### Simple Attribute SAMs
 
