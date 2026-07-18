@@ -166,12 +166,7 @@ This field indicates whether this criterion is considered critical for the evalu
                     "SAMShortName": "ValidDate",
                     "successNameOverride": "Valid Birth Date",
                     "failureNameOverride": "Invalid Birth Date",
-                    "SAMParameters": [
-                        {
-                            "parameterName": "DateFormat",
-                            "parameterValue": "YYYY-MM-DD"
-                        }
-                    ],
+                    "SAMParameters": [],
                     "conditionalSAM": "Attr_IsPopulated",
                     "conditionalSAMParameters": [
                         {
