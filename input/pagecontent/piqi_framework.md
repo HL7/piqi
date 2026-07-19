@@ -63,6 +63,9 @@ tr {
 | text | Simple Attribute | Text representation of the concept |
 | codings | Codings | Collection of zero-to-many codings |
 
+##### Coding Attributes
+Codings exist as a substructure to the CodeableConcept type.  The substructure is adopted from FHIR to express one or more codings associated with a given CodeableConcept.
+
 **Coding sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
