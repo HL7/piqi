@@ -68,7 +68,7 @@ The alias for the SAM that is used when communicating that the SAM has failed. T
 
 #### SAM Description
 
-This is a brief description of the purpose of the SAM.
+This is a brief description of the purpose of the SAM. This description should have a detailed explanation of the logic used to perform the assessment.
 
 #### SAM Input Type
 
@@ -198,7 +198,7 @@ A primitive SAM for [Attribute](glossary.html#data-attribute) is Valid Date:
             "name": "Attribute is valid date",
             "successAlias": "Valid date",
             "failureAlias": "Invalid date",
-            "description": "Determines if a simple attribute is a valid date",
+            "description": "Determines if a simple attribute is a valid date by attempting tocast to DateTime format",
             "inputType": "SimpleAttribute",
             "parameters": [],
             "prerequisiteSAMMnemonic": "Attr_IsPopulated",
