@@ -70,6 +70,12 @@
           "sourceUrl": "evaluation.html"
         },
         {
+          "title": "Glossary",
+          "generation": "markdown",
+          "name": "glossary.html",
+          "sourceUrl": "glossary.html"
+        },
+        {
           "title": "Change History",
           "generation": "markdown",
           "name": "changes.html",
