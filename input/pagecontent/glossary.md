@@ -62,11 +62,11 @@ A **Simple Assessment Module** that must pass in order for a given SAM to run.
 
 ### Observation Value
 
-A **Simple** attirbute with a type codeable concept to provide information on the nature of the value, a set of numberic simple attributes for single or ranged quanititative results and a codings collection for qualitative result values.
+A **Simple** attribute with a type codeable concept to provide information on the nature of the value, a set of numeric simple attributes for single or ranged quanititative results and a codings collection for qualitative result values.
 
 ### Range Value
 
-A **Simple** attirbute with a set of numberic simple attributes for single or ranged quanititative values.
+A **Simple** attirbute with a set of numeric simple attributes for single or ranged quanititative values.
 
 ### SAM Library
 
