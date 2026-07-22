@@ -563,9 +563,9 @@ The criticality indicator on an assigned Evaluation SAM allows the user to flag 
 
 In some cases, an assigned Evaluation SAM should only be applied if another condition is true. While this may seem similar to a prerequisite SAM it affects the scoring in a very different way.
 
-If a **prerequisite** SAM for an assigned Evaluation SAM fails, this is considered an entity assessment failure which increments the denominator but not the numerator for that assessment. In other words, the assessment is a failure.
+A **prerequisite** SAM is part of a SAM definition. If a prerequisite SAM for an assigned Evaluation SAM fails, this is considered an entity assessment failure which increments the denominator by 1 but not the numerator for that assessment. In other words, the assessment is a failure. For example, the  Attr_IsPopulated simple SAM is commonly a prerequisite for downstream SAMS such Attr_IsDate.
 
-If a **conditional** SAM for an assigned Evaluation SAM fails, this means the conditions for the assigned Evaluation SAM were not met and the assigned Evaluation SAM should not be run. Neither the numerator nor the denominator is incremented.
+A **conditional** SAM is part of an evaluation rubric. If a conditional SAM for an assigned Evaluation SAM fails, this means the conditions for the assigned Evaluation SAM were not met and the assigned Evaluation SAM should not be run. Therefore it is neither a pass or a fail. Accordingly, neither the numerator nor the denominator is incremented. For example, the Observation Value _IsQualitative SAM is a conditional SAM that must pass in order for a downstream SAMs that requires a qualitative result to be run.
 
 ### Evaluation Rubric Execution
 
