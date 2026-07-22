@@ -141,7 +141,7 @@ This field has the weight for scoring criteria. For informational criteria it is
 
 ##### Criterion Criticality Indicator
 
-This field indicates whether this criterion is considered critical for the evaluation profile. It is set to ‘false’ for Informational criteria and defaults to ‘false’ for Scoring criteria.
+This field identifies a criterion as critical, meaning that if this criterion fails, the entire patient message is considered to have failed the rubric regardless of the scores from all other criteria. Informational criteria cannot be critical and this value is always ‘false’ for them. For Scoring criteria, this value defaults to ‘false’; set it to ‘true’ only for criteria whose failure must disqualify the message as a whole.
 
 ### Example of Evaluation Rubric Definition JSON
 
