@@ -624,7 +624,7 @@ Software Components
 
 ### PIQI Alliance as a Community of Practice
 
-The PIQI Framework is designed to be implemented within a community of practice. Encapsulated, portable, data-driven components, and the ability to share knowledge establishes great potential for rapid evolution and adoption.
+The **PIQI Alliance** serves as the community of practice to support the implementation and collaborative evolution of the PIQI Framework. The Alliance aspires to bring together stakeholders—such as healthcare organizations, vendors, and standards bodies—who share a common interest in improving patient data quality. Through encapsulated, portable, data-driven components and the ability to share knowledge and assets, the PIQI Alliance has the potential to accelerate the adoption and ongoing refinement of the framework.
 
 ### PIQI Model Extensions
 
@@ -640,7 +640,7 @@ While the Evaluation Rubrics in PIQI are designed to be configured to support th
 
 ### PIQI Endpoint Registration
 
-Within the community of practice implementations of the PIQI Framework could be registered and certified to facilitate the ability to share content seamlessly with other community members.
+The PIQI Alliance envisions that implementations of the PIQI Framework could be registered and certified within the community, with the goal of enabling participants to seamlessly share content—such as SAMs, Evaluation Rubrics, and PIQI Models—with other community members.
 
 ### PIQI Data Source Unique Identifier
 
