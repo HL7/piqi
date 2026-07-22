@@ -538,21 +538,21 @@ Example: High Level
 <img src="high_level_sam_example.png" alt="High Level SAM example" height="70%" width="70%"/>
 </span>
 
-Example: Attribute is Present
+Example: Attribute is Populated
 
 | Component | Example Value |
 | --- | --- |
-| SAM Name | Attribute is Present |
+| SAM Name | Attribute is Populated |
 | Entity Type | Simple Attribute |
 | Assessment Logic | If (Attribute.Value==””) { SAM.Result=”FAIL”} (Pseudocode) |
 | PIQI Dimension | Availability.Unpopulated \[AV.UNPOP\] |
 | Required Params | N/A |
 
-Example: Coded Entity is Interoperable
+Example: Coded Entity is Compatible
 
 | Component | Example Value |
 | --- | --- |
-| SAM Name | Coded Entity is Interoperable |
+| SAM Name | Coded Entity is Compatible|
 | Entity Type | Coded Entity Attribute |
 | Assessment Logic | If ((Attribute.CS.Value==CS_PARAM)&&(Attribute.CNF.INVMBR=”PASS”))<br><br>{ SAM.Result=”PASS”} (Psuedocode) |
 | PIQI Dimension | Conformity.Incompatible \[CNF.INCMPT\] |
