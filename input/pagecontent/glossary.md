@@ -1,5 +1,7 @@
 Glossary of PIQI Framework Terms
 
+The following terms are used throughout the Patient Information Quality Improvement (PIQI) Framework documentation.
+
 ### Code System Identifiers
 
 A collection of string values that are considered valid for identifying a given code system.  may also be referred to as code system aliases.

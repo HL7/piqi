@@ -64,7 +64,7 @@ tr {
 | codings | Codings | Collection of zero-to-many codings |
 
 ##### Coding Attributes
-Codings exist as a substructure to the CodeableConcept type.  The substructure is adopted from FHIR to express one or more codings associated with a given CodeableConcept.
+Codings exist as a substructure to the CodeableConcept type.  The substructure is adopted from Fast Healthcare Interoperability Resources (FHIR) to express one or more codings associated with a given CodeableConcept.
 
 **Coding sub-attributes**
 
@@ -439,7 +439,7 @@ Dimensions:
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
 | Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, and single alphanumeric character. The specific logic used to assess format should be included in the corresponding SAM definition.|
-| Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. For example, it would be appropriate to include in this dimension the logical assessments of text strings expected to conform to a specific set of values (e.g., UCUM units when they are not conveyed in a fully coded format where the Invalid Member dimension would be a more appropriate choice), or business rules related to date values (e.g., Date of Birth with a future date). Note that a value may be an invalid value despite the values having an appropriate format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields.|
+| Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. For example, it would be appropriate to include in this dimension the logical assessments of text strings expected to conform to a specific set of values (e.g., Unified Code for Units of Measure (UCUM) units when they are not conveyed in a fully coded format where the Invalid Member dimension would be a more appropriate choice), or business rules related to date values (e.g., Date of Birth with a future date). Note that a value may be an invalid value despite the values having an appropriate format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields.|
 | Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. An example of this could be a situation where a lab test that is only performed on serum and a lab element had that lab code paired with a urine specimen.  This is would represent a fundamentally invalid combination |
 
 #### Conformity Category
@@ -617,7 +617,7 @@ Structured Data Asset Components
 Software Components
 
 - PIQI Framework Scoring Engine Representational State Transfer (REST)ful Service
-- Fast Healthcare Interoperability Resources (FHIR) (or equivalent) Terminology Server
+- FHIR (or equivalent) Terminology Server
 <span width="100%">
 <img src="piqi_technical_components.png" alt="PIQI Technical Components" width="85%" />
 </span>
