@@ -515,7 +515,7 @@ This SAM is designed to assess if a simple attribute is a timestamp including a 
 
 ##### Attribute Matches Regex
 
-This SAM is designed to assess if a simple attribute matches the regex pattern provided in the parameter. This should only apply to simple attributes and is intended to handle situations in an evaluation profile not covered by standard pattern SAMS.
+This SAM is designed to assess if a simple attribute matches the regex pattern provided in the parameter. This should only apply to simple attributes and is intended to handle situations in an evaluation rubric not covered by standard pattern SAMS.
 
 | **Property** | **Value** |
 | --- | --- |

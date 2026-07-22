@@ -107,7 +107,7 @@ A delicate balance exists between the need for thorough clinical documentation a
 
 Providers also face limited feedback mechanisms to assess whether their data entries satisfy regulatory, operational, or quality standards. This lack of transparency can impede efforts to improve documentation practices and diminish trust in the EHR as a reliable source of information.
 
-The PIQI Framework serves as a powerful tool to evaluate and enhance data quality from the provider's perspective. By utilizing modular, reusable Simple Assessment Modules (SAMs) and structured evaluation profiles, PIQI helps pinpoint actionable gaps—such as missing coded entries, improper use of value sets, or misalignment with USCDI and US Core standards. Integrating provider-centric rubrics identifies the gap between real-time documentation and downstream data applications.
+The PIQI Framework serves as a powerful tool to evaluate and enhance data quality from the provider's perspective. By utilizing modular, reusable Simple Assessment Modules (SAMs) and structured Evaluation Rubrics, PIQI helps pinpoint actionable gaps—such as missing coded entries, improper use of value sets, or misalignment with USCDI and US Core standards. Integrating provider-centric rubrics identifies the gap between real-time documentation and downstream data applications.
 
 Ultimately, aligning the PIQI Framework with clinical workflows and provider constraints fosters greater engagement, reduces documentation burdens, and elevates the quality and utility of clinical data across the healthcare landscape.
 

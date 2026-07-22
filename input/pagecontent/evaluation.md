@@ -41,7 +41,7 @@ The description of the scope and purpose of the evaluation rubric.
 
 #### Evaluation Rubric Version
 
-The version of the evaluation rubric is an optional field for evaluation profiles that are versioned.
+The version of the evaluation rubric is an optional field to support versioned rubrics.
 
 #### Evaluation Rubric Authority
 
