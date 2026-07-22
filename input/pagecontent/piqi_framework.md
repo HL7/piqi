@@ -516,6 +516,8 @@ Prerequisite SAMs cannot have parameters that are not provided to the assigned E
 
 One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisite logic in the assigned Evaluation SAM. The reason PIQI does not do this is the information on the failure of the entity being evaluated is primary to the definition of the SAM and the SAM itself just returns a pass or fail. In the above example when the assigned assessment ‘Concept is Compatible’ is run the first prerequisite SAM, ‘Attribute is Populated’ is run on the entity. The idea that the entity fails to pass the assigned SAM is what establishes the entity's score. Recording the specific SAM that failed provides the statistics that are core to the PIQI approach. This conveys the nature of the failure, as opposed to ‘Concept is Compatible’ failing and having to return a reason for the failure. Additionally, when a pre-requisite SAM fails, that failure should be categorized against the dimension for the pre-requisite SAM, not the dimension for the assigned Evaluation SAM.
 
+For more information on SAMs, please see [Simple Assessment Modules SAMS](sams.html)
+
 #### PIQI Evaluation Rubric
 An evaluation rubric is always based on a given [PIQI model](glossary.html#piqi-model) and version.  An evaluation rubric based on a given model should be compatible with any future version of the same model as PIQI models are backwards compatible.
 
