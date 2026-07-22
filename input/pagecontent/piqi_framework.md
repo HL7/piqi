@@ -97,33 +97,85 @@ An Observation Value attribute is a structure that can be represented as a simpl
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
 | text | Simple Attribute | Text representation of the value |
-| type | Codeable Concept | Collection of zero-to-many codings representing the value type |
+| type | Codeable Concept | A text representation of the value type and an optional collection of zero-to-many coded concepts representing the coded value types |
 | number | Simple Attribute | For numeric values |
 | number2 | Simple Attribute | For second numeric value |
-| codings | Codeable Concept | Collection of zero-to-many codings representing the observation value |
+| codings | Codeable Concept | Collection of zero-to-many coded concepts representing the observation value if it is a codeable concept |
 
-**Example:**
+**Example of ResultValue Text Only:**
 
 ```json
     "resultValue": {
-        "text": "Abnormal",
+        "text": "NEG",
+        "type": {
+            "text": "ST"
+        }
+    }
+```
+
+**Example of ResultValue Coding Sub-Attribute:**
+
+```json
+    "resultValue": {
+        "text": "Negative",
         "type": {
             "text": "CE",
             "codings": [
                 {
                     "system": "HL7-0125",
                     "code": "CE",
-                    "display": "Coded Entry"
-                },
-                {
-                    "system": "LOINC",
-                    "code": "11111",
-                    "display": "Abnormal"
+                    "display": "Coded element"
                 }
             ]
-        }
+        },
+        "codings": [
+            {
+                "system": "SNOMEDCT",
+                "code": "260385009",
+                "display": "Negative"
+            }
+        ]
     }
 ```
+
+**Example of ResultValue Number Value Sub-Attribute:**
+
+```json
+    "resultValue": {
+        "text": "100",
+        "type": {
+            "text": "NM",
+            "codings": [
+                {
+                    "system": "HL7-0125",
+                    "code": "NM",
+                    "display": "Numeric"
+                }
+            ]
+        },
+        "number": "100"
+    }
+```
+**Example of ResultValue Numeric Range Sub-Attribute:**
+
+```json
+    "resultValue": {
+        "text": "3.5-4.5",
+        "type": {
+            "text": "NR",
+            "codings": [
+                {
+                    "system": "HL7-0125",
+                    "code": "NR",
+                    "display": "Numeric range"
+                }
+            ]
+        },
+        "number": "3.5",
+        "number2": "4.5"
+    }
+```
+
 
 #### Range Value Attribute Type
 
