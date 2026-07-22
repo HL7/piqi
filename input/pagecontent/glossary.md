@@ -84,7 +84,7 @@ In an **Evaluation criteria** this defines the weight of the numerator and denom
 
 ### Simple Assessment Module (SAM)
 
-A logical measurement aligned to a dimension of quality in the **Healthcare Data Quality Taxonomy**, applied to a model-based input (**Data Attribute**, **Data Class Element**, **Data Class**, **Patient Container**) according to a pattern. The input parameters are based on the pattern of the assessment, and the returned result is a **pass**, **fail**, or **skip** with an optional reason for the result. A SAM may have a **Prerequisite SAM** that must pass in order for the SAM to be run.
+A logical test that measures a specific data quality dimension in the **Healthcare Data Quality Taxonomy** for a model element or characteristic (**Data Attribute**, **Data Class Element**, **Data Class**, **Patient Container**), following a defined pattern. The inputs depend on the pattern, but the output is always a simple result: **pass**, **fail**, or **skip**, with an optional reason for the result. SAMs can be grouped into hierarchical collections, allowing multiple checks to be combined in order to provide a broader picture of data quality for a given use case. A SAM may have a **Prerequisite SAM** that must pass in order for the SAM to be run.
 
 ### Simple Attribute
 

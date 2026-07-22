@@ -40,7 +40,7 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 #### Simple Assessment Modules
 
-SAMs are logical measurements aligned to a dimension of quality applied to a patient message, data class, element or attribute according to a pattern. The input parameters of a SAM are based on the pattern of the assessment, and the returned result is always a "pass", "fail", or "skip". Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard.
+A SAM is a logical test that measures a specific data quality dimension for a model element or characteristic, following a defined pattern. The inputs depend on the pattern, but the output is always a simple result: pass, fail, or skip. SAMs can be grouped into hierarchical collections, allowing multiple checks to be combined in order to provide a broader picture of data quality for a given use case. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard.
 
 ### Anatomy of a Simple Assessment Module (SAM)
 

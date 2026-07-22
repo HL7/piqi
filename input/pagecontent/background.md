@@ -23,7 +23,7 @@ Further details can be found here: [PIQI Data Models](https://build.fhir.org/ig/
 
 #### Simple Assessment Module (SAM)
 
-A [simple assessment module](sams.html) is a logical measurement aligned to a dimension of quality applied to a model data class or attribute according to a pattern. The input parameters of the module are based on the pattern of the assessment, but the returned result is always a ‘pass’ or ‘fail’ or 'skip'. These modules are intended to be organized into one or many hierarchical collections of SAMs to collectively paint a larger qualitative picture as defined by a given use case.
+A [simple assessment module](sams.html) is a logical test that measures a specific data quality dimension for a model element or characteristic, following a defined pattern. The inputs depend on the pattern, but the output is always a simple result: pass, fail, or skip. SAMs can be grouped into hierarchical collections, allowing multiple checks to be combined in order to provide a broader picture of data quality for a given use case.
 
 #### Evaluation Rubric
 

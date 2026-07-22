@@ -468,7 +468,7 @@ The PIQI Framework assesses patient data that has been put into the PIQI Data Mo
 
 #### PIQI Simple Assessment Modules
 
-PIQI SAMs are logical measurements aligned to a dimension of quality applied to a patient message, [data class](glossary.html#data-class), element or [attribute](glossary.html#data-attribute) according to a pattern. The input parameters of a SAM are based on the pattern of the assessment, and the returned result is always a ‘pass’, ‘fail’, or ‘skip’. A SAM that has been configured for use in an Evaluation Rubric is referred to simply as an Evaluation.
+A PIQI SAM is a logical test that measures a specific data quality dimension for a model element or characteristic, following a defined pattern. The inputs depend on the pattern, but the output is always a simple result: pass, fail, or skip. SAMs can be grouped into hierarchical collections, allowing multiple checks to be combined in order to provide a broader picture of data quality for a given use case. A SAM that has been configured for use in an Evaluation Rubric is referred to simply as an Evaluation.
 
 Each SAM is comprised of the following elements:
 
