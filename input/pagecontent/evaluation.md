@@ -17,7 +17,7 @@ Each Evaluation that is processed triggers the **Scoring Effect** based upon the
 
 ### Simple Assessment Modules
 
-SAMs are composable service endpoints that follow a consistent interface pattern, evaluate a patient message, [data class](glossary.html#data-class), element or [attribute](glossary.html#data-attribute) and return a simple "pass", "fail" or "skip" result. Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
+SAMs are logical measurements aligned to a dimension of quality applied to a patient message, [data class](glossary.html#data-class), element or [attribute](glossary.html#data-attribute) according to a pattern. The input parameters of a SAM are based on the pattern of the assessment, and the returned result is always a "pass", "fail", or "skip". Given that interaction with a PIQI evaluation endpoint is at the Rubric level, and not at the SAM level, the actual format for conveying these responses (e.g., "pass/fail" vs. "true/false" vs. "1/0") is an implementation decision that is outside the scope of this standard. For detailed information see [SAMS](sams.html)
 
 ### Evaluation Rubrics
 
