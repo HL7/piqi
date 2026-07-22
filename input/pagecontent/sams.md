@@ -276,7 +276,7 @@ For the purposes of a SAM complex attribute type like Codeable Concepts, Ranged 
 
 A **codeable concept** attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
 
-**Example:** In this Test example the highlighted text is considered the simple attribute value of the codeable concept.
+**Example:** In this Test example the text.text value is considered the simple attribute value of the codeable concept.
 
 ```json
 {
