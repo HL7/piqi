@@ -4,7 +4,7 @@ The following terms are used throughout the Patient Information Quality Improvem
 
 ### Code System Identifiers
 
-A collection of string values that are considered valid for identifying a given code system.  may also be referred to as code system aliases.
+A collection of string values that are considered valid for identifying a given code system. May also be referred to as code system aliases.
 
 ### Codeable Concept Attribute
 
@@ -20,19 +20,16 @@ A domain-specific, named collection of typed attributes representing a category 
 
 ### Data Class Element
 
-An single instance of a member of a data class.  The term **Data Class** refers to an patient specific data pattern and the entire collection of all instances of that pattern, when refering to a single instance of that pattern for assessment purposes the term **Data Class Element** or **Element** is used.
+A single instance of a member of a data class. The term **Data Class** refers to a patient specific data pattern and the entire collection of all instances of that pattern; when referring to a single instance of that pattern for assessment purposes the term **Data Class Element** or **Element** is used.
 
 ### Evaluation Criteria
 
-A combination of a **PIQI model entity reference**, A **Simple Assessment Module**, and necessary SAM parameters and the **Scoring Effect**, **Scoring Weight** and **Failure Criticality indicator**.
+A combination of a **PIQI model entity reference**, a **Simple Assessment Module**, and necessary SAM parameters and the **Scoring Effect**, **Scoring Weight** and **Failure Criticality indicator**.
 
 ### Evaluation Rubric
 
 A versioned, use-case-specific collection of configured Simple Assessment Modules (SAMs) aligned to a [PIQI Model](#piqi-model). Each criterion in an Evaluation Rubric specifies a [Data Class](#data-class), an entity scope ([attribute](#data-attribute), element, data class, or patient), an assigned SAM, scoring weight, and criticality indicator. Evaluation Rubrics can be shared through the PIQI Community of Practice to establish common data quality standards.
 
-### Evaluation Template
-
-A template that preconfigures the parameters for a **Simple Assessment Module** in the **SAM Library** for a common uses. 
 
 ### Failure Criticality indicator
 
@@ -40,7 +37,7 @@ In an **Evaluation criteria** this defines if the criteria is considered critica
 
 ### Healthcare Data Quality Taxonomy (HDQT)
 
-This is a taxonomy desinged to categorize and identify dimensions for quakitative issues in healthcare data in order to provide isight into root causes and remediation.
+This is a taxonomy designed to categorize and identify dimensions for qualitative issues in healthcare data in order to provide insight into root causes and remediation.
 
 ### Patient Container
 
@@ -62,17 +59,17 @@ A reference to any defined **Data Attribute**, **Data Class Element**, **Data Cl
 
 A **Simple Assessment Module** that must pass in order for a given SAM to run.
 
-#### Observation Value
+### Observation Value
 
-A **Simple** attribute with a type codeable concept to provide information on the nature of the value, a set of numeric simple attributes for single or ranged quanititative results and a codings collection for qualitative result values.
+A **Simple** attribute with a type codeable concept to provide information on the nature of the value, a set of numeric simple attributes for single or ranged quantitative results and a codings collection for qualitative result values.
 
 ### Range Value
 
-A **Simple** attirbute with a set of numeric simple attributes for single or ranged quanititative values.
+A **Simple** attribute with a set of numeric simple attributes for single or ranged quantitative values.
 
 ### SAM Library
 
-A collection of available **Simple Asssessment Modules** in a **PIQI Framework Assessment Service**.
+A collection of available **Simple Assessment Modules** in a **PIQI Framework Assessment Service**.
 
 ### Scoring Effect
 
@@ -80,7 +77,7 @@ In an **Evaluation criteria** this defines how the success or failure impacts th
 
 ### Scoring Weight
 
-In an **Evaluation criteria** this defines the weight of the numerator and denominator for the **Evaluation Rubric**, if the criterias effect is **scoring**.
+In an **Evaluation criteria** this defines the weight of the numerator and denominator for the **Evaluation Rubric**, if the criterion's effect is **scoring**.
 
 ### Simple Assessment Module (SAM)
 
@@ -88,7 +85,7 @@ A logical test that measures a specific data quality dimension in the **Healthca
 
 ### Simple Attribute
 
-A simple string value that is used to reperesent any classic data type in an information model. PIQI does not use strong types in the model since part of it's function is to assess if the data in the model payload complies with the type expectations of the use case.  For the purposes of higher order assessments, like **Is Populated**, all **Data Attributes** can be assessed as **Simple** attributes 
+A simple string value that is used to represent any classic data type in an information model. PIQI does not use strong types in the model since part of its function is to assess if the data in the model payload complies with the type expectations of the use case.  For the purposes of higher order assessments, like **Is Populated**, all **Data Attributes** can be assessed as **Simple** attributes 
 
 
 

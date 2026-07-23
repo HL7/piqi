@@ -21,7 +21,7 @@ A SAM is a logical test that measures a specific data quality dimension for a mo
 
 ### Evaluation Rubrics
 
-Evaluation rubrics represent a collection of sequences SAM evaluations of specific entities in the [PIQI Model](glossary.html#piqi-model) along with the desired scoring effect.
+Evaluation Rubrics represent a collection of sequenced SAM evaluations of specific entities in the [PIQI Model](glossary.html#piqi-model) along with the desired scoring effect.
 
 ### Anatomy of an Evaluation Rubric
 
@@ -29,23 +29,23 @@ An Evaluation Rubric is comprised of the following components:
 
 #### Evaluation Rubric Mnemonic
 
-The Rubric Mnemonic is a mnemonic identifier that is used to identify a unique evaluation rubric. This is the primary identifier to reference a given evaluation rubric.
+The Rubric Mnemonic is a mnemonic identifier that is used to identify a unique Evaluation Rubric. This is the primary identifier to reference a given Evaluation Rubric.
 
 #### Evaluation Rubric Name
 
-The name of the evaluation rubric.
+The name of the Evaluation Rubric.
 
 #### Evaluation Rubric Description
 
-The description of the scope and purpose of the evaluation rubric.
+The description of the scope and purpose of the Evaluation Rubric.
 
 #### Evaluation Rubric Version
 
-The version of the evaluation rubric is an optional field to support versioned rubrics.
+The version of the Evaluation Rubric is an optional field to support versioned rubrics.
 
 #### Evaluation Rubric Authority
 
-The authoritative source or reference for the evaluation rubric. This should contain both any organizations that have endorsed the rubric (to convey trustworthiness) as well as context on known production usage of the rubric.
+The authoritative source or reference for the Evaluation Rubric. This should contain both any organizations that have endorsed the rubric (to convey trustworthiness) as well as context on known production usage of the rubric.
 
 #### Evaluation Rubric Model
 
@@ -61,7 +61,7 @@ This is the PIQI Data Model required for the rubric. It is envisioned that there
 
 #### Evaluation Rubric Source
 
-This is the original source of the evaluation rubric content, containing both a unique identifier as well as a human readable name for the organization.
+This is the original source of the Evaluation Rubric content, containing both a unique identifier as well as a human readable name for the organization.
 
 - PIQI Organization UID
 
@@ -69,11 +69,15 @@ This is the original source of the evaluation rubric content, containing both a 
 
 #### CreationDateTime
 
+The date and time the Evaluation Rubric was originally created.
+
 #### ModifiedDateTime
+
+The date and time the Evaluation Rubric was most recently modified.
 
 #### Evaluation Rubric Criteria
 
-Each evaluation rubric contains a collection of criteria that are used for assessing and scoring patient messages. Each criterion has the following attributes:
+Each Evaluation Rubric contains a collection of criteria that are used for assessing and scoring patient messages. Each criterion has the following attributes:
 
 ##### Criterion Sequence
 

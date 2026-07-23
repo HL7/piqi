@@ -2,7 +2,7 @@
 
 The ongoing digitization of healthcare has resulted in significant growth in the volume and diversity of patient-centric data, including electronic health records (EHRs), clinical registries, administrative claims, and digital health applications. While these data are foundational to interoperable exchange and secondary use, their utility is frequently constrained by variation in data representation, conformance to standards, and governance across systems.
 
-The Patient Information Quality Improvement (PIQI) Framework (pronounced “picky”) defines a standardized, transportable, and reusable approach for assessing the quality of patient-centric health data. The framework is designed to operate as an ingestion, or “in-line,” data quality assessment capability, in which data quality evaluation is performed during data acquisition, transformation, or exchange. This approach supports near real-time assessment at points of data movement, enabling early detection and remediation of data quality issues and improving downstream reliability and reuse. Data usability is fundamentally subjective and specific to a use case. In the PIQI framework an evaluation rubric uses evaluation criteria to assess usability of the data for the evaluation rubric's use case.Data usability is fundamentally subjective and specific to a use case.
+The Patient Information Quality Improvement (PIQI) Framework (pronounced “picky”) defines a standardized, transportable, and reusable approach for assessing the quality of patient-centric health data. The framework is designed to operate as an ingestion, or “in-line,” data quality assessment capability, in which data quality evaluation is performed during data acquisition, transformation, or exchange. This approach supports near real-time assessment at points of data movement, enabling early detection and remediation of data quality issues and improving downstream reliability and reuse. Data usability is fundamentally subjective and specific to a use case. In the PIQI framework an Evaluation Rubric uses evaluation criteria to assess usability of the data for the Evaluation Rubric's use case.
 
 The PIQI Framework defines a structured taxonomy of data quality dimensions that integrates both structural and contextual perspectives. Conventional data quality frameworks within healthcare interoperability primarily emphasize structural assessment, including validation of data element conformance to defined formats, value sets, and profiles. Common structural dimensions include completeness, conformance, consistency, and syntactic validity. These checks are necessary to ensure alignment with implementation guides and specifications; however, they do not determine whether data are suitable for a specific use case.
 
@@ -15,14 +15,14 @@ The PIQI Framework is aligned with Health Level Seven (HL7) interoperability sta
 By embedding data quality assessment within ingestion and exchange workflows, PIQI supports scalable implementation across heterogeneous environments without dependency on specific infrastructure. This enables implementers to incorporate data quality evaluation as a core component of interoperability workflows. Through its emphasis on standards alignment, portability, and use-case-driven assessment, PIQI provides a foundation for improving trust in exchanged patient data and supporting high-quality, data-driven healthcare delivery.
 
 ### Informative Document Overview and Scope
-The HL7 Cross-Group Project (CGP) sponsored PIQI project is two-phased. This Informative Document is the first phase, in which, the PIQI Framework, it's components and approach to data quality evaluation are described. As an Informative Document, no HL7 product specific resources are defined herein. The second phase will encompass a cross-paradigm implementation guide (CP IG), which defines how the PIQI Framework and approach can be utilized across formats, namely the HL7 V2, Consolidated Clinical Document Architecture (C-CDA) and FHIR, will be produced in the second phase. Therefore specifics about how PIQI Framework relates to each HL7 product family is out of scope for the Informative Document and will be addressed in the PIQI CP IG.
+The HL7 Cross-Group Project (CGP) sponsored PIQI project is two-phased. This Informative Document is the first phase, in which the PIQI Framework, its components and approach to data quality evaluation are described. As an Informative Document, no HL7 product specific resources are defined herein. The second phase will produce a Cross-Paradigm implementation guide (CP IG) that defines how the PIQI Framework and approach can be utilized across formats, namely HL7 V2, Consolidated Clinical Document Architecture (C-CDA) and FHIR. Therefore, specifics about how the PIQI Framework relates to each HL7 product family is out of scope for the Informative Document and will be addressed in the PIQI CP IG.
 
 The main sections of this Informative Document include:
 
 *   [PIQI Background](background.html) - These pages provide background on the PIQI Framework.
 *   [Data Quality Use Cases](requirements_and_use_case.html) - This page describes known use cases and specific requirements for assessing data quality in various industry verticals.
 *   [PIQI Framework](piqi_framework.html) - These pages define the structure of the PIQI Framework with examples.
-*   [PIQI Glossary](glossary.html) - This pages provides a glossary of terms use throuughout the PIQI IG.
+*   [PIQI Glossary](glossary.html) - This page provides a glossary of terms used throughout the PIQI IG.
 *   [Change Notes](changes.html) - This page documents the changes across the versions of the PIQI IG.
 
 Achieving higher data quality involves careful review and action throughout different stages of the health data lifecycle. However, the PIQI framework is primarily designed to objectively assess data quality at the point of data exchange—which is when data receivers first encounter the data. To best assess data quality, it's important to evaluate that data in as close to the format in which it was received as possible. When PIQI-based assessments uncover data quality issues, organizations should work to address these problems by consulting comprehensive, end-to-end standards for health record data quality, such as the following:
@@ -53,7 +53,7 @@ Contributing Authors:
 *   Sarah DeSilvey, Gravity Project
 *   Gay Dolin, Namaste Informatics
 *   Benjamin Hamlin, IPRO
-*   Gena Jarosch, Michigan Health Information Netork (MiHIN)
+*   Gena Jarosch, Michigan Health Information Network (MiHIN)
 *   Jon Lowe, CommonSpirit Health
 *   Craig Newman, J Michael Consulting
 *   Riki Merrick, Association of Public Health Laboratories (APHL)

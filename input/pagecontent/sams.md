@@ -1,4 +1,4 @@
-### Simple Assessment Modules (SAMS)
+### Simple Assessment Modules (SAMs)
 
 #### PIQI Assessment Approach
 
@@ -44,7 +44,7 @@ A SAM is a logical test that measures a specific data quality dimension for a mo
 
 ### Anatomy of a Simple Assessment Module (SAM)
 
-A SAM is comprised of the following component:
+A SAM is comprised of the following components:
 
 #### SAM Mnemonic
 
@@ -102,7 +102,7 @@ The standard mnemonic for the PIQI model
 
 The numeric version of the PIQI Model
 
-##### PIQI Model Mnemonic
+##### PIQI Model Version Mnemonic
 
 The mnemonic for the specific standard model version.
 
@@ -198,7 +198,7 @@ A primitive SAM for [Attribute](glossary.html#data-attribute) is Valid Date:
             "name": "Attribute is valid date",
             "successAlias": "Valid date",
             "failureAlias": "Invalid date",
-            "description": "Determines if a simple attribute is a valid date by attempting tocast to DateTime format",
+            "description": "Determines if a simple attribute is a valid date by attempting to cast to DateTime format",
             "inputType": "SimpleAttribute",
             "parameters": [],
             "prerequisiteSAMMnemonic": "Attr_IsPopulated",
@@ -310,7 +310,7 @@ This SAM is designed to assess if a simple attribute has content. For complex at
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
 | Prerequisite SAM | \-  |
-| HDQT Dimension | Availablity.Populated |
+| HDQT Dimension | Availability.Populated |
 | Execution Type | Primitive_logic |
 | Execution Reference | \-  |
 | Source | PIQI Alliance |
@@ -515,7 +515,7 @@ This SAM is designed to assess if a simple attribute is a timestamp including a 
 
 ##### Attribute Matches Regex
 
-This SAM is designed to assess if a simple attribute matches the regex pattern provided in the parameter. This should only apply to simple attributes and is intended to handle situations in an evaluation rubric not covered by standard pattern SAMS.
+This SAM is designed to assess if a simple attribute matches the regex pattern provided in the parameter. This should only apply to simple attributes and is intended to handle situations in an Evaluation Rubric not covered by standard pattern SAMs.
 
 | **Property** | **Value** |
 | --- | --- |
@@ -524,7 +524,7 @@ This SAM is designed to assess if a simple attribute matches the regex pattern p
 | Failure Alias | does not match the regex pattern |
 | Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
-| Parameter(s) | Paramter_1:Regular Expression |
+| Parameter(s) | Parameter_1:Regular Expression |
 | Prerequisite SAM | Attr_IsPopulated |
 | HDQT Dimension | Accuracy.ValidFormat |
 | Execution Type | Regular_Expression |
@@ -542,7 +542,7 @@ This SAM is designed to assess if a simple attribute is a member of a list of en
 | Failure Alias | Is not in list |
 | Input Type | Simple Attribute |
 | Domain Mnemonic | \-  |
-| Parameter(s) | Paramter_1:Enumerated_Valueset_Mnemonic |
+| Parameter(s) | Parameter_1:Enumerated_Valueset_Mnemonic |
 | Prerequisite SAM | Attr_IsPopulated |
 | HDQT Dimension | Accuracy.ValidValue |
 | Execution Type | Value |
@@ -566,7 +566,7 @@ A Codeable Concept attribute is a structure that can be represented as a simple 
 | --- | --- | --- |
 | code | Simple Attribute | Code value for the coded concept |
 | display | Simple Attribute | Display value for the coded concept |
-| system | Simple Attribute | Code system identifier for the codec concept |
+| system | Simple Attribute | Code system identifier for the coded concept |
 
 **Example:**
 
@@ -693,7 +693,7 @@ This SAM is designed to assess if a codeable concept attribute has at least ONE 
 
 ##### Codeable Concept Is Valid Concept
 
-This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of is provided code system.
+This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is a valid member of its provided code system.
 
 | **Property** | **Value** |
 | --- | --- |
@@ -747,12 +747,12 @@ This SAM is designed to assess if a codeable concept attribute’s text value is
 
 ##### Codeable Concept Is Active
 
-This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is an active member of is provided code system.
+This SAM is designed to assess if a codeable concept attribute has at least ONE complete coding (code, code system and display) in its codings collection that is an active member of its provided code system.
 
 | **Property** | **Value** |
 | --- | --- |
 | SAM Mnemonic | Concept_IsActive |
-| Success Alias | Is a active concept |
+| Success Alias | Is an active concept |
 | Failure Alias | Is a obsolete concept |
 | Input Type | Codeable Concept Attribute |
 | Domain Mnemonic | \-  |
@@ -774,7 +774,7 @@ An **Observation Value** attribute is a structure that can be represented as a s
 | text | Simple Attribute | Text representation of the value |
 | type | Codeable Concept | Collection of zero-to-many coded concepts representing the value type |
 | number | Simple Attribute | For numeric values |
-| number2 | Simple Attribute | For second numeric value – used for structured numrics like ranges and ratios |
+| number2 | Simple Attribute | For second numeric value – used for structured numerics like ranges and ratios |
 | codings | Codeable Concept | Collection of zero-to-many coded concepts representing the observation value |
 
 Example:
@@ -811,7 +811,7 @@ This SAM is designed to assess if an observation result value type is contained 
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | Observation Value Type_InList |
+| SAM Mnemonic | ObservationValue_TypeInList |
 | Success Alias | Value type in list |
 | Failure Alias | Value type not in list |
 | Input Type | Observation_Value |
@@ -829,13 +829,13 @@ This SAM is designed to assess if an observation result value is consistent with
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | Observation Value _MatchesType |
+| SAM Mnemonic | ObservationValue_MatchesType |
 | Success Alias | Value matches type |
 | Failure Alias | Value does not match type |
 | Input Type | Observation_Value |
 | Domain Mnemonic | \-  |
 | Parameter(s) | \-  |
-| Prerequisite SAM | Observation Value _HasType |
+| Prerequisite SAM | ObservationValue_HasType |
 | HDQT Dimension | Accuracy.InvalidValue |
 | Execution Type | Primitive_Logic |
 | Execution Reference | \-  |
@@ -847,13 +847,13 @@ This SAM is designed to assess if an observation result value type is a qualitat
 
 | **Property** | **Value** |
 | --- | --- |
-| SAM Mnemonic | Observation Value _IsQualitative |
+| SAM Mnemonic | ObservationValue_IsQualitative |
 | Success Alias | Value is qualitative |
 | Failure Alias | Value is not qualitative |
 | Input Type | Observation_Value |
 | Domain Mnemonic | \-  |
 | Parameter(s) |     |
-| Prerequisite SAM | Observation Value _HasType |
+| Prerequisite SAM | ObservationValue_HasType |
 | HDQT Dimension | Accuracy.InvalidValue |
 | Execution Type | Primitive_Logic |
 | Execution Reference | \-  |
@@ -863,7 +863,7 @@ This SAM is designed to assess if an observation result value type is a qualitat
 
 A RangeValue attribute is a structure that can be represented as a simple attribute value or a structure ranged value. The RangeValue is a specialized attribute as many elements in patient information can be represented by a structured range.
 
-**RanegValue sub-attributes**
+**RangeValue sub-attributes**
 
 | **AttributeName** | **Type** | **Description** |
 | --- | --- | --- |
@@ -952,7 +952,7 @@ This SAM is designed to assess if a lab result unit (or lack of unit) is plausib
 | --- | --- |
 | SAM Mnemonic | LabResult_UnitIsPlausible |
 | Success Alias | Unit is plausible |
-| Failure Alias | UNit is not plausible |
+| Failure Alias | Unit is not plausible |
 | Input Type | Element |
 | Domain Mnemonic | LabResult |
 | Parameter(s) | \-  |
@@ -1030,7 +1030,7 @@ Here is an example of a patient level SAM.
 
 ##### Patient is Undocumented Diabetic
 
-This SAM is designed to process the patient message with a multi-data class inference that determines if the patient has Type 2 Diabetes Mellitus based on labs, medications and comorbidities, but does have no mention of Diabetes on their condition list. This SAM would return a ‘condition not met’ if the patient has diabetes in their conditions list or does meet the criteria for the evaluation.
+This SAM is designed to process the patient message with a multi-data class inference that determines if the patient has Type 2 Diabetes Mellitus based on labs, medications and comorbidities, but has no mention of Diabetes on their condition list. This SAM would return a ‘condition not met’ if the patient has diabetes in their conditions list or does meet the criteria for the evaluation.
 
 | **Property** | **Value** |
 | --- | --- |

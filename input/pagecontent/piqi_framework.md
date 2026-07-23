@@ -164,7 +164,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | Allergy | Zero to Many |
 | Condition | Zero to Many |
 | Demographics | One |
-| HealthAssessments | Zero to Many |
+| HealthAssessment | Zero to Many |
 | Immunization | Zero to Many |
 | LabResult | Zero to Many |
 | MedicalDevice | Zero to Many |
@@ -236,8 +236,8 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | **LabResult** |
 | --- |     |     |
 | **Attribute Name** | **Type** | **Description** |
-| performed test | Codeable Concept | Specific lab test performed |
-| ordered test | Codeable Concept | Order or panel that initiated the test being performed |
+| performedTest | Codeable Concept | Specific lab test performed |
+| orderedTest | Codeable Concept | Order or panel that initiated the test being performed |
 | resultValue | Observation Value | Test result value |
 | resultUnit | Codeable Concept | Test result unit, if applicable |
 | interpretation | Codeable Concept | Test result interpretation |
@@ -295,7 +295,7 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | interpretation | Codeable Concept | Interpretation of vital sign |
 | referenceRange | Range Value | Reference range for vital sign |
 | resultStatus | Codeable Concept | Vital sign result status |
-| performedSite | Simple Attribute | Unique identifier for performing site |
+| performingSite | Simple Attribute | Unique identifier for performing site |
 | performedDateTime | Simple Attribute | Date and time vital sign was collected |
 | provenance | Simple Attribute | Source of this information |
 
@@ -379,7 +379,7 @@ This is another example of how PIQI is designed specifically for patient informa
         "ICD9CM",
         "ICD9-CM",
         "2.16.840.1.113883.6.103",
-        "urn:oid:2.16.840.1.113883.6.103"
+        "urn:oid:2.16.840.1.113883.6.103",
         "http://hl7.org/fhir/sid/icd-9-cm",
       ]
     }
@@ -411,7 +411,7 @@ The PIQI Taxonomy consists of high-level categories, each containing more specif
 
 Given that the dimensions are designed to categorize qualitative issues, they are presented from a negative perspective. Consequently, the percentages associated with these dimensions indicate the proportion of failures or issues identified within each dimension.  
 
-It is important to remember that these dimensions are available to be used by the SAMs which provide code assessments of the input to the SAM, be that an attribute, data class element, data class collection or the entire message.  This means a HDQT is an abstract concept and it's assignment to the SAM is based on a best-fit interpretation of the assessments intent.
+It is important to remember that these dimensions are available to be used by the SAMs which provide code assessments of the input to the SAM, be that an attribute, data class element, data class collection or the entire message.  This means a HDQT is an abstract concept and its assignment to the SAM is based on a best-fit interpretation of the assessments intent.
 
 The categories are as follows:  
 <span width="100%">
@@ -440,11 +440,11 @@ Dimensions:
 | --- | --- | --- |
 | Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, and single alphanumeric character. The specific logic used to assess format should be included in the corresponding SAM definition.|
 | Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. For example, it would be appropriate to include in this dimension the logical assessments of text strings expected to conform to a specific set of values (e.g., Unified Code for Units of Measure (UCUM) units when they are not conveyed in a fully coded format where the Invalid Member dimension would be a more appropriate choice), or business rules related to date values (e.g., Date of Birth with a future date). Note that a value may be an invalid value despite the values having an appropriate format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields.|
-| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. An example of this could be a situation where a lab test that is only performed on serum and a lab element had that lab code paired with a urine specimen.  This is would represent a fundamentally invalid combination |
+| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. An example of this could be a situation where a lab test that is only performed on serum and a lab element had that lab code paired with a urine specimen.  This would represent a fundamentally invalid combination |
 
 #### Conformity Category
 
-This category contains dimensions that relate to the integrity of coded information, for example verifying that specific code is a member of a CodeSystem or Valueset.
+This category contains dimensions that relate to the integrity of coded information, for example verifying that a specific code is a member of a CodeSystem or Valueset.
 
 | Dimension | Applies to | Definition |
 | --- | --- | --- |
@@ -460,7 +460,7 @@ This category contains dimensions that relate to whether the data makes sense ba
 | --- | --- | --- |
 | Temporally Implausible | Element<br><br>Attribute | Temporally implausible conditions are identified when an attribute or element is uncertain due to when it occurs in the context of the patient's timeline. _An example of this would be a future birth date or an end time that precedes a start time._ |
 | Clinically Implausible | Element<br><br>Attribute | Clinically Implausible conditions are identified when an attribute or element is uncertain due to clinical considerations. _An example of this would be a lab result value that is outside a reasonable range of values for a given lab test._ |
-| Situationally Implausible | Element | Situationally Implausible conditions are identified when an attribute or element is uncertain due other conflicting elements or attributes. _An example of this would be a high range value that is lower then a low range value._ |
+| Situationally Implausible | Element | Situationally Implausible conditions are identified when an attribute or element is uncertain due other conflicting elements or attributes. _An example of this would be a high range value that is lower than a low range value._ |
 
 ### PIQI Assessment Approach
 
@@ -519,11 +519,11 @@ One might be tempted to avoid prerequisite SAMs by encapsulating the prerequisit
 For more information on SAMs, please see [Simple Assessment Modules SAMS](sams.html)
 
 #### PIQI Evaluation Rubric
-An evaluation rubric is always based on a given [PIQI model](glossary.html#piqi-model) and version.  An evaluation rubric based on a given model should be compatible with any future version of the same model as PIQI models are backwards compatible.
+An Evaluation Rubric is always based on a given [PIQI model](glossary.html#piqi-model) and version. An Evaluation Rubric based on a given model should be compatible with any future version of the same model as PIQI models are backward compatible.
 
-An evaluation rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that specific collection of patient data. Evaluation rubrics can be established as a standard or custom scoring rubric.
+An Evaluation Rubric is the alignment of patient data entities to SAMs as a list of assessable items that contribute to provide a standard scoring rubric for that specific collection of patient data. Evaluation Rubrics can be established as a standard or custom scoring rubric.
 
-A given evaluation rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the model, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
+A given Evaluation Rubric has a name, version and purpose, a PIQI model and model version along with a sequenced collection of evaluations comprised of SAMs configured and assigned to the model, data classes, elements and attributes with the necessary parameters, conditions, scoring effect, weight, and criticality.
 
 Example: Graphical Depiction of an Evaluation Rubric for a data class
 
@@ -557,7 +557,7 @@ In some cases, a PIQI user may want to weigh the score in a rubric allowing some
 
 #### Criticality
 
-The criticality indicator on an assigned Evaluation SAM allows the user to flag that assessment as critically important to the rubric. As an alternative to a weighted score the criticality indicator provides the ability to indicate that message has critical qualitative issues that may make the data unusable without effecting nature of the unweighted numerator/denominator percentage.
+The criticality indicator on an assigned Evaluation SAM allows the user to flag that assessment as critically important to the rubric. As an alternative to a weighted score the criticality indicator provides the ability to indicate that message has critical qualitative issues that may make the data unusable without affecting the nature of the unweighted numerator/denominator percentage.
 
 #### Conditional Assessments
 
@@ -565,7 +565,7 @@ In some cases, an assigned Evaluation SAM should only be applied if another cond
 
 A **prerequisite** SAM is part of a SAM definition. If a prerequisite SAM for an assigned Evaluation SAM fails, this is considered an entity assessment failure which increments the denominator by 1 but not the numerator for that assessment. In other words, the assessment is a failure. For example, the  Attr_IsPopulated simple SAM is commonly a prerequisite for downstream SAMS such Attr_IsDate.
 
-A **conditional** SAM is part of an evaluation rubric. If a conditional SAM for an assigned Evaluation SAM fails, this means the conditions for the assigned Evaluation SAM were not met and the assigned Evaluation SAM should not be run. Therefore it is neither a pass or a fail. Accordingly, neither the numerator nor the denominator is incremented. For example, the Observation Value _IsQualitative SAM is a conditional SAM that must pass in order for a downstream SAMs that requires a qualitative result to be run.
+A **conditional** SAM is part of an Evaluation Rubric. If a conditional SAM for an assigned Evaluation SAM fails, this means the conditions for the assigned Evaluation SAM were not met and the assigned Evaluation SAM should not be run. Therefore it is neither a pass nor a fail. Accordingly, neither the numerator nor the denominator is incremented. For example, the Observation Value _IsQualitative SAM is a conditional SAM that must pass in order for a downstream SAMs that require a qualitative result to be run.
 
 ### Evaluation Rubric Execution
 
@@ -616,7 +616,7 @@ Structured Data Asset Components
 
 Software Components
 
-- PIQI Framework Scoring Engine Representational State Transfer (REST)ful Service
+- PIQI Framework Scoring Engine RESTful Service
 - FHIR (or equivalent) Terminology Server
 <span width="100%">
 <img src="piqi_technical_components.png" alt="PIQI Technical Components" width="85%" />
@@ -651,6 +651,3 @@ In healthcare, we have various identifier types for institutions, facilities, an
 This is not merely a "nice to have" feature. Establishing a unique data source identifier is critical for trust, traceability, and provenance in our national healthcare infrastructure.
 
 While the PIQI Framework does not require a global unique data source identifier, nor does it include a methodology for assigning one, incorporating one would significantly enhance the ability to assess the quality and reliability of data exchange participants—regardless of their role or the nature of the coordinating entity.
-
-
-[def]: docs/
