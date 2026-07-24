@@ -533,7 +533,7 @@ This SAM is designed to assess if a simple attribute matches the regex pattern p
 
 ##### Attribute Is In List
 
-This SAM is designed to assess if a simple attribute is a member of a list of enumerate values.
+The Attribute_IsInList SAM check is a simple quality test that answers one question: does thedata match one of the expected values. For example, if an evaluation rubric says a patient's sex should be recorded as one of "Male," "Female," or "Unknown," this check looks at what's actually in the record and confirms it's one of those three approved options. If the value is something unexpected - a typo, an outdated code, or something that doesn't belong on the list - the check fails. If there's no value recorded at all, the check doesn't count that as a failure; it simply skips it (see conditional SAMs). The Attribute_IsInList SAM is built to be reused for any type of information (e.g., marital status, a medication's route of administration, or a document's format), by giving it a different list of acceptable values for evaluation. This SAM can also be used to check for a single expected value by creating a list with a single value in it. This SAM can also be used to check for a single expected value by creating a list with a single value in it.
 
 | **Property** | **Value** |
 | --- | --- |
