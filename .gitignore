@@ -20,10 +20,6 @@ _updatePublisher.*
 SUSHI-GENERATED-FILES.mdv
 /my-notes/
 
-# generated file #
-################
-OTHER-piqi-framework.xml
-
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
