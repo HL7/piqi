@@ -71,7 +71,7 @@ menu:
   
   PIQI Framework:
     Overview: piqi_framework.html
-    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt-version-10
+    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt
     PIQI Model: piqi_framework.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html

@@ -456,7 +456,7 @@ When considering a PIQI information model it is worth noting that patient data i
 
 **Reminder**: It is important to restate that PIQI is intended to assess the quality of data payloads in real time, determining their suitability for use by the intended recipient, and not intended to evaluate data within records at rest.
 
-### PIQI Healthcare Data Quality Taxonomy (HDQT) Version 1.0
+### PIQI Healthcare Data Quality Taxonomy (HDQT)
 
 A standard classification taxonomy for patient information quality issues provides structure and clarity to the process of data quality management. This systematic approach allows for the identification and categorization of various types of errors or inconsistencies, which can range from minor inaccuracies to critical misinformation. By classifying these issues, healthcare data stewards can prioritize them based on their potential impact. This methodical categorization facilitates easier tracking and analysis of recurring problems, enabling healthcare organizations to implement targeted improvements. Moreover, standardized taxonomy aids communication among healthcare professionals by providing a common language for discussing quality issues. Ultimately, this leads to enhanced quality control, improved patient outcomes, and a reduction in the likelihood of medical errors, thereby fostering a safer and more reliable healthcare environment.
 
@@ -477,11 +477,11 @@ This category contains dimensions that relate to the presence of usable informat
 
 Dimensions:
 
-| Dimension | Applies to | Definition |
-| --- | --- | --- |
-| Missing |  | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient has Insulin on their medication list, and has a high A1C, but there is no corresponding condition indicating Diabetes, then the diabetes condition is considered missing._ |
-| Unpopulated | Attribute | This applies to an Attribute that should be populated with something but is not. This dimension does not evaluate the validity of the Attribute, merely whether or not it has data. This dimension only applies to Attributes of Elements that are not missing. |
-| Incomplete | Element<br><br>Attribute | This applies to Elements or complex Attributes where there is inadequate information available to fully represent the attribute or element. _For example, a coded entity (attribute) that is missing its code system is incomplete. In this context the code system component of a coding is unpopulated and the coded entity Attribute is incomplete._ |
+| Dimension | Definition |
+| --- | --- |
+| Missing | Pertains to Elements and specifically evaluates whether an expected element is absent. This dimension can be conceptualized as a method for assessing 'missingness' at an elemental level. _For example, if a patient has Insulin on their medication list, and has a high A1C, but there is no corresponding condition indicating Diabetes, then the diabetes condition is considered missing._ |
+| Unpopulated | This applies to an Attribute that should be populated with something but is not. This dimension does not evaluate the validity of the Attribute, merely whether or not it has data. This dimension only applies to Attributes of Elements that are not missing. _For example, an Condition onsetDate is empty or null._|
+| Incomplete | This applies to Elements or complex Attributes where there is inadequate information available to fully represent the attribute or element. _For example, a coded entity (attribute) that is missing its code system is incomplete. In this context, the system component of a coding is "unpopulated" and the coded entity Attribute is "incomplete."_ |
 
 #### Accuracy Category
 
@@ -489,31 +489,31 @@ This category contains dimensions that relate to the innate validity of the data
 
 Dimensions:
 
-| Dimension | Applies to | Definition |
-| --- | --- | --- |
-| Invalid Format | Attribute | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, and single alphanumeric character. The specific logic used to assess format should be included in the corresponding SAM definition.|
-| Invalid Value | Attribute |This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. Included in this dimension are  logical assessments of text strings expected to conform to a specific set of values or business rules related to field values. Note that a value may be an invalid value despite the values having an appropriate format. The Invalid Member dimension would be a better choice for codes not matching expected format (e.g UCUM units when they are not conveyed in a fully coded format), This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields. _For example, a patient's hemoglobin is reported as "12.158795354682221" which is a valid decimal format but not within logical rules of expected measurement precision_|
-| Invalid Grouping | Element<br><br>Attribute | This applies to Elements or complex Attributes where the combination of Attributes is invalid. An example of this could be a situation where a lab test that is only performed on serum and a lab element had that lab code paired with a urine specimen.  This is would represent a fundamentally invalid combination |
+| Dimension | Definition |
+| --- | --- |
+| Invalid Format | This applies to Attributes that are not properly formatted for their expected data type. It is assumed that all Attributes are presented as text strings and therefore validating the format of that string before progressing the data type assessments is necessary. Examples of format are freetext, date, time, timestamp, integer, decimal, and single alphanumeric character. The specific logic used to assess format should be included in the corresponding SAM definition. _For example, an onsetDate of "March 1" may be invalid when the expected format is "2026-03-01"_|
+| Invalid Value | This applies to an Attribute that has a value but the value does not conform to the expectations for the attribute. Included in this dimension are logical assessments of text strings expected to conform to a specific set of values or business rules related to field values. Note that a value may be an invalid value despite the values having an appropriate format. The Invalid Member dimension would be a better choice for codes not matching expected format. This dimension is intended to reflect "field-level" errors, and not broader data quality errors involving values across multiple fields. _For example, a patient's hemoglobin is reported as "12.158795354682221" which is a valid decimal format but not within logical rules of expected measurement precision. Another example is a result unit field expecting a UCUM unit but populated with a non-UCUM conformant unit._|
+| Invalid Grouping | This applies to Elements or complex Attributes where the combination of Attributes is invalid. _For example of this could be a situation where a lab test that is only performed on serum and paired with a urine specimen as this represents a fundamentally invalid combination_ |
 
 #### Conformity Category
 
 This category contains dimensions that relate to the integrity of coded information, for example verifying that a specific code is a member of a CodeSystem or Valueset.
 
-| Dimension | Applies to | Definition |
-| --- | --- | --- |
-| Invalid Member | Attribute | This applies to coded entity complex attributes when the code provided is not a member of the CodeSystem/ValueSet provided. |
-| Incompatible | Attribute | This applies to coded entity complex attributes when the code system provided is not an agreed upon CodeSystem/ValueSet per the terms of the criteria. |
-| Obsolete | Element<br><br>Attribute | This applies to coded entity complex attributes when the concept provided is no longer active in the CodeSystem/ValueSet provided. |
+| Dimension |  Definition |
+| --- | --- |
+| Invalid Member | This applies to coded entity complex attributes when the code provided is not a member of the CodeSystem/ValueSet provided. _An example of this would be providing a code of "742-7" (a valid LOINC code) with the system of "SNOMEDCT"._|
+| Incompatible | This applies to coded entity complex attributes when the code system provided is not an agreed upon CodeSystem/ValueSet per the terms of the criteria. _An example of this would be providing a code of "742-7" with system "LOINC" as a condition where another coding system is expected._|
+| Obsolete | This applies to coded entity complex attributes when the concept provided is no longer active in the CodeSystem/ValueSet provided. _An example of this would be using LOINC code "2086-7" which is deprecated and replaced by "2085-9"._|
 
 #### Plausibility Category
 
 This category contains dimensions that relate to whether the data makes sense based on some context.
 
-| Dimension | Applies to | Definition |
-| --- | --- | --- |
-| Temporally Implausible | Element<br><br>Attribute | Temporally implausible conditions are identified when an attribute or element is uncertain due to when it occurs in the context of the patient's timeline. _An example of this would be a future birth date or an end time that precedes a start time._ |
-| Clinically Implausible | Element<br><br>Attribute | Clinically Implausible conditions are identified when an attribute or element is uncertain due to clinical considerations. _An example of this would be a lab result value that is outside a reasonable range of values for a given lab test._ |
-| Situationally Implausible | Element | Situationally Implausible conditions are identified when an attribute or element is uncertain due other conflicting elements or attributes. _An example of this would be a high range value that is lower than a low range value._ |
+| Dimension | Definition |
+| --- | --- |
+| Clinically Implausible | Clinically Implausible conditions are identified when an attribute or element is uncertain due to clinical considerations. _An example of this would be a lab result value that is outside a reasonable range of values for a given lab test._ |
+| Temporally Implausible | Temporally implausible conditions are identified when an attribute or element is uncertain due to when it occurs in the context of the patient's timeline. _An example of this would be a future birth date or an end time that precedes a start time._ |
+| Situationally Implausible | Situationally Implausible conditions are identified when an attribute or element is uncertain due other conflicting elements or attributes. _An example of this would be a baby sharing the same MRN as the mother when distinct identifiers are expected._ |
 
 ### PIQI Assessment Approach
 
