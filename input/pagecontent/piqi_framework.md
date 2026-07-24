@@ -16,7 +16,7 @@ Implementers of the PIQI Framework will likely aggregate scoring results for the
 
 ### PIQI Attribute Types
 
-PIQI Elements are comprised of four [attribute](glossary.html#data-attribute) types: Simple, Codeable Concept, Observation Value, and Ranged Value.
+PIQI Elements are comprised of four [attribute](glossary.html#data-attribute) types: Simple, Codeable Concept, Observation Value, and Ranged Value. All attributes have a cardinality of 0..1, recognizing that a CodeableConcept collection attribute may contain multiple coding values.
 
 #### Simple Attribute Type
 
@@ -203,7 +203,10 @@ A Range Value attribute is a structure that can be represented as a simple attri
 
 The PIQI Framework depends on a patient-oriented, flat-data class collection information model. Depending on the use case, the structure of the model—including its [data classes](glossary.html#data-class) and [attribute](glossary.html#data-attribute) details—may vary. For example, the PIQI Clinical Data Model is designed to evaluate clinical information exchanged about a patient, so its data classes and attributes reflect common clinical data elements. In contrast, the PIQI Medical Claim Data Model includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses attribute types that align with the framework’s design.
 
-All attributes have a cardinality of 0..1, recognizing that a CodeableConcept collection attribute may contain multiple CodeableConcepts values.
+<span width="100%">
+<img src="piqi_data_model.png" alt="PIQI Flattened Data Model" width="100%" />
+</span>
+<br/>
 
 ### PIQI Clinical Data Model
 
@@ -352,8 +355,6 @@ The PIQI Clinical Data Model is a simplified information model based on US Core 
 | provenance | Simple Attribute | Source of this information |
 
 ### Code System Identifiers in PIQI
-
-
 
 One of the issues with validating codeable concepts is that often different string values are used to identify the code system for a given code. For example, when sending a Logical Observation Identifiers Names and Codes (LOINC) code it is possible to see the following code system identifiers:
 
