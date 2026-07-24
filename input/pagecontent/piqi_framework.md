@@ -24,8 +24,8 @@ A Simple Attribute is a string value in the JavaScript Object Notation (JSON) at
 
 Example: In this example the effectiveDateTime attribute is a Simple Attribute.
 ```json
-    "labElements": [
-        {"effectiveDateTime": "20230111135518"}
+    "Allergies": [
+        {"effectiveDate": "20230111"}
     ]
 ```
 #### Codeable Concept Attribute Type
