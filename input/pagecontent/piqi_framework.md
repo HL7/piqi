@@ -76,7 +76,7 @@ Codings exist as a substructure to the CodeableConcept type.  The substructure i
 
 **Example:**
 ```json
-    "test": {
+    "performedTest": {
         "text": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
         "codings": [
             {
