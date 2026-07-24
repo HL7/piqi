@@ -503,7 +503,7 @@ This category contains dimensions that relate to the integrity of coded informat
 | --- | --- |
 | Invalid Member | This applies to coded entity complex attributes when the code provided is not a member of the CodeSystem/ValueSet provided. _An example of this would be providing a code of "742-7" (a valid LOINC code) with the system of "SNOMEDCT"._|
 | Incompatible | This applies to coded entity complex attributes when the code system provided is not an agreed upon CodeSystem/ValueSet per the terms of the criteria. _An example of this would be providing a code of "742-7" with system "LOINC" as a condition where another coding system is expected._|
-| Obsolete | This applies to coded entity complex attributes when the concept provided is no longer active in the CodeSystem/ValueSet provided. _An example of this would be using LOINC code "2086-7" which is deprecated and replaced by "2085-9"._|
+| Obsolete | This applies to coded entity complex attributes when the concept provided was no longer active in the CodeSystem/ValueSet provided at the time of event described in the transaction. _An example of this would be using LOINC code "2086-7" which is deprecated and replaced by "2085-9"._|
 
 #### Plausibility Category
 
