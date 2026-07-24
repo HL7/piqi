@@ -16,7 +16,7 @@ Implementers of the PIQI Framework will likely aggregate scoring results for the
 
 ### PIQI Attribute Types
 
-PIQI Elements are comprised of four [attribute](glossary.html#data-attribute) types: Simple, Codeable Concept, Observation Value, and Ranged Value. All attributes have a cardinality of 0..1, recognizing that a CodeableConcept collection attribute may contain multiple coding values.
+PIQI Elements are comprised of four [attribute](glossary.html#data-attribute) types: Simple, Codeable Concept, Observation Value, and Ranged Value. All attributes have a cardinality of 0..1, recognizing that a Codeable Concept collection attribute may contain multiple coding values.
 
 #### Simple Attribute Type
 
