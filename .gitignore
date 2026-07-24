@@ -1,13 +1,28 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-*.py
+# FHIR IG Publisher local build directories #
+#############################################
 
+/output/
+/input-cache/
+/fsh-generated/
+/temp/
+/template/
+/node_modules/
+/save/
+/bin/
+/target/
+/docs/
+publish.sh
+push_to_autobuild.sh
+_gencontinuous.*
+_genonce.*
+_build.*
+_updatePublisher.*
+SUSHI-GENERATED-FILES.mdv
+/my-notes/
+
+# generated file #
+################
+OTHER-piqi-framework.xml
 
 # Packages #
 ############
@@ -37,44 +52,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-
-# FHIR IG Publisher local build directories #
-#############################################
-
-/output/
-/input-cache/
-/temp/
-/template/
-/node_modules/
-/save/
-/bin/
-/target/
-/docs/
-publish.sh
-push_to_autobuild.sh
-_gencontinuous.*
-_genonce.*
-_updatePublisher.*
-SUSHI-GENERATED-FILES.mdv
-/my-notes/
-
-
-# Altova files #
-################
-*.spp
-tmp*.html
-tmp*.md
-*.mfd
-tmp*.xml
-~mf*.tmp
-*.xlst
-
-# Microsoft Office #
-####################
-~*.docx
-~*.xlsx
-~*.pptx
 
 # Manually Added #
 ##################
