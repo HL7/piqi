@@ -40,6 +40,7 @@ It's important to note that PIQI is not intended to assess clinical judgement or
 This Informative Document was made possible by the thoughtful contributions of the following people and organizations:
 
 Primary Authors:
+*   John D'Amore, More Informatics
 *   Charlie Harp, Clinical Architecture, LLC
 *   Carol Macumber, Clinical Architecture, LLC
 *   Russell Ott, Deloitte Consulting LLP
@@ -48,8 +49,7 @@ Primary Authors:
 Contributing Authors:
 *   Lisa Anderson, The Joint Commission
 *   Amol Bhalla, IMO Health
-*   Carmela Couderc, US Assistant Secretary for Technology Policy (ASTP)
-*   John D'Amore, More Informatics
+*   Carmela Couderc, US Assistant Secretary for Technology Policy (ONC)
 *   Sarah DeSilvey, Gravity Project
 *   Gay Dolin, Namaste Informatics
 *   Benjamin Hamlin, IPRO
