@@ -1,0 +1,198 @@
+"PIQXLResponse": {
+  "type": "object",
+  "properties": {
+    "succeeded": {
+      "type": "boolean"
+    },
+    "errorMessage": {
+      "type": "string",
+      "nullable": true
+    },
+    "elapsedTimeInMS": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "scoringData": {
+	  "type": "object",
+	  "properties": {
+		"dataProviderID": {
+		  "type": "string",
+		  "nullable": true
+		},
+		"dataSourceID": {
+		  "type": "string",
+		  "nullable": true
+		},
+		"messageID": {
+		  "type": "string",
+		  "nullable": true
+		},
+		"channelMnemonic": {
+		  "type": "string",
+		  "nullable": true
+		},
+		"evaluationRubric": {
+		  "type": "string",
+		  "nullable": true
+		},
+		"piqiEndpointUID": {
+		  "type": "string",
+		  "format": "uuid",
+		  "nullable": true
+		},
+		"processDate": {
+		  "type": "string",
+		  "format": "date-time"
+		},
+		"messageResults": {
+		  "type": "object",
+			"properties": {
+			  "denominator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "numerator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "piqiScore": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "criticalFailureCount": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "weightedDenominator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "weightedNumerator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "weightedPIQIScore": {
+				"type": "integer",
+				"format": "int32"
+			  }
+			},
+			"additionalProperties": false
+		},
+		"dataClassResults": {
+		  "type": "array",
+		  "items": {
+			"type": "object",
+			"properties": {
+			  "dataClassName": {
+				"type": "string",
+				"nullable": true
+			  },
+			  "instanceCount": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "denominator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "numerator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "piqiScore": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "criticalFailureCount": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "weightedDenominator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "weightedNumerator": {
+				"type": "integer",
+				"format": "int32"
+			  },
+			  "weightedPIQIScore": {
+				"type": "integer",
+				"format": "int32"
+			  }
+			},
+			"additionalProperties": false
+		  },
+		  "nullable": true
+		},
+		"informationalResults": {
+		  "type": "array",
+		  "items": {
+			"type": "object",
+			"properties": {
+			  "dataClassName": {
+				"type": "string",
+				"nullable": true
+			  },
+			  "evaluationList": {
+				"type": "array",
+				"items": {
+				  "type": "object",
+					"properties": {
+					  "entityName": {
+						"type": "string",
+						"nullable": true
+					  },
+					  "evaluationName": {
+						"type": "string",
+						"nullable": true
+					  },
+					  "instanceCount": {
+						"type": "integer",
+						"format": "int32"
+					  },
+					  "denominator": {
+						"type": "integer",
+						"format": "int32"
+					  },
+					  "numerator": {
+						"type": "integer",
+						"format": "int32"
+					  }
+					},
+					"additionalProperties": false
+				},
+				"nullable": true
+			  }
+			},
+			"additionalProperties": false
+		  },
+		  "nullable": true
+		},
+		"detectionResults": {
+		  "type": "array",
+		  "items": {
+			"type": "object",
+			"properties": {
+			  "valueSetName": {
+				"type": "string",
+				"nullable": true
+			  },
+			  "detectionCount": {
+				"type": "integer",
+				"format": "int32"
+			  }
+			},
+			"additionalProperties": false
+		  },
+		  "nullable": true
+		}
+	  },
+	  "additionalProperties": false
+    },
+    "auditedMessage": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false
+},
