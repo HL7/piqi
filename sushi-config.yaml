@@ -6,15 +6,18 @@
 id: hl7.xprod.uv.piqi
 canonical: http://hl7.org/xprod/ig/uv/piqi
 name: CrossParadigmPIQI
-title: "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1"
-description: "HL7 Informative Document: Patient Information Quality Improvement (PIQI) Framework, Edition 1"
+title: "HL7 Implementation Guide: Patient Information Quality Improvement (PIQI) Framework, Edition 2"
+description: "HL7 Implementation Guide: Patient Information Quality Improvement (PIQI) Framework, Edition 2"
 status: draft # draft | active | retired | unknown
-version: 1.0.0
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: cgp
+version: 2.0.0-ballot
 fhirVersion: 5.0.0
-copyrightYear: 2025+
-releaseLabel: Informative 1  # | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
-# license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-# jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+copyrightYear: 2026+
+releaseLabel: STU2 Ballot
 publisher:
   name: HL7 Cross-Group Projects Work Group
   url: https://www.hl7.org/Special/committees/cgp
@@ -31,6 +34,8 @@ pages:
     title: Home
   background.md:
     title: PIQI Background
+  guidance.md:
+    title: Guidance
   requirements_and_use_case.md:
     title: Data Quality Use Cases
   piqi_framework.md:
@@ -39,6 +44,8 @@ pages:
     title: Simple Assessment Modules (SAMS)
   evaluation.md:
     title: Evaluation
+  artifacts.md:
+    title: PIQI Artifacts
   conformance.md:
     title: Conformance
   glossary.md:
@@ -77,10 +84,18 @@ menu:
     PIQI Model: piqi_framework.html#piqi-data-models
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
+    PIQI Glossary: glossary.html
+  
+  Guidance: guidance.html
   
   PIQI Conformance: conformance.html
+  Artifacts: artifacts.html
 
-  PIQI Glossary: glossary.html
+  Support:
+    Confluence Project: https://confluence.hl7.org/spaces/CGP/pages/345544532/Patient+Information+Quality+Improvement+PIQI+Framework
+    Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=12501&issuetype=10600&customfield_11302=OTHER-piqi-framework
+    Discussion Forum: https://chat.fhir.org/#narrow/channel/523549-PIQI
+
 
   Change Notes: changes.html
   

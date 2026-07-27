@@ -1,0 +1,151 @@
+"Rubric":
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "mnemonic": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "authorityName": {
+      "type": "string"
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mnemonic": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "mnemonic",
+        "version"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mnemonic": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "mnemonic"
+      ]
+    },
+    "criteria": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "sequence": {
+              "type": "integer"
+            },
+            "description": {
+              "type": "string"
+            },
+            "entity": {
+              "type": "string"
+            },
+            "samMnemonic": {
+              "type": "string"
+            },
+            "samNameOverride": {
+              "type": "string"
+            },
+            "failureNameOverride": {
+              "type": "string"
+            },
+            "conditionalSam": {
+              "type": "string"
+            },
+            "scoringEffect": {
+              "type": "string"
+            },
+            "scoringWeight": {
+              "type": "integer"
+            },
+            "criticalityIndicator": {
+              "type": "boolean"
+            },
+            "samParameters": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "samParameterMnemonic": {
+                      "type": "string"
+                    },
+                    "parameterValue": {
+                      "type": "string"
+                    },
+                    "parameterValueTypeName": {
+                      "type": "string"
+                    },
+                    "parameterName": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "samParameterMnemonic",
+                    "parameterValue",
+                    "parameterValueTypeName",
+                    "parameterName"
+                  ]
+                }
+              ]
+            },
+            "conditionalSamParameters": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "sequence",
+            "description",
+            "entity",
+            "samMnemonic",
+            "samNameOverride",
+            "failureNameOverride",
+            "conditionalSam",
+            "scoringEffect",
+            "scoringWeight",
+            "criticalityIndicator",
+            "samParameters",
+            "conditionalSamParameters"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "mnemonic",
+    "description",
+    "version",
+    "authorityName",
+    "model",
+    "source",
+    "criteria"
+  ]
+}

@@ -1,0 +1,105 @@
+"SAM":
+{
+  "type": "object",
+  "properties": {
+    "mnemonic": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "inputType": {
+      "type": "string",
+      "nullable": true
+    },
+    "failName": {
+      "type": "string",
+      "nullable": true
+    },
+    "prerequisiteSamMnemonic": {
+      "type": "string",
+      "nullable": true
+    },
+    "conditionalSamMnemonic": {
+      "type": "string",
+      "nullable": true
+    },
+    "hdqtDimensionMnemonic": {
+      "type": "string"
+    },
+    "executionTypeMnemonic": {
+      "type": "string"
+    },
+    "dataTypeId": {
+      "type": "integer"
+    },
+    "createdDateTime": {
+      "type": "string"
+    },
+    "modifiedDateTime": {
+      "type": "string"
+    },
+    "piqiModel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "nullable": true
+        },
+        "mnemonic": {
+          "type": "string",
+          "nullable": true
+        },
+        "version": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "required": [
+        "name",
+        "mnemonic",
+        "version"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mnemonic": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "mnemonic"
+      ]
+    },
+    "parameters": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "mnemonic",
+    "name",
+    "description",
+    "inputType",
+    "failName",
+    "prerequisiteSamMnemonic",
+    "conditionalSamMnemonic",
+    "hdqtDimensionMnemonic",
+    "executionTypeMnemonic",
+    "dataTypeId",
+    "createdDateTime",
+    "modifiedDateTime",
+    "piqiModel",
+    "source",
+    "parameters"
+  ]
+}
