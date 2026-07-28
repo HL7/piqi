@@ -1,3 +1,9 @@
+<blockquote class="note-to-balloters">
+  <p> 
+    This is a new page developed for the 2.0-ballot of the PIQI Implementation Guide as a standard for trial use (STU). As a new section, this content may change and considered a working draft until community review and feedback have been integrated.  
+  </p>
+</blockquote>
+
 This page provides implementation guidance for authors of PIQI Models, [Evaluation Rubrics](glossary.html#evaluation-rubric), and [Simple Assessment Modules (SAMs)](glossary.html#simple-assessment-module-sam), as well as for implementers deploying PIQI-based evaluation services. The guidance is organized into four areas: model design, Evaluation Rubric design, implementation architectures, and advanced SAM patterns.
 
 ### Model Design
@@ -27,7 +33,7 @@ Rubric authors should review the Code System Identifiers configured in their PIQ
 
 #### Mapping FHIR Choice Elements
 
-FHIR defines many data elements as choice types (e.g., `onset[x]` may be represented as `onsetDateTime`, `onsetAge`, `onsetRange`, or `onsetPeriod`). When mapping FHIR resources to a PIQI [PIQI Model](glossary.html#piqi-model), implementers must design the model to accommodate all choice representations present in the source data.
+FHIR defines many data elements as choice types (e.g., `onset[x]` may be represented as `onsetDateTime`, `onsetAge`, `onsetRange`, or `onsetPeriod`). When mapping FHIR resources to a [PIQI Model](glossary.html#piqi-model), implementers must design the model to accommodate all choice representations present in the source data.
 
 The recommended approach is:
 
