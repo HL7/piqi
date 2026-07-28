@@ -1,3 +1,9 @@
+<blockquote class="note-to-balloters">
+  <p> 
+    This is a new page developed for the 2.0-ballot of the PIQI Implementation Guide as a standard for trial use (STU). As a new section, this content may change and considered a working draft until community review and feedback have been integrated.  
+  </p>
+</blockquote>
+
 ### Consensus PIQI Instances
 
 To support broad interoperability and repeatable benchmarking, PIQI publishes consensus instances that are community-vetted and intended for common baseline use across implementations. These artifacts pair a shared PIQI model with a corresponding evaluation rubric so organizations can evaluate data quality using consistent structure and scoring logic.

@@ -1,8 +1,10 @@
-# PIQI Framework Scoring Endpoint — Conformance Guide
+<blockquote class="note-to-balloters">
+  <p> 
+    This is a new page developed for the 2.0-ballot of the PIQI Implementation Guide as a standard for trial use (STU). As a new section, this content may change and considered a working draft until community review and feedback have been integrated.  
+  </p>
+</blockquote>
 
-**Version:** 0.1 (Draft)
-**Status:** Working Draft
-**Audience:** Implementers integrating with, or building, a PIQI-conformant scoring service
+# PIQI Framework Scoring Endpoint — Conformance Guide
 
 Conformance verbs in this guide follow RFC 2119 usage (**MUST**, **SHOULD**, **MAY**), consistent with HL7 conformance conventions.
 
@@ -421,4 +423,3 @@ SAMs **MAY** depend on external services (e.g., a terminology server, a FHIR end
 
 ---
 
-*This is a working draft.*
