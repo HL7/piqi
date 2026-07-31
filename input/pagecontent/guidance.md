@@ -114,16 +114,10 @@ Key design considerations for real-time gating:
 
 Clinical Quality Language (CQL) is a standards-based expression language defined by HL7 for clinical logic. The PIQI team assessed CQL as an execution pattern for SAMs requiring complex clinical logic, validating the approach against open-source CQL engines.
 
-A CQL SAM is a SAM with an execution type of `RESTful_Service` or `Stored_Procedure` whose underlying logic is implemented in CQL. The SAM accepts a CQL library reference as a parameter (using the `Content_Asset_Mnemonic` parameter type) and executes the referenced CQL library against the patient payload, returning a pass, fail, or skip result consistent with the standard SAM interface.
+A CQL SAM is a SAM with an execution type of  PCQL (PIQI-based CQL) and a specified input type (model, data class collection or data class element) that executes PIQI-based CQL logic and returns a pass, fail or skip result consistent with the standard SAM interface.. The SAM parameters are a CQL library reference (using the `Content_Asset_Mnemonic` parameter type) and an optional measure period (datetime interval).  It executes the referenced CQL logic against the input type (patient payload, data class collection or data class element) 
 
 This pattern is particularly well-suited for:
-
 - SAMs that require complex multi-criterion clinical logic that cannot be expressed through the standard primitive logic or value set execution types.
 - Assessments that reuse existing CQL expression libraries, such as those already developed for electronic Clinical Quality Measures (eCQMs), allowing PIQI rubrics to leverage established, validated clinical logic.
 - Deployments operating in environments that maintain CQL-enabled terminology services or clinical reasoning engines (such as those aligned with the Tinkar specification for standardized terminology knowledgebases).
 
-Implementers considering CQL-based SAMs should account for the following:
-
-- The CQL execution service must expose an endpoint that conforms to the SAM RESTful service interface for the input type being assessed.
-- The CQL library's data model must be compatible with or mappable from the PIQI payload structure for the relevant Data Class or Patient Container.
-- CQL library versioning should be managed as part of the PIQI [SAM Library](glossary.html#sam-library), with the library mnemonic referenced in the SAM's `Content_Asset_Mnemonic` parameter serving as the stable identifier for a given version of the logic.
