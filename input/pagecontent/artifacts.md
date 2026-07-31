@@ -51,20 +51,20 @@ To support broad interoperability and repeatable benchmarking, PIQI publishes co
 
 To support consistent evaluation across PIQI implementations, each core PIQI component adheres to a specific json schema. These schemas define the structure of the modular PIQI components and the resulting data quality scoring responses.
 
-#### Evaluation Report Schema
+#### Model Schema
 
-- **File:** [evaluationreport.json](evaluationreport.json)
-- **Purpose:** Defines the shape of a PIQI scoring response payload (`PIQXLResponse`) returned after an evaluation run.
+- **File:** [piqi-model-schema.json](piqi-model-schema.json)
+- **Purpose:** Defines the structure of a PIQI data model, comprising a root entity and a set of data classes with typed attributes and optional semantic role assignments.
 - **What it includes:**
-	- Run-level status metadata such as `succeeded`, `errorMessage`, and elapsed processing time.
-	- A `scoringData` object with source identifiers, rubric metadata, and processing timestamp.
-	- Aggregated scoring outputs at multiple levels, including message-level totals, per-data-class results, informational results, and detection counts.
-	- Optional audited message content.
-- **How it supports PIQI:** Provides a consistent output contract for communicating pass/fail-derived scoring and quality findings across implementations.
+	- Model identity and governance metadata (`name`, `mnemonic`, `version`, `modelTypeName`, `rootEntityName`, `rootEntityMnemonic`, and optional `description` and `baseModel` reference).
+	- A `dataClasses` collection, each with identity fields (`name`, `mnemonic`, `shortName`, `fieldName`), cardinality (One, Zero-to-One, Zero-to-Many, One-to-Many), sequence ordering, and an inheritance flag.
+	- Per-data-class `attributes` with typed definitions (Simple Attribute, Codeable Concept, Range Value, Observation Value, and others), camelCase field names, sequence ordering, and auto-generation and inheritance flags.
+	- Optional `roles` assignments that map specific attributes within a data class to well-known semantic roles such as Start Datetime and End Datetime.
+- **How it supports PIQI:** Establishes the structural target — the root entity and its data classes — against which evaluation rubrics and audit schemas operate, ensuring quality checks are applied to a consistently defined data surface.
 
 #### Rubric Schema
 
-- **File:** [rubric.json](rubric.json)
+- **File:** [piqi-rubric-schema.json](piqi-rubric-schema.json)
 - **Purpose:** Defines the structure of an evaluation rubric that organizes SAMs into a scored set of criteria for a specific model and source.
 - **What it includes:**
 	- Rubric identity and governance metadata (`name`, `mnemonic`, `description`, `version`, `authorityName`).
@@ -74,7 +74,7 @@ To support consistent evaluation across PIQI implementations, each core PIQI com
 
 #### SAM Schema
 
-- **File:** [sam.json](sam.json)
+- **File:** [piqi-sam-schema.json](piqi-sam-schema.json)
 - **Purpose:** Defines the structure of a Simple Assessment Module (SAM), the atomic reusable quality check in PIQI.
 - **What it includes:**
 	- SAM identity and descriptive fields (`mnemonic`, `name`, `description`, `failName`).
@@ -83,3 +83,22 @@ To support consistent evaluation across PIQI implementations, each core PIQI com
 	- PIQI model/source linkage and SAM parameter definitions.
 - **How it supports PIQI:** Standardizes how individual quality checks are represented so they can be shared, parameterized, and assembled into higher-level rubrics.
 
+#### Evaluation Score Schema
+
+- **File:** [piqi-score-schema.json](piqi-score-schema.json)
+- **Purpose:** Defines the shape of a PIQI scoring response payload (`PIQXLResponse`) returned after an evaluation run.
+- **What it includes:**
+	- Run-level status metadata such as `succeeded`, `errorMessage`, and elapsed processing time.
+	- A `scoringData` object with source identifiers, rubric metadata, and processing timestamp.
+	- Aggregated scoring outputs at multiple levels, including message-level totals, per-data-class results, informational results, and detection counts.
+- **How it supports PIQI:** Provides a consistent output contract for communicating pass/fail-derived scoring and quality findings across implementations.
+
+#### Evaluation Audit Schema
+
+- **File:** [piqi-audit-schema.json](piqi-audit-schema.json)
+- **Purpose:** Defines the shape of a PIQI audit response — the field-level, evidentiary detail behind a PIQI score result. Extends the score result envelope with a full per-instance, per-attribute audit trail.
+- **What it includes:**
+	- The same run-level envelope as the Score Result schema: `succeeded`, `elapsedTimeInMS`, and a `scoringData` object carrying the rolled-up score result.
+	- An `auditedMessage` payload (serialized as a JSON string) that, for every instance of every data class in the source message, captures the raw attribute values, the criterion-by-criterion assessments applied to each attribute (with `Passed`/`Failed`/`Skipped` status and a reason string), and scores rolled up from attribute to element to message.
+	- Granular scoring structures at three levels: per-attribute (`attributeAudit` with weighted/unweighted numerator, denominator, and critical failure count), per-data-class-instance (`elementAudit`), and per-message (`messageAudit`).
+- **How it supports PIQI:** Provides an evidentiary audit trail enabling implementers to trace each quality score back to the specific field values and assessment outcomes that produced it.

@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://piqi-alliance.org/schemas/piqi-rubric-schema.json",
+  "title": "PIQI Rubric",
+  "description": "Schema describing a PIQI scoring rubric: a versioned, authority-aligned set of criteria evaluated against entities in a referenced PIQI clinical model, used to score data quality.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "mnemonic",
+    "tenantUid",
+    "description",
+    "version",
+    "authorityName",
+    "model",
+    "source",
+    "criteria"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the rubric.",
+      "examples": ["USCDI v3.1 Aligned Rubric"]
+    },
+    "mnemonic": {
+      "type": "string",
+      "description": "Short, unique, upper-case code identifying the rubric.",
+      "pattern": "^[A-Z0-9_.]+$",
+      "examples": ["USCDI_V31"]
+    },
+    "tenantUid": {
+      "type": "string",
+      "description": "UUID of the tenant that owns this rubric.",
+      "format": "uuid",
+      "examples": ["00000000-0000-0000-0000-000000000000"]
+    },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Free-text description of the rubric's purpose and scope."
+    },
+    "version": {
+      "type": "integer",
+      "description": "Rubric version, typically encoded as a date-like integer (e.g., YYYYMM).",
+      "examples": [202601]
+    },
+    "authorityName": {
+      "type": "string",
+      "description": "Name of the standards authority or program the rubric is aligned to.",
+      "examples": ["USCDI"]
+    },
+    "model": {
+      "type": "object",
+      "description": "Reference to the PIQI clinical model this rubric's criteria are evaluated against.",
+      "additionalProperties": false,
+      "required": ["name", "mnemonic", "version"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the referenced model.",
+          "examples": ["Patient Clinical Model 1.0"]
+        },
+        "mnemonic": {
+          "type": "string",
+          "description": "Mnemonic code of the referenced model.",
+          "pattern": "^[A-Z0-9_]+$",
+          "examples": ["PAT_CLINICAL_V1"]
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Version number of the referenced model."
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "description": "The organization or body that published/maintains this rubric.",
+      "additionalProperties": false,
+      "required": ["name", "mnemonic"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the source organization.",
+          "examples": ["PIQI Alliance"]
+        },
+        "mnemonic": {
+          "type": "string",
+          "description": "Mnemonic code of the source organization.",
+          "pattern": "^[A-Z0-9_.]+$",
+          "examples": ["PIQI.ALLIANCE"]
+        }
+      }
+    },
+    "criteria": {
+      "type": "array",
+      "description": "The ordered set of scoring criteria that make up the rubric.",
+      "items": { "$ref": "#/$defs/criterion" },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "samParameter": {
+      "type": "object",
+      "description": "A named parameter value passed to a Scoring Algorithm Method (SAM), configuring how it evaluates the target entity.",
+      "additionalProperties": false,
+      "required": [
+        "samParameterMnemonic",
+        "parameterValue",
+        "parameterValueTypeName",
+        "parameterName"
+      ],
+      "properties": {
+        "samParameterMnemonic": {
+          "type": "string",
+          "description": "Mnemonic code identifying which SAM parameter this is.",
+          "examples": [
+            "CODE_SYSTEM_CSV",
+            "LIST_CSV",
+            "VALID_ATTRIBUTE_LIST",
+            "EXTERNAL_LIST_MNEMONIC"
+          ]
+        },
+        "parameterValue": {
+          "type": "string",
+          "description": "The value supplied for the parameter. May be a single value or a comma-separated list depending on parameterValueTypeName.",
+          "examples": ["SNO_INT_USEXT", "SNO_INT_USEXT,NLM_RXN", "UCUM"]
+        },
+        "parameterValueTypeName": {
+          "type": "string",
+          "description": "The data/value type of the parameter, indicating how parameterValue should be interpreted.",
+          "enum": ["Code System", "Content Set", "Simple List (CSV)"]
+        },
+        "parameterName": {
+          "type": "string",
+          "description": "Human-readable display name of the parameter.",
+          "examples": ["Code System CSV", "External List  Mnemonic", "Valid Attribute List"]
+        }
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "description": "A single scoring criterion: a Scoring Algorithm Method (SAM) applied to a target entity/attribute, optionally gated by a conditional SAM.",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "description",
+        "entity",
+        "samMnemonic",
+        "samNameOverride",
+        "failureNameOverride",
+        "conditionalSam",
+        "scoringEffect",
+        "scoringWeight",
+        "criticalityIndicator",
+        "samParameters",
+        "conditionalSamParameters"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Ordering position of the criterion within the rubric."
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": "Free-text description of the criterion. May be empty string or null when not provided."
+        },
+        "entity": {
+          "type": "string",
+          "description": "Mnemonic of the model attribute/entity this criterion evaluates.",
+          "pattern": "^[A-Z0-9_]+$",
+          "examples": ["ALG_REACT", "PRACTITIONER_NAME", "CLINICAL_TESTS_RESULTVALUE"]
+        },
+        "samMnemonic": {
+          "type": "string",
+          "description": "Mnemonic identifying the Scoring Algorithm Method (SAM) used to evaluate the entity.",
+          "examples": [
+            "ATTR_ISPOPULATED",
+            "ATTR_ISDATE",
+            "ATTR_ISPASTDATE",
+            "ATTR_INLIST",
+            "ATTR_INEXTERNALLIST",
+            "ATTRIBUTE_INDICATOR_IS_TRUE",
+            "CONCEPT_ISVALIDMEMBER",
+            "CONCEPT_ISCOMPATIBLE"
+          ]
+        },
+        "samNameOverride": {
+          "type": "string",
+          "description": "Human-readable label describing the passing condition of this criterion, shown in scorecards.",
+          "examples": ["allergy reaction is SNOMED CT"]
+        },
+        "failureNameOverride": {
+          "type": "string",
+          "description": "Human-readable label describing the failing condition of this criterion, shown in scorecards.",
+          "examples": ["allergy reaction is not SNOMED CT"]
+        },
+        "conditionalSam": {
+          "type": ["string", "null"],
+          "description": "Mnemonic of a SAM that must evaluate true before this criterion is scored (e.g., only score if the attribute is populated). Null if the criterion is unconditional.",
+          "examples": ["ATTR_ISPOPULATED", "OBSERVATIONVALUE_ISQUALITATIVE"]
+        },
+        "scoringEffect": {
+          "type": "string",
+          "description": "How this criterion affects the overall score.",
+          "enum": ["Scoring"]
+        },
+        "scoringWeight": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Relative weight applied to this criterion's contribution to the overall score."
+        },
+        "criticalityIndicator": {
+          "type": "boolean",
+          "description": "Whether failing this criterion is considered a critical (high-severity) failure."
+        },
+        "samParameters": {
+          "type": "array",
+          "description": "Parameters configuring the primary SAM referenced by samMnemonic.",
+          "items": { "$ref": "#/$defs/samParameter" }
+        },
+        "conditionalSamParameters": {
+          "type": "array",
+          "description": "Parameters configuring the conditional SAM referenced by conditionalSam.",
+          "items": { "$ref": "#/$defs/samParameter" }
+        }
+      }
+    }
+  }
+}

@@ -34,9 +34,6 @@
     "executionTypeMnemonic": {
       "type": "string"
     },
-    "dataTypeId": {
-      "type": "integer"
-    },
     "createdDateTime": {
       "type": "string"
     },
@@ -95,7 +92,6 @@
     "conditionalSamMnemonic",
     "hdqtDimensionMnemonic",
     "executionTypeMnemonic",
-    "dataTypeId",
     "createdDateTime",
     "modifiedDateTime",
     "piqiModel",
