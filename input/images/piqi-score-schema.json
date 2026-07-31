@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://piqi-alliance.org/schemas/piqi-score-result.schema.json",
+  "title": "PIQI Score Result",
+  "description": "Schema describing the output of a PIQI EvaluationRun: the scored result of running a rubric against a single message/payload, including per-data-class scores, message-level totals, and supporting detail lists.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["elapsedTimeInMS", "scoringData", "succeeded"],
+  "properties": {
+    "elapsedTimeInMS": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Time taken to score the message, in milliseconds."
+    },
+    "succeeded": {
+      "type": "boolean",
+      "description": "Whether the scoring run completed successfully."
+    },
+    "scoringData": {
+      "type": "object",
+      "description": "The full scoring output for the message, present when the run succeeded.",
+      "additionalProperties": false,
+      "required": [
+        "channelMnemonic",
+        "dataClassResults",
+        "dataProviderID",
+        "dataSourceID",
+        "detectionResults",
+        "evaluationRubric",
+        "informationalResults",
+        "messageID",
+        "messageResults",
+        "plausibilityResults",
+        "processDate"
+      ],
+      "properties": {
+        "channelMnemonic": {
+          "type": "string",
+          "description": "Mnemonic of the data channel/pipeline the message was submitted through.",
+          "examples": ["EOB_CLAIMS_CARIN_BLUE_BUTTON"]
+        },
+        "dataProviderID": {
+          "type": "string",
+          "description": "Identifier of the organization/system that provided the data.",
+          "examples": ["Connectathon"]
+        },
+        "dataSourceID": {
+          "type": "string",
+          "description": "Identifier of the specific data source/feed the message came from.",
+          "examples": ["Test Source EOB/Claims"]
+        },
+        "evaluationRubric": {
+          "type": "string",
+          "description": "Name of the rubric used to score this message.",
+          "examples": ["EOB - CARIN Blue Button  - Inpatient"]
+        },
+        "messageID": {
+          "type": "string",
+          "description": "Identifier of the scored message, typically derived from the source filename."
+        },
+        "processDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the message was processed/scored."
+        },
+        "dataClassResults": {
+          "type": "array",
+          "description": "PIQI scoring rolled up per data class present in the rubric's target model.",
+          "items": { "$ref": "#/$defs/dataClassResult" }
+        },
+        "informationalResults": {
+          "type": "array",
+          "description": "Non-scoring, informational evaluations rolled up per data class, providing visibility into criteria that don't affect the score (e.g., scoringEffect other than Scoring).",
+          "items": { "$ref": "#/$defs/dataClassEvaluationGroup" }
+        },
+        "detectionResults": {
+          "type": "array",
+          "description": "Results of detection-type evaluations (e.g., pattern/anomaly detection criteria) for this message. No populated example was available; item shape is permissive pending a representative sample.",
+          "items": { "type": "object" }
+        },
+        "plausibilityResults": {
+          "type": "array",
+          "description": "Results of plausibility-check evaluations for this message. No populated example was available; item shape is permissive pending a representative sample.",
+          "items": { "type": "object" }
+        },
+        "messageResults": { "$ref": "#/$defs/scoreSummary" }
+      }
+    }
+  },
+  "$defs": {
+    "scoreSummary": {
+      "type": "object",
+      "description": "A PIQI score summary: numerator/denominator counts and the resulting score, both raw and weighted.",
+      "additionalProperties": false,
+      "required": [
+        "criticalFailureCount",
+        "denominator",
+        "numerator",
+        "piqiScore",
+        "weightedDenominator",
+        "weightedNumerator",
+        "weightedPIQIScore"
+      ],
+      "properties": {
+        "criticalFailureCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of failed criteria flagged with criticalityIndicator = true."
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of criteria evaluations that were applicable (the count a passing evaluation is measured against)."
+        },
+        "numerator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of applicable criteria evaluations that passed."
+        },
+        "piqiScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Unweighted PIQI score as a percentage (numerator / denominator * 100), rounded."
+        },
+        "weightedDenominator": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Denominator after applying each criterion's scoringWeight."
+        },
+        "weightedNumerator": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Numerator after applying each criterion's scoringWeight."
+        },
+        "weightedPIQIScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Weighted PIQI score as a percentage (weightedNumerator / weightedDenominator * 100), rounded."
+        }
+      }
+    },
+    "dataClassResult": {
+      "type": "object",
+      "description": "PIQI score summary for a single data class, plus the number of instances of that data class found in the message.",
+      "additionalProperties": false,
+      "required": [
+        "criticalFailureCount",
+        "dataClassName",
+        "denominator",
+        "instanceCount",
+        "numerator",
+        "piqiScore",
+        "weightedDenominator",
+        "weightedNumerator",
+        "weightedPIQIScore"
+      ],
+      "properties": {
+        "dataClassName": {
+          "type": "string",
+          "description": "Name of the data class this score summarizes.",
+          "examples": ["Claim Diagnosis", "Coverage", "Member", "Provider"]
+        },
+        "instanceCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of instances of this data class found in the message (0 if the data class was not present)."
+        },
+        "criticalFailureCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of failed criteria flagged with criticalityIndicator = true, within this data class."
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of applicable criteria evaluations within this data class."
+        },
+        "numerator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of applicable criteria evaluations that passed within this data class."
+        },
+        "piqiScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Unweighted PIQI score for this data class, as a percentage."
+        },
+        "weightedDenominator": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Denominator for this data class after applying scoringWeight."
+        },
+        "weightedNumerator": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Numerator for this data class after applying scoringWeight."
+        },
+        "weightedPIQIScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Weighted PIQI score for this data class, as a percentage."
+        }
+      }
+    },
+    "evaluationDetail": {
+      "type": "object",
+      "description": "Detail of a single criterion's evaluation outcome across all instances of its entity within the message.",
+      "additionalProperties": false,
+      "required": ["denominator", "entityName", "evaluationName", "instanceCount", "numerator"],
+      "properties": {
+        "entityName": {
+          "type": "string",
+          "description": "Display name of the entity/attribute evaluated by this criterion.",
+          "examples": ["Line Payment Denial Code"]
+        },
+        "evaluationName": {
+          "type": "string",
+          "description": "Display name of the criterion's passing condition (the rubric criterion's samNameOverride).",
+          "examples": ["line payment denial code is populated"]
+        },
+        "instanceCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of instances of the entity found in the message."
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of applicable evaluations for this criterion."
+        },
+        "numerator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of applicable evaluations for this criterion that passed."
+        }
+      }
+    },
+    "dataClassEvaluationGroup": {
+      "type": "object",
+      "description": "A list of criterion-level evaluation details, grouped by data class.",
+      "additionalProperties": false,
+      "required": ["dataClassName", "evaluationList"],
+      "properties": {
+        "dataClassName": {
+          "type": "string",
+          "description": "Name of the data class these evaluations belong to."
+        },
+        "evaluationList": {
+          "type": "array",
+          "description": "Evaluation details for each applicable criterion within this data class.",
+          "items": { "$ref": "#/$defs/evaluationDetail" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://piqi-alliance.org/schemas/piqi-audit.schema.json",
+  "title": "PIQI Audit",
+  "description": "Schema describing a PIQI audit response: the field-level, evidentiary detail behind a PIQI Score Result. Extends the score result envelope (elapsedTimeInMS/scoringData/succeeded) with an auditedMessage payload that shows, for every instance of every data class in the source message, the raw data captured, the criterion-by-criterion assessment applied to each attribute, and the resulting scores rolled up from attribute to element to message.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["auditedMessage", "elapsedTimeInMS", "scoringData", "succeeded"],
+  "properties": {
+    "elapsedTimeInMS": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Time taken to score and audit the message, in milliseconds."
+    },
+    "succeeded": {
+      "type": "boolean",
+      "description": "Whether the audit run completed successfully."
+    },
+    "auditedMessage": {
+      "type": "string",
+      "contentMediaType": "application/json",
+      "contentSchema": { "$ref": "#/$defs/auditedMessage" },
+      "description": "A JSON document, serialized as a string, containing the full field-level audit of the source message. Parse this string to validate/read it against the auditedMessage definition below."
+    },
+    "scoringData": {
+      "$ref": "#/$defs/scoringData",
+      "description": "The rolled-up PIQI score result for the message, in the same shape produced by the PIQI Framework Scoring endpoint (see the PIQI Score Result schema)."
+    }
+  },
+  "$defs": {
+    "numericString": {
+      "type": "string",
+      "pattern": "^-?[0-9]+$",
+      "description": "An integer value encoded as a string (as emitted by the audit engine)."
+    },
+    "coding": {
+      "type": "object",
+      "description": "A single code/system/display triple, aligned to FHIR Coding conventions.",
+      "additionalProperties": false,
+      "required": ["system", "code", "display"],
+      "properties": {
+        "system": {
+          "type": "string",
+          "description": "URI of the code system the code belongs to.",
+          "examples": ["http://hl7.org/fhir/sid/icd-10-cm", "http://terminology.hl7.org/CodeSystem/ex-diagnosistype"]
+        },
+        "code": {
+          "type": "string",
+          "description": "The code value."
+        },
+        "display": {
+          "type": "string",
+          "description": "Human-readable display text for the code."
+        }
+      }
+    },
+    "codeableConceptData": {
+      "type": "object",
+      "description": "Captured value of a Codeable Concept attribute: a coded value with optional coding list and free text.",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "codings": {
+          "type": "array",
+          "description": "Coded representations of the value, if any were present.",
+          "items": { "$ref": "#/$defs/coding" }
+        },
+        "text": {
+          "type": "string",
+          "description": "Display text for the value."
+        }
+      }
+    },
+    "attributeData": {
+      "description": "The raw captured value of an attribute in the source message. Simple attributes are plain strings (including string-encoded booleans/dates); Codeable Concept and similar structured attributes are objects with optional codings and text.",
+      "oneOf": [
+        { "type": "string" },
+        { "$ref": "#/$defs/codeableConceptData" }
+      ]
+    },
+    "assessmentItem": {
+      "type": "object",
+      "description": "The outcome of applying a single rubric criterion to an attribute instance.",
+      "additionalProperties": false,
+      "required": ["attributeMnemonic", "attributeName", "assessment", "effect", "status", "reason"],
+      "properties": {
+        "attributeMnemonic": {
+          "type": "string",
+          "description": "Mnemonic of the model attribute this assessment evaluated.",
+          "examples": ["DIAG_DIAGNOSIS", "PROV_NPI"]
+        },
+        "attributeName": {
+          "type": "string",
+          "description": "Human-readable name of the model attribute this assessment evaluated.",
+          "examples": ["Diagnosis Code", "Provider NPI"]
+        },
+        "assessment": {
+          "type": "string",
+          "description": "Human-readable label of the criterion applied (the rubric criterion's samNameOverride).",
+          "examples": ["diagnosis is ICD9 or ICD10", "NPI is formatted correctly"]
+        },
+        "effect": {
+          "type": "string",
+          "description": "Whether this assessment counted toward the PIQI score or was informational only.",
+          "enum": ["Scoring", "Informational"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Outcome of the assessment.",
+          "enum": ["Passed", "Failed", "Skipped"]
+        },
+        "reason": {
+          "type": "string",
+          "description": "Explanation for the outcome, particularly for failures. Empty string when not applicable (e.g., on a pass)."
+        }
+      }
+    },
+    "attributeScoringData": {
+      "type": "object",
+      "description": "PIQI score summary for a single attribute instance.",
+      "additionalProperties": false,
+      "required": [
+        "attributeScore",
+        "attributeScoreWeighted",
+        "attributeCriticalFailureCount",
+        "attributeNumerator",
+        "attributeDenominator"
+      ],
+      "properties": {
+        "attributeScore": { "$ref": "#/$defs/numericString", "description": "Unweighted PIQI score (0-100) for this attribute instance." },
+        "attributeScoreWeighted": { "$ref": "#/$defs/numericString", "description": "Weighted PIQI score (0-100) for this attribute instance." },
+        "attributeCriticalFailureCount": { "$ref": "#/$defs/numericString", "description": "Number of failed criteria flagged critical, for this attribute instance." },
+        "attributeNumerator": { "$ref": "#/$defs/numericString", "description": "Number of applicable criteria that passed for this attribute instance." },
+        "attributeDenominator": { "$ref": "#/$defs/numericString", "description": "Number of applicable criteria evaluated for this attribute instance." }
+      }
+    },
+    "attributeAudit": {
+      "type": "object",
+      "description": "Full audit detail for a single attribute instance: its rolled-up score plus every scoring and informational assessment applied to it.",
+      "additionalProperties": false,
+      "required": ["scoringData", "assessmentItems", "InformationalItems"],
+      "properties": {
+        "scoringData": { "$ref": "#/$defs/attributeScoringData" },
+        "assessmentItems": {
+          "type": "array",
+          "description": "Assessments that counted toward the PIQI score for this attribute.",
+          "items": { "$ref": "#/$defs/assessmentItem" }
+        },
+        "InformationalItems": {
+          "type": "array",
+          "description": "Assessments that did not count toward the PIQI score for this attribute (effect = Informational).",
+          "items": { "$ref": "#/$defs/assessmentItem" }
+        }
+      }
+    },
+    "auditedAttributeField": {
+      "type": "object",
+      "description": "An attribute as it appears within an audited data class instance: its captured value and, if the attribute was in scope for scoring, its audit detail. May be an empty object when the attribute was absent from the source message and not evaluated.",
+      "additionalProperties": false,
+      "properties": {
+        "data": { "$ref": "#/$defs/attributeData" },
+        "attributeAudit": { "$ref": "#/$defs/attributeAudit" }
+      }
+    },
+    "elementAuditSummary": {
+      "type": "object",
+      "description": "PIQI score summary rolled up across all attributes of a single data class instance (an 'element').",
+      "additionalProperties": false,
+      "required": [
+        "elementScore",
+        "elementScoreWeighted",
+        "elementCriticalFailureCount",
+        "elementNumerator",
+        "elementDenominator"
+      ],
+      "properties": {
+        "elementScore": { "$ref": "#/$defs/numericString", "description": "Unweighted PIQI score (0-100) for this data class instance." },
+        "elementScoreWeighted": { "$ref": "#/$defs/numericString", "description": "Weighted PIQI score (0-100) for this data class instance." },
+        "elementCriticalFailureCount": { "$ref": "#/$defs/numericString", "description": "Number of failed criteria flagged critical, within this data class instance." },
+        "elementNumerator": { "$ref": "#/$defs/numericString", "description": "Number of applicable criteria that passed within this data class instance." },
+        "elementDenominator": { "$ref": "#/$defs/numericString", "description": "Number of applicable criteria evaluated within this data class instance." }
+      }
+    },
+    "dataClassInstance": {
+      "type": "object",
+      "description": "A single instance of a data class from the source message (e.g., one diagnosis, one claim line), with every attribute's audited value alongside the instance's rolled-up element score.",
+      "properties": {
+        "elementAudit": { "$ref": "#/$defs/elementAuditSummary" }
+      },
+      "patternProperties": {
+        "^(?!elementAudit$).+$": { "$ref": "#/$defs/auditedAttributeField" }
+      },
+      "additionalProperties": false
+    },
+    "messageAudit": {
+      "type": "object",
+      "description": "PIQI score summary rolled up across the entire audited message.",
+      "additionalProperties": false,
+      "required": [
+        "messageNumerator",
+        "messageDenominator",
+        "messageScore",
+        "messageNumeratorWeighted",
+        "messageDenominatorWeighted",
+        "messageScoreWeighted",
+        "messageCriticalFailureCount"
+      ],
+      "properties": {
+        "messageNumerator": { "$ref": "#/$defs/numericString", "description": "Number of applicable criteria that passed across the message." },
+        "messageDenominator": { "$ref": "#/$defs/numericString", "description": "Number of applicable criteria evaluated across the message." },
+        "messageScore": { "$ref": "#/$defs/numericString", "description": "Unweighted PIQI score (0-100) for the message." },
+        "messageNumeratorWeighted": { "$ref": "#/$defs/numericString", "description": "Weighted numerator across the message." },
+        "messageDenominatorWeighted": { "$ref": "#/$defs/numericString", "description": "Weighted denominator across the message." },
+        "messageScoreWeighted": { "$ref": "#/$defs/numericString", "description": "Weighted PIQI score (0-100) for the message." },
+        "messageCriticalFailureCount": { "$ref": "#/$defs/numericString", "description": "Number of failed criteria flagged critical, across the message." }
+      }
+    },
+    "auditedMessage": {
+      "type": "object",
+      "description": "The parsed contents of the auditedMessage string: message identification, the message-level score, and a per-data-class breakdown of every instance found in the message.",
+      "additionalProperties": false,
+      "required": ["EntityModelMnemonic", "DataProviderID", "DataSourceID", "MessageID", "Audit", "patient"],
+      "properties": {
+        "EntityModelMnemonic": {
+          "type": "string",
+          "description": "Mnemonic of the PIQI model the source message was mapped to for auditing.",
+          "examples": ["PAT_EOB_V1"]
+        },
+        "DataProviderID": {
+          "type": "string",
+          "description": "Identifier of the organization/system that provided the data.",
+          "examples": ["Connectathon"]
+        },
+        "DataSourceID": {
+          "type": "string",
+          "description": "Identifier of the specific data source/feed the message came from.",
+          "examples": ["Test Source EOB/Claims"]
+        },
+        "MessageID": {
+          "type": "string",
+          "description": "Identifier of the audited message, typically derived from the source filename."
+        },
+        "Audit": { "$ref": "#/$defs/messageAudit" },
+        "patient": {
+          "type": "object",
+          "description": "The audited message content, keyed by data class field name (camelCase, matching the model's dataClasses[].fieldName), each holding the list of instances of that data class found in the message.",
+          "propertyNames": {
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "description": "Instances of this data class found in the source message.",
+            "items": { "$ref": "#/$defs/dataClassInstance" }
+          },
+          "examples": [
+            {
+              "claimDiagnosis": [],
+              "claimServiceLine": [],
+              "claimProcedure": [],
+              "coverage": [],
+              "dentalClaim": [],
+              "medicalClaim": [],
+              "member": [],
+              "pharmacyClaim": [],
+              "provider": []
+            }
+          ]
+        }
+      }
+    },
+    "scoreSummary": {
+      "type": "object",
+      "description": "A PIQI score summary: numerator/denominator counts and the resulting score, both raw and weighted.",
+      "additionalProperties": false,
+      "required": [
+        "criticalFailureCount",
+        "denominator",
+        "numerator",
+        "piqiScore",
+        "weightedDenominator",
+        "weightedNumerator",
+        "weightedPIQIScore"
+      ],
+      "properties": {
+        "criticalFailureCount": { "type": "integer", "minimum": 0 },
+        "denominator": { "type": "integer", "minimum": 0 },
+        "numerator": { "type": "integer", "minimum": 0 },
+        "piqiScore": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "weightedDenominator": { "type": "number", "minimum": 0 },
+        "weightedNumerator": { "type": "number", "minimum": 0 },
+        "weightedPIQIScore": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "dataClassResult": {
+      "type": "object",
+      "description": "PIQI score summary for a single data class, plus the number of instances of that data class found in the message.",
+      "additionalProperties": false,
+      "required": [
+        "criticalFailureCount",
+        "dataClassName",
+        "denominator",
+        "instanceCount",
+        "numerator",
+        "piqiScore",
+        "weightedDenominator",
+        "weightedNumerator",
+        "weightedPIQIScore"
+      ],
+      "properties": {
+        "dataClassName": { "type": "string" },
+        "instanceCount": { "type": "integer", "minimum": 0 },
+        "criticalFailureCount": { "type": "integer", "minimum": 0 },
+        "denominator": { "type": "integer", "minimum": 0 },
+        "numerator": { "type": "integer", "minimum": 0 },
+        "piqiScore": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "weightedDenominator": { "type": "number", "minimum": 0 },
+        "weightedNumerator": { "type": "number", "minimum": 0 },
+        "weightedPIQIScore": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "evaluationDetail": {
+      "type": "object",
+      "description": "Detail of a single criterion's evaluation outcome across all instances of its entity within the message.",
+      "additionalProperties": false,
+      "required": ["denominator", "entityName", "evaluationName", "instanceCount", "numerator"],
+      "properties": {
+        "entityName": { "type": "string" },
+        "evaluationName": { "type": "string" },
+        "instanceCount": { "type": "integer", "minimum": 0 },
+        "denominator": { "type": "integer", "minimum": 0 },
+        "numerator": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "dataClassEvaluationGroup": {
+      "type": "object",
+      "description": "A list of criterion-level evaluation details, grouped by data class.",
+      "additionalProperties": false,
+      "required": ["dataClassName", "evaluationList"],
+      "properties": {
+        "dataClassName": { "type": "string" },
+        "evaluationList": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evaluationDetail" }
+        }
+      }
+    },
+    "scoringData": {
+      "type": "object",
+      "description": "The rolled-up PIQI score result for the message (same shape as the PIQI Score Result schema's scoringData).",
+      "additionalProperties": false,
+      "required": [
+        "channelMnemonic",
+        "dataClassResults",
+        "dataProviderID",
+        "dataSourceID",
+        "detectionResults",
+        "evaluationRubric",
+        "informationalResults",
+        "messageID",
+        "messageResults",
+        "plausibilityResults",
+        "processDate"
+      ],
+      "properties": {
+        "channelMnemonic": { "type": "string" },
+        "dataProviderID": { "type": "string" },
+        "dataSourceID": { "type": "string" },
+        "evaluationRubric": { "type": "string" },
+        "messageID": { "type": "string" },
+        "processDate": { "type": "string", "format": "date-time" },
+        "dataClassResults": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/dataClassResult" }
+        },
+        "informationalResults": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/dataClassEvaluationGroup" }
+        },
+        "detectionResults": {
+          "type": "array",
+          "description": "Results of detection-type evaluations. No populated example was available; item shape is permissive.",
+          "items": { "type": "object" }
+        },
+        "plausibilityResults": {
+          "type": "array",
+          "description": "Results of plausibility-check evaluations. No populated example was available; item shape is permissive.",
+          "items": { "type": "object" }
+        },
+        "messageResults": { "$ref": "#/$defs/scoreSummary" }
+      }
+    }
+  }
+}
