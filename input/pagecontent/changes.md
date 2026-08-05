@@ -1,5 +1,16 @@
 This provides a list of changes to the Patient Information Quality Improvement (PIQI) Framework since its initial release
 
+### 2.0.0-ballot
+
+In September 2026, PIQI entered a second ballot with some notable changes based on implementer and connectathon feedback and advancing maturity of the standard: 
+
+- The standard status for PIQI changed from **informative** to **standard for trial use (STU)**
+- A new "Guidance" page that discusses model design, rubric design, implementation architecture and advance simple assessment modules (SAMs) was added
+- A new "Conformance" page with implementer requirements was added
+- An artifacts page with schema artifacts and two consensus models was added: 
+  - Clinical data model and evaluation rubric
+  - Claims (Explanation of Benefit) data model and inpatient evaluation rubric
+
 ### 1.0.0
 
 1.0.0 - Patient Information Quality Improvement (PIQI) Framework, Edition 1: Initial publication. Introduces the four components of the PIQI Framework: the Healthcare Data Quality Taxonomy (HDQT v1.0), the PIQI Clinical Data Model, the Simple Assessment Module (SAM) specification, and the Evaluation Rubric specification.
@@ -132,6 +143,7 @@ In total, 121 changes were addressed as part of 1.0.0-ballot feedback categorize
 - [OTHER-3089](https://jira.hl7.org/browse/OTHER-3089) - Add examples in section 4.8.1 Availability Category
 - [OTHER-3032](https://jira.hl7.org/browse/OTHER-3032) - Add examples to Plausibility Category, Situationally Implausible
 - [OTHER-3026](https://jira.hl7.org/browse/OTHER-3026) - Improve SAM examples and diagram alignment
+- An OID (2.16.840.1.113883.4.642.40.82) was assigned to PIQI per guidance from Cross-Group Project 
 
 ### 1.0.0-ballot
 
