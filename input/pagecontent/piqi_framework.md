@@ -1,8 +1,8 @@
 ### High Level Component Diagram
 
-Please refer to the appropriate [**PIQI Message Format Guide**](https://piqiframework.org/wp-content/uploads/2025/05/PIQI-Framework-Message-Format-Implementation-Guide-Patient-Clinical-Data-Model-v1.1-05MAY2025.pdf) for specific [PIQI model](glossary.html#piqi-model) format implementation details.
+This page explains the major parts of the PIQI Framework. A composite diagram that outlines how various PIQI components interrelate can be found in [the framework section of the PIQI Background](background.html#framework-design). Definitions of individual PIQI components can be found in the [PIQI glossary](glossary.html)
 
-The high-level component diagram can be found [here](background.html#framework-design)
+This HL7 PIQI Framework, published as an informative document, was based on a previous publication developed outside HL7 known as the [PIQI Message Format Guide](https://piqiframework.org/wp-content/uploads/2025/05/PIQI-Framework-Message-Format-Implementation-Guide-Patient-Clinical-Data-Model-v1.1-05MAY2025.pdf), which provides an earlier version of this content as well as implementation details. Future versions of the PIQI Framework are planned to include implementation guidance not cuurently included in this informative guide (See [Overview and Scope](index.html#informative-document-overview-and-scope) for the phased development plan of the PIQI Framework). 
 
 ### PIQI Message Philosophy
 
