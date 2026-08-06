@@ -52,6 +52,8 @@ tr {
 | Source | The original source of the Evaluation Rubric content. Sub-attributes: PIQI Organization UID, PIQI Organization Name. | |
 | CreationDateTime | The date and time the Evaluation Rubric was originally created. | |
 | ModifiedDateTime | The date and time the Evaluation Rubric was most recently modified. | |
+| Criterion | The specific rules to use to assess a specific PIQI Model Entity and associated scoring implications. For full attributes of each Criterion, see [Evaluation Rubric Criteria](evaluation.html#evaluation-rubric-criteria) | Repeats |
+
 
 #### Evaluation Rubric Criteria
 
