@@ -27,125 +27,51 @@ Evaluation Rubrics represent a collection of sequenced SAM evaluations of specif
 
 An Evaluation Rubric is comprised of the following components:
 
-#### Evaluation Rubric Mnemonic
+<style>
+table, td{
+  border: 1px solid black;
+}
+th{
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+tr {
+  background-color: #DCDCDC;
+}
+</style>
 
-The Rubric Mnemonic is a mnemonic identifier that is used to identify a unique Evaluation Rubric. This is the primary identifier to reference a given Evaluation Rubric.
-
-#### Evaluation Rubric Name
-
-The name of the Evaluation Rubric.
-
-#### Evaluation Rubric Description
-
-The description of the scope and purpose of the Evaluation Rubric.
-
-#### Evaluation Rubric Version
-
-The version of the Evaluation Rubric is an optional field to support versioned rubrics.
-
-#### Evaluation Rubric Authority
-
-The authoritative source or reference for the Evaluation Rubric. This should contain both any organizations that have endorsed the rubric (to convey trustworthiness) as well as context on known production usage of the rubric.
-
-#### Evaluation Rubric Model
-
-This is the PIQI Data Model required for the rubric. It is envisioned that there may be many versions of a given model, as well as extensions based upon those versions. Given the tight relationship between the model and the rubric, all of these sub-attributes are necessary to uniquely identify the specific model required.
-
-- Rubric Model version mnemonic
-
-- Rubric Model mnemonic
-
-- Rubric Model Version
-
-- Rubric Model Extension mnemonic
-
-#### Evaluation Rubric Source
-
-This is the original source of the Evaluation Rubric content, containing both a unique identifier as well as a human readable name for the organization.
-
-- PIQI Organization UID
-
-- PIQI Organization Name
-
-#### CreationDateTime
-
-The date and time the Evaluation Rubric was originally created.
-
-#### ModifiedDateTime
-
-The date and time the Evaluation Rubric was most recently modified.
+| Field | Description | Notes |
+| --- | --- | --- |
+| Mnemonic | A mnemonic identifier used to uniquely identify the Evaluation Rubric. This is the primary identifier for referencing a given Evaluation Rubric. | |
+| Name | The name of the Evaluation Rubric. | |
+| Description | The description of the scope and purpose of the Evaluation Rubric. | |
+| Version | The version of the Evaluation Rubric. | Optional |
+| Authority | The authoritative source or reference for the Evaluation Rubric. Should include organizations that have endorsed the rubric and context on known production usage. | |
+| Model | The [PIQI Model](glossary.html#piqi-model) required for the rubric. All sub-attributes are required to uniquely identify the specific model and version: Rubric Model Mnemonic, Rubric Model Version Mnemonic, Rubric Model Version, Rubric Model Extension Mnemonic. | |
+| Source | The original source of the Evaluation Rubric content. Sub-attributes: PIQI Organization UID, PIQI Organization Name. | |
+| CreationDateTime | The date and time the Evaluation Rubric was originally created. | |
+| ModifiedDateTime | The date and time the Evaluation Rubric was most recently modified. | |
 
 #### Evaluation Rubric Criteria
 
-Each Evaluation Rubric contains a collection of criteria that are used for assessing and scoring patient messages. Each criterion has the following attributes:
+Each Evaluation Rubric contains a collection of criteria used for assessing and scoring patient messages. Each criterion has the following fields:
 
-##### Criterion Sequence
-
-This is the sequence order for the criteria in the collection. The criteria sequence is assigned automatically based on the [data class](glossary.html#data-class) and entity being assessed by the criteria.
-
-##### Criterion Description
-
-This is a human readable description of the purpose or rationale for the criteria.
-
-##### Criterion Data Class
-
-This is the Data Class in the [PIQI model](glossary.html#piqi-model) that is being assessed. This can be any data class in the PIQI information model or ‘Patient’ which indicates a complete patient
-
-##### Criterion Entity
-
-This is the entity (element or [attribute](glossary.html#data-attribute)) being assessed by the criteria,
-
-##### Criterion SAM Mnemonic
-
-This is the SAM that is being assigned in the criteria.
-
-##### Criterion Success Name Override
-
-This is a profile specific override for the success alias for the SAM.
-
-##### Criterion Failure Name Override
-
-This is a profile specific override for the Failure alias for the SAM.
-
-##### Criterion SAM Parameters
-
-This field contains a collection of the parameters necessary to properly configure the SAM.
-
-##### Criterion SAM Parameter Name
-
-This field contains the name for a SAM parameter being configured.
-
-##### Criterion SAM Parameter Value
-
-This field contains the value for a SAM parameter being configured.
-
-##### Criterion Conditional SAM
-
-This contains the SAM mnemonic for a conditional SAM If the criteria should only be run under a certain condition. If the criteria is not conditional, this field should be empty.
-
-##### Criterion Conditional SAM Parameters
-
-If there is a conditional SAM and it requires a parameter, this is where that parameter collection can be populated.
-
-##### Criterion Conditional SAM Parameter Name
-
-This field contains the name for a SAM parameter being configured.
-
-##### Criterion Conditional SAM Parameter Value
-
-This field contains the value for a SAM parameter being configured.
-
-##### Criterion Scoring Effect
-
-This field indicates if this criterion is ‘scoring’ or ‘informational’.
-
-##### Criterion Scoring Weight
-
-This field has the weight for scoring criteria. For informational criteria it is set to ‘0’. For Scoring criteria, it defaults to ‘1’.
-
-##### Criterion Criticality Indicator
-
-This field identifies a criterion as critical, meaning that if this criterion fails, the entire patient message is considered to have failed the rubric regardless of the scores from all other criteria. Informational criteria cannot be critical and this value is always ‘false’ for them. For Scoring criteria, this value defaults to ‘false’; set it to ‘true’ only for criteria whose failure must disqualify the message as a whole.
+| Field | Description | Notes |
+| --- | --- | --- |
+| Sequence | The sequence order for the criterion in the collection. Assigned automatically based on the [Data Class](glossary.html#data-class) and entity being assessed. | |
+| Description | A human-readable description of the purpose or rationale for the criterion. | |
+| Data Class | The [Data Class](glossary.html#data-class) in the [PIQI Model](glossary.html#piqi-model) being assessed. May be any Data Class in the PIQI information model, or `Patient` to indicate the entire patient record. | |
+| Entity | The entity (element or [attribute](glossary.html#data-attribute)) being assessed by the criterion. | |
+| SAM Mnemonic | The mnemonic of the SAM assigned to this criterion. | |
+| Success Name Override | A rubric-specific override for the success alias of the assigned SAM. | Optional |
+| Failure Name Override | A rubric-specific override for the failure alias of the assigned SAM. | Optional |
+| SAM Parameters | A collection of name/value pairs (`parameterName`, `parameterValue`) used to configure the assigned SAM. | Optional |
+| Conditional SAM | The mnemonic of a conditional SAM. If configured, the assigned evaluation SAM is only processed if this SAM passes. Leave empty if the criterion is not conditional. | Optional |
+| Conditional SAM Parameters | A collection of name/value pairs (`parameterName`, `parameterValue`) used to configure the conditional SAM. | Optional |
+| Scoring Effect | Indicates whether this criterion is `scoring` or `informational`. | |
+| Scoring Weight | The weight applied to the criterion for scoring. Set to `0` for informational criteria; defaults to `1` for scoring criteria. | |
+| Criticality Indicator | If `true` and this criterion fails, the entire patient message is considered to have failed the Evaluation Rubric regardless of all other scores. Always `false` for informational criteria. Defaults to `false` for scoring criteria; set to `true` only for criteria whose failure must disqualify the message as a whole. | |
 
 ### Example of Evaluation Rubric Definition JSON
 
