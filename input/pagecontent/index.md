@@ -14,16 +14,21 @@ The PIQI Framework is aligned with Health Level Seven (HL7) interoperability sta
 
 By embedding data quality assessment within ingestion and exchange workflows, PIQI supports scalable implementation across heterogeneous environments without dependency on specific infrastructure. This enables implementers to incorporate data quality evaluation as a core component of interoperability workflows. Through its emphasis on standards alignment, portability, and use-case-driven assessment, PIQI provides a foundation for improving trust in exchanged patient data and supporting high-quality, data-driven healthcare delivery.
 
-### Informative Document Overview and Scope
-The HL7 Cross-Group Project (CGP) sponsored PIQI project is two-phased. This Informative Document is the first phase, in which the PIQI Framework, its components and approach to data quality evaluation are described. As an Informative Document, no HL7 product specific resources are defined herein. The second phase will produce a Cross-Paradigm implementation guide (CP IG) that defines how the PIQI Framework and approach can be utilized across formats, namely HL7 V2, Consolidated Clinical Document Architecture (C-CDA) and FHIR. Therefore, specifics about how the PIQI Framework relates to each HL7 product family is out of scope for the Informative Document and will be addressed in the PIQI CP IG.
+### Implementation Guide Overview and Scope
+The HL7 Cross-Group Project (CGP) sponsored PIQI project is two-phased. The first phase was the publication of an Informative Document in which the PIQI Framework, its components and approach to data quality evaluation are described. As an Informative Document, no HL7 product specific resources were defined in that 1.0 publication. This 2.0 publication represents a second phase of PIQI producing a Cross-Paradigm Implementation Guide that includes artifacts for PIQI implementation and conformance criteria.  
 
-The main sections of this Informative Document include:
+The original informative publication includes:
 
 *   [PIQI Background](background.html) - These pages provide background on the PIQI Framework.
 *   [Data Quality Use Cases](requirements_and_use_case.html) - This page describes known use cases and specific requirements for assessing data quality in various industry verticals.
-*   [PIQI Framework](piqi_framework.html) - These pages define the structure of the PIQI Framework with examples.
-*   [PIQI Glossary](glossary.html) - This page provides a glossary of terms used throughout the PIQI IG.
+*   [PIQI Framework](piqi_framework.html) - These pages define the structure of the PIQI Framework with examples and a glossary
 *   [Change Notes](changes.html) - This page documents the changes across the versions of the PIQI IG.
+
+This Cross-Paradigm Implementation Guide adds the following: 
+
+*   [Guidance](guidance.html) - This provides implementation guidance for authors of PIQI Models, Evaluation Rubrics, and Simple Assessment Modules (SAMs), and is organized into four areas: Model design, Evaluation Rubric design, Implementation architectures, and Advanced SAM patterns.
+*   [Conformance](conformance.html) - A PIQI Framework Scoring Endpoint Conformance Guide with key capabilities expected of PIQI implementers
+*   [Artifacts](artifacts.html) - A clinical data and claims data Model and Evaluation Rubric and Schema artifacts 
 
 Achieving higher data quality involves careful review and action throughout different stages of the health data lifecycle. However, the PIQI framework is primarily designed to objectively assess data quality at the point of data exchange—which is when data receivers first encounter the data. To best assess data quality, it's important to evaluate that data in as close to the format in which it was received as possible. When PIQI-based assessments uncover data quality issues, organizations should work to address these problems by consulting comprehensive, end-to-end standards for health record data quality, such as the following:
 
