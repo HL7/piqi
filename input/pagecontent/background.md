@@ -11,11 +11,7 @@ The Patient Information Quality Improvement (PIQI) Framework is structured into 
 
 This component establishes a well-organized taxonomy that categorizes the various dimensions to be measured in healthcare data quality assessment. A PIQI dimension may be accuracy, completeness, consistency, timeliness or reliability, among others. The taxonomy serves as a structured framework for classifying the aspects of data quality that need to be evaluated. A dimension is an aspect of data quality that provides insight into the nature of a data quality failure. By categorizing these dimensions, it enables a clear understanding of what aspects of data quality are being assessed, providing a standardized and consistent foundation for the assessment process.
 
-<<<<<<< HEAD
-Further details can be found here: [PIQI Healthcare Data Quality Taxonomy (HDQT) Version 1.0](piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt)
-=======
 Further details can be found here: [PIQI Healthcare Data Quality Taxonomy (HDQT)](piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt)
->>>>>>> 872734a (Updates for New Pages, and note-to-balloters)
 
 #### Information Model
 
