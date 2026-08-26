@@ -28,7 +28,10 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   shownav: 'true'  
   jira-code: 'piqi-framework'
   auto-oid-root: 2.16.840.1.113883.4.642.40.82
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0800d2 (Addding auto-OID assignment)
 
 pages:
   index.md:
