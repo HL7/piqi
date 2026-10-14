@@ -100,7 +100,7 @@ Characteristics: #can-be-target
 * criteria.samNameOverride 0..1 string "TBD"
 * criteria.failureNameOverride 0..1 string "TBD"
 * criteria.conditionalSam 0..1 id "TBD"
-* criteria.scoringEffect 1..1 code "Must be selected from: Scoring | Informational | Plausibility"
+* criteria.scoringEffect 1..1 code "Must be selected from: Scoring | Informational | Plausibility | Detection"
 * criteria.scoringWeight 0..1 integer "TBD"
 * criteria.criticalityIndicator 0..1 boolean "TBD"
 * criteria.samParameters 0..1 BackboneElement "TBD"
