@@ -9,16 +9,28 @@
 <artifactPageExtension value="-mappings"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
+<page key="about" name="About"/>
 <page key="changes" name="Change History"/>
-<page key="conformance" name="Conformance"/>
+<page key="claims_model_rubric" name="Claims Model/Rubric"/>
+<page key="clinical_model_rubric" name="Clinical Model/Rubric"/>
+<page deprecated="true" key="conformance" name="Conformance"/>
 <page key="requirements_and_use_case" name="Data Quality Use Cases"/>
+<page key="conformance-endpoint" name="Endpoint Conformance"/>
 <page key="evaluation" name="Evaluation"/>
-<page key="glossary" name="Glossary"/>
-<page key="guidance" name="Guidance"/>
+<page key="fhir_artifacts" name="FHIR Artifacts"/>
+<page key="guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
+<page key="checklist" name="Implementer Checklist"/>
+<page key="conformance-operation" name="Operation Conformance"/>
+<page key="alliance" name="PIQI Alliance"/>
 <page key="artifacts" name="PIQI Artifacts"/>
 <page key="background" name="PIQI Background"/>
 <page key="piqi_framework" name="PIQI Framework"/>
-<page key="sams" name="Simple Assessment Modules (SAMS)"/>
+<page key="glossary" name="PIQI Glossary"/>
+<page key="piqi_model" name="PIQI Model"/>
+<page key="quick_start" name="PIQI Quick Start"/>
+<page key="propose" name="Propose New Rubric"/>
+<page key="sams" name="SAM Library"/>
+<page key="sam" name="Simple Assessment Module (SAM)"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

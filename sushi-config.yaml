@@ -34,70 +34,83 @@ pages:
     title: Home
   background.md:
     title: PIQI Background
-  guidance.md:
-    title: Guidance
-  requirements_and_use_case.md:
-    title: Data Quality Use Cases
   piqi_framework.md:
     title: PIQI Framework
-  sams.md:
-    title: Simple Assessment Modules (SAMS)
+  requirements_and_use_case.md:
+    title: Data Quality Use Cases
+  alliance.md:
+    title: PIQI Alliance
+  glossary.md:
+    title: PIQI Glossary
+  quick_start.md:
+    title: PIQI Quick Start
+  guidance.md:
+    title: General Guidance
+  checklist.md:
+    title: Implementer Checklist
+  conformance-operation.md:
+    title: Operation Conformance
+  conformance-endpoint.md:
+    title: Endpoint Conformance
+  piqi_model.md:
+    title: PIQI Model
   evaluation.md:
     title: Evaluation
+  sam.md: 
+    title: Simple Assessment Module (SAM)
+  sams.md:
+    title: SAM Library
+  fhir_artifacts.md:
+    title: FHIR Artifacts
+  clinical_model_rubric.md:
+    title: Clinical Model/Rubric
+  claims_model_rubric.md:
+    title: Claims Model/Rubric
   artifacts.md:
     title: PIQI Artifacts
-  conformance.md:
-    title: Conformance
-  glossary.md:
-    title: Glossary
+  about.md:
+    title: About
+  propose.md:
+    title: Propose New Rubric
   changes.md:
     title: Change History
   
 menu:
-  Home:
-    Introduction: index.html
-    Overview and Scope: index.html#implementation-guide-overview-and-scope
-    Authors: index.html#authors
+  Home: index.html
     
-  PIQI Background:
-    Framework Design: background.html#framework-design
-    Framework Benefits: background.html#framework-benefits
-    PIQI Community of Practice: background.html#piqi-community-of-practice   
-  
-  Data Quality Use Cases:
-    General Use Case: requirements_and_use_case.html
-    Core Data for Interoperability: requirements_and_use_case.html#core-data-for-interoperability-cdi
-    Quality Measurement and Improvement: requirements_and_use_case.html#data-quality-in-quality-measurement-and-quality-improvement
-    Clinical Care and Decision Support: requirements_and_use_case.html#clinical-care-and-clinical-decision-support
-    Public Health: requirements_and_use_case.html#public-health
-    Regulatory: requirements_and_use_case.html#regulatory
-    Payers: requirements_and_use_case.html#payers
-    Health Information Exchange: requirements_and_use_case.html#health-information-exchange
-    Laboratory Data: requirements_and_use_case.html#laboratory-data
-    Health Information Technology: requirements_and_use_case.html#health-information-technology
-    Provider: requirements_and_use_case.html#provider
-    Social Services: requirements_and_use_case.html#social-services    
-  
-  PIQI Framework:
-    Overview: piqi_framework.html
-    Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt
-    PIQI Model: piqi_framework.html#piqi-data-models
-    Simple Assessment Modules (SAMS): sams.html
-    PIQI Evaluation: evaluation.html
+  PIQI Introduction:
+    Background: background.html
+    Framework: piqi_framework.html
+    Use Cases: requirements_and_use_case.html  
+    PIQI Alliance: alliance.html
     PIQI Glossary: glossary.html
   
-  Guidance: guidance.html
+  Guidance:
+    PIQI Quick Start: quick_start.html
+    General Guidance: guidance.html
+    Implementer Checklist: checklist.html 
+
+  Conformance:
+    Operation Conformance: conformance-operation.html
+    Endpoint Conformance: conformance-endpoint.html
   
-  Conformance: conformance.html
-  Artifacts: artifacts.html
+  Artifacts: 
+    PIQI Model: piqi_model.html
+    PIQI Rubric: evaluation.html
+    Simple Assessment Module (SAM): sam.html
+    SAM Library: sams.html
+    FHIR Artifacts: fhir_artifacts.html
+    Clinical Model/Rubric: clinical_model_rubric.html
+    Claims Models/Rubric: claims_model_rubric.html
 
   Support:
+    About: about.html
+    Propose New Rubric: propose.html
     Confluence Project: https://confluence.hl7.org/spaces/CGP/pages/345544532/Patient+Information+Quality+Improvement+PIQI+Framework
     Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=12501&issuetype=10600&customfield_11302=OTHER-piqi-framework
     Discussion Forum: https://chat.fhir.org/#narrow/channel/523549-PIQI
 
-
-  Change Notes: changes.html
+  Change Log: changes.html
   
     
 

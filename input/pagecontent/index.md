@@ -45,7 +45,7 @@ It's important to note that PIQI is not intended to assess clinical judgement or
 This Informative Document was made possible by the thoughtful contributions of the following people and organizations:
 
 Primary Authors:
-*   John D'Amore, More Informatics
+*   John D'Amore, More Informatics, Inc.
 *   Charlie Harp, Clinical Architecture, LLC
 *   Carol Macumber, Clinical Architecture, LLC
 *   Russell Ott, Deloitte Consulting LLP
@@ -66,18 +66,4 @@ Contributing Authors:
 *   Serafina Versaggi, Versaggi Health IT Consulting
 *   Andrew Sills, Deloitte Consulting LLP
 
-### Cross Version Analysis
 
-{% lang-fragment cross-version-analysis.xhtml %}
-
-### Dependency Table
-
-{% lang-fragment dependency-table.xhtml %}
-
-### Globals Statements
-
-{% lang-fragment globals-table.xhtml %}
-
-### IP Statements
-
-{% lang-fragment ip-statements.xhtml %}

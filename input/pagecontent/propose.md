@@ -1,0 +1,1 @@
+Information that related the proposal and advancement of new rubrics to PIQI Alliance. 
