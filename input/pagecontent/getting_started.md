@@ -1,6 +1,7 @@
 
 
-<p style="font-size:1.5em">
+<p style="font-size:22.4px">
+<br/>
 PIQI answers a simple question: <b>How good is this patient data for a given use case, and what problems does it have?</b> The figure and descriptions below walk through the five steps of data evaluation and highlight the key artifacts used by the PIQI Framework.
 </p>
 
