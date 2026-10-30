@@ -1,8 +1,10 @@
 
 
 <p style="font-size:22.4px">
+PIQI answers a simple question: <b>How good is this patient data for a given use case, and what problems does it have?</b> 
 <br/>
-PIQI answers a simple question: <b>How good is this patient data for a given use case, and what problems does it have?</b> The figure and descriptions below walk through the five steps of data evaluation and highlight the key artifacts used by the PIQI Framework.
+<br/>
+The figure and descriptions below walk through the five steps of data evaluation and highlight the key artifacts used by the PIQI Framework.
 </p>
 
 <span width="100%">
@@ -57,11 +59,17 @@ A rubric works like one a teacher uses to grade a paper. It lists the **[criteri
 
 #### Step 3b: Simple Assessment Module (SAM) Operation
 
-Each [SAM](./glossary.html#simple-assessment-module-sam) asks one yes-or-no-style question, such as "Is this field filled in?" or "Is this a real lab code?" The answer is always pass, fail, or skip (meaning the check did not apply). SAMs are like reusable building blocks, so the same test can be used by multiple criteria and rubrics.
+Each [SAM](./glossary.html#simple-assessment-module-sam) asks one yes-or-no-style question, such as "Is this field filled in?" or "Is this a real lab code?" The answer is always pass, fail, or skip (meaning the check did not apply). SAMs are like reusable building blocks, so the same test can be used by multiple criteria and rubrics. While new SAMs can be created, a [library of common SAMs](./sams.html) are included in this guide.  
 
 <span width="100%">
 <img src="piqi3b.png" alt="PIQI Framework High Level Component Diagram Part 3b" height="70%" width="70%"/>
 </span>
+
+<blockquote style="background-color: rgb(237, 250, 250); border: 2px solid navy; border-radius: 8px; padding: 5px;">
+  <p>
+    <b>What is it?</b> Small, single-purpose tests that do the actual checking.
+  </p>
+</blockquote>
 
 ### Step 4: Outputs to Improve Data Quality
 
