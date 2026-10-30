@@ -19,6 +19,7 @@
 <page key="evaluation" name="Evaluation"/>
 <page key="fhir_artifacts" name="FHIR Artifacts"/>
 <page key="guidance" name="General Guidance"/>
+<page key="getting_started" name="Getting Started with the PIQI Framework"/>
 <page key="index" name="Home"/>
 <page key="checklist" name="Implementer Checklist"/>
 <page key="conformance-operation" name="Operation Conformance"/>
@@ -28,7 +29,6 @@
 <page key="piqi_framework" name="PIQI Framework"/>
 <page key="glossary" name="PIQI Glossary"/>
 <page key="piqi_model" name="PIQI Model"/>
-<page key="quick_start" name="PIQI Quick Start"/>
 <page key="propose" name="Propose New Rubric"/>
 <page key="sams" name="SAM Library"/>
 <page key="sam" name="Simple Assessment Module (SAM)"/>

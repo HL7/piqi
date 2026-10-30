@@ -42,8 +42,8 @@ pages:
     title: PIQI Alliance
   glossary.md:
     title: PIQI Glossary
-  quick_start.md:
-    title: PIQI Quick Start
+  getting_started.md:
+    title: Getting Started with the PIQI Framework
   guidance.md:
     title: General Guidance
   checklist.md:
@@ -79,6 +79,7 @@ menu:
   Home: index.html
     
   PIQI Introduction:
+    Getting Started: getting_started.html
     Background: background.html
     Framework: piqi_framework.html
     Use Cases: requirements_and_use_case.html  
@@ -86,7 +87,6 @@ menu:
     PIQI Glossary: glossary.html
   
   Guidance:
-    PIQI Quick Start: quick_start.html
     General Guidance: guidance.html
     Implementer Checklist: checklist.html 
 
