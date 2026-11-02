@@ -44,7 +44,7 @@ Think of the model like a filing cabinet. Each **[data class](./glossary.html#da
 
 #### Step 3a: Assessing Data Quality Through Rubrics 
 
-A rubric works like one a teacher uses to grade a paper. It lists the **[criteria](./glossary.html#evaluation-criteria)**, or the specific things to check, and says which drawer, folder, or detail each criterion applies to. It can also give more weight to checks that matter more for a particular use, such as public health reporting or billing. Criteria can also be used to count data rather than score it.
+A rubric works like one a teacher uses to grade a paper. It lists the **[criteria](./glossary.html#evaluation-criteria)**, or the specific things to check, and says which drawer, folder, or detail each criterion applies to. It can also give more weight to checks that matter more for a **[particular use case](./requirements_and_use_case.html)**, such as public health reporting or billing. Criteria can also be used to count data rather than score it.
 
 <span width="100%">
 <img src="piqi3a.png" alt="PIQI Framework High Level Component Diagram Part 3a" height="70%" width="70%"/>
@@ -72,6 +72,8 @@ Each [SAM](./glossary.html#simple-assessment-module-sam) asks one yes-or-no-styl
 </blockquote>
 
 ### Step 4: Outputs to Improve Data Quality
+
+The PIQI Framework produces outputs that can be used to improve data quality: 
 
 - **Score:** An overall score, such as 67%, showing how usable the data is for the selected use case.
 - **Root cause:** The specific checks that failed, which helps identify what to fix.
@@ -119,8 +121,8 @@ A lab result comes in with a glucose value of 95 but no unit. The rubric include
 
 This brief introduction shows the key processes and components of the PIQI Framework, but this guide includes much more detail. Here are some places to explore next:
 
-- **Ready for a deeper dive?** Visit [PIQI Background](./background.html) and [PIQI Framework](./piqi_framework.html) to learn more about the PIQI approach.
+- **Ready for a deeper dive?** Visit [PIQI Background](./background.html) and [PIQI Framework](./piqi_framework.html) to read in greater detail about the development and approach of the PIQI Framework.
 - **What's already available?** Visit the [PIQI Clinical Model/Rubric](./clinical_model_rubric.html) and [PIQI Claims Model/Rubric](./claims_model_rubric.html) to see how existing models and rubrics can be applied to your use case.
 - **Need to build a PIQI implementation?** See the [implementation guidance](./guidance.html), [operation conformance](./conformance-operation.html), [endpoint conformance](./conformance-endpoint.html), and [implementer checklist](checklist.html) for the PIQI Framework.
 - **Ready to design PIQI artifacts?** Visit the [PIQI Model](./piqi_model.html) and [PIQI Rubric](./evaluation.html) pages to view the artifact schemas. If you design artifacts for sharing, you can bring them to the [PIQI Alliance](/alliance.html).
-- **Need to understand PIQI output?** Visit [FHIR Artifacts](./fhir_artifacts.html) to learn how scoring data and audit logs can be shared.
+- **Need to understand PIQI output?** Visit [FHIR Artifacts](./fhir_artifacts.html) to learn how scoring data and audit logs can be examined and shared.
