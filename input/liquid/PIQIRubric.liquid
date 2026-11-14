@@ -1,0 +1,22 @@
+<div>
+<table class="grid">
+<tr><td><b>Name</b></td><td>{{ name || escape }}</td></tr>
+<tr><td><b>Mnemonic</b></td><td><code>{{ mnemonic }}</code></td></tr>
+<tr><td><b>Version</b></td><td>{{ version }}</td></tr>
+{% if description.hasValue() and description.length() > 0 %}<tr><td><b>Description</b></td><td>{{ description || escape }}</td></tr>
+{% endif %}<tr><td><b>Authority</b></td><td>{{ authorityName || escape }}</td></tr>
+<tr><td><b>Model</b></td><td>{{ model.name || escape }} (<code>{{ model.mnemonic }}</code>, version {{ model.version }})</td></tr>
+<tr><td><b>Source</b></td><td>{{ source.name || escape }}</td></tr>
+<tr><td><b>Criteria</b></td><td>{{ criteria.count() }}</td></tr>
+</table>
+<p></p>
+<table class="grid">
+<tr><td><b>Entity</b></td><td><b>Criterion</b></td><td><b>SAM</b></td><td><b>Scoring</b></td></tr>
+{% for c in criteria %}<tr>
+<td><code>{{ c.entity }}</code></td>
+<td>{{ c.samNameOverride || escape }}{% if c.description.hasValue() and c.description.length() > 0 %}<br/><i>{{ c.description || escape }}</i>{% endif %}</td>
+<td><code>{{ c.samMnemonic }}</code>{% for p in c.samParameters %}<br/>{{ p.parameterName || escape }}: {{ p.parameterValue || escape }}{% endfor %}{% if c.conditionalSam.hasValue() %}<br/>if <code>{{ c.conditionalSam }}</code>{% for p in c.conditionalSamParameters %} ({{ p.parameterName || escape }}: {{ p.parameterValue || escape }}){% endfor %}{% endif %}</td>
+<td>{{ c.scoringEffect }}, weight {{ c.scoringWeight }}{% if c.criticalityIndicator %}, <b>critical</b>{% endif %}</td>
+</tr>
+{% endfor %}</table>
+</div>

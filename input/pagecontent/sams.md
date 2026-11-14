@@ -185,74 +185,12 @@ The name of the source of the SAM
 
 The PIQI Alliance Member unique identifier.
 
-### Examples of SAM Definition JSON
+### SAM Definition Format
 
-A primitive SAM for [Attribute](glossary.html#data-attribute) is Valid Date:
+PIQI implementations exchange SAM definitions in a JSON format, which is defined by the [PIQI Simple Assessment Module](StructureDefinition-PIQISAM.html) logical model. The following examples show SAM definitions in this format:
 
-```json
-{
-    "SAMs": [
-        {
-            "mnemonic": "Attr_IsValidDate",
-            "uniqueID": " 5ea00021-24ce-40c2-a1f7-02875b7732f0",
-            "name": "Attribute is valid date",
-            "successAlias": "Valid date",
-            "failureAlias": "Invalid date",
-            "description": "Determines if a simple attribute is a valid date by attempting to cast to DateTime format",
-            "inputType": "SimpleAttribute",
-            "parameters": [],
-            "prerequisiteSAMMnemonic": "Attr_IsPopulated",
-            "HDQTDimensionMnemonic": "Accuracy.InvalidFormat",
-            "executionType": "Primitive_Logic",
-            "executionReference": "",
-            "createdDateTime": "",
-            "modifiedDateTime": "",
-            "Source": [
-                {
-                    "Name": "PIQI Alliance",
-                    "PIQIAllianceMemberUID": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
-                }
-            ]
-        }
-    ]
-}
-```
-
-A Stored Procedure SAM for lab result unit plausibility based on Logical Observation Identifiers Names and Codes (LOINC):
-
-```json
-{
-    "SAMs": [
-        {
-            "mnemonic": " Lab_PlausibleUnit_LOINC_V1",
-            "uniqueID": "2241d12c-58a4-4596-ae0f-e983b0ba5209",
-            "name": " Lab Result Unit is plausible (LOINC) \u2013 V1",
-            "success_Alias": " plausible unit ",
-            "failure_Alias": " implausible unit",
-            "description": " Evaluates a populated result unit against a valid LOINC Code",
-            "PIQIModel": {
-                "mnemonic": "PAT",
-                "version": 1,
-                "versionMnemonic": "PAT_V1"
-            },
-            "input_Type": "Element:LabResult",
-            "parameters": [],
-            "prerequisiteSAMMnemonic": "",
-            "HDQTDimensionMnemonic": "Plausibility.Clinical ",
-            "executionTypeMnemonic": " Stored_Procedure ",
-            "execution_Reference": " spLOINC_UnitPlausibility ",
-            "createdDateTime": "20250315",
-            "modifiedDateTime": "20250315",
-            "source": [
-                {
-                    "name": "PIQI Alliance",
-                    "PIQIAllianceMemberUID": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
-                }
-            ]
-        }
-    ]
-}
-```
+- A primitive SAM: [Attribute is Valid Date](Binary-piqi-sam-attr-isvaliddate.html)
+- A stored procedure SAM for lab result unit plausibility based on Logical Observation Identifiers Names and Codes (LOINC): [Lab Result Unit is Plausible (LOINC)](Binary-piqi-sam-lab-plausibleunit-loinc-v1.html)
 
 ### Standard Simple Assessment Modules
 

@@ -16,6 +16,8 @@ extension:
     valueCode: cgp
 version: 2.0.0-ballot
 fhirVersion: 5.0.0
+dependencies:
+  hl7.fhir.us.core: 9.0.0
 copyrightYear: 2026+
 releaseLabel: STU 2 Ballot
 publisher:
@@ -28,6 +30,10 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   shownav: 'true'  
   jira-code: 'piqi-framework'
   auto-oid-root: 2.16.840.1.113883.4.642.40.82
+  path-resource:
+    - input/rubrics
+    - input/sams
+  path-liquid: input/liquid
 
 pages:
   index.md:
@@ -40,6 +46,12 @@ pages:
     title: Data Quality Use Cases
   piqi_framework.md:
     title: PIQI Framework
+  piqi_model_clinical.md:
+    title: PIQI Clinical Data Model
+  piqi_model_claims.md:
+    title: PIQI Claims Data Model
+  piqi_model_of_models.md:
+    title: PIQI Model of Models
   sams.md:
     title: Simple Assessment Modules (SAMS)
   evaluation.md:
@@ -82,6 +94,9 @@ menu:
     Overview: piqi_framework.html
     Taxonomy: piqi_framework.html#piqi-healthcare-data-quality-taxonomy-hdqt
     PIQI Model: piqi_framework.html#piqi-data-models
+    Clinical Data Model: piqi_model_clinical.html
+    Claims Data Model: piqi_model_claims.html
+    PIQI Model of Models: piqi_model_of_models.html
     Simple Assessment Modules (SAMS): sams.html
     PIQI Evaluation: evaluation.html
     PIQI Glossary: glossary.html
@@ -225,3 +240,50 @@ menu:
 #   if InstanceOf references a profile:
 #
 #   setId: always # always | standalone-only
+
+# The example evaluation rubrics are raw JSON (the PIQI rubric format), validated against the PIQIRubric logical model
+resources:
+  Binary/piqi-rubric-uscdi-v31:
+    name: USCDI v3.1 Aligned Rubric
+    description: The consensus USCDI v3.1 aligned evaluation rubric for the PIQI Clinical Data Model
+    isExample: true
+    profile:
+      - http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQIRubric
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQIRubric
+  Binary/piqi-rubric-eob-c4bb-inpatient:
+    name: C4BB Inpatient EOB Rubric
+    description: The consensus CARIN Blue Button inpatient EOB evaluation rubric for the PIQI Claims Data Model
+    isExample: true
+    profile:
+      - http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQIRubric
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQIRubric
+  Binary/piqi-sam-attr-isvaliddate:
+    name: Attribute is Valid Date SAM
+    description: Example definition of a primitive SAM that checks that a simple attribute is a valid date
+    isExample: true
+    profile:
+      - http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQISAM
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQISAM
+  Binary/piqi-sam-lab-plausibleunit-loinc-v1:
+    name: Lab Result Unit is Plausible (LOINC) SAM
+    description: Example definition of a stored procedure SAM that checks that a lab result unit is plausible for the LOINC test
+    isExample: true
+    profile:
+      - http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQISAM
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/xprod/ig/uv/piqi/StructureDefinition/PIQISAM

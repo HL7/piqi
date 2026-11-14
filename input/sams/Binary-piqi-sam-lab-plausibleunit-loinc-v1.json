@@ -1,0 +1,27 @@
+{
+  "mnemonic": "Lab_PlausibleUnit_LOINC_V1",
+  "uid": "2241d12c-58a4-4596-ae0f-e983b0ba5209",
+  "name": "Lab Result Unit is plausible (LOINC) – V1",
+  "successName": "plausible unit",
+  "description": "Evaluates a populated result unit against a valid LOINC Code",
+  "inputType": "Element:LabResult",
+  "failName": "implausible unit",
+  "prerequisiteSamMnemonic": null,
+  "conditionalSamMnemonic": null,
+  "hdqtDimensionMnemonic": "Plausibility.Clinical",
+  "executionTypeMnemonic": "Stored_Procedure",
+  "executionReference": "spLOINC_UnitPlausibility",
+  "createdDateTime": "20250315",
+  "modifiedDateTime": "20250315",
+  "piqiModel": {
+    "name": "Patient Clinical Model 1.0",
+    "mnemonic": "PAT_CLINICAL_V1",
+    "version": "1"
+  },
+  "source": {
+    "name": "PIQI Alliance",
+    "mnemonic": "PIQI.ALLIANCE",
+    "memberUid": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
+  },
+  "parameters": []
+}

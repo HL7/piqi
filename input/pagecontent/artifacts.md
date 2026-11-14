@@ -19,7 +19,7 @@ To support broad interoperability and repeatable benchmarking, PIQI publishes co
 
 #### Clinical Data Evaluation Rubric
 
-- **File:** [USCDI_Aligned_V31.json](USCDI_Aligned_V31.json)
+- **File:** [USCDI v3.1 Aligned Rubric](Binary-piqi-rubric-uscdi-v31.html)
 - **Role in consensus baseline:** Provides the shared USCDI-inspired evaluation rubric that operationalizes data quality checks for the clinical model.
 - **What it captures:**
 	- A sequenced criteria set (66 total checks) with predominantly scoring rules, plus informational checks.
@@ -38,7 +38,7 @@ To support broad interoperability and repeatable benchmarking, PIQI publishes co
 
 #### C4BB Inpatient EOB Evaluation Rubric
 
-- **File:** [EOB_C4BB_INPATIENT.json](EOB_C4BB_INPATIENT.json)
+- **File:** [C4BB Inpatient EOB Rubric](Binary-piqi-rubric-eob-c4bb-inpatient.html)
 - **Role in consensus baseline:** Provides the shared CARIN Blue Button-inspired evaluation rubric that operationalizes data quality checks for inpatient institutional EOB data using the claims/EOB model.
 - **What it captures:**
 	- A sequenced criteria set (54 total checks) with predominantly scoring rules, plus informational checks.
