@@ -7,6 +7,34 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Binary/piqi-sam-attr-isvaliddate" key="Binary-piqi-sam-attr-isvaliddate" name="Attribute is Valid Date SAM"/>
+<artifact id="Binary/piqi-rubric-eob-c4bb-inpatient" key="Binary-piqi-rubric-eob-c4bb-inpatient" name="C4BB Inpatient EOB Rubric"/>
+<artifact id="Binary/piqi-sam-lab-plausibleunit-loinc-v1" key="Binary-piqi-sam-lab-plausibleunit-loinc-v1" name="Lab Result Unit is Plausible (LOINC) SAM"/>
+<artifact id="ValueSet/piqi-attribute-type" key="ValueSet-piqi-attribute-type" name="PIQI Attribute Type"/>
+<artifact id="CodeSystem/piqi-attribute-type" key="CodeSystem-piqi-attribute-type" name="PIQI Attribute Type"/>
+<artifact id="ValueSet/piqi-cardinality" key="ValueSet-piqi-cardinality" name="PIQI Cardinality"/>
+<artifact id="CodeSystem/piqi-cardinality" key="CodeSystem-piqi-cardinality" name="PIQI Cardinality"/>
+<artifact id="StructureDefinition/PIQICodeableConcept" key="StructureDefinition-PIQICodeableConcept" name="PIQI Codeable Concept"/>
+<artifact id="StructureDefinition/PIQICoding" key="StructureDefinition-PIQICoding" name="PIQI Coding"/>
+<artifact id="StructureDefinition/PIQIRubric" key="StructureDefinition-PIQIRubric" name="PIQI Evaluation Rubric"/>
+<artifact id="StructureDefinition/PIQIModelDefinition" key="StructureDefinition-PIQIModelDefinition" name="PIQI Model Definition"/>
+<artifact id="StructureDefinition/piqi-model-structuredefinition" key="StructureDefinition-piqi-model-structuredefinition" name="PIQI Model StructureDefinition"/>
+<artifact id="StructureDefinition/piqi-model-type" key="StructureDefinition-piqi-model-type" name="PIQI Model Type"/>
+<artifact id="StructureDefinition/piqi-model-version" key="StructureDefinition-piqi-model-version" name="PIQI Model Version"/>
+<artifact id="StructureDefinition/PIQIObservationValue" key="StructureDefinition-PIQIObservationValue" name="PIQI Observation Value"/>
+<artifact id="StructureDefinition/PIQIRangeValue" key="StructureDefinition-PIQIRangeValue" name="PIQI Range Value"/>
+<artifact id="ValueSet/piqi-sam-execution-type" key="ValueSet-piqi-sam-execution-type" name="PIQI SAM Execution Type"/>
+<artifact id="CodeSystem/piqi-sam-execution-type" key="CodeSystem-piqi-sam-execution-type" name="PIQI SAM Execution Type"/>
+<artifact id="ValueSet/piqi-sam-input-type" key="ValueSet-piqi-sam-input-type" name="PIQI SAM Input Type"/>
+<artifact id="CodeSystem/piqi-sam-input-type" key="CodeSystem-piqi-sam-input-type" name="PIQI SAM Input Type"/>
+<artifact id="ValueSet/piqi-parameter-value-type" key="ValueSet-piqi-parameter-value-type" name="PIQI SAM Parameter Value Type"/>
+<artifact id="CodeSystem/piqi-parameter-value-type" key="CodeSystem-piqi-parameter-value-type" name="PIQI SAM Parameter Value Type"/>
+<artifact id="ValueSet/piqi-scoring-effect" key="ValueSet-piqi-scoring-effect" name="PIQI Scoring Effect"/>
+<artifact id="CodeSystem/piqi-scoring-effect" key="CodeSystem-piqi-scoring-effect" name="PIQI Scoring Effect"/>
+<artifact id="StructureDefinition/PIQISAM" key="StructureDefinition-PIQISAM" name="PIQI Simple Assessment Module"/>
+<artifact id="StructureDefinition/PIQIClinicalModel" key="StructureDefinition-PIQIClinicalModel" name="Patient Clinical Model 1.0"/>
+<artifact id="StructureDefinition/PIQIEOBModel" key="StructureDefinition-PIQIEOBModel" name="Patient EOB Model"/>
+<artifact id="Binary/piqi-rubric-uscdi-v31" key="Binary-piqi-rubric-uscdi-v31" name="USCDI v3.1 Aligned Rubric"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="changes" name="Change History"/>
@@ -18,7 +46,10 @@
 <page key="index" name="Home"/>
 <page key="artifacts" name="PIQI Artifacts"/>
 <page key="background" name="PIQI Background"/>
+<page key="piqi_model_claims" name="PIQI Claims Data Model"/>
+<page key="piqi_model_clinical" name="PIQI Clinical Data Model"/>
 <page key="piqi_framework" name="PIQI Framework"/>
+<page key="piqi_model_of_models" name="PIQI Model of Models"/>
 <page key="sams" name="Simple Assessment Modules (SAMS)"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

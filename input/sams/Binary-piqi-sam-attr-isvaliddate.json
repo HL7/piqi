@@ -1,0 +1,27 @@
+{
+  "mnemonic": "Attr_IsValidDate",
+  "uid": "5ea00021-24ce-40c2-a1f7-02875b7732f0",
+  "name": "Attribute is valid date",
+  "successName": "Valid date",
+  "description": "Determines if a simple attribute is a valid date by attempting to cast to DateTime format",
+  "inputType": "Simple_Attribute",
+  "failName": "Invalid date",
+  "prerequisiteSamMnemonic": "Attr_IsPopulated",
+  "conditionalSamMnemonic": null,
+  "hdqtDimensionMnemonic": "Accuracy.InvalidFormat",
+  "executionTypeMnemonic": "Primitive_Logic",
+  "executionReference": null,
+  "createdDateTime": null,
+  "modifiedDateTime": null,
+  "piqiModel": {
+    "name": null,
+    "mnemonic": null,
+    "version": null
+  },
+  "source": {
+    "name": "PIQI Alliance",
+    "mnemonic": "PIQI.ALLIANCE",
+    "memberUid": "f0f3de6d-c3d8-483c-a8ff-004a66dbc551"
+  },
+  "parameters": []
+}

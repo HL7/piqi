@@ -14,34 +14,6 @@ It is important to remember that the goal of the Patient Information Quality Imp
 
 Implementers of the PIQI Framework will likely aggregate scoring results for the purpose of qualitative root-cause analysis, but this specification is focused on the implementation of the framework itself.  Future efforts may consider optimal patterns for analyzing data quality patterns across collections of messages.
 
-### PIQI Attribute Types
-
-PIQI Elements are comprised of four [attribute](glossary.html#data-attribute) types: Simple, Codeable Concept, Observation Value, and Ranged Value. All attributes have a cardinality of 0..1, recognizing that a Codeable Concept collection attribute may contain multiple coding values.
-
-#### Simple Attribute Type
-
-A Simple Attribute is a string value in the JavaScript Object Notation (JSON) attribute structure. Simple Attributes can contain any string and can be used to represent any single basic data type like text, simple numbers, structured numbers, dates, and date ranges.
-
-Example: In this example the effectiveDateTime attribute is a Simple Attribute.
-```json
-    "Allergies": [
-        {"effectiveDate": "20230111"}
-    ]
-```
-#### Codeable Concept Attribute Type
-
-A Codeable Concept attribute is a structure that can be represented as a simple attribute or a coded entity. Many attributes in patient data can be represented by a coded entity or a simple code value and as such is represented by a text sub-attribute and a codings collection.
-
-Many of the important attributes in patient information are Codeable Concepts. Codeable Concepts are attributes that can be represented by a simple text string or by one or many codings, hence the codeable concept. If the attribute does contain one or more codings, each coding is comprised of three components: a code, display, and code system identifier.
-
-**All of these Coding sub attributes should be populated in order for the concept being exchanged to be validated.**
-
-The **code is needed** to provide a unique stable identifier for the concept in a given code system.
-
-The **code system identifier is needed** to provide context for the meaning of a code, and to confirm that the code is valid in that code system and, if necessary, determine the status of that code.
-
-The **display is needed** so that a human can verify that the code provided does, in fact, semantically match the concept in the identified code system. It is also necessary if the concept provided is being mapped/normalized to a standard or local terminology.
-
 <style>
 table, td{
   border: 1px solid black;
@@ -56,303 +28,27 @@ tr {
 }
 </style>
 
-**Codeable Concept sub-attributes**
-
-| **AttributeName** | **Type** | **Description** |
-| --- | --- | --- |
-| text | Simple Attribute | Text representation of the concept |
-| codings | Codings | Collection of zero-to-many codings |
-
-##### Coding Attributes
-Codings exist as a substructure to the CodeableConcept type.  The substructure is adopted from Fast Healthcare Interoperability Resources (FHIR) to express one or more codings associated with a given CodeableConcept.
-
-**Coding sub-attributes**
-
-| **AttributeName** | **Type** | **Description** |
-| --- | --- | --- |
-| code | Simple Attribute | Code value for the coding |
-| display | Simple Attribute | Display value for the coding |
-| system | Simple Attribute | Code system identifier for the coding |
-
-**Example:**
-```json
-    "performedTest": {
-        "text": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
-        "codings": [
-            {
-                "code": "742-7",
-                "display": "MONOCYTES:NCNC:PT:BLD:QN:AUTOMATED COUNT",
-                "system": "LOINC"
-            }
-        ]
-    }
-```
-
-#### Observation Value Attribute Type
-
-An Observation Value attribute is a structure that can be represented as a simple attribute value or a structure observation value. Observation Value is a specialized attribute as many elements in patient information can be represented by a quantitative, text, or coding value.
-
-**Observation Value sub-attributes**
-
-| **AttributeName** | **Type** | **Description** |
-| --- | --- | --- |
-| text | Simple Attribute | Text representation of the value |
-| type | Codeable Concept | A text representation of the value type and an optional collection of zero-to-many coded concepts representing the coded value types |
-| number | Simple Attribute | For numeric values |
-| number2 | Simple Attribute | For second numeric value |
-| codings | Codeable Concept | Collection of zero-to-many coded concepts representing the observation value if it is a codeable concept |
-
-**Example of ResultValue Text Only:**
-
-```json
-    "resultValue": {
-        "text": "NEG",
-        "type": {
-            "text": "ST"
-        }
-    }
-```
-
-**Example of ResultValue Coding Sub-Attribute:**
-
-```json
-    "resultValue": {
-        "text": "Negative",
-        "type": {
-            "text": "CE",
-            "codings": [
-                {
-                    "system": "HL7-0125",
-                    "code": "CE",
-                    "display": "Coded element"
-                }
-            ]
-        },
-        "codings": [
-            {
-                "system": "SNOMEDCT",
-                "code": "260385009",
-                "display": "Negative"
-            }
-        ]
-    }
-```
-
-**Example of ResultValue Number Value Sub-Attribute:**
-
-```json
-    "resultValue": {
-        "text": "100",
-        "type": {
-            "text": "NM",
-            "codings": [
-                {
-                    "system": "HL7-0125",
-                    "code": "NM",
-                    "display": "Numeric"
-                }
-            ]
-        },
-        "number": "100"
-    }
-```
-**Example of ResultValue Numeric Range Sub-Attribute:**
-
-```json
-    "resultValue": {
-        "text": "3.5-4.5",
-        "type": {
-            "text": "NR",
-            "codings": [
-                {
-                    "system": "HL7-0125",
-                    "code": "NR",
-                    "display": "Numeric range"
-                }
-            ]
-        },
-        "number": "3.5",
-        "number2": "4.5"
-    }
-```
-
-
-#### Range Value Attribute Type
-
-A Range Value attribute is a structure that can be represented as a simple attribute value or a structured range value. The Range Value is a specialized attribute as many elements in patient information can be represented by a structured range. The Range Value Attribute Type can only be used with numeric ranges and cannot be used for a date range.
-
-**Range Value sub-attributes**
-
-| **AttributeName** | **Type** | **Description** |
-| --- | --- | --- |
-| text | Simple Attribute | Text representation of the value range |
-| lowValue | Simple Attribute | Text representation of the low value |
-| highValue | Simple Attribute | Text representation of the high value |
-
-**Example**:
-
-```json
-    "referenceRange": {
-        "text": "14-88",
-        "lowValue": "14",
-        "highValue": "88"
-    }
-```
-
 ### PIQI Data Models
 
-The PIQI Framework depends on a patient-oriented, flat-data class collection information model. Depending on the use case, the structure of the model—including its [data classes](glossary.html#data-class) and [attribute](glossary.html#data-attribute) details—may vary. For example, the PIQI Clinical Data Model is designed to evaluate clinical information exchanged about a patient, so its data classes and attributes reflect common clinical data elements. In contrast, the PIQI Medical Claim Data Model includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses attribute types that align with the framework’s design.
+The PIQI Framework depends on a patient-oriented, flat-data class collection information model. Depending on the use case, the structure of the model—including its [data classes](glossary.html#data-class) and [attribute](glossary.html#data-attribute) details—may vary. For example, the [PIQI Clinical Data Model](piqi_model_clinical.html) is designed to evaluate clinical information exchanged about a patient, so its data classes and attributes reflect common clinical data elements. In contrast, the [PIQI Claims Data Model](piqi_model_claims.html) includes data classes and attributes typically associated with claims information. The PIQI Framework functions consistently across different models, provided the model remains flat, includes a patient demographics element, and uses [attribute types](piqi_model_of_models.html#piqi-attribute-types) that align with the framework’s design.
 
 <span width="100%">
 <img src="piqi_data_model.png" alt="PIQI Flattened Data Model" width="100%" />
 </span>
 <br/>
 
-### PIQI Clinical Data Model
+### PIQI Models in this Specification
 
-The PIQI Clinical Data Model is a simplified information model based on US Core profiles and is intended to focus on [data classes](glossary.html#data-class) and [attributes](glossary.html#data-attribute) that are highly relevant to patient clinical data quality and to simplify the qualitative assessment process. While it could be extended to include administrative and other data relative to the patient's care process, initially the model is purposefully limited to patient demographics, social, and clinical information.
+The PIQI Framework is not tied to any particular model. It is applied to whatever models a community agrees to use for assessing the data that is exchanged within that community, and [Evaluation Rubrics](glossary.html#evaluation-rubric) are always written against a particular model and version. Models are expected to be developed, agreed and maintained by the communities that use them - for example, through the [PIQI Alliance](#piqi-alliance-as-a-community-of-practice) - and communities may [extend](#piqi-model-extensions) existing models or define new ones, provided that they follow the rules described above.
 
-#### PIQI Clinical Data Model Classes
+This specification provides two models, both suitable for use by communities in the United States:
 
-| **Data Class** | **Cardinality to [Patient Container](glossary.html#patient-container)** |
-| --- | --- |
-| Allergy | Zero to Many |
-| Condition | Zero to Many |
-| Demographics | One |
-| HealthAssessment | Zero to Many |
-| Immunization | Zero to Many |
-| LabResult | Zero to Many |
-| MedicalDevice | Zero to Many |
-| Medication | Zero to Many |
-| Procedure | Zero to Many |
-| VitalSign | Zero to Many |
+- The [PIQI Clinical Data Model](piqi_model_clinical.html), for the clinical data exchanged about a patient, aligned with USCDI and based on US Core
+- The [PIQI Claims Data Model](piqi_model_claims.html), for claims and Explanation of Benefits data, based on the Common Payer Consumer Data Set (CPCDS)
 
-#### PIQI Data Class Attributes
+These two models are the only US-specific content in this guide.
 
-| **Allergy**|
-| --- |     |     |
-| **AttributeName** | **Type** | **Description** |
-| substance | Codeable Concept | Allergen or substance that trigger an intolerance |
-| category | Codeable Concept | Category of substance: medication, food, chemical, etc |
-| reaction | Codeable Concept | Condition triggered by the intolerance or allergy |
-| effectiveDate | Simple Attribute | Date of allergy onset or documentation. Note: this could be a date or date range |
-| severity | Codeable Concept | Severity of the reaction |
-| allergyStatus | Codeable Concept | Status of allergy: active, confirmed, refuted, etc |
-| provenance | Simple Attribute | Source of this information |
-
-
-
-| **Condition** |
-| --- |     |     |
-| **AttributeName** | **Type** | **Description** |
-| condition | Codeable Concept | Problem, Diagnosis or other medical condition |
-| conditionStatus | Codeable Concept | Status of condition: active, confirmed, refuted, etc |
-| conditionType | Codeable Concept | Type of condition/diagnosis: complaint, discharge, etc |
-| onsetDate | Simple Attribute | Onset or effective date |
-| resolutionDate | Simple Attribute | Date condition resolved |
-| provenance | Simple Attribute | Source of this information |
-
-
-| **Demographics** |
-| --- |     |     |
-| **AttributeName** | **Type** | **Description** |
-| birthDate | Simple Attribute | Patient date of birth |
-| birthSex | Codeable Concept | Patient sex at birth |
-| deathDate | Simple Attribute | Patient date of death |
-| deceased | Codeable Concept | Is patient deceased: Yes or No or boolean |
-| ethnicity | Codeable Concept | Patient ethnic group |
-| genderIdentity | Codeable Concept | Patient gender identity |
-| primaryLanguage | Codeable Concept | Patient primary language |
-| maritalStatus | Codeable Concept | Patient marital status |
-| raceCategory | Codeable Concept | Patient race category |
-| provenance | Simple Attribute | Source of this information |
-
-| **HealthAssessment** |
-| --- |     |     |
-| **Attribute Name** | **Type** | **Description** |
-| assessment | Codeable Concept | Specific health assessment |
-| resultValue | Observation Value | Health assessment result |
-| resultUnit | Codeable Concept | Health assessment result unit, if applicable |
-| performedDateTime | Simple Attribute | Date and time when assessment was performed |
-| provenance | Simple Attribute | Source of this information |
-
-| **Immunization** |
-| --- |     |     |
-| **Attribute Name** | **Type** | **Description** |
-| immunization | Codeable Concept | Immunization or vaccine product |
-| lotNumber | Simple Attribute | Lot number for immunization product |
-| administrationDate | Simple Attribute |  Date immunization was administered |
-| expirationDate | Simple Attribute | Expiration date for immunization product |
-| reaction | Codeable Concept | Patient reaction to immunization, if applicable |
-| immunizationStatus | Codeable Concept | Status of immunization: completed, entered-in-error, not-done, etc |
-| provenance | Simple Attribute | Source of this information |
-
-
-| **LabResult** |
-| --- |     |     |
-| **Attribute Name** | **Type** | **Description** |
-| performedTest | Codeable Concept | Specific lab test performed |
-| orderedTest | Codeable Concept | Order or panel that initiated the test being performed |
-| resultValue | Observation Value | Test result value |
-| resultUnit | Codeable Concept | Test result unit, if applicable |
-| interpretation | Codeable Concept | Test result interpretation |
-| referenceRange | Range Value | Test reference range |
-| specimenType | Codeable Concept | Type of specimen used by the specific test |
-| resultStatus | Codeable Concept | Status of the result: Incomplete, pending, final, etc |
-| performingSite | Simple Attribute | Unique identifier for the performing site |
-| performedDateTime | Simple Attribute | Date and time the test was performed |
-| orderDate | Simple Attribute | Date the order was requested |
-| provenance | Simple Attribute | Source of this information |
-
-| **MedicalDevice** |
-| --- |     |     |
-| **Attribute Name** | **Type** | **Description** |
-| deviceType | Codeable Concept | Type of medical device |
-| deviceID | Codeable Concept | Food and Drug Administration (FDA) unique device identifier |
-| implantationDate | Simple Attribute | Date the device was implanted if applicable |
-| deviceStatus | Codeable Concept | Status of the medical device |
-| provenance | Simple Attribute | Source of this information |
-
-| **Medication** |
-| --- |     |     |
-| **Attribute Name** | **Type** | **Description** |
-| medication | Codeable Concept | Medication product (drug) |
-| startDate | Simple Attribute | Date the patient started the medication |
-| endDate | Simple Attribute | Date the patient discontinued the medication |
-| doseAmount | Simple Attribute | The dose amount expressed in strength or eaches. For a 200mg total dose delivered via 2 100mg tablets, the doseAmount is 200. |
-| doseAmountUnit | Codeable Concept | The dose amount unit. For a 200mg total dose delivered via 2 100mg tablets, the doseAmountUnit is mg. |
-| doseRoute | Codeable Concept | The route of administration |
-| doseQuantity | Simple Attribute | The dose quantity dispensed. For a 200mg total dose delivered via 2 100mg tablets, the doseQuantity is 2. |
-| doseQuantityUnit | Simple Attribute | The dose quantity units. For a 200mg total dose delivered via 2 100mg tablets, the doseQuantityUnit is {Tablet}. |
-| instructions | Simple Attribute | The medication instruction text |
-| adherence | Codeable Concept | The patient’s adherence to the medication |
-| indication | Codeable Concept | The condition that is being treated by the medication |
-| fillStatus | Codeable Concept | Fill status of the medication |
-| medicationStatus | Codeable Concept | Status of medication: active, stopped, entered-in-error, etc |
-| provenance | Simple Attribute | Source of this information |
-
-| **Procedure** |
-| --- |     |     |
-| **AttributeName** | **Type** | **Description** |
-| procedure | Codeable Concept | The procedure that was performed on the patient |
-| procedureDateTime | Simple Attribute | The date and time the procedure was performed. Note: this could be a date or date range  |
-| procedureReason | Codeable Concept | The condition that prompted the procedure |
-| procedureStatus | Codeable Concept | Status of procedure: preparation, in-progress, completed, entered-in-error, etc |
-| provenance | Simple Attribute | Source of this information |
-
-
-| **VitalSign** |
-| --- |     |     |
-| **AttributeName** | **Type** | **Description** |
-| vitalSign | Codeable Concept | Vital sign assessment/test |
-| resultValue | Observation Value | Vital sign result |
-| resultUnit | Codeable Concept | Vital sign result unit, if applicable |
-| interpretation | Codeable Concept | Interpretation of vital sign |
-| referenceRange | Range Value | Reference range for vital sign |
-| resultStatus | Codeable Concept | Vital sign result status |
-| performingSite | Simple Attribute | Unique identifier for performing site |
-| performedDateTime | Simple Attribute | Date and time vital sign was collected |
-| provenance | Simple Attribute | Source of this information |
+All PIQI models are built from the same parts - a root entity, data classes, attributes and roles - and follow the same rules. These are described by the [PIQI model of models](piqi_model_of_models.html), which is defined as the logical model [PIQI Model Definition](StructureDefinition-PIQIModelDefinition.html). This is also the format in which PIQI models are exchanged between PIQI implementations. PIQI models can also be defined as FHIR logical models, as the models in this specification are; the profile [PIQI Model StructureDefinition](StructureDefinition-piqi-model-structuredefinition.html) enforces the model of models on these logical models.
 
 ### Code System Identifiers in PIQI
 
